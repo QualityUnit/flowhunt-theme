@@ -1,0 +1,50 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.Box {
+
+	.elementor-widget-heading + .elementor-widget-text-editor p {
+		margin-bottom: 1.5em;
+	}
+
+	&__padded {
+
+		&.col-5 {
+			padding: 1.125em;
+		}
+	}
+
+	&__content {
+		padding: 1.625em 1.5em;
+
+		p {
+			font-size: 0.875rem;
+		}
+
+		.learn-more {
+			margin-top: 1.5em;
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			padding: 1.625em 2.5em;
+		}
+	}
+
+	&--article {
+
+		&__image {
+			position: relative;
+
+			img[src*="/images/imagePlaceholder.svg"] {
+				position: absolute;
+				width: 6em;
+				height: auto;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+}

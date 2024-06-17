@@ -1,0 +1,226 @@
+/* stylelint-disable selector-class-pattern,
+no-descending-specificity, scss/no-global-function-names */
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+@use "../elements/Button" as *;
+
+.Pricing {
+
+	&__programs {
+		margin: 2em 0 1.5em;
+		font-size: 0.875em;
+
+		.elementor-container {
+
+			@media (max-width: ($breakpoint-tablet - 1px)) {
+
+				.checklist.elementor-widget-text-editor ul:not([class]) li {
+					font-size: 1em;
+					line-height: 1.1;
+
+					&::before {
+						top: 0;
+					}
+				}
+			}
+
+			@media (min-width: $breakpoint-tablet) {
+				display: grid;
+				grid-template-columns: repeat(2, auto);
+				grid-gap: 1em;
+			}
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				position: relative;
+				grid-template-columns: repeat(4, auto);
+				grid-gap: 0;
+				left: 0.75em;
+			}
+		}
+	}
+
+	&__program {
+		position: relative;
+		background-color: $white;
+		padding: 1.5em;
+		margin-top: 1.5em;
+		border: 2px solid $light-gray;
+		border-radius: $border-radius-16;
+
+		@media (min-width: $breakpoint-tablet) {
+			width: 100% !important;
+			margin-top: 0;
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+
+			&:first-of-type {
+				position: relative;
+				left: -1.5em;
+			}
+
+			+.Pricing__program {
+
+				&:not(:nth-of-type(2)) {
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+
+				&:not(:last-of-type) {
+					border-right: 0;
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+				}
+			}
+		}
+
+		>.elementor-widget-wrap {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.badge {
+			position: absolute;
+			display: inline-flex;
+			align-items: center;
+			background-color: $light-grayBg;
+			border-radius: 1.5em 0.5em 0.5em 1.5em;
+			padding: 0.75em 1em;
+			font-size: 0.875rem;
+			margin-left: auto;
+			margin-top: 0.5em;
+			right: -0.25em;
+
+			p {
+				margin-bottom: 0;
+			}
+
+			&.most__popular {
+				font-weight: 600;
+				background-color: $tag;
+			}
+
+			&.premiumSupport {
+
+				svg {
+
+					@include square(1em);
+					fill: url(#star-gradient);
+					margin-left: 0.5em;
+					margin-right: 0.5em;
+				}
+
+				p {
+					font-weight: 600;
+					background: linear-gradient(117deg, $primary 0%, rgba(#db6bd7, 0.75) 100%);
+					background-clip: text;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					backdrop-filter: blur(6px);
+				}
+			}
+		}
+
+		.elementor-widget-image {
+
+			img {
+				width: 3.75em;
+				margin-bottom: 1.5em;
+			}
+		}
+
+		.elementor-heading-title {
+			font-size: 1.875rem;
+			margin: 0 0 0.35em;
+		}
+
+		.elementor-button-link {
+			display: block;
+			text-align: center;
+			padding: 1em 1.5em;
+			margin: 2em 0 1.5em;
+			border-radius: $border-radius-6;
+			border: 1px solid currentcolor;
+			font-size: 0.875rem;
+			font-weight: 600;
+			line-height: 1;
+			color: $black;
+			text-decoration: none;
+
+			* {
+				line-height: inherit !important;
+			}
+
+			@media (max-width: ($breakpoint-tablet - 1px)) {
+				margin: 0.5em 0;
+			}
+		}
+
+		.Button--full {
+			all: unset;
+		}
+
+		.credits {
+			margin-top: 0.75em;
+
+			strong {
+				display: inline-block;
+				background-color: $light-gray;
+				border-radius: 1em;
+				padding: 0 0.5em;
+			}
+		}
+	}
+
+	&__price {
+		font-size: 2.5rem;
+		font-weight: 600;
+		color: $secondary;
+
+		p {
+			font-family: inherit;
+			font-weight: inherit;
+			font-size: inherit;
+			color: inherit;
+		}
+
+		sup {
+			position: relative;
+			font-size: 1rem;
+			font-weight: 400;
+			top: -0.15em;
+		}
+	}
+
+	&__checklist {
+
+		&--logo {
+
+			@include square(1.5rem);
+			margin-right: 0.5em;
+		}
+
+		p {
+
+			&:has(~ul) {
+				display: flex;
+				align-items: center;
+				color: $level-2;
+				margin-bottom: 0.5em;
+				font-size: 0.875rem;
+			}
+
+			b,
+			strong {
+				color: $black;
+				margin-bottom: 0 !important;
+			}
+		}
+
+		ul + p a {
+			text-decoration: underline;
+		}
+
+
+	}
+}

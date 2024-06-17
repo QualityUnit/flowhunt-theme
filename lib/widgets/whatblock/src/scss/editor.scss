@@ -1,0 +1,26 @@
+@forward "style";
+
+.WhatBlock {
+	max-width: 45em;
+
+	h3 {
+
+		textarea {
+			font-size: 2rem !important;
+			font-weight: 600 !important;
+			line-height: 1.33 !important;
+		}
+	}
+
+	p {
+
+		textarea {
+			font-size: 1rem !important;
+			line-height: 1.33 !important;
+
+			a:not(.Button) {
+				color: #2570ed;
+			}
+		}
+	}
+}

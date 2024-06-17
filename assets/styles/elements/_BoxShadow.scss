@@ -1,0 +1,94 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.Box--shadow {
+	border-radius: $border-radius-16;
+	overflow: hidden;
+	transition: all 0.2s;
+	background-color: $white;
+	filter: $box-shadow-big;
+	transform: translateZ(1px);
+
+	&__small {
+		box-shadow: 0 1px 3px rgba($black-real, 0.16);
+
+		&--title {
+			font-size: 0.75rem;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			margin: 1em auto;
+
+			a[target="_blank"] & {
+				position: relative;
+				padding-right: 1.5em;
+
+				&::after {
+					position: absolute;
+					top: -0.15em;
+					right: 0;
+					content: "\e832" !important;
+					font-family: fontello, sans-serif;
+					font-size: 1.25em;
+					width: 1em;
+				}
+			}
+		}
+	}
+
+	&__border {
+		border: 1px solid $light-gray;
+		overflow: visible;
+		text-align: left;
+		padding-bottom: 2.5em;
+
+		p {
+			padding: 0 !important;
+		}
+
+		.elementor-widget-image {
+			position: relative;
+			margin-bottom: 1.5em;
+			overflow: hidden;
+			border-radius: $border-radius-16 $border-radius-16 0 0;
+
+			&::before {
+
+				@include posCustom(-1.5em, -1.5em, 0, -1.5em);
+				position: absolute;
+				content: "";
+				z-index: 1;
+				box-shadow: inset 0 -1px 1.5em 0 rgba($black-real, 0.14);
+			}
+		}
+
+		.elementor-widget {
+
+			&-heading {
+				margin-bottom: 1em;
+			}
+
+			&-heading,
+			&-text-editor {
+				padding: 0 2rem;
+			}
+
+			&-text-editor {
+				font-size: 0.875rem;
+			}
+		}
+	}
+
+	@media (hover: hover) {
+
+		&:hover {
+			filter: drop-shadow(0 0.25em 4em rgba($black-real, 0.16));
+		}
+
+		&__small:hover {
+			filter: $box-shadow-big;
+		}
+	}
+}

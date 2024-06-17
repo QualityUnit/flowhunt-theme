@@ -1,0 +1,84 @@
+/* stylelint-disable no-descending-specificity */
+
+@use "../common/mixins" as *;
+@use "../common/variables" as *;
+
+.searchfield {
+
+	&.inputField {
+		position: relative;
+		border-radius: $border-radius-10;
+		border: 1px solid $gray-fields;
+		margin-bottom: 0;
+
+
+		svg {
+
+			@include square(1.25em);
+			position: absolute;
+			fill: $black-real;
+			height: 1.5em;
+			left: 0.85em;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		@media (min-width: $breakpoint-tablet) {
+			max-width: 15.625em;
+		}
+	}
+
+	&:focus-within {
+		color: $black;
+		border-color: transparent;
+		box-shadow: none;
+	}
+
+	&.has-value {
+		color: $black;
+	}
+
+}
+
+.SearchField {
+
+	&__wrapper {
+		position: relative;
+		max-width: 15em;
+	}
+
+	&__results {
+		position: absolute;
+		top: calc(100% + 1px);
+		left: 0;
+		font-size: $font-size-smaller;
+		width: calc(100% + 3em);
+		padding: 0.5em 1.45em;
+		border-radius: $border-radius-6;
+		background-color: $white;
+		filter: $box-shadow-small;
+
+		&--inn {
+
+			@include scrollbar;
+			max-height: 19em;
+			overflow-y: scroll;
+			position: relative;
+			margin-left: -1.45em;
+			margin-right: -1.45em;
+
+			li {
+				padding: 0.25em 1em;
+
+				a {
+					display: block;
+				}
+
+				.excerpt {
+					font-size: $font-size-small;
+					line-height: 1.33;
+				}
+			}
+		}
+	}
+}

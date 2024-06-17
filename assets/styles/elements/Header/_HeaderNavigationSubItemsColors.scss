@@ -1,0 +1,53 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../../common/variables" as *;
+@use "../../common/mixins" as *;
+
+.Header {
+
+	&__navigation {
+
+		ul.sub-menu {
+
+			li {
+
+				&[class*="icn-"]::after {
+					background-color: $primary-light;
+				}
+
+				&[class*="label"] {
+					border-radius: 8px;
+
+					.icon {
+						fill: currentcolor;
+					}
+				}
+
+				&.label-blue {
+					color: $primary;
+
+					li[class]::after {
+						background-color: $primary-light;
+					}
+				}
+
+				&.label-magenta, {
+					color: $saturated-magenta-menu;
+
+					li[class]::after {
+						background-color: $saturated-magenta-menu;
+						opacity: 16%;
+					}
+				}
+
+				&.label-orange, {
+					color: $saturated-orange-menu;
+
+					li[class]::after {
+						background-color: $desaturated-orange-menu;
+					}
+				}
+			}
+		}
+	}
+}

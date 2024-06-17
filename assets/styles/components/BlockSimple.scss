@@ -1,0 +1,36 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.BlockSimple {
+	background-color: $lightest-gray;
+
+	.elementor-col-50 {
+
+		.elementor-heading-title {
+			margin-bottom: 0.5em;
+		}
+
+		@media (max-width: ($breakpoint-tablet-landscape - 1px)) {
+
+			&:has(picture, img):not(:has(.elementor-heading-title)) {
+				margin-bottom: 1.5em;
+			}
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+
+			width: 45%;
+			max-width: 31.25em;
+
+			&:has(picture, img):not(:has(.elementor-heading-title)) {
+				width: 60%;
+				max-width: 37.5em;
+			}
+
+			&:last-of-type {
+				margin-left: auto;
+			}
+		}
+	}
+}

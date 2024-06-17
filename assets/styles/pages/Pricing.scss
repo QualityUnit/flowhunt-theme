@@ -1,0 +1,81 @@
+/* stylelint-disable selector-class-pattern,
+no-descending-specificity, scss/no-global-function-names */
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+@forward "../components/PricingPrograms";
+@forward "../components/PricingTable";
+
+.Pricing {
+	position: relative;
+	padding: 3.2em 0;
+	margin: 1.5em auto 4em;
+	max-width: $breakpoint-desktop-box;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0;
+		background-color: $lightest-gray;
+		border-radius: $border-radius-16;
+		padding-bottom: 100%;
+
+		@media (min-width: $breakpoint-desktop) {
+			padding-bottom: 30%;
+		}
+	}
+
+	.wrapper {
+		position: relative;
+		z-index: 2;
+
+		@media (min-width: $breakpoint-desktop) {
+			padding: 0;
+		}
+	}
+
+	&__title .elementor-heading-title {
+		font-size: $font-size-h2;
+		text-align: center;
+
+		@media (max-width: $breakpoint-tablet) {
+			font-size: $font-size-h2-s;
+		}
+	}
+
+	&__subtitle {
+		max-width: 80ch;
+		margin: 0 auto;
+		text-align: center;
+
+		.elementor-heading-title {
+			font-size: 1rem;
+		}
+	}
+
+	&__tags {
+		margin-top: 1.5em;
+
+		ul {
+			display: flex;
+			flex-flow: wrap row;
+			justify-content: center;
+
+			li {
+				background-color: $light-gray;
+				margin: 0 1em 1em 0;
+				padding: 0.5em 1em !important;
+				border-radius: 1em;
+				font-size: 0.75rem;
+				line-height: 1.42;
+				text-align: center;
+
+				&::before {
+					display: none !important;
+				}
+			}
+		}
+	}
+}
