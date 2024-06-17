@@ -1,0 +1,135 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+@mixin elementor-col-50() {
+	width: auto !important;
+
+	.Button {
+		font-size: 0.875rem;
+	}
+
+	&:first-of-type {
+		flex-basis: 43%;
+	}
+
+	&:last-of-type {
+		flex-basis: 57%;
+		min-height: 34em;
+
+		picture,
+		img {
+			max-width: none;
+			width: 100%;
+		}
+	}
+}
+
+.hero__banner,
+.heroHeadline,
+.heroHeadline__home {
+
+	.Button {
+		font-size: 0.875rem;
+	}
+
+	&__title,
+	&--title {
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+
+			h1.elementor-heading-title {
+				font-size: $font-size-h1;
+				line-height: 1.15;
+			}
+		}
+	}
+
+	&__image,
+	&--image {
+
+		&.elementor-column[class]:last-of-type {
+			padding-left: 0;
+			position: relative;
+
+			@media (max-width: ($breakpoint-tablet - 1px)) {
+				display: none !important;
+			}
+		}
+	}
+
+	&__subtitle,
+	&--subtitle {
+
+		h3 {
+			font-size: 1.125rem;
+			line-height: $line-height-h3;
+			font-weight: 400;
+			margin-bottom: 0.25em;
+		}
+
+		+ .elementor-widget-html .Button {
+			margin-top: 1.5em;
+		}
+	}
+
+	@media (max-width: ($breakpoint-tablet - 1px)) {
+
+		&__subtitle,
+		&--subtitle {
+			padding: 0 1em;
+		}
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+
+		.elementor-col-50:first-of-type {
+			padding-left: 1.5em;
+		}
+	}
+
+	@media (min-width: $breakpoint-tablet-landscape) {
+
+		.elementor-col-50 {
+
+			&:first-of-type {
+				padding-left: 0;
+			}
+
+			@include elementor-col-50;
+		}
+	}
+}
+
+.elementor > section.Block__image:first-of-type {
+
+	@media (max-width: ($breakpoint-tablet - 1px)) {
+
+		.elementor-col-50[class] {
+
+			&:last-of-type {
+				display: none !important;
+			}
+		}
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+
+		.elementor-col-50:first-of-type {
+			padding-left: 1.5em;
+		}
+	}
+
+	@media (min-width: $breakpoint-tablet-landscape) {
+
+		.elementor-col-50 {
+
+			&:first-of-type {
+				padding-left: 0;
+			}
+
+			@include elementor-col-50;
+		}
+	}
+}

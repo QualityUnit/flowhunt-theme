@@ -1,0 +1,45 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.Button--login {
+
+	padding: 0 1.5em;
+	background-color: transparent;
+
+
+	&::before {
+
+		width: 17px;
+		height: 100%;
+		content: "";
+		display: block;
+		background-image: url(/app/themes/urlslab/assets/images/icon-login.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		margin-right: 0.5em;
+	}
+
+	@media (max-width: ($breakpoint-tablet-landscape - 1px)) {
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-left: 0 !important;
+
+		&::before {
+			display: none !important;
+		}
+
+		span {
+			display: inline;
+			font-size: 1rem;
+			color: #000;
+
+			&::before {
+				display: none !important;
+			}
+		}
+	}
+}
