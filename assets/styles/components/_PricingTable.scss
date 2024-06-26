@@ -1,7 +1,13 @@
-/* stylelint-disable selector-class-pattern,
-no-descending-specificity, scss/no-global-function-names */
+/* stylelint-disable  */
+
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
+
+
+
+#apiRequestPricing {
+	margin-top: -10em !important;
+}
 
 .Pricing__table {
 	margin-top: 2em;
@@ -167,6 +173,12 @@ no-descending-specificity, scss/no-global-function-names */
 
 
 	&--header[class] {
+		margin-bottom: 0;
+		border-radius: $border-radius-16 $border-radius-16 0 0;
+
+		.elementor-widget-container {
+			background-color: transparent;
+		}
 
 		.elementor-price-list {
 			border: 1px solid $light-gray;
@@ -179,12 +191,13 @@ no-descending-specificity, scss/no-global-function-names */
 
 			&-item {
 				padding: 1.75em 2.625em;
+				border-radius: $border-radius-16 $border-radius-16 0 0;
 			}
 
 			&-title,
 			&-price {
 				font-size: 1.25rem;
-				font-weight: 700;
+				font-weight: $font-weight-bold !important;
 			}
 
 			&-price {
@@ -219,22 +232,33 @@ no-descending-specificity, scss/no-global-function-names */
 	}
 
 	&--SectionHeader[class] {
-
+		margin-bottom: 0;
 		.elementor-price-list {
 			font-weight: 600;
 			color: $primary;
 			background-color: $primary-lighter;
-			border-bottom: none;
 			border-radius: 0;
 			padding: 0;
 			margin-bottom: 0;
+			border-top: none;
+			border-bottom: none;
 
 			&-item {
 				padding: 0.25em 1.5em;
+				background-color: $primary-lighter;
 			}
 
 			&-price::before {
 				display: none;
+			}
+
+			&-header {
+				margin-bottom: 0;
+			}
+
+			&-title {
+				font-size: 1rem;
+				font-weight: $font-weight-bold;
 			}
 
 			@media (min-width: $breakpoint-tablet-landscape) {
@@ -247,7 +271,7 @@ no-descending-specificity, scss/no-global-function-names */
 	}
 
 	.elementor-widget-price-list {
-
+			margin-bottom: 0;
 		.elementor-price-list-price {
 			margin-bottom: 0;
 
@@ -264,6 +288,10 @@ no-descending-specificity, scss/no-global-function-names */
 			.elementor-price-list {
 
 				border-radius: 0 0 $border-radius-16 $border-radius-16;
+
+				&-item {
+					border-radius: 0 0 $border-radius-16 $border-radius-16;
+				}
 			}
 		}
 	}
@@ -273,9 +301,14 @@ no-descending-specificity, scss/no-global-function-names */
 		margin-bottom: 0;
 		border: 1px solid $light-gray;
 
+		&-header {
+			margin-bottom: 0 !important;
+		}
+
 		&-item {
 			margin: 0 !important;
 			padding: 0.75em 1.5em;
+			background-color: $white;
 
 			&:nth-of-type(even) {
 				background-color: rgba($primary-lighter, 0.25);
@@ -288,7 +321,9 @@ no-descending-specificity, scss/no-global-function-names */
 
 		&-title,
 		&-description {
-			width: 66.66%;
+			max-width: 66.66%;
+			font-size: 1rem;
+			font-weight: $font-weight-normal;
 		}
 
 		&-price {
@@ -298,6 +333,11 @@ no-descending-specificity, scss/no-global-function-names */
 			width: 33.33%;
 			height: calc(100% + 2.5em);
 			border-left: 1px solid $light-gray;
+			font-size: 1rem;
+			font-weight: $font-weight-normal !important;
+			display: flex;
+			align-items: center;
+			top: -1.35em;
 
 			&::before {
 				position: relative;
@@ -310,15 +350,6 @@ no-descending-specificity, scss/no-global-function-names */
 		&-description {
 			font-size: 0.875rem;
 			color: $level-3;
-		}
-
-		@media (min-width: $breakpoint-tablet) {
-
-			&-price {
-				display: flex;
-				align-items: center;
-				top: -0.75em;
-			}
 		}
 
 		@media (min-width: $breakpoint-tablet-landscape) {

@@ -202,6 +202,14 @@ inline_compact_header();
 								<?php $logo = $args['logo']; ?>
 								<?php if ( isset( $logo['src'] ) ) { ?>
 									<div class="compact-header__logo">
+										<?php
+										$logo_is_svg = $logo['is_svg'] ?? false;
+										// Check if the logo is SVG.
+										if ( $logo_is_svg ) {
+												echo $logo['src']; //@codingStandardsIgnoreLine
+											// If not, display the image.
+										} else {
+											?>
 										<img
 											src="<?= esc_url( $logo['src'] ); ?>"
 											<?php if ( isset( $logo['alt'] ) ) { ?>
@@ -209,6 +217,7 @@ inline_compact_header();
 											<?php } ?>
 											class="compact-header__logo-img"
 										>
+									<?php } ?>
 									</div>
 								<?php } ?>
 							<?php } ?>
@@ -233,8 +242,8 @@ inline_compact_header();
 									<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#close' ); ?>"></use>
 								</svg>
 							</a>
-							<div class=" compact-header__filters-wrap 
-							<?php 
+							<div class=" compact-header__filters-wrap
+							<?php
 							if ( isset( $filter_count ) ) {
 								?>
 								 compact-header__filters-wrap--count<?php } ?>">

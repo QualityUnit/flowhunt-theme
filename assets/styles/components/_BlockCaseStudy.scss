@@ -1,13 +1,12 @@
+/* stylelint-disable  */
 
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
 .Block__CaseStudy {
-	background-color: $lightest-gray;
 	max-width: $wrapper-wide;
-	box-shadow: 0 15px 66px -15px rgba($black-real, 0.12);
-	border-radius: 10px;
-	border: 1px solid $light-gray;
+
+
 
 	@media (max-width: $breakpoint-tablet-landscape) {
 

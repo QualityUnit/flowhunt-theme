@@ -4,26 +4,26 @@ add_action(
 	'init',
 	function () {
 		$labels  = array(
-			'name'           => _x( 'Videos', 'Post Type General Name', 'flowhunt' ),
-			'singular_name'  => _x( 'Video', 'Post Type Singular Name', 'flowhunt' ),
-			'menu_name'      => __( 'Videos', 'flowhunt' ),
-			'name_admin_bar' => __( 'Videos', 'flowhunt' ),
+			'name'           => _x( 'Flow components', 'Post Type General Name', 'flowhunt' ),
+			'singular_name'  => _x( 'Flow component', 'Post Type Singular Name', 'flowhunt' ),
+			'menu_name'      => __( 'Flow components', 'flowhunt' ),
+			'name_admin_bar' => __( 'Flow components', 'flowhunt' ),
 		);
 		$rewrite = array(
-			'slug'       => 'videos',
+			'slug'       => 'flow-components',
 			'with_front' => true,
 			'pages'      => true,
 			'feeds'      => false,
 		);
 		$args    = array(
-			'label'               => __( 'Videos', 'flowhunt' ),
+			'label'               => __( 'Flow components', 'flowhunt' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
-			'hierarchical'        => true,
+			'hierarchical'        => false,
 			'public'              => true,
 			'show_ui'             => true,
 			'show_in_menu'        => true,
-			'menu_position'       => 52,
+			'menu_position'       => 30,
 			'menu_icon'           => 'dashicons-book',
 			'show_in_admin_bar'   => true,
 			'show_in_nav_menus'   => true,
@@ -35,10 +35,10 @@ add_action(
 			'capability_type'     => 'post',
 			'show_in_rest'        => true,
 			'show_in_graphql'     => true,
-			'graphql_single_name' => 'video',
-			'graphql_plural_name' => 'videos',
+			'graphql_single_name' => 'flow_component',
+			'graphql_plural_name' => 'flow_components',
 		);
-		register_post_type( 'videos', $args );
+		register_post_type( 'flow-components', $args );
 	},
 	0
 );

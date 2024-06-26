@@ -8,11 +8,19 @@ const filter = require( 'gulp-filter' );
 const gulp = require( 'gulp' );
 const plumber = require( 'gulp-plumber' );
 const rename = require( 'gulp-rename' );
+const replace = require( 'gulp-replace' );
 const sass = require( 'gulp-sass' )( require( 'sass' ) );
 const stylelint = require( 'gulp-stylelint' );
 const terser = require( 'gulp-terser' );
 const uglifycss = require( 'gulp-uglifycss' );
 const svgSprites = require( 'gulp-svg-sprite' );
+
+gulp.task( 'set-path', async () => {
+	if ( process.env.NODE_ENV === 'production' ) {
+		return process.env.url = '/app/themes/flowhunt/assets';
+	}
+	return process.env.url = '/app/themes/flowhunt-theme/assets';
+} );
 
 gulp.task( 'browser-reload', ( done ) => {
 	browserSync.reload();
@@ -95,6 +103,7 @@ gulp.task( 'styles', () =>
 		)
 		.pipe( autoprefixer( 'last 3 version', 'android 4', 'ie 11' ) )
 		.pipe( plumber.stop() )
+		.pipe( replace( /(url\().+?(images|webfonts)/g, `$1${ process.env.url }/$2` ) )
 		.pipe( gulp.dest( './assets/dist/' ) )
 		.pipe( filter( '**/*.css' ) )
 		// .pipe( gcmq() )
@@ -190,6 +199,7 @@ gulp.task( 'eslint', () =>
 gulp.task(
 	'build',
 	gulp.series(
+		'set-path',
 		'clean-dist',
 		'iconsSprite',
 		'styles',
@@ -203,6 +213,7 @@ gulp.task(
 gulp.task(
 	'default',
 	gulp.series(
+		'set-path',
 		'clean-dist',
 		'iconsSprite',
 		'styles',
