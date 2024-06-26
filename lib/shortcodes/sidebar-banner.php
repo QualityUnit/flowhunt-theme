@@ -5,7 +5,6 @@ function sidebar_banner( $atts ) {
 		array(
 			'bannerTitle'    => '',
 			'bannerSubtitle' => '',
-			'chatbotType'    => '',
 		),
 		$atts,
 		'sidebarBanner'
@@ -16,28 +15,20 @@ function sidebar_banner( $atts ) {
    <div class="SidebarBanner">
 	<div class="SidebarBanner__inn">
 	  <h4>
-			<?php
-			if ( isset( $atts['chatbotType'] ) ) {
-				echo esc_html( ! empty( $atts['bannerTitle'] ) ? $atts['bannerTitle'] : __( 'Craft an AI Chatbot in minutes', 'flowhunt' ) );
-			} else {
-				echo esc_html( ! empty( $atts['bannerTitle'] ) ? $atts['bannerTitle'] : __( 'Unleash the power of AI for your website', 'flowhunt' ) );
-			}
+			<?=
+			esc_html( ! empty( $atts['bannerTitle'] ) ? $atts['bannerTitle'] : __( 'Unleash the power of AI for your website', 'flowhunt' ) );
 			?>
 		</h4>
 	  <p>
-			<?php
-			if ( isset( $atts['chatbotType'] ) ) {
-				echo esc_html( ! empty( $atts['bannerSubtitle'] ) ? $atts['bannerSubtitle'] : __( 'URLsLab chatbot provides instant answers from multiple sources, and collects data automatically', 'flowhunt' ) );
-			} else {
-				echo esc_html( ! empty( $atts['bannerSubtitle'] ) ? $atts['bannerSubtitle'] : __( 'Get started today and download the URLsLab WordPress plugin', 'flowhunt' ) );
-			}
+			<?=
+			esc_html( ! empty( $atts['bannerSubtitle'] ) ? $atts['bannerSubtitle'] : __( 'Get started today and download the URLsLab Wordpress plugin', 'flowhunt' ) );
 			?>
 		</p>
-	  <a class="Button Button--full pt-s pb-s" href="<?= esc_url( isset( $atts['chatbotType'] ) ? 'https://api.urlslab.com/v1/auth/signin/google' : '/demo' ); ?>" target="_blank"><?= esc_html( isset( $atts['chatbotType'] ) ? __( 'Try Chatbot now', 'flowhunt' ) : __( 'Schedule a demo', 'flowhunt' ) ); ?></a>
+	  <a class="Button Button--full pt-s pb-s" href="<?= esc_url( '#0' ); ?>" target="_blank"><?= esc_html( 'Download the plugin', 'flowhunt' ); ?></a>
 	</div>
 	<img
 	  class="SidebarBanner__image"
-	  src="<?= esc_url( get_template_directory_uri() . ( isset( $atts['chatbotType'] ) ? '/assets/images/urlslab-chatbot.png' : '/assets/images/urlslab-modules.png' ) ); ?>"
+	  src="<?= esc_url( get_template_directory_uri() . '/assets/images/flowhunt-sidebar-img.png' ); ?>"
 	  alt="Experience next-level SEO plugin"
 	/>
   </div>

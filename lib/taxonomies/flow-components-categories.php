@@ -4,8 +4,8 @@ add_action(
 	'init',
 	function () {
 		$labels = array(
-			'name'          => _x( 'Knowledge Base Categories', 'Taxonomy General Name', 'flowhunt' ),
-			'singular_name' => _x( 'Knowledge Base Category', 'Taxonomy Singular Name', 'flowhunt' ),
+			'name'          => _x( 'Flow Components Categories', 'Taxonomy General Name', 'flowhunt' ),
+			'singular_name' => _x( 'Flow Components Category', 'Taxonomy Singular Name', 'flowhunt' ),
 			'menu_name'     => __( 'Categories', 'flowhunt' ),
 		);
 		$args   = array(
@@ -18,10 +18,10 @@ add_action(
 			'show_tagcloud'     => false,
 			'show_in_rest'      => true,
 			'show_in_graphql'     => true,
-			'graphql_single_name' => 'kbCategory',
-			'graphql_plural_name' => 'kbCategories',
+			'graphql_single_name' => 'flowComponentCategory',
+			'graphql_plural_name' => 'flowComponentsCategory',
 		);
-		register_taxonomy( 'kb-category', array( 'kb-disabled' ), $args );
+		register_taxonomy( 'flow_components_categories', array( 'flow-components' ), $args );
 	},
 	0
 );

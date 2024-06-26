@@ -4,26 +4,26 @@ add_action(
 	'init',
 	function () {
 		$labels  = array(
-			'name'           => _x( 'Directories', 'Post Type General Name', 'ms' ),
-			'singular_name'  => _x( 'Directory', 'Post Type Singular Name', 'ms' ),
-			'menu_name'      => __( 'Directories', 'ms' ),
-			'name_admin_bar' => __( 'Directory', 'ms' ),
+			'name'           => _x( 'Flow templates', 'Post Type General Name', 'flowhunt' ),
+			'singular_name'  => _x( 'Flow template', 'Post Type Singular Name', 'flowhunt' ),
+			'menu_name'      => __( 'Flow templates', 'flowhunt' ),
+			'name_admin_bar' => __( 'Flow templates', 'flowhunt' ),
 		);
 		$rewrite = array(
-			'slug'       => 'directory',
+			'slug'       => 'flow-templates',
 			'with_front' => true,
 			'pages'      => true,
 			'feeds'      => false,
 		);
 		$args    = array(
-			'label'               => __( 'Directory', 'ms' ),
+			'label'               => __( 'Flow templates', 'flowhunt' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
-			'hierarchical'        => true,
+			'hierarchical'        => false,
 			'public'              => true,
 			'show_ui'             => true,
 			'show_in_menu'        => true,
-			'menu_position'       => 42,
+			'menu_position'       => 30,
 			'menu_icon'           => 'dashicons-book',
 			'show_in_admin_bar'   => true,
 			'show_in_nav_menus'   => true,
@@ -34,8 +34,11 @@ add_action(
 			'rewrite'             => $rewrite,
 			'capability_type'     => 'post',
 			'show_in_rest'        => true,
+			'show_in_graphql'     => true,
+			'graphql_single_name' => 'flow_template',
+			'graphql_plural_name' => 'flow_templates',
 		);
-		register_post_type( 'directory', $args );
+		register_post_type( 'flow-templates', $args );
 	},
 	0
 );
