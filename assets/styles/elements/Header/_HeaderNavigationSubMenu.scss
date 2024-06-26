@@ -217,6 +217,13 @@
 		color: $level-3;
 	}
 
+	.Button {
+
+		&--outline {
+			border: none;
+		}
+	}
+
 
 	@media (min-width: $breakpoint-tablet-landscape) and (width: $breakpoint-desktop) {
 
