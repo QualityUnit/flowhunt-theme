@@ -95,6 +95,14 @@ body.compact-header--active {
 			object-position: center;
 			margin: 15%;
 		}
+
+		&:has(svg) {
+
+			@include square(92px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 
 	&__title {
