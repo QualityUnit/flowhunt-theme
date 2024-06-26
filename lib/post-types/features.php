@@ -18,7 +18,7 @@ add_action(
 		$args    = array(
 			'label'               => __( 'Feature', 'flowhunt' ),
 			'labels'              => $labels,
-			'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
+			'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author' ),
 			'hierarchical'        => false,
 			'public'              => true,
 			'show_ui'             => true,
