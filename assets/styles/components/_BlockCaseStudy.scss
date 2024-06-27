@@ -1,11 +1,11 @@
-/* stylelint-disable  */
+/* stylelint-disable selector-class-pattern,
+no-descending-specificity, scss/no-global-function-names */
 
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
 .Block__CaseStudy {
 	max-width: $wrapper-wide;
-
 
 
 	@media (max-width: $breakpoint-tablet-landscape) {

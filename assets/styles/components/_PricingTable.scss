@@ -1,8 +1,7 @@
-/* stylelint-disable  */
-
+/* stylelint-disable selector-class-pattern,selector-id-pattern,
+no-descending-specificity, scss/no-global-function-names */
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
-
 
 
 #apiRequestPricing {
@@ -233,6 +232,7 @@
 
 	&--SectionHeader[class] {
 		margin-bottom: 0;
+
 		.elementor-price-list {
 			font-weight: 600;
 			color: $primary;
@@ -271,7 +271,8 @@
 	}
 
 	.elementor-widget-price-list {
-			margin-bottom: 0;
+		margin-bottom: 0;
+
 		.elementor-price-list-price {
 			margin-bottom: 0;
 
