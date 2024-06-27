@@ -1,4 +1,5 @@
-/* stylelint-disable */
+/* stylelint-disable selector-class-pattern */
+
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
@@ -84,6 +85,14 @@ body.compact-header--active {
 		border-bottom-right-radius: $border-radius-16;
 		background-color: $white;
 
+		&:has(svg) {
+
+			@include square(92px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
 		body.about & {
 			display: none;
 		}
@@ -96,13 +105,6 @@ body.compact-header--active {
 			margin: 15%;
 		}
 
-		&:has(svg) {
-
-			@include square(92px);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
 	}
 
 	&__title {
