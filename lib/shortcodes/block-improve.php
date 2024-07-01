@@ -3,14 +3,10 @@
 function block_improve( $atts ) {
 	$atts = shortcode_atts(
 		array(
-			'headline'    => '',
-			'subheadline' => '',
-			'question-1'  => '',
-			'answer-1'    => '',
-			'question-2'  => '',
-			'answer-2'    => '',
-			'question-3'  => '',
-			'answer-3'    => '',
+			'headline'    => __( 'Lorem ipsum dolor sit amet', 'flowhunt' ),
+			'subHeadline' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit ligula sollicitudin, justo feugiat mauris', 'flowhunt' ),
+			'buttonText'  => __( 'Lorem ipsum dolor sit', 'flowhunt' ),
+			'buttonLink'    => __( 'Lorem ipsum', 'flowhunt' ),
 		),
 		$atts,
 		'block_improve'
@@ -22,10 +18,10 @@ function block_improve( $atts ) {
 	<div class="block-improve">
 		<div class="block-improve__wrapper">
 			<div class="block-improve__content">
-				<h2><?= esc_html( 'Run a website of your dreams', 'flowhunt' ); ?></h2>
-				<p><?= esc_html( 'Want a website you can pour your heart into? Download the URLsLab WordPress plugin and let’s get started!', 'flowhunt' ); ?></p>
-				<a class="Button Button--full icn-download" href="<?= esc_url( 'https://wordpress.org/plugins/urlslab/', 'flowhunt' ); ?>" target="_blank">
-					<?= esc_html( 'Get the plugin', 'flowhunt' ); ?>
+				<h2><?= esc_html( $atts['headline'] ); ?></h2>
+				<p><?= esc_html( $atts['subHeadline'] ); ?></p>
+				<a class="Button Button--full icn-download" href="<?= esc_url( $atts['buttonLink'] ); ?>" target="_blank">
+					<?= esc_html( $atts['buttonText'] ); ?>
 				</a>
 			</div>
 			<div class="block-improve__img">
