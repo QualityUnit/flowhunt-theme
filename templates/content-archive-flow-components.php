@@ -124,5 +124,8 @@ $page_header_args = array(
 				<?php endwhile; ?>
 			</ul>
 	</div>
+	<div class="after-wrapper-content wrapper__wide">
+		<?= do_shortcode( '[blockImprove]' ); ?>
+	</div>
 
 </div>

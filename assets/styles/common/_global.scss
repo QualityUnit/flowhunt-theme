@@ -92,11 +92,15 @@ hr {
 
 	&__wide {
 		position: relative;
-		max-width: 1380px;
+		max-width: $wrapper-wide;
 		margin-left: auto !important;
 		margin-right: auto !important;
 		padding: 1.5em 0;
 		border-radius: 1rem;
+
+		.e-con-inner {
+			max-width: $wrapper-wide;
+		}
 
 		@media (min-width: $breakpoint-tablet) {
 			padding: 2.75em 0;
