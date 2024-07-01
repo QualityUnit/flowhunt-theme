@@ -35,6 +35,5 @@ function block_improve( $atts ) {
 	set_custom_source( 'components/BlockImprove' );
 
 	return ob_get_clean();
-
 }
 add_shortcode( 'blockImprove', 'block_improve' );
