@@ -7,7 +7,11 @@
 }
 
 .tag[class] {
-	margin-bottom: 0;
+	margin-bottom: 0 !important;
+
+	&.tag.elementor-widget {
+		margin-bottom: 0 !important;
+	}
 
 	p {
 		display: inline-block;
@@ -18,5 +22,6 @@
 		font-size: 0.8125rem;
 		font-weight: 700;
 		letter-spacing: 0.08em;
+		margin-bottom: 0;
 	}
 }
