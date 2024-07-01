@@ -1717,9 +1717,9 @@
   integrity sha512-OvIUKpaphNdS26mQ9C9/bGzRZJnoyEzbJdtCmWr45fHAcfmkYbyNdyBERGjcne0F9BbMWP3yIqfB7eHZjQ1hnw==
 
 "@wordpress/stylelint-config@^22":
-  version "22.1.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/stylelint-config/-/stylelint-config-22.1.0.tgz#7ca592afc2917e1707cbbaae5fddc813414e386b"
-  integrity sha512-5XgYdcReIBecKCem5i1kbf3YnqocWW2nW1mnm6oPJpkimih2f/CWJQUtgATtdsgMjsgDVoQcrfQ9OrJeokB3fA==
+  version "22.2.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/stylelint-config/-/stylelint-config-22.2.0.tgz#1aff6bce040e9ab477b368261e2ffdc4446a20d8"
+  integrity sha512-Afc1ce0zpUkMlDG3lvJr59q6LC+sb1igIawyF8Vl8eRLBeQP7bNN8d6NVFmirUzYCD98UZqt2DRCLi72/K1Oig==
   dependencies:
     stylelint-config-recommended "^6.0.0"
     stylelint-config-recommended-scss "^5.0.2"
