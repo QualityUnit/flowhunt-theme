@@ -21,7 +21,7 @@ $page_header_args = array(
 	'toc'   => true,
 );
 $current_id       = apply_filters( 'wpml_object_id', $post->ID, 'features' );
-$categories       = get_the_terms( $current_id, 'features_categories' );
+$categories       = get_the_terms( $current_id, 'features-categories' );
 $categories_url   = get_post_type_archive_link( 'features' );
 if ( $categories && $categories_url ) {
 	$new_tags = array(

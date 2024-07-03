@@ -4,19 +4,19 @@ add_action(
 	'init',
 	function () {
 		$labels  = array(
-			'name'           => _x( 'Flow templates', 'Post Type General Name', 'flowhunt' ),
-			'singular_name'  => _x( 'Flow template', 'Post Type Singular Name', 'flowhunt' ),
-			'menu_name'      => __( 'Flow templates', 'flowhunt' ),
-			'name_admin_bar' => __( 'Flow templates', 'flowhunt' ),
+			'name'           => _x( 'Templates', 'Post Type General Name', 'flowhunt' ),
+			'singular_name'  => _x( 'Template', 'Post Type Singular Name', 'flowhunt' ),
+			'menu_name'      => __( 'Templates', 'flowhunt' ),
+			'name_admin_bar' => __( 'Templates', 'flowhunt' ),
 		);
 		$rewrite = array(
-			'slug'       => 'flow-templates',
+			'slug'       => 'templates',
 			'with_front' => true,
 			'pages'      => true,
 			'feeds'      => false,
 		);
 		$args    = array(
-			'label'               => __( 'Flow templates', 'flowhunt' ),
+			'label'               => __( 'Templates', 'flowhunt' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author' ),
 			'hierarchical'        => false,
@@ -35,10 +35,10 @@ add_action(
 			'capability_type'     => 'post',
 			'show_in_rest'        => true,
 			'show_in_graphql'     => true,
-			'graphql_single_name' => 'flow_template',
-			'graphql_plural_name' => 'flow_templates',
+			'graphql_single_name' => 'template',
+			'graphql_plural_name' => 'templates',
 		);
-		register_post_type( 'flow-templates', $args );
+		register_post_type( 'templates', $args );
 	},
 	0
 );
