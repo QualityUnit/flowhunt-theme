@@ -21,7 +21,7 @@ add_action(
 			'graphql_single_name' => 'featureCategory',
 			'graphql_plural_name' => 'featureCategories',
 		);
-		register_taxonomy( 'features_categories', array( 'features' ), $args );
+		register_taxonomy( 'features-categories', array( 'features' ), $args );
 	},
 	0
 );

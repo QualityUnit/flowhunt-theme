@@ -4,7 +4,7 @@
   * Redirect Features Categories
   */
 function features_category_redirect() {
-	if ( is_tax( 'features_categories' ) ) {
+	if ( is_tax( 'features-categories' ) ) {
 		wp_safe_redirect( '/features/', 301 );
 		exit;
 	}

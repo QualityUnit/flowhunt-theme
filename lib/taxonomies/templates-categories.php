@@ -4,8 +4,8 @@ add_action(
 	'init',
 	function () {
 		$labels = array(
-			'name'          => _x( 'Flow Components Categories', 'Taxonomy General Name', 'flowhunt' ),
-			'singular_name' => _x( 'Flow Components Category', 'Taxonomy Singular Name', 'flowhunt' ),
+			'name'          => _x( 'Templates Categories', 'Taxonomy General Name', 'flowhunt' ),
+			'singular_name' => _x( 'Template Category', 'Taxonomy Singular Name', 'flowhunt' ),
 			'menu_name'     => __( 'Categories', 'flowhunt' ),
 		);
 		$args   = array(
@@ -18,10 +18,10 @@ add_action(
 			'show_tagcloud'     => false,
 			'show_in_rest'      => true,
 			'show_in_graphql'     => true,
-			'graphql_single_name' => 'flowComponentCategory',
-			'graphql_plural_name' => 'flowComponentsCategory',
+			'graphql_single_name' => 'templateCategory',
+			'graphql_plural_name' => 'templatesCategory',
 		);
-		register_taxonomy( 'flow_components_categories', array( 'flow-components' ), $args );
+		register_taxonomy( 'templates-categories', array( 'templates' ), $args );
 	},
 	0
 );
