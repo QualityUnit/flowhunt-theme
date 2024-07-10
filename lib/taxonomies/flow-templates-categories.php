@@ -21,7 +21,7 @@ add_action(
 			'graphql_single_name' => 'templateCategory',
 			'graphql_plural_name' => 'templatesCategory',
 		);
-		register_taxonomy( 'templates-categories', array( 'templates' ), $args );
+		register_taxonomy( 'flow-templates-categories', array( 'flow-templates' ), $args );
 	},
 	0
 );

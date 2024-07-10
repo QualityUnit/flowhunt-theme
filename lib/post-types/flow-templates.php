@@ -38,7 +38,7 @@ add_action(
 			'graphql_single_name' => 'template',
 			'graphql_plural_name' => 'templates',
 		);
-		register_post_type( 'templates', $args );
+		register_post_type( 'flow-templates', $args );
 	},
 	0
 );
