@@ -8,4 +8,4 @@
 	require_once get_template_directory() . '/lib/taxonomies/checklists-categories.php';
 
 	// Templates
-	require_once get_template_directory() . '/lib/taxonomies/templates-categories.php';
+	require_once get_template_directory() . '/lib/taxonomies/flow-templates-categories.php';
