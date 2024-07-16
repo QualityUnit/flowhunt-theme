@@ -39,7 +39,7 @@ textarea {
 input[type="search"] {
 	padding: 0.5em 0.5em 0.5em 3.5em;
 	border-radius: 12px;
-	background-color: $light-grayBg;
+	background-color: $gray-300;
 
 	@include input-placeholder {
 		color: currentcolor;
@@ -94,7 +94,7 @@ input[type="search"] {
 
 .inputField {
 	position: relative;
-	border: 1px solid $gray-fields;
+	border: 1px solid $gray-300;
 	border-radius: $border-radius-6;
 	font-size: 1rem;
 	color: $level-3;
@@ -146,7 +146,7 @@ input[type="search"] {
 		left: 0.85em;
 		top: 50%;
 		transform: translateY(-50%);
-		fill: $gray-icons;
+		fill: $icons-color;
 	}
 }
 

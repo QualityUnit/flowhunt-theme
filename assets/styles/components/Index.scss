@@ -4,7 +4,7 @@
 @use "../common/mixins" as *;
 
 .Index {
-	background-color: $lightest-gray;
+	background-color: $gray-50;
 
 	.wrapper {
 		padding: 0.5em;
@@ -58,7 +58,7 @@
 
 				ul {
 					flex-basis: calc(100% - 4em);
-					border-left: 1px solid $light-gray;
+					border-left: 1px solid $gray-200;
 					padding-left: 1.5em;
 
 					li {

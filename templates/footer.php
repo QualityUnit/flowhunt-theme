@@ -21,7 +21,7 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 		  </a>
 		</div>
 		<p class="small Footer__motto">Start improving all important aspects of your website</p>
-		<a class="Button Button--full noIcon" href="#0" target="_blank"><span>Get the plugin</span></a>
+		<a class="Button Button--full Button--medium noIcon" href="#0" target="_blank"><span>Get the plugin</span></a>
 		<!-- <div class="Footer__social">
 		  <a href="" class="Footer__social--item">
 			<FacebookIcon />

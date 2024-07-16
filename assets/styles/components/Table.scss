@@ -23,7 +23,7 @@ figure.wp-block-table,
 		table-layout: auto;
 		width: 100%;
 		text-align: left;
-		border: 1px solid $light-gray;
+		border: 1px solid $gray-200;
 		margin: 3em auto;
 		border-collapse: separate;
 		border-spacing: 0;
@@ -38,7 +38,7 @@ figure.wp-block-table,
 			th {
 				padding: 1em 1.5em;
 				line-height: 1.1;
-				border-bottom: 1px solid $light-gray;
+				border-bottom: 1px solid $gray-200;
 
 				&:empty {
 					display: none;
@@ -52,7 +52,7 @@ figure.wp-block-table,
 			+th,
 			+td {
 
-				border-left: 1px solid $light-gray;
+				border-left: 1px solid $gray-200;
 			}
 		}
 
@@ -63,7 +63,7 @@ figure.wp-block-table,
 				+ tr {
 
 					td {
-						border-top: 1px solid $light-gray;
+						border-top: 1px solid $gray-200;
 					}
 				}
 
@@ -131,7 +131,7 @@ figure.wp-block-table,
 
 					+ td {
 						border-left: none;
-						border-top: 1px solid $light-gray;
+						border-top: 1px solid $gray-200;
 					}
 				}
 
@@ -163,7 +163,7 @@ figure.wp-block-table,
 						max-width: 25%;
 
 						&:not(:first-of-type):not(:nth-of-type(2)) {
-							border-left: 1px solid $light-gray;
+							border-left: 1px solid $gray-200;
 						}
 
 						&:first-of-type {

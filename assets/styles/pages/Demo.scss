@@ -6,7 +6,7 @@ no-descending-specificity, scss/no-global-function-names */
 
 body.demo {
 
-	background-color: $lightest-gray;
+	background-color: $gray-50;
 
 	#app > .elementor {
 		display: flex;
