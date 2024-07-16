@@ -19,17 +19,31 @@
 	border-radius: $border-radius-16;
 	background-image: url(../../images/block-improve-bg.jpg);
 	background-repeat: no-repeat;
-
-
+	background-size: cover;
+	background-position: left top;
 	backdrop-filter: blur(6.32016px);
+
+
+	@media (min-width: $breakpoint-tablet-landscape) {
+		background-size: unset;
+	}
 
 	&__wrapper {
 		display: flex;
+		flex-wrap: wrap;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			flex-wrap: nowrap;
+		}
 	}
 
 	&__content,
 	&__img {
-		width: 50%;
+		width: 100%;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			width: 50%;
+		}
 	}
 
 	&__content {
@@ -77,6 +91,11 @@
 	&__img {
 		margin-top: -3.8em;
 		align-self: flex-end;
+
+		img {
+			margin: 0 auto;
+			width: 100%;
+		}
 	}
 
 }
