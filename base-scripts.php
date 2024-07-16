@@ -85,29 +85,15 @@
 <!-- End Google Tag Manager -->
 
 <!-- Chat Button Loader -->
-<script>
-	function loadChatBot( { chatbotId, chatbotUserId, btnTarget } ) {
-		const chatBotButton = document.querySelector( btnTarget );
-		chatBotButton.classList.remove('hidden');
-
-		(function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
-		'https://www.urlslab.com/public/w/v1/urlslab-chat-widget.js',
-		function(e){
-			const chatbotManager = UrlslabChatbot.initChatbot({
-				showChatButton: false, // important to not show chat button on page load
-				chatbotId: chatbotId,
-				chatbotUserId: chatbotUserId,
-				welcomeMessage: 'Hi, I\'m URLsLab Bot. How can I help you?',
-				inputPlaceholder: 'Ask me any question...',
-				suggestedUserMessages: [],
-				urlSuffix: '?utm_medium=chatbot&utm_source=urlslab',
-				maxWindowWidth: '500px',
-			});
-			chatBotButton.addEventListener('click', () => {
-				chatbotManager.openChat();
-			});
-		});
-	}
+<script type="text/javascript" id="fh-chatbot-script">
+	(function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
+		'https://app.flowhunt.io/fh-chat-widget.js?v=1.0.20',
+		function(e){ FHChatbot.initChatbot({
+			chatbotId: '4f954c97-1f1b-4164-82df-1b259ce5f645',
+			workspaceId: 'e31db667-893b-4e47-92c3-bb1f93c1b594',
+			urlSuffix: '#utm_source=chatbot',
+			maxWindowWidth: '700px',
+		}); });
 </script>
 
 <?php
@@ -121,7 +107,7 @@ if (
 	</button>
 
 	<script type="text/javascript" id="urlslab-chatbot-script">
-	const chatBtnOptions = {btnTarget: '#chatBotOnly', chatbotId: '3ebb1d2f-a75c-4df5-9a51-83cc1551557d', chatbotUserId: 'b3JnLnBhYzRqLm9pZGMucHJvZmlsZS5PaWRjUHJvZmlsZToxMTEzNzg1MDQzOTkwMjg3MjAwMTVAQEAzZWJiMWQyZi1hNzVjLTRkZjUtOWE1MS04M2NjMTU1MTU1N2Q='};
+	const chatBtnOptions = {btnTarget: '#chatBotOnly', chatbotId: '4f954c97-1f1b-4164-82df-1b259ce5f645', workspaceId: 'e31db667-893b-4e47-92c3-bb1f93c1b594'};
 		acceptButton.addEventListener( "click", () => {
 			loadChatBot(chatBtnOptions);
 		});

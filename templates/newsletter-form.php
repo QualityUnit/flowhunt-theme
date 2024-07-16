@@ -5,7 +5,7 @@
   <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_18d6ab6093f8e6cdbbd783635_22b687a6cc" tabindex="-1" value=""></div>
 
-    <button type="submit" name="subscribe" id="newsletter_submit" class="Button Button--full Button--dark" disabled>
+    <button type="submit" name="subscribe" id="newsletter_submit" class="Button Button--dark" disabled>
       <span>Subscribe</span>
     </button>
 
@@ -21,7 +21,7 @@
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
   const subscribeInput = document.querySelector('#newsletter_input');
   const subscribeBtn = document.querySelector('#newsletter_submit');
-  
+
   subscribeInput.addEventListener( 'input', () => {
     const subscribeVal = subscribeInput.value;
 

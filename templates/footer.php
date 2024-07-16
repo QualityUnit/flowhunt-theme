@@ -9,7 +9,7 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 	<div class="Footer__newsletter">
 	  <div class="Footer__newsletter--text">
 		<h4>Join our newsletter</h4>
-		<p class="small no-margin">Get exclusive access to the latest tips, trends and deals for free.</p>
+		<p class="small no-margin">Get exclusive access to the latest tips, trends, and deals for free.</p>
 	  </div>
 	  <?php require_once get_template_directory() . '/templates/newsletter-form.php'; ?>
 	</div>
@@ -20,8 +20,8 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 			<img alt="URLsLab" loading="lazy" width="139" height="34" src="<?= esc_url( get_template_directory_uri() . '/assets/images/flowhunt-logo.svg' ); ?>" />
 		  </a>
 		</div>
-		<p class="small Footer__motto">Start improving all important aspects of your website</p>
-		<a class="Button Button--full Button--medium noIcon" href="#0" target="_blank"><span>Get the plugin</span></a>
+		<p class="small Footer__motto">Build your custom chatbot in minutes with FlowHunt.</p>
+		<a class="Button Button--full Button--medium noIcon" href="https://calendly.com/liveagentsession/flowhunt-chatbot-demo" target="_blank"><span>Demo</span></a>
 		<!-- <div class="Footer__social">
 		  <a href="" class="Footer__social--item">
 			<FacebookIcon />
@@ -69,10 +69,10 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 		<p><?php _e( 'Our website uses cookies. By continuing we assume your permission to deploy cookies as detailed in our', 'flowhunt' ); ?> <a href="<?php _e( '/privacy-policy/', 'flowhunt' ); ?>"><?php _e( 'privacy and cookies policy', 'ms' ); ?></a><?php _e( '.', 'flowhunt' ); ?></p>
 
 		<div class="Medovnicky__buttons">
-			<a href="#" class="Medovnicky__button Medovnicky__button--no Medovnicky__button--more Button Button--outline">
+			<a href="#" class="Medovnicky__button Medovnicky__button--no Medovnicky__button--more Button Button--medium Button--outline">
 				<span><?php _e( 'Decline', 'flowhunt' ); ?></span>
 			</a>
-			<a href="#" class="Medovnicky__button Medovnicky__button--yes Button Button--full">
+			<a href="#" class="Medovnicky__button Medovnicky__button--yes Button Button--medium Button--full">
 				<span><?php _e( 'Accept', 'flowhunt' ); ?></span>
 			</a>
 		</div>

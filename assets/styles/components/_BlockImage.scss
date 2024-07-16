@@ -3,9 +3,14 @@
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
-
 .block-image-with-text {
 
+	&.wrapper,
+	&.wrapper-md,
+	&.wrapper-xl,
+	&.wrapper-full {
+		margin-bottom: 0;
+	}
 
 	&__right {
 
@@ -95,6 +100,15 @@
 	&__content {
 		align-self: center;
 		padding: 2em;
+
+		.elementor-heading-title {
+			font-size: 2.75em;
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+
+				font-size: 3.75em;
+			}
+		}
 
 
 		@media (min-width: $breakpoint-tablet-landscape) {
