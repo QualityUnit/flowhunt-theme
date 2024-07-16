@@ -56,7 +56,7 @@ body.compact-header--active {
 			overflow: hidden;
 			padding-bottom: 60%;
 			border-radius: $border-radius-16;
-			border: 1px solid $light-gray;
+			border: 1px solid $gray-200;
 			.#{$class-name}__img {
 
 				@include square(100%);
@@ -80,7 +80,7 @@ body.compact-header--active {
 		left: 0;
 		z-index: 2;
 		overflow: hidden;
-		border: 0.063em solid $gray-icons;
+		border: 0.063em solid $icons-color;
 		border-top-left-radius: $border-radius-16;
 		border-bottom-right-radius: $border-radius-16;
 		background-color: $white;
@@ -336,8 +336,8 @@ body.compact-header--active {
 			padding-left: 3.5em;
 			border-radius: 0.714em;
 			font-size: 0.875rem;
-			background-color: $light-grayBg;
-			border: 1px solid $gray-fields;
+			background-color: $gray-400;
+			border: 1px solid $gray-300;
 			box-shadow: none;
 			transition: all 0.2s, background-color 0.2s;
 
@@ -372,7 +372,7 @@ body.compact-header--active {
 			justify-content: center;
 			align-items: center;
 			border-radius: 50%;
-			background-color: $gray-hover;
+			background-color: $gray-300;
 			transform: translateY(-50%);
 			cursor: pointer;
 
@@ -426,7 +426,7 @@ body.compact-header--active {
 				display: block;
 				content: "";
 				border-radius: 50%;
-				background-color: $gray-hover;
+				background-color: $gray-300;
 				transform: translateY(-50%);
 			}
 
@@ -552,7 +552,7 @@ body.compact-header--active {
 			right: 0;
 			filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.16));
 			margin-top: $headerHeight;
-			border-top: 0.063em solid $light-gray;
+			border-top: 0.063em solid $gray-200;
 			background-color: $white;
 			.#{$class-name} {
 
@@ -711,7 +711,7 @@ body.compact-header--active {
 					content: "";
 					display: block;
 					height: 0.3em;
-					background-color: $light-gray;
+					background-color: $gray-200;
 				}
 			}
 

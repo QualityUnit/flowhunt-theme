@@ -135,7 +135,7 @@ $page_header_args = array(
 		</ul>
 	</div>
 
-	<div class="block-improve-section wrapper__wide">
+	<div class="block-improve-section wrapper-md">
 		<?php
 		echo do_shortcode( '[blockImprove]' );
 		?>

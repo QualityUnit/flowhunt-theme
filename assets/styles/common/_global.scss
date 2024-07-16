@@ -63,52 +63,61 @@ hr {
 	max-width: 1280px;
 }
 
-.wrapper {
+// mixin for wrapper width
+@mixin wrapper-styles($max-width, $inner-max-width: $max-width) {
+	max-width: $max-width;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
 	position: relative;
-	width: 100%;
-	max-width: $wrapper-width;
-	margin-left: auto !important;
-	margin-right: auto !important;
-	border-radius: 1rem;
 	padding-left: $wrapper-padding;
 	padding-right: $wrapper-padding;
+	border-radius: $border-radius-6;
+
+	@media (min-width: $breakpoint-tablet) {
+		margin-bottom: 100px;
+	}
+
+	.e-con-inner {
+		max-width: $inner-max-width;
+	}
+}
+
+.wrapper {
+
+	@include wrapper-styles($wrapper);
+	position: relative;
+
+	margin-left: auto !important;
+	margin-right: auto !important;
+	padding-left: $wrapper-padding;
+	padding-right: $wrapper-padding;
+	border-radius: $border-radius-6;
 
 	@media (min-width: $breakpoint-desktop) {
 		padding: 0;
 	}
 
-	&__extended {
-		max-width: $breakpoint-desktop-box;
+	&-md {
 
-		@media (min-width: $breakpoint-tablet-landscape) {
-			padding: 3em 8.7%;
-		}
-
-		@media (min-width: $breakpoint-desktop-box) {
-
-			padding: 5.25em 7.5em;
-		}
+		@include wrapper-styles($wrapper-md);
 	}
 
-	&__wide {
-		position: relative;
-		max-width: $wrapper-wide;
-		margin-left: auto !important;
-		margin-right: auto !important;
-		padding: 1.5em 0;
-		border-radius: 1rem;
+	&-lg {
 
-		.e-con-inner {
-			max-width: $wrapper-wide;
-		}
+		@include wrapper-styles($wrapper-lg);
+	}
 
-		@media (min-width: $breakpoint-tablet) {
-			padding: 2.75em 0;
-		}
+	&-xl {
 
-		@media (min-width: $breakpoint-tablet-landscape) {
-			display: flex;
-		}
+		@include wrapper-styles($wrapper-xl);
+	}
+
+	&-full {
+
+		@include wrapper-styles($wrapper-full);
+		padding-right: 0;
+		padding-left: 0;
 	}
 }
 

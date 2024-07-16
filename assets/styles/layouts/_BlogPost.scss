@@ -85,14 +85,14 @@ no-descending-specificity, value-keyword-case */
 
 		&-box {
 
-			background-color: $lightest-gray;
+			background-color: $gray-50;
 			display: flex;
 			flex-flow: wrap row;
 			justify-content: space-between;
 			align-items: flex-start;
 			max-width: 670px;
 			margin: 0 auto 40px;
-			border: 1px solid $lightest-gray;
+			border: 1px solid $gray-50;
 			border-radius: 30px;
 			overflow: hidden;
 
@@ -203,13 +203,13 @@ no-descending-specificity, value-keyword-case */
 
 	&__co-author {
 
-		background-color: $lightest-gray;
+		background-color: $gray-50;
 		display: flex;
 		flex-flow: nowrap row;
 		justify-content: space-between;
 		align-items: flex-start;
 		margin: 0;
-		border: 1px solid $lightest-gray;
+		border: 1px solid $gray-50;
 		border-radius: 30px;
 		overflow: hidden;
 

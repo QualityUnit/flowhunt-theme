@@ -70,7 +70,7 @@ no-descending-specificity, scss/no-global-function-names */
 			}
 
 			&:not(.fake) {
-				border: 1px solid $light-gray;
+				border: 1px solid $gray-200;
 				border-bottom: none;
 				border-radius: 0;
 			}
@@ -180,7 +180,7 @@ no-descending-specificity, scss/no-global-function-names */
 		}
 
 		.elementor-price-list {
-			border: 1px solid $light-gray;
+			border: 1px solid $gray-200;
 			border-bottom: none;
 			border-radius: $border-radius-16 $border-radius-16 0 0;
 
@@ -236,7 +236,7 @@ no-descending-specificity, scss/no-global-function-names */
 		.elementor-price-list {
 			font-weight: 600;
 			color: $primary;
-			background-color: $primary-lighter;
+			background-color: $primary-light;
 			border-radius: 0;
 			padding: 0;
 			margin-bottom: 0;
@@ -245,7 +245,7 @@ no-descending-specificity, scss/no-global-function-names */
 
 			&-item {
 				padding: 0.25em 1.5em;
-				background-color: $primary-lighter;
+				background-color: $primary-light;
 			}
 
 			&-price::before {
@@ -300,7 +300,7 @@ no-descending-specificity, scss/no-global-function-names */
 
 	.elementor-price-list {
 		margin-bottom: 0;
-		border: 1px solid $light-gray;
+		border: 1px solid $gray-200;
 
 		&-header {
 			margin-bottom: 0 !important;
@@ -312,7 +312,7 @@ no-descending-specificity, scss/no-global-function-names */
 			background-color: $white;
 
 			&:nth-of-type(even) {
-				background-color: rgba($primary-lighter, 0.25);
+				background-color: rgba($primary-light, 0.25);
 			}
 		}
 
@@ -333,7 +333,7 @@ no-descending-specificity, scss/no-global-function-names */
 			padding-left: 1.5em;
 			width: 33.33%;
 			height: calc(100% + 2.5em);
-			border-left: 1px solid $light-gray;
+			border-left: 1px solid $gray-200;
 			font-size: 1rem;
 			font-weight: $font-weight-normal !important;
 			display: flex;

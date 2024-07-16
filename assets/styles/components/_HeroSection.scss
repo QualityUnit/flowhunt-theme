@@ -1,0 +1,159 @@
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+
+.hero-section-home {
+
+	&::after {
+
+		@include square(100%);
+
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: 0 auto;
+		max-width: $wrapper-xl;
+		background-image: url(../../images/home-page-hero-bg.jpg);
+		background-size: cover;
+		background-position: bottom center;
+		background-repeat: no-repeat;
+		z-index: -1;
+	}
+
+	&__content {
+		text-align: center;
+		padding-top: 2em;
+		padding-bottom: 2em;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			padding-top: 10em;
+			padding-bottom: 10em;
+		}
+
+		h1 {
+			font-size: 50px;
+			line-height: 1.1;
+
+			@media (min-width: $breakpoint-tablet) {
+				font-size: 70px;
+			}
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				font-size: 90px;
+			}
+		}
+
+		p {
+			color: $gray-500;
+		}
+
+		.Button {
+			margin-bottom: 1em;
+		}
+
+	}
+
+	.e-con-inner {
+		padding: 0;
+	}
+
+	&__images {
+
+		max-width: $wrapper-lg;
+		margin: 0 auto;
+		padding-bottom: 4em;
+		position: relative;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			padding-bottom: 10em;
+		}
+
+		img {
+			transition: transform 0.2s ease-out;
+		}
+
+
+		#parallax-topbar {
+			display: none;
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				display: block;
+				position: absolute;
+				top: 2em;
+				left: 53%;
+				max-width: 389px !important;
+			}
+
+			@media (min-width: $breakpoint-desktop) {
+				max-width: 429px !important;
+
+			}
+
+			@media (min-width: $breakpoint-desktop-box) {
+				max-width: 469px !important;
+			}
+		}
+
+		#parallax-components {
+			display: none;
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				display: block;
+				position: absolute;
+				left: 0;
+				bottom: 4em;
+				max-width: 245px !important;
+			}
+
+			@media (min-width: $breakpoint-desktop) {
+				max-width: 280px !important;
+			}
+
+			@media (min-width: $breakpoint-desktop-box) {
+				max-width: 315px !important;
+			}
+		}
+
+		#parallax-chat {
+			display: none;
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				display: block;
+				position: absolute;
+				right: 0;
+				bottom: 8em;
+				max-width: 320px !important;
+			}
+
+			@media (min-width: $breakpoint-desktop) {
+				max-width: 380px !important;
+			}
+
+			@media (min-width: $breakpoint-desktop-box) {
+				max-width: 413px !important;
+			}
+
+		}
+	}
+
+
+	&__mobile__img {
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			display: none;
+		}
+	}
+
+	&__desktop__img {
+		display: none;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+}

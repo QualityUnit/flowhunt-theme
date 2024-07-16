@@ -350,4 +350,47 @@
 			} );
 		} );
 	}
+
+	// parallax on the hero section in the home page
+	document.addEventListener( 'DOMContentLoaded', function() {
+		const section = document.querySelector( '.hero-section-home__images' );
+
+		if ( section ) {
+			const topbar = document.getElementById( 'parallax-topbar' );
+			const components = document.getElementById( 'parallax-components' );
+			const chat = document.getElementById( 'parallax-chat' );
+
+			const observer = new IntersectionObserver( ( entries ) => {
+				entries.forEach( ( entry ) => {
+					if ( entry.isIntersecting ) {
+						window.addEventListener( 'scroll', onScroll );
+					} else {
+						window.removeEventListener( 'scroll', onScroll );
+					}
+				} );
+			}, {
+				threshold: 0.01, // Adjust threshold as needed
+			} );
+
+			const onScroll = () => {
+				const scrollPosition = window.pageYOffset;
+
+				const sectionHeight = section.offsetHeight;
+				const sectionTop = section.offsetTop;
+
+				if ( scrollPosition < sectionTop + sectionHeight ) {
+					topbar.style.transform = 'translateY(' + ( scrollPosition * 0.1 ) + 'px)';
+					components.style.transform = 'translateY(' + ( scrollPosition * 0.05 ) + 'px)';
+					chat.style.transform = 'translateY(' + ( scrollPosition * 0.08 ) + 'px)';
+				} else {
+					const maxScroll = sectionHeight + sectionTop;
+					topbar.style.transform = 'translateY(' + ( maxScroll * 0.1 ) + 'px)';
+					components.style.transform = 'translateY(' + ( maxScroll * 0.05 ) + 'px)';
+					chat.style.transform = 'translateY(' + ( maxScroll * 0.08 ) + 'px)';
+				}
+			};
+
+			observer.observe( section );
+		}
+	} );
 } )();

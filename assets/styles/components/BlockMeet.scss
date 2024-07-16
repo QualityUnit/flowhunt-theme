@@ -19,7 +19,7 @@
 			display: block;
 			content: "";
 			border-radius: 1rem;
-			background-color: $lightest-gray;
+			background-color: $gray-50;
 			background-image: url(../../images/meet_plugin_rect_left.png?ver=#{$version}), url(../../images/meet_plugin_rect_right.png?ver=#{$version});
 			background-position: left top, right 25%;
 			background-repeat: no-repeat;
@@ -92,7 +92,7 @@
 			&.has-border {
 
 				.elementor-column {
-					border: 2px solid $light-gray;
+					border: 2px solid $gray-200;
 				}
 			}
 
@@ -129,7 +129,7 @@
 
 			.elementor-column {
 				filter: none;
-				border: 2px solid $light-gray;
+				border: 2px solid $gray-200;
 				border-radius: 1rem;
 				background-color: $white;
 				overflow: hidden;

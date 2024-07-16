@@ -5,8 +5,10 @@ function block_improve( $atts ) {
 		array(
 			'headline'    => __( 'Lorem ipsum dolor sit amet', 'flowhunt' ),
 			'subHeadline' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit ligula sollicitudin, justo feugiat mauris', 'flowhunt' ),
-			'buttonText'  => __( 'Lorem ipsum dolor sit', 'flowhunt' ),
-			'buttonLink'    => __( 'Lorem ipsum', 'flowhunt' ),
+			'buttonTextOne'  => __( 'Try it out', 'flowhunt' ),
+			'buttonLinkOne'    => __( '#', 'flowhunt' ),
+			'buttonTextTwo'  => __( 'Book a demo', 'flowhunt' ),
+			'buttonLinkTwo'    => __( '/demo/', 'flowhunt' ),
 		),
 		$atts,
 		'block_improve'
@@ -20,12 +22,17 @@ function block_improve( $atts ) {
 			<div class="block-improve__content">
 				<h2><?= esc_html( $atts['headline'] ); ?></h2>
 				<p><?= esc_html( $atts['subHeadline'] ); ?></p>
-				<a class="Button Button--full icn-download" href="<?= esc_url( $atts['buttonLink'] ); ?>" target="_blank">
-					<?= esc_html( $atts['buttonText'] ); ?>
-				</a>
+				<div class="block-improve__buttons">
+					<a class="Button Button--white Button--medium" href="<?= esc_url( $atts['buttonLinkOne'] ); ?>" target="_blank">
+						<span><?= esc_html( $atts['buttonTextOne'] ); ?></span>
+					</a>
+					<a class="Button Button--outline Button--medium" href="<?= esc_url( $atts['buttonLinkTwo'] ); ?>" target="_blank">
+						<span><?= esc_html( $atts['buttonTextTwo'] ); ?></span>
+					</a>
+				</div>
 			</div>
 			<div class="block-improve__img">
-				<img src="<?= esc_url( get_template_directory_uri() . '/assets/images/improve-banner-right-img.png' ); ?>" alt="<?= esc_attr( 'Experience next-level SEO plugin', 'flowhunt' ); ?>">
+				<img src="<?= esc_url( get_template_directory_uri() . '/assets/images/block-improve-right-img.png' ); ?>" alt="<?= esc_attr( 'Experience next-level SEO plugin', 'flowhunt' ); ?>">
 			</div>
 		</div>
 	</div>

@@ -155,7 +155,7 @@
 						top: calc(0.4375em - 1px);
 						left: 50%;
 						transform: translateX(-50%);
-						background: $light-gray;
+						background: $gray-200;
 					}
 				}
 			}
@@ -165,14 +165,14 @@
 				&:first-of-type .elementor-widget-heading {
 
 					&::after {
-						background: linear-gradient(to left, $light-gray 75%, rgba($light-gray, 0));
+						background: linear-gradient(to left, $gray-200 75%, rgba($gray-200, 0));
 					}
 				}
 
 				&:last-of-type .elementor-widget-heading {
 
 					&::after {
-						background: linear-gradient(to right, $light-gray 75%, rgba($light-gray, 0));
+						background: linear-gradient(to right, $gray-200 75%, rgba($gray-200, 0));
 					}
 				}
 			}

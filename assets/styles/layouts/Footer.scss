@@ -4,7 +4,7 @@
 @use "../common/mixins" as *;
 
 .Footer {
-	background-color: $lightest-gray;
+	background-color: $gray-50;
 
 	.small {
 		font-size: $font-size-smaller;
@@ -36,7 +36,7 @@
 		input[type="email"] {
 			position: relative;
 			right: -2em;
-			background-color: $light-gray;
+			background-color: $gray-200;
 
 			@include input-placeholder {
 				color: $level-3;
