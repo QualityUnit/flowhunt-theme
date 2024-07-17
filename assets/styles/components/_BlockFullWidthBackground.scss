@@ -1,0 +1,77 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+
+.block-fullwidth-background {
+	background-color: $black;
+
+	.wrapper-md {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	> .e-con-inner {
+		padding-block-end: 0;
+		gap: 0;
+	}
+
+	&__content {
+		justify-content: center;
+		align-items: center;
+		padding-block: 8em 0;
+
+		padding-inline: 1.125em;
+
+		@media (min-width: $breakpoint-mobile) {
+			padding-inline: 4em;
+		}
+
+		@media (min-width: $breakpoint-tablet) {
+			padding-inline: 6em;
+			padding-block: 12.5em 0;
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			padding-inline: 16em;
+		}
+
+		&.wrapper {
+			margin-bottom: 0;
+		}
+
+		h2,
+		p {
+			color: $white;
+			text-align: center;
+		}
+
+		h2 {
+			font-size: 3em;
+			line-height: 1.1;
+
+			@media (min-width: $breakpoint-mobile) {
+				font-size: 3.75em;
+			}
+		}
+
+		p {
+
+			font-size: 1.125em;
+		}
+	}
+
+	&__image {
+		margin-block-start: -1em;
+
+		@media (min-width: $breakpoint-mobile) {
+			margin-block-start: -5em;
+		}
+
+		@media (min-width: $breakpoint-tablet) {
+			margin-block-start: -10em;
+		}
+	}
+
+}

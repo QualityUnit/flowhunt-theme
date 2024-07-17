@@ -26,7 +26,7 @@ function block_improve( $atts ) {
 					<a class="Button Button--white Button--medium" href="<?= esc_url( $atts['buttonLinkOne'] ); ?>" target="_blank">
 						<span><?= esc_html( $atts['buttonTextOne'] ); ?></span>
 					</a>
-					<a class="Button Button--outline Button--medium" href="<?= esc_url( $atts['buttonLinkTwo'] ); ?>" target="_blank">
+					<a class="Button Button--outline--white Button--medium" href="<?= esc_url( $atts['buttonLinkTwo'] ); ?>" target="_blank">
 						<span><?= esc_html( $atts['buttonTextTwo'] ); ?></span>
 					</a>
 				</div>

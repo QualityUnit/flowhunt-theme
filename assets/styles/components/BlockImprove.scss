@@ -74,22 +74,6 @@
 				font-size: $font-size-h1;
 			}
 		}
-
-		.Button--outline {
-			border-color: $white;
-
-			span {
-				color: $white;
-			}
-
-			&:hover {
-				background-color: $white;
-
-				span {
-					color: $black;
-				}
-			}
-		}
 	}
 
 	&__img {
