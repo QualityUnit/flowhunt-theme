@@ -24,8 +24,8 @@
 				endif;
 				?>
 				<div class="Header__buttons">
-					<a class="Button Button--secondary" href="/demo" target="_blank"><span><?php _e( 'Demo', 'flowhunt' ); ?></span></a>
-					<a href="https://api.urlslab.com/v1/auth/signin/google" id="loginBtn" class="Button Button--login Button--outline"><span><?php _e( 'Login', 'flowhunt' ); ?></span></a>
+					<a class="Button Button--secondary" href="https://calendly.com/liveagentsession/flowhunt-chatbot-demo" target="_blank"><span><?php _e( 'Demo', 'flowhunt' ); ?></span></a>
+					<a href="https://app.flowhunt.io/sign-in" id="loginBtn" class="Button Button--login Button--medium Button--outline"><span><?php _e( 'Login', 'flowhunt' ); ?></span></a>
 				</div>
 			</nav>
 		</div>

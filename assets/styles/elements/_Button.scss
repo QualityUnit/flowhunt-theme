@@ -47,7 +47,13 @@ button,
 }
 
 .Button + .Button {
-	margin-left: 15px;
+	margin-top: 15px;
+
+	@media (min-width: $breakpoint-iphone-new) {
+		margin-top: 0;
+		margin-left: 15px;
+	}
+
 
 	&--outline {
 		top: 1px;

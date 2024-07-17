@@ -74,12 +74,21 @@ hr {
 	padding-right: $wrapper-padding;
 	border-radius: $border-radius-6;
 
-	@media (min-width: $breakpoint-tablet) {
-		margin-bottom: 100px;
+	&.elementor-element {
+		margin-bottom: 2.5em;
+
+		@media (min-width: $breakpoint-tablet) {
+			margin-bottom: 5.625em;
+		}
+
+		@media (min-width: $breakpoint-desktop) {
+			margin-bottom: 12.5em;
+		}
 	}
 
 	.e-con-inner {
 		max-width: $inner-max-width;
+		gap: 0;
 	}
 }
 

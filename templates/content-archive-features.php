@@ -7,7 +7,7 @@ if ( is_tax( 'features-categories' ) ) :
 	$page_header_description = the_archive_description();
 else :
 	$page_header_title       = __( 'Features', 'flowhunt' );
-	$page_header_description = __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit dis, donec a posuere cubilia feugiat suspendisse ut, class pulvinar sociosqu elementum consequat duis maecenas. Mollis eu egestas nec in primis odio pretium, dapibus vitae augue taciti arcu cum himenaeos, molestie laoreet', 'flowhunt' );
+	$page_header_description = __( 'Explore the features and components for building AI tools and chatbots. Designed with modularity and flexibility at heart, FlowHunt is ready to support all your automation needs.', 'flowhunt' );
 endif;
 $filter_items_categories = array(
 	array(

@@ -3,12 +3,12 @@
 function block_improve( $atts ) {
 	$atts = shortcode_atts(
 		array(
-			'headline'    => __( 'Lorem ipsum dolor sit amet', 'flowhunt' ),
-			'subHeadline' => __( 'Lorem ipsum dolor sit amet consectetur adipiscing elit ligula sollicitudin, justo feugiat mauris', 'flowhunt' ),
+			'headline'    => __( 'Ready to build your own AI?', 'flowhunt' ),
+			'subHeadline' => __( 'Chatbots and AI tools under one roof. Connect intuitive blocks to turn your ideas into automated Flows.', 'flowhunt' ),
 			'buttonTextOne'  => __( 'Try it out', 'flowhunt' ),
-			'buttonLinkOne'    => __( '#', 'flowhunt' ),
+			'buttonLinkOne'    => __( 'https://app.flowhunt.io/sign-in', 'flowhunt' ),
 			'buttonTextTwo'  => __( 'Book a demo', 'flowhunt' ),
-			'buttonLinkTwo'    => __( '/demo/', 'flowhunt' ),
+			'buttonLinkTwo'    => __( 'https://calendly.com/liveagentsession/flowhunt-chatbot-demo', 'flowhunt' ),
 		),
 		$atts,
 		'block_improve'

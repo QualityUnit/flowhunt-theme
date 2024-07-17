@@ -24,10 +24,6 @@
 	backdrop-filter: blur(6.32016px);
 
 
-	@media (min-width: $breakpoint-tablet-landscape) {
-		background-size: unset;
-	}
-
 	&__wrapper {
 		display: flex;
 		flex-wrap: wrap;
@@ -51,7 +47,14 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-		padding: 4.5em;
+		padding: 1.5em;
+		margin-bottom: 4em;
+
+		@media (min-width: $breakpoint-tablet) {
+			padding: 4.5em;
+			margin-bottom: 0;
+
+		}
 
 		@media (min-width: $breakpoint-desktop) {
 			padding: 4.5em 5em 4.5em 7.5em;
@@ -59,6 +62,7 @@
 
 		p {
 			color: $white;
+			margin-bottom: 2em;
 		}
 
 		h2 {
