@@ -31,8 +31,29 @@
 			}, 5000 );
 		}
 
+		consentGranted();
+		grafana();
 		postAffiliate();
+
+		<?php if ( ! is_page( array( 'request-demo', 'demo', 'trial', 'free-account' ) ) ) { ?>
+		if ( typeof offlineContactForm == 'function' ) {
+			offlineContactForm();
+		}
+		<?php } ?>
 	});
+
+	if ( trialButton !== null ) {
+		trialButton.addEventListener( "click", () => {
+			if ( ! getCookieFrontend( "cookieLaw" ) ) {
+				setCookie( 'cookieLaw', 'yes', 14 );
+				document.querySelector( '.Medovnicky' ).classList.add( 'hide' );
+
+				consentGranted();
+				grafana();
+				postAffiliate();
+			}
+		});
+	}
 
 </script>
 
@@ -73,14 +94,92 @@
 	}
 </script>
 
+
+<!-- Grafana -->
+<script>
+	function grafana(cookie = true) {
+		var _paq = window._paq || [];
+		window._paq = _paq;
+
+		if (cookie === false) {
+			_paq.push(["disableCookies"]);
+		}
+
+		// _paq.push(['enableLinkTracking']);
+		_paq.push(['trackPageView']);
+		_paq.push(['enableCrossDomainLinking']);
+		(function() {
+			_paq.push(['setSiteId', 'FH-web']);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			g.type='text/javascript'; g.async=true; g.defer=true; g.src='//analytics.qualityunit.com/i.js'; s.parentNode.insertBefore(g,s);
+		})();
+	}
+
+	if ( ! mobile.matches ) {
+		if ( getCookieFrontend( "cookieLaw" ) ) {
+			grafana()
+		} else {
+			grafana(false)
+		}
+	}
+
+	if ( mobile.matches && getCookieFrontend( "cookieLaw" ) ) {
+		grafana()
+	}
+</script>
+
 <!-- Google Tag Manager -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W2STK077L2"></script>
+<script>
+	function loadGoogle() {
+		const body  = document.body;
+		const gtag1 = document.createElement('script');
+		gtag1.async = true;
+		gtag1.src = "https://www.googletagmanager.com/gtag/js?id=G-T9HBB9KMVK";
+
+		body.insertAdjacentElement('beforeend', gtag1);
+	}
+
+	if ( ! mobile.matches ) {
+		loadGoogle()
+	}
+
+	if ( mobile.matches && getCookieFrontend( "cookieLaw" ) ) {
+		loadGoogle()
+	}
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-W2STK077L2');
+	gtag('consent', 'default', {
+		'ad_user_data': 'granted',
+		'analytics_storage': 'granted'
+	})
+
+	gtag('consent', 'default', {
+		'ad_user_data': 'denied',
+		'analytics_storage': 'denied',
+		'region': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO']
+	})
+
+  gtag('config', 'G-W2STK077L2', {
+		'allow_enhanced_conversions': true,
+		'linker': {
+			'domains': [
+				'flowhunt.io',
+				'support.liveagent.com',
+				'ladesk.com'
+			]
+		}
+	});
+
+	function consentGranted() {
+		gtag('consent', 'update', {
+			'ad_user_data': 'granted',
+			'analytics_storage': 'granted'
+		})
+	}
 </script>
 <!-- End Google Tag Manager -->
 
