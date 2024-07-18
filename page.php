@@ -5,7 +5,7 @@ set_source( false, 'splide', 'js' );
 global $post;
 $page_header_args = array(
 	'title' => get_the_title(),
-	'text'  => do_shortcode( '[urlslab-generator id="4"]' ),
+	'text'  => '',  // do_shortcode( '[urlslab-generator id="4"]' ) that was in the original code
 	'toc'   => true,
 );
 while ( have_posts() ) :

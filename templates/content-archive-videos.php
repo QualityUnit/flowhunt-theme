@@ -52,7 +52,7 @@ $page_header_args = array(
 		'alt' => $page_header_title,
 	),
 	'title'  => $page_header_title,
-	'text'   => do_shortcode( '[urlslab-generator id="6"]' ),
+	'text'   => '', // do_shortcode( '[urlslab-generator id="6"]' ) that was in the original code
 	'search' => array(
 		'type' => 'academy',
 	),
