@@ -3,10 +3,54 @@
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
-.Block__boxes {
-	margin: 6em auto;
+.block-boxes-grid {
 
-	&--top {
-		padding: 0 12%;
+
+	&__content--bg {
+		padding: 13em 0 0 0;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right top;
+		border: 2px solid $gray-200;
+		border-radius: 16px;
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.01);
+	}
+
+	&__content {
+		background: linear-gradient(107.75deg, rgba(10, 11, 12, 0.96) 2.48%, rgba(10, 11, 12, 0.9) 48.4%, rgba(30, 34, 39, 0.85) 100.04%);
+		border-radius: 0 0 10px 10px;
+		color: $white;
+		padding: 2em;
+		height: 100%;
+
+		.elementor-widget-heading {
+
+			h3 {
+				font-size: 24px;
+				color: $white;
+			}
+
+		}
+
+		.elementor-widget-text-editor {
+
+			.learn-more {
+
+				&:hover {
+
+					svg {
+						fill: $white;
+					}
+
+				}
+			}
+
+			p,
+			a {
+				color: $white;
+				margin-bottom: 0;
+			}
+		}
 	}
 }
+
