@@ -1,7 +1,7 @@
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
-
+// HOME PAGE HERO SECTION
 .hero-section-home {
 
 	&::after {
@@ -157,4 +157,58 @@
 		}
 	}
 
+}
+
+// LANDING HERO SECTION
+.hero-section-landing-page {
+
+
+	&__content {
+		padding: 0;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			justify-content: center;
+
+		}
+
+		@media (min-width: $breakpoint-desktop-box) {
+			transform: translateX(7em);
+			z-index: 1;
+			width: 38%;
+		}
+
+		h1.elementor-heading-title {
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				font-size: 3.75em;
+			}
+		}
+
+		h3 {
+			font-size: 18px;
+			color: $level-2;
+			padding: 0;
+			font-weight: $font-weight-normal;
+
+			@media (min-width: $breakpoint-desktop-hd) {
+				padding-right: 11em;
+			}
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				font-size: 24px;
+			}
+		}
+
+	}
+
+	&__image {
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			padding-right: 0;
+		}
+
+		@media (min-width: $breakpoint-desktop-box) {
+			width: 62%;
+		}
+	}
 }

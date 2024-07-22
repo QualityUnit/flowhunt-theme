@@ -326,8 +326,13 @@ button,
 }
 
 .Button--big {
-	padding: 20px 60px;
-	font-size: 1.125rem;
+	font-size: 1rem;
+	padding: 15px 30px;
+
+	@media (min-width: $breakpoint-tablet-landscape) {
+		padding: 20px 60px;
+		font-size: 1.125rem;
+	}
 
 	span,
 	strong {
