@@ -24,7 +24,7 @@
 				endif;
 				?>
 				<div class="Header__buttons">
-					<a class="Button Button--secondary" href="https://calendly.com/liveagentsession/flowhunt-chatbot-demo" target="_blank"><span><?php _e( 'Demo', 'flowhunt' ); ?></span></a>
+					<a class="Button Button--full Button--medium" href="https://calendly.com/liveagentsession/flowhunt-chatbot-demo" target="_blank"><span><?php _e( 'Demo', 'flowhunt' ); ?></span></a>
 					<a href="https://app.flowhunt.io/sign-in" id="loginBtn" class="Button Button--login Button--medium Button--outline"><span><?php _e( 'Login', 'flowhunt' ); ?></span></a>
 				</div>
 			</nav>
@@ -34,23 +34,27 @@
 </header>
 
 <script>
-	const loginBtn = document.querySelector( '#loginBtn' );
-	const loginForm = document.querySelector( '#loginForm' );
+	document.addEventListener('DOMContentLoaded', () => {
+		const loginBtn = document.querySelector('#loginBtn');
+		const loginForm = document.querySelector('#loginForm');
 
-	loginBtn.addEventListener( 'click', ( event ) => {
-		const loginShown = loginForm.style.display;
+		if (loginBtn && loginForm) {
+			loginBtn.addEventListener('click', (event) => {
+				event.stopPropagation();
+				const loginShown = loginForm.style.display;
 
-		if ( loginShown === 'none' ) {
-			loginForm.style.display = 'block';
-			return false;
+				if (loginShown === 'none' || loginShown === '') {
+					loginForm.style.display = 'block';
+				} else {
+					loginForm.style.display = 'none';
+				}
+			});
+
+			document.querySelector('body').addEventListener('click', (event) => {
+				if (event.target.id !== 'loginForm' && event.target.id !== 'loginBtn') {
+					loginForm.style.display = 'none';
+				}
+			});
 		}
-		loginForm.style.display = 'none';
-	} );
-
-	document.querySelector( 'body' ).addEventListener( 'click', ( event ) => {
-		event.stopPropagation();
-		if ( event.target.id !== ( 'loginForm' ) && event.target.id !== ( 'loginBtn' ) ) {
-			loginForm.style.display = 'none';
-		}
-	} );
+	});
 </script>

@@ -52,7 +52,7 @@ function extrafaq( $atts ) {
 			$counter  = 0;
 		foreach ( $words as $word ) {
 			if ( 0 === $counter ) {
-				echo '<span class="highlight">' . esc_html( $words[0] ) . '</span>';
+				echo '<span>' . esc_html( $words[0] ) . '</span>';
 			} else {
 				echo ' ';
 				echo esc_html( $word );
@@ -66,7 +66,7 @@ function extrafaq( $atts ) {
 				<p class="subhead"><?= $atts['subheadline'] // @codingStandardsIgnoreLine; ?></p>
 			</div>
 			<?php
-		} 
+		}
 		?>
 		<ul class="Faq__items">
 			<?php

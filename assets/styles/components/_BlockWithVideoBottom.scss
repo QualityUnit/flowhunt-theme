@@ -1,0 +1,97 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.block-with-video-bottom {
+
+	&-transparent-pricing {
+
+		.block-with-video-bottom__video {
+
+			&::after {
+				content: url(../../images/transparent-pricing-app-img.png);
+				position: absolute;
+				top: 0;
+				right: 2%;
+				z-index: 1;
+				border-radius: $border-radius;
+				border: 0.465px solid $gray-200;
+				box-shadow: 15.501px 23.251px 7.75px 0 rgba(7, 32, 65, 0), 10.075px 14.726px 6.975px 0 rgba(7, 32, 65, 0.01), 5.425px 8.525px 6.2px 0 rgba(7, 32, 65, 0.02), 2.325px 3.875px 4.65px 0 rgba(7, 32, 65, 0.03), 0.775px 0.775px 2.325px 0 rgba(7, 32, 65, 0.04);
+				backdrop-filter: blur(9.833466529846191px);
+
+				@media (min-width: $breakpoint-tablet-landscape) {
+					top: 12%;
+					right: 28%;
+				}
+			}
+		}
+	}
+
+	&__content {
+		padding: 0;
+		padding-inline: 0;
+		margin-bottom: 0 !important;
+		align-items: center;
+		text-align: center;
+
+		@media (min-width: $breakpoint-tablet) {
+			padding-inline: 6em;
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			padding-inline: 16em;
+		}
+
+	}
+
+	&__video {
+		padding-bottom: 0;
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		padding-top: 4em;
+		margin-bottom: 0 !important;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			padding-top: 8.75em;
+		}
+
+		> .e-con {
+			padding: 0;
+			margin-bottom: 0;
+
+
+			.elementor-widget-video {
+				max-width: 916px;
+				max-height: 498px;
+				display: flex;
+				margin: 0 auto;
+				height: 100%;
+				justify-content: center;
+				align-items: flex-end;
+
+				.e-hosted-video {
+					background: $primary-gradient;
+					border-bottom: 0;
+					display: flex;
+					align-items: flex-end;
+					border-radius: $border-radius-16 $border-radius-16 0 0;
+
+					@media (min-width: $breakpoint-tablet-landscape) {
+						width: 916px;
+						max-height: 498px;
+					}
+
+					video {
+						max-width: calc(100% - $border-radius-16);
+						max-height: calc(100% - $border-radius);
+						margin: 0 auto;
+						background: transparent;
+						border-radius: $border-radius $border-radius 0 0;
+					}
+				}
+			}
+		}
+	}
+}
+
