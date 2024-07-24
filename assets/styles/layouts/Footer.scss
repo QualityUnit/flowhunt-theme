@@ -6,10 +6,11 @@
 .Footer {
 	background-color: $gray-50;
 
-	.wrapper {
+	.wrapper-md {
 		margin-bottom: 0;
 		display: block;
-		padding: 2em;
+		padding: 3.125em 1.125em;
+
 	}
 
 	.small {
@@ -20,20 +21,31 @@
 		margin-bottom: 1em;
 
 		@media (min-width: $breakpoint-tablet-landscape) {
-			max-width: 55%;
+			max-width: 85%;
 		}
 	}
 
 	&__newsletter {
 		font-size: $font-size-smaller;
-		margin-bottom: 3em;
+		margin-bottom: 4.375em;
 
-		input[type="email"],
+		input[type="email"] {
+
+			border-radius: $border-radius-6;
+			padding: 0.95em 1.875em;
+			font-size: 14px;
+			position: relative;
+			right: -2em;
+			background-color: $gray-200;
+
+			@include input-placeholder {
+				color: $level-3;
+			}
+		}
+
+
 		button {
-			font-size: inherit;
-			border-radius: 1.5em;
-			padding: 0.75em 2em;
-			background-color: $black;
+			font-size: 14px;
 
 			span {
 				line-height: 1.2;
@@ -46,20 +58,18 @@
 			}
 		}
 
-		input[type="email"] {
-			position: relative;
-			right: -2em;
-			background-color: $gray-200;
+		&--form {
+			width: min(100%, 31em);
+			margin-top: 2em;
+			margin-left: -2em;
 
-			@include input-placeholder {
-				color: $level-3;
+			form {
+
+				display: flex;
+				align-items: center;
 			}
 		}
 
-		&--form form {
-			display: flex;
-			align-items: center;
-		}
 
 		@media (min-width: $breakpoint-tablet) {
 			display: flex;
@@ -70,7 +80,6 @@
 			}
 
 			&--form {
-				width: 40%;
 				margin-left: auto;
 			}
 		}
@@ -108,10 +117,17 @@
 	}
 
 	&__navigation {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 150px);
+		justify-content: space-between;
 		color: $black;
-		margin-top: 1.5em;
+		margin-top: 2.5em;
+		gap: 2.5em;
+
+
+		@media (min-width: $breakpoint-tablet) {
+			grid-template-columns: repeat(4, 150px);
+		}
 
 		a {
 			color: currentcolor;
@@ -119,6 +135,9 @@
 
 		.sub-menu {
 			margin-top: 1em;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
 
 			li {
 				font-weight: 400;
@@ -146,24 +165,36 @@
 				}
 			}
 
-			+ .menu-item {
-				margin-left: 10%;
-			}
+		}
+	}
+
+	&__main {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		row-gap: 2em;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			flex-direction: row;
 		}
 	}
 
 	&__bottom {
-		margin-top: 3em;
+		margin-top: 4.375em;
 		font-size: 0.75rem;
+
+		&--copyright {
+			font-size: 12px;
+			color: $gray-400;
+		}
 	}
 
 	@media (min-width: $breakpoint-tablet) {
 
 		&__main {
-			display: flex;
 
 			&--links {
-				margin-left: auto;
+				//margin-left: auto;
 			}
 		}
 
@@ -173,18 +204,13 @@
 			.menu-item {
 
 				+.menu-item {
-					margin-left: 4em;
+					margin-left: 0;
 				}
 			}
 		}
 
 		&__bottom {
 			display: flex;
-
-			&--copyright {
-				font-size: 12px;
-				color: $gray-400;
-			}
 
 			&--menu {
 				margin-left: auto;
