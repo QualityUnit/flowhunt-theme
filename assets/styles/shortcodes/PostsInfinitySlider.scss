@@ -95,30 +95,4 @@
 			transform: translate(calc(-50% - 1.5rem));
 		}
 	}
-
-	//@media (min-width: $breakpoint-desktop-hd) {
-	//
-	//	&::before,
-	//	&::after {
-	//		content: "";
-	//		position: absolute;
-	//		top: -1em;
-	//		bottom: -1em;
-	//		width: 10%;
-	//		pointer-events: none;
-	//		z-index: 5;
-	//	}
-	//
-	//	&::before {
-	//		left: 0;
-	//		background: rgb(255, 255, 255);
-	//		background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 90%, rgba(255, 255, 255, 0) 100%);
-	//	}
-	//
-	//	&::after {
-	//		right: 0;
-	//		background: rgb(255, 255, 255);
-	//		background: linear-gradient(-90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 90%, rgba(255, 255, 255, 0) 100%);
-	//	}
-	//}
 }
