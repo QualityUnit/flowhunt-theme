@@ -1,5 +1,5 @@
 <header class="Header urlslab-skip-all">
-	<div class="wrapper">
+	<div class="wrapper-md">
 		<div class="Logo">
 			<a href="<?= esc_url( home_url( '/' ) ); ?>">
 				<img alt="URLsLab" loading="lazy" width="139" height="34" src="<?= esc_url( get_template_directory_uri() . '/assets/images/flowhunt-logo.svg' ); ?>" />
@@ -24,8 +24,12 @@
 				endif;
 				?>
 				<div class="Header__buttons">
+					<ul class="Header__buttons__login">
+						<li class="Header__buttons__login__item">
+							<a href="https://app.flowhunt.io/sign-in" id="loginBtn" class="Button--login"><span><?php _e( 'Log in', 'flowhunt' ); ?></span></a>
+						</li>
+					</ul>
 					<a class="Button Button--full Button--medium" href="https://calendly.com/liveagentsession/flowhunt-chatbot-demo" target="_blank"><span><?php _e( 'Demo', 'flowhunt' ); ?></span></a>
-					<a href="https://app.flowhunt.io/sign-in" id="loginBtn" class="Button Button--login Button--medium Button--outline"><span><?php _e( 'Login', 'flowhunt' ); ?></span></a>
 				</div>
 			</nav>
 		</div>
