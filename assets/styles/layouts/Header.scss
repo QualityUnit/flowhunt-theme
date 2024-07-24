@@ -48,14 +48,15 @@ html.mobile-menu-opened {
 			background-color: transparent;
 		}
 
-		.wrapper {
+		.wrapper-md {
 			display: flex;
 			align-items: center;
-			padding-right: 1.25em;
-			padding-left: 0.625em;
+			padding-right: 1.125em;
+			padding-left: 1.125em;
 			height: 100%;
 			border-radius: 0;
 			background-color: $white;
+			margin-bottom: 0;
 		}
 
 		&__items {
@@ -112,7 +113,7 @@ html.mobile-menu-opened {
 
 		@media (min-width: $breakpoint-tablet-landscape) {
 
-			.wrapper {
+			.wrapper-md {
 				padding: 0 !important;
 			}
 
@@ -126,6 +127,19 @@ html.mobile-menu-opened {
 
 				.hamburger {
 					display: none;
+				}
+			}
+
+			&__buttons {
+
+				&__login {
+					margin: 0;
+					display: flex;
+					align-items: center;
+
+					a {
+						padding: 0;
+					}
 				}
 			}
 		}

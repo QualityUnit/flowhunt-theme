@@ -1,7 +1,7 @@
 $version: "2.0";
 $transitionTime: 0.25s;
 
-$headerHeight: 90px;
+$headerHeight: 70px;
 
 $sizes: (
 	"xxs": 0.15em,
@@ -110,7 +110,7 @@ $input-height-normal: 3.75rem;
 $input-padding-normal: 1.25rem;
 $input-border-width-normal: 1px;
 
-$header-height: 90px;
+$header-height: 70px;
 
 $block-space: 12.5em;
 $block-space-md: 5em;
@@ -160,9 +160,8 @@ $accent-electric-blue: #0497dc;
 $accent-dark: #1a56db;
 $accent-indigo: #984ad7;
 
-$primary-gradient: linear-gradient(96.78deg, $accent-electric-blue 0%, #465ce0 100%);
-$primary-gradient-reverse:  linear-gradient(135.95deg, $accent-electric-blue 39.1%, #465ce0 109.91%);
-
+$primary-gradient: linear-gradient(90deg, $accent-electric-blue 0, #465ce0 100%);
+$primary-gradient-reverse:  linear-gradient(90deg, #465ce0 0, $accent-electric-blue 100%);
 
 // Other colors
 $secondary: #ff3c29;
