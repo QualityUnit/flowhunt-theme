@@ -5,11 +5,11 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 	?>
 
 <footer class="Footer urlslab-skip-all">
-  <div class="wrapper">
+  <div class="wrapper-md">
 	<div class="Footer__newsletter">
 	  <div class="Footer__newsletter--text">
-		<h4>Join our newsletter</h4>
-		<p class="small no-margin">Get exclusive access to the latest tips, trends, and deals for free.</p>
+		<h4><?php _e( 'Join our newsletter', 'flowhunt' ); ?></h4>
+		<p class="small no-margin"><?php _e( 'Get exclusive access to the latest tips, trends, and deals for free.', 'flowhunt' ); ?></p>
 	  </div>
 	  <?php require_once get_template_directory() . '/templates/newsletter-form.php'; ?>
 	</div>
@@ -20,8 +20,7 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 			<img alt="URLsLab" loading="lazy" width="139" height="34" src="<?= esc_url( get_template_directory_uri() . '/assets/images/flowhunt-logo.svg' ); ?>" />
 		  </a>
 		</div>
-		<p class="small Footer__motto">Build your custom chatbot in minutes with FlowHunt.</p>
-		<a class="Button Button--full Button--medium noIcon" href="https://calendly.com/liveagentsession/flowhunt-chatbot-demo" target="_blank"><span>Demo</span></a>
+		<p class="small Footer__motto"><?php _e( 'Build your custom chatbot in minutes with FlowHunt.', 'flowhunt' ); ?></p>
 		<!-- <div class="Footer__social">
 		  <a href="" class="Footer__social--item">
 			<FacebookIcon />

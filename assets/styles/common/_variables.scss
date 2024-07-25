@@ -42,15 +42,17 @@ $font-size-bigger: 1.125rem;
 $line-height-bigger: 1.44;
 
 
-$font-size-h1: 3.75rem;
-$line-height-h1: 1.33;
-$font-size-h2: 3.75em;
+$font-size-h1: clamp(2.75rem, 6vw, 3.75em);
+$font-size-h1-l: 3rem;
+$font-size-h1-s: 2.75rem;
+$line-height-h1: 1.2;
+$font-size-h2: clamp(2rem, 4vw, 3.75em);
 $line-height-h2: 1.15;
-$font-size-h2-s: 1.5rem;
-$font-size-h2-xs: 2rem;
+$font-size-h2-xs: 1.5rem;
+$font-size-h2-s: 2rem;
 $font-size-h2-l: 2.25rem;
 $font-size-h2-xl: 2.75rem;
-$font-size-h3: 1.5rem;
+$font-size-h3: clamp(1.2rem, 2vw, 1.5rem);
 $line-height-h3: 1.33;
 $font-size-h4: 1.125rem;
 $line-height-h4: 1.33;

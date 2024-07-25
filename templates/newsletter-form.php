@@ -5,7 +5,7 @@
   <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_18d6ab6093f8e6cdbbd783635_22b687a6cc" tabindex="-1" value=""></div>
 
-    <button type="submit" name="subscribe" id="newsletter_submit" class="Button Button--dark" disabled>
+    <button type="submit" name="subscribe" id="newsletter_submit" class="Button Button--medium Button--dark" disabled>
       <span>Subscribe</span>
     </button>
 
