@@ -1,7 +1,9 @@
 <?php
 
-function get_colored_svg( $color = '#000' ) {
+function get_colored_svg( $color ) {
+	$color = $color ?: '#d1d5db';
 	return '
+
         <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<g clip-path="url(#clip0_46_52)">
 							<path d="M-0.410658 -1.70533C-0.410658 -0.990302 -0.990302 -0.410658 -1.70533 -0.410658C-2.42036 -0.410658 -3 -0.990302 -3 -1.70533C-3 -2.42036 -2.42036 -3 -1.70533 -3C-0.990302 -3 -0.410658 -2.42036 -0.410658 -1.70533Z" fill="' . esc_attr( $color ) . '" fill-opacity="0.3"/>
