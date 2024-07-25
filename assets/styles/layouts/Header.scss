@@ -51,8 +51,8 @@ html.mobile-menu-opened {
 		.wrapper-md {
 			display: flex;
 			align-items: center;
-			padding-right: 1.125em;
 			padding-left: 1.125em;
+			padding-right: 1.125em;
 			height: 100%;
 			border-radius: 0;
 			background-color: $white;
@@ -113,10 +113,6 @@ html.mobile-menu-opened {
 
 		@media (min-width: $breakpoint-tablet-landscape) {
 
-			.wrapper-md {
-				padding: 0 !important;
-			}
-
 			.signup &.noMenu {
 				background-color: transparent;
 			}
@@ -137,9 +133,6 @@ html.mobile-menu-opened {
 					display: flex;
 					align-items: center;
 
-					a {
-						padding: 0;
-					}
 				}
 			}
 		}

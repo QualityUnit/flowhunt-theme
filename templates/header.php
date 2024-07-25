@@ -26,7 +26,7 @@
 				<div class="Header__buttons">
 					<ul class="Header__buttons__login">
 						<li class="Header__buttons__login__item">
-							<a href="https://app.flowhunt.io/sign-in" id="loginBtn" class="Button--login"><span><?php _e( 'Log in', 'flowhunt' ); ?></span></a>
+							<a href="https://app.flowhunt.io/sign-in" id="loginBtn" class="Button Button--medium Button--white Button--login"><span><?php _e( 'Log in', 'flowhunt' ); ?></span></a>
 						</li>
 					</ul>
 					<a class="Button Button--full Button--medium" href="https://calendly.com/liveagentsession/flowhunt-chatbot-demo" target="_blank"><span><?php _e( 'Demo', 'flowhunt' ); ?></span></a>

@@ -42,7 +42,7 @@
 			}
 
 			@media (min-width: $breakpoint-tablet-landscape) {
-				font-size: 90px;
+				font-size: 90px !important;
 			}
 		}
 
@@ -172,9 +172,8 @@
 		}
 
 		@media (min-width: $breakpoint-desktop-box) {
-			transform: translateX(7em);
 			z-index: 1;
-			width: 38%;
+			//width: 38%;
 		}
 
 		h1.elementor-heading-title {
@@ -208,7 +207,8 @@
 		}
 
 		@media (min-width: $breakpoint-desktop-box) {
-			width: 62%;
+			//width: 50%;
+			padding-block: 0;
 		}
 	}
 }

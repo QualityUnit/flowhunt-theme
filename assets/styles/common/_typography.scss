@@ -41,31 +41,20 @@ h1,
 	line-height: $line-height-h1 !important;
 	margin-bottom: 0.33em;
 
-	@media (max-width: $breakpoint-tablet) {
-		font-size: $font-size-h2 !important;
-	}
 }
 
 h2,
 .h2[class] {
 	font-size: $font-size-h2 !important;
 	line-height: $line-height-h2 !important;
-
-	@media (max-width: $breakpoint-tablet) {
-		font-size: $font-size-h2-s !important;
-	}
 }
 
 h3,
 .h3[class] {
-	font-size: math.div($font-size-h3, $mobile-divider);
-	line-height: math.div($line-height-h3, $mobile-divider);
 
-	@media (min-width: $breakpoint-tablet) {
+	font-size: $font-size-h3 !important;
+	line-height: $line-height-h3 !important;
 
-		font-size: $font-size-h3 !important;
-		line-height: $line-height-h3 !important;
-	}
 }
 
 h4,
