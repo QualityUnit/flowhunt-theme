@@ -1,7 +1,7 @@
 <?php
 
 function get_colored_svg( $color ) {
-	$color = !empty($color) ? $color : '#d1d5db';
+	$color = ! empty( $color ) ? $color : '#d1d5db';
 	return '
 
         <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
