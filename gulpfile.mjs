@@ -194,7 +194,7 @@ gulp.task( 'stylelint', () =>
 
 gulp.task( 'eslint', () =>
 	gulp
-		.src( [ 'gulpfile.js', 'assets/scripts/**/*.js' ] )
+		.src( [ 'gulpfile.mjs', 'assets/scripts/**/*.js' ] )
 		.pipe( eslint() )
 		.pipe( eslint.format() )
 		.pipe( eslint.failAfterError() )
