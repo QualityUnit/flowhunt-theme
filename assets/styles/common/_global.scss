@@ -325,3 +325,46 @@ hr {
 		border-radius: $border-radius-16;
 	}
 }
+
+
+.doted-bg {
+
+	.e-con-inner {
+
+		&:has(.block-image-with-text):has(.posts-infinity-slider-section) {
+
+			@media (min-width: $breakpoint-desktop-hd) {
+				overflow: hidden;
+				mask: linear-gradient(90deg, transparent, $white 20%, $white 80%, transparent);
+
+			}
+
+			&::before {
+				content: url(../../images/full-width-doted-bg.png);
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+			}
+
+			padding-top: $block-bg-space-sm;
+
+			@media (min-width: $breakpoint-tablet) {
+				padding-top: $block-space-md;
+			}
+
+			@media (min-width: $breakpoint-desktop) {
+				padding-top: $block-space;
+			}
+
+		}
+
+	}
+
+
+}
