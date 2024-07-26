@@ -3,18 +3,71 @@
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
+#app > .elementor {
+	display: contents;
+
+}
 
 [data-scroll] {
+	position: sticky;
+	top: 10em;
 
 	&.wrapper-md {
 		max-width: none !important;
-		padding: 0 !important;
+		padding: 0;
+		max-height: 100vh;
+		scroll-snap-type: y mandatory;
+		// margin-right: -20px;
+		padding-right: 20px;
+		overflow-y: scroll;
 
 		> div {
 			max-width: $wrapper-md;
 			margin: 0 auto;
 			padding-left: $wrapper-padding;
 			padding-right: $wrapper-padding;
+
+			&.e-con-inner {
+				position: relative;
+				align-items: stretch;
+
+				> .e-child {
+					scroll-snap-align: top;
+					position: relative;
+					margin-left: auto;
+					margin-right: -20px;
+					display: block !important;
+					flex-direction: column;
+					justify-content: stretch;
+					align-items: stretch;
+					height: auto;
+
+
+					> .e-child {
+						height: 100%;
+					}
+
+					&:not(:has(.elementor-header-title)) > .elementor-widget-image {
+
+						@include square(100%);
+						position: absolute;
+						bottom: 0;
+
+						div {
+							max-height: none;
+							height: 100%;
+
+						}
+
+						img {
+							object-fit: contain;
+							object-position: center bottom;
+							max-height: none;
+							height: 100%;
+						}
+					}
+				}
+			}
 		}
 	}
 }
