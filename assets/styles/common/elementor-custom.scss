@@ -6,3 +6,18 @@
 .elementor-widget-wrap.elementor-element-populated {
 	padding: 0;
 }
+
+.e-con-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.e-con-full {
+
+	&.e-flex {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}

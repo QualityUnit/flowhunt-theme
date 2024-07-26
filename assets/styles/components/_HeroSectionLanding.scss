@@ -1,0 +1,79 @@
+// stylelint-disable no-descending-specificity
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+// LANDING HERO SECTION
+.hero-section-landing-page {
+
+	.e-con-inner {
+
+		@media (min-width: $breakpoint-tablet) {
+			flex-direction: row;
+
+			.e-child {
+				display: block;
+			}
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+
+			.e-child {
+
+
+				&:first-of-type {
+
+					&:has(.elementor-heading-title) {
+						padding-right: 10%;
+					}
+
+					&:has(.elementor-widget-image) {
+						margin-left: -10%;
+						margin-right: 0;
+					}
+				}
+
+				&:has(.elementor-widget-image) {
+					flex: 0 0 60%;
+					margin-right: -10%;
+				}
+
+				&:last-of-type {
+
+					&:has(.elementor-heading-title) {
+						padding-left: 10%;
+					}
+				}
+			}
+		}
+
+	}
+
+	&__content {
+		padding: 0;
+
+
+		h1.elementor-heading-title {
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				font-size: 3.75em;
+			}
+		}
+
+		h3 {
+			font-size: 18px;
+			color: $level-2;
+			padding: 0;
+			font-weight: $font-weight-normal;
+
+			@media (min-width: $breakpoint-desktop-hd) {
+				padding-right: 11em;
+			}
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				font-size: 24px;
+			}
+		}
+
+	}
+}

@@ -1,19 +1,23 @@
-const autoprefixer = require( 'gulp-autoprefixer' );
-const browserSync = require( 'browser-sync' ).create();
-const clean = require( 'del' );
-const concat = require( 'gulp-concat' );
-const eslint = require( 'gulp-eslint' );
-const filter = require( 'gulp-filter' );
-// const gcmq = require( 'gulp-group-css-media-queries' );
-const gulp = require( 'gulp' );
-const plumber = require( 'gulp-plumber' );
-const rename = require( 'gulp-rename' );
-const replace = require( 'gulp-replace' );
-const sass = require( 'gulp-sass' )( require( 'sass' ) );
-const stylelint = require( 'gulp-stylelint' );
-const terser = require( 'gulp-terser' );
-const uglifycss = require( 'gulp-uglifycss' );
-const svgSprites = require( 'gulp-svg-sprite' );
+import gulp from 'gulp';
+import autoprefixer from 'gulp-autoprefixer';
+import browserSync from 'browser-sync';
+import { deleteAsync as clean } from 'del';
+import concat from 'gulp-concat';
+import eslint from 'gulp-eslint';
+import filter from 'gulp-filter';
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+// const gcmq from 'gulp-group-css-media-queries';
+import plumber from 'gulp-plumber';
+import rename from 'gulp-rename';
+import replace from 'gulp-replace';
+import stylelint from 'gulp-stylelint';
+import terser from 'gulp-terser';
+import uglifycss from 'gulp-uglifycss';
+import svgSprites from 'gulp-svg-sprite';
+
+const sass = gulpSass( dartSass );
+browserSync.create();
 
 gulp.task( 'set-path', async () => {
 	if ( process.env.NODE_ENV === 'production' ) {
@@ -190,7 +194,7 @@ gulp.task( 'stylelint', () =>
 
 gulp.task( 'eslint', () =>
 	gulp
-		.src( [ 'gulpfile.js', 'assets/scripts/**/*.js' ] )
+		.src( [ 'gulpfile.mjs', 'assets/scripts/**/*.js' ] )
 		.pipe( eslint() )
 		.pipe( eslint.format() )
 		.pipe( eslint.failAfterError() )

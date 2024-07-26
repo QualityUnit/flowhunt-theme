@@ -1,0 +1,20 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+
+[data-scroll] {
+
+	&.wrapper-md {
+		max-width: none !important;
+		padding: 0 !important;
+
+		> div {
+			max-width: $wrapper-md;
+			margin: 0 auto;
+			padding-left: $wrapper-padding;
+			padding-right: $wrapper-padding;
+		}
+	}
+}
