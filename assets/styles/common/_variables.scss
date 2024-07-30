@@ -61,6 +61,11 @@ $line-height-h5: 1.5;
 $font-size-h6: 1rem;
 $line-height-h6: 1.5;
 
+// font sizes for single pages
+$font-size-h1-single: clamp(1.875rem, 3vw, 2.5rem);
+$font-size-h2-single: clamp(2rem, 1vw, 3.75rem);
+$font-size-h3-single: clamp(1.2rem, 1vw, 1.5rem);
+
 $font-weight-normal: 400;
 $font-weight-semi: 600;
 $font-weight-bold: 700;

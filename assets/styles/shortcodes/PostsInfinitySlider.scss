@@ -3,6 +3,8 @@
 
 
 .posts-infinity-slider-section {
+	z-index: 3;
+	max-width: 100%;
 
 	> .e-con-inner {
 		flex-direction: column !important;
