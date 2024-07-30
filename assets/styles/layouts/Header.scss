@@ -33,107 +33,102 @@ html.mobile-menu-opened {
 	}
 }
 
-#app {
-	padding-top: $headerHeight;
+.Header {
+	position: sticky;
+	top: 0;
+	// left: 0;
+	z-index: 99991;
+	width: 100%;
+	height: $headerHeight;
+	background-color: $white;
 
-	.Header {
-		position: fixed;
-		top: 0;
-		z-index: 99991;
-		width: 100%;
-		height: $headerHeight;
+	&.noMenu {
+		background-color: transparent;
+	}
+
+	.wrapper-md {
+		display: flex;
+		align-items: center;
+		padding-left: 1.125em;
+		padding-right: 1.125em;
+		height: 100%;
+		border-radius: 0;
 		background-color: $white;
+	}
 
-		&.noMenu {
+	&__items {
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+
+		.hamburger {
+
+			.line {
+				width: 1.75em;
+				height: 0.1875em;
+				background-color: $black;
+				display: block;
+				margin: 0.25em auto;
+				-webkit-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+			}
+
+			&.open {
+
+				.line {
+
+					&:nth-child(2) {
+						opacity: 0;
+					}
+
+					&:nth-child(1) {
+						transform: translateY(6px) rotate(45deg);
+					}
+
+					&:nth-child(3) {
+						transform: translateY(-8px) rotate(-45deg);
+					}
+				}
+			}
+
+		}
+
+	}
+
+	&__mobile__menu__overlay {
+		display: none;
+	}
+
+	.LoginOrSignup {
+		font-size: 0.875rem;
+
+		.Button {
+			margin-left: 1em;
+		}
+	}
+
+	@media (min-width: $breakpoint-tablet-landscape) {
+
+		.signup &.noMenu {
 			background-color: transparent;
 		}
 
-		.wrapper-md {
-			display: flex;
-			align-items: center;
-			padding-left: 1.125em;
-			padding-right: 1.125em;
-			height: 100%;
-			border-radius: 0;
-			background-color: $white;
-			margin-bottom: 0;
-		}
-
 		&__items {
-			display: flex;
-			align-items: center;
-			margin-left: auto;
+			width: 100%;
+			margin-left: 0;
 
 			.hamburger {
-
-				.line {
-					width: 1.75em;
-					height: 0.1875em;
-					background-color: $black;
-					display: block;
-					margin: 0.25em auto;
-					-webkit-transition: all 0.3s ease-in-out;
-					-o-transition: all 0.3s ease-in-out;
-					transition: all 0.3s ease-in-out;
-				}
-
-				&.open {
-
-					.line {
-
-						&:nth-child(2) {
-							opacity: 0;
-						}
-
-						&:nth-child(1) {
-							transform: translateY(6px) rotate(45deg);
-						}
-
-						&:nth-child(3) {
-							transform: translateY(-8px) rotate(-45deg);
-						}
-					}
-				}
-
-			}
-
-		}
-
-		&__mobile__menu__overlay {
-			display: none;
-		}
-
-		.LoginOrSignup {
-			font-size: 0.875rem;
-
-			.Button {
-				margin-left: 1em;
+				display: none;
 			}
 		}
 
-		@media (min-width: $breakpoint-tablet-landscape) {
+		&__buttons {
 
-			.signup &.noMenu {
-				background-color: transparent;
-			}
-
-			&__items {
-				width: 100%;
-				margin-left: 0;
-
-				.hamburger {
-					display: none;
-				}
-			}
-
-			&__buttons {
-
-				&__login {
-					margin: 0;
-					display: flex;
-					align-items: center;
-
-				}
+			&__login {
+				margin: 0;
+				display: flex;
+				align-items: center;
 			}
 		}
 	}

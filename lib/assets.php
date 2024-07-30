@@ -29,7 +29,14 @@ add_action(
 	100
 );
 
+//Loads greensock lib with scrolltrigger module
 
+function theme_gsap_script() {
+		wp_enqueue_script( 'gsap-js', get_template_directory_uri() . '/assets/dist/gsap' . wpenv() . '.js', array(), THEME_VERSION, true );
+		wp_enqueue_script( 'gsapSt-js', get_template_directory_uri() . '/assets/dist/gsap-scrolltrigger' . wpenv() . '.js', array( 'gsap-js' ), THEME_VERSION, true );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_gsap_script' );
 /**
  * Scripts
  */
@@ -38,6 +45,7 @@ add_action(
 	'wp_footer',
 	function () {
 		wp_enqueue_script( 'jquery' );
+		
 		wp_enqueue_script( 'popper_js', get_template_directory_uri() . '/assets/dist/popper' . wpenv() . '.js', array( 'wp-i18n' ), THEME_VERSION, true );
 		wp_enqueue_script( 'app_js', get_template_directory_uri() . '/assets/dist/app' . wpenv() . '.js', false, THEME_VERSION, true );
 	}

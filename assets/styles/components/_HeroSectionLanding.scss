@@ -1,5 +1,5 @@
-// stylelint-disable no-descending-specificity
 
+// stylelint-disable no-descending-specificity
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
@@ -20,6 +20,10 @@
 
 			.e-child {
 
+				&:has(.elementor-widget-image) {
+					flex: 0 0 60%;
+					margin-right: -10%;
+				}
 
 				&:first-of-type {
 
@@ -33,11 +37,6 @@
 					}
 				}
 
-				&:has(.elementor-widget-image) {
-					flex: 0 0 60%;
-					margin-right: -10%;
-				}
-
 				&:last-of-type {
 
 					&:has(.elementor-heading-title) {
@@ -46,7 +45,6 @@
 				}
 			}
 		}
-
 	}
 
 	&__content {

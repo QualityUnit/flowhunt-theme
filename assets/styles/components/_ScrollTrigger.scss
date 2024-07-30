@@ -3,18 +3,207 @@
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
-
 [data-scroll] {
+	overflow: clip;
 
 	&.wrapper-md {
 		max-width: none !important;
-		padding: 0 !important;
+		padding: 0;
+		height: clamp(50vh, var(--scroll-height), 80vh) !important;
+
+		@media (max-width: $breakpoint-tablet-landscape) {
+			height: 100vh !important;
+		}
 
 		> div {
 			max-width: $wrapper-md;
 			margin: 0 auto;
 			padding-left: $wrapper-padding;
 			padding-right: $wrapper-padding;
+
+			height: 100%;
+
+			&.e-con-inner {
+				position: relative;
+				align-items: stretch;
+				gap: $header-height;
+				padding-top: $header-height * 2;
+
+				@media (min-width: $breakpoint-tablet-landscape) {
+					gap: 0;
+					padding-top: 0;
+				}
+
+				> .e-child {
+					position: relative;
+					display: block !important;
+					flex-direction: column;
+					height: auto;
+					z-index: 1;
+
+					> .e-child {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: flex-start;
+						height: 100%;
+					}
+
+					.elementor-heading-title[class] {
+						font-size: 3.125rem !important;
+						text-align: left;
+					}
+
+					&:first-child:has(.elementor-heading-title) {
+						padding-right: 7.5em;
+					}
+
+					&:last-child:has(.elementor-heading-title) {
+						padding-left: 7.5em;
+					}
+
+
+					&:not(:has(.elementor-heading-title)) {
+						position: relative;
+						z-index: 2;
+						height: 100%;
+						order: -1;
+
+						@media (min-width: $breakpoint-tablet-landscape) {
+							order: 0;
+						}
+
+						>.elementor-widget-image {
+
+							@include posZero();
+							position: absolute;
+							opacity: 0;
+							bottom: 0;
+							min-height: var(--scroll-height) !important;
+							z-index: 1;
+
+							&:first-child {
+								opacity: 1;
+							}
+
+							&.active {
+								opacity: 1;
+								z-index: 2;
+							}
+
+							div {
+								display: flex;
+								max-height: none;
+								height: 100%;
+							}
+
+							img {
+								object-fit: contain;
+								object-position: center bottom;
+								max-height: none;
+								margin-top: auto;
+							}
+						}
+
+						> .elementor-widget-video[class] {
+							position: absolute;
+							top: 0;
+							display: flex;
+							align-items: center;
+							padding: 0;
+
+							&::after {
+
+								@include posCustom(-15%);
+								left: 0;
+								position: absolute;
+
+								content: "";
+								background: url(../../images/video_background.svg) left center no-repeat;
+								background-size: contain;
+
+								@media (min-width: $breakpoint-desktop-big) {
+									background-size: 105% 100%;
+								}
+							}
+
+							> div {
+								position: relative;
+								display: flex;
+								align-items: center;
+								height: 100%;
+								margin-left: -0.5em;
+								z-index: 2;
+
+								.e-hosted-video[class] {
+									padding: 8px;
+									border-radius: 0.75em;
+								}
+							}
+
+							video {
+								object-fit: contain;
+								object-position: center bottom;
+								max-height: 37em;
+								border-radius: 0.75em;
+								width: 100%;
+
+								@media (min-width: $breakpoint-tablet-landscape) {
+									width: calc(50vw - 16px);
+								}
+
+								@media (min-width: $breakpoint-desktop-big) {
+									max-width: 59.5em;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&[data-scroll="all"] {
+		overflow: visible;
+
+		&.wrapper-md {
+			height: auto;
+
+			.e-con-inner {
+
+				> .e-child {
+
+					.details {
+
+						> .e-child {
+							align-items: flex-start;
+							opacity: 0.5;
+
+							&.active {
+								opacity: 1;
+
+								.elementor-heading-title[class] {
+									background: linear-gradient(to right, #0497dc, #465ce0);
+									background-clip: text;
+									-webkit-text-fill-color: transparent;
+								}
+							}
+						}
+					}
+
+					> .e-child {
+						height: auto;
+
+
+						.elementor-heading-title[class] {
+							font-size: 1.375rem !important;
+							text-align: left;
+						}
+
+					}
+
+				}
+			}
 		}
 	}
 }
