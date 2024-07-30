@@ -34,34 +34,83 @@ const scrollByPoint = document.querySelectorAll('[data-scroll="all"]');
 if (scrollByPoint.length > 0) {
   scrollByPoint.forEach(scroller => {
 
-    const images = gsap.utils.toArray(".e-child > .elementor-widget-image", scroller);
-    const videos = gsap.utils.toArray(".e-child > .elementor-widget-video", scroller);
-    const details = gsap.utils.toArray(".e-child > .e-child:has(.elementor-widget-heading)", scroller);
+    const images = gsap.utils.toArray(scroller.querySelectorAll(".e-child > .elementor-widget-image"));
+    const videos = gsap.utils.toArray(scroller.querySelectorAll(".e-child > .elementor-widget-video"));
+    const details = gsap.utils.toArray(scroller.querySelectorAll(".details > .e-child:has(.elementor-widget-heading)"));
 
     const media = images.length ? images : videos
 
-    let timeline = gsap.timeline({
+    let timelineDetails = gsap.timeline({
+      scrollTrigger: {
+        toggleActions: "restart pause restart pause",
+        start: "center center",
+        end: `+=${(details.length) * 100}%`,
+        pin: true,
+        scrub: 1,
+        markers: true,
+      }
+    });
+
+    let timelineMedia = gsap.timeline({
       scrollTrigger: {
         trigger: scroller,
-        toggleActions: "restart pause reverse pause",
+        toggleActions: "restart pause restart pause",
         start: "center center",
         end: `+=${(media.length) * 100}%`,
         pin: true,
-        scrub: true,
-        markers: true
+        scrub: 1,
+        markers: true,
       }
     });
 
-    media.forEach((img, i) => {
-      if (media[i + 1]) {
-        timeline.to(img, { opacity: 0 }, "+=0.5")
-          .to(media[i + 1], { opacity: 1 }, "<")
+    const restartVideo = (video) => {
+      video.pause();
+      video.currentTime = 0;
+    }
+
+    details.forEach((detail, i) => {
+
+      timelineDetails.to(detail, {
+        // trigger: media[i],
+        onStart: () => { detail.classList.add('active') },
+        onComplete: () => detail.classList.remove('active'),
+      })
+    })
+
+    media.forEach((medium, i) => {
+      // .to(details[i], { minHeight: 100 }, ">")
+
+      timelineMedia.to(medium, {
+        // trigger: media[i],
+        onStart: () => {
+          medium.style.zIndex = media.length + i;
+          medium.querySelector('video').play()
+        },
+        onComplete: () => {
+          medium.style.zIndex = 1;
+          restartVideo(media[i].querySelector('video'))
+        },
+        // onReverseComplete: () => {
+        //   media[i].style.zIndex = media.length + i;
+        //   restartVideo(media[i].querySelector('video'));
+        //   media[i].querySelector('video').play();
+        // }
+        // onR
+      })
+      if (media[i] && media[i].querySelector('video')) {
         // timeline.scrollTrigger
-
+        return
       }
-      timeline.to(details[i], { onStart: () => details[i].classList.add('active') })
+
+      // media.forEach((img, i) => {
+      //   if (images[i + 1]) {
+      //     timeline.to(img, { opacity: 0 }, "+=0.5")
+      //       .to(images[i + 1], { opacity: 1 }, "<")
+      //       .to(details, { yPercent: -(100 * (i + 1)), ease: "none" }, "<");
+      //   }
+      // });
     });
-    timeline.to({}, {}, "+=0.5");
+    // timelineDetails.to({}, {});
   })
 }
 
