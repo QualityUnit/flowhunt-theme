@@ -15,7 +15,6 @@ if ( scrollByOne.length > 0 ) {
 				end: `+=${ ( images.length - 1 ) * 100 }%`,
 				pin: true,
 				scrub: true,
-				// markers: true
 			},
 		} );
 
@@ -47,7 +46,6 @@ if ( scrollByPoint.length > 0 ) {
 				end: `+=${ ( details.length ) * 100 }%`,
 				pin: true,
 				scrub: 1,
-				markers: true,
 			},
 		} );
 
@@ -59,7 +57,6 @@ if ( scrollByPoint.length > 0 ) {
 				end: `+=${ ( media.length ) * 100 }%`,
 				pin: true,
 				scrub: 1,
-				markers: true,
 			},
 		} );
 
@@ -70,7 +67,6 @@ if ( scrollByPoint.length > 0 ) {
 
 		details.forEach( ( detail ) => {
 			timelineDetails.to( detail, {
-				// trigger: media[i],
 				onStart: () => {
 					detail.classList.add( 'active' );
 				},
@@ -79,10 +75,8 @@ if ( scrollByPoint.length > 0 ) {
 		} );
 
 		media.forEach( ( medium, i ) => {
-			// .to(details[i], { minHeight: 100 }, ">")
 
 			timelineMedia.to( medium, {
-				// trigger: media[i],
 				onStart: () => {
 					medium.style.zIndex = media.length + i;
 					medium.querySelector( 'video' ).play();
@@ -91,27 +85,8 @@ if ( scrollByPoint.length > 0 ) {
 					medium.style.zIndex = 1;
 					restartVideo( media[ i ].querySelector( 'video' ) );
 				},
-				// onReverseComplete: () => {
-				//   media[i].style.zIndex = media.length + i;
-				//   restartVideo(media[i].querySelector('video'));
-				//   media[i].querySelector('video').play();
-				// }
-				// onR
 			} );
-			if ( media[ i ] && media[ i ].querySelector( 'video' ) ) {
-				// timeline.scrollTrigger
-
-			}
-
-			// media.forEach((img, i) => {
-			//   if (images[i + 1]) {
-			//     timeline.to(img, { opacity: 0 }, "+=0.5")
-			//       .to(images[i + 1], { opacity: 1 }, "<")
-			//       .to(details, { yPercent: -(100 * (i + 1)), ease: "none" }, "<");
-			//   }
-			// });
 		} );
-		// timelineDetails.to({}, {});
 	} );
 }
 
