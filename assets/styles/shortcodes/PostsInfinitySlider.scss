@@ -2,54 +2,53 @@
 @use "../common/mixins" as *;
 
 
-.posts-moving-wrapper {
-	overflow-x: hidden;
-	padding: 3.75em 0;
+.posts-infinity-slider-section {
 
-	@media (min-width: $breakpoint-desktop-hd) {
-
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			top: -1em;
-			bottom: -1em;
-			width: 10%;
-			pointer-events: none;
-			z-index: 5;
-		}
-
-		&::before {
-			left: 0;
-			background: rgb(255, 255, 255);
-			background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 90%, rgba(255, 255, 255, 0) 100%);
-		}
-
-		&::after {
-			right: 0;
-			background: rgb(255, 255, 255);
-			background: linear-gradient(-90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 90%, rgba(255, 255, 255, 0) 100%);
-		}
+	> .e-con-inner {
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
 	}
 }
 
-.posts-moving-rows {
-	display: grid;
-	grid-template-columns: repeat(12, 440px);
-	grid-template-rows: repeat(2, auto);
-	column-gap: 40px;
-	row-gap: 30px;
-	position: relative;
-	animation: scroll 20s linear infinite;
-	transition: all 0.5s ease;
-	z-index: 1;
+.posts-infinity-slider {
+	overflow-x: hidden;
+	max-width: $wrapper-xl;
 
-	&:hover {
-		animation-play-state: paused;
-
+	&[data-slider="first"] {
+		padding: 3.5em 0 1em 0;
 	}
 
-	&__card {
+	&[data-slider="second"] {
+		padding: 1em 0 3.5em 0;
+	}
+
+	&[data-direction="right"] {
+		--_animation-direction: reverse;
+	}
+
+	&[data-direction="left"] {
+		--_animation-direction: forwards;
+	}
+
+	&[data-animated="true"] {
+		overflow: hidden;
+
+		@media (min-width: $breakpoint-desktop-hd) {
+			mask-image: linear-gradient(90deg, transparent, $white 20%, $white 80%, transparent);
+		}
+
+		.posts-infinity-slider__items {
+			width: max-content;
+			flex-wrap: nowrap;
+			animation: scroll 90s var(--_animation-direction, forwards) linear infinite;
+			display: flex;
+			gap: 3em;
+		}
+	}
+
+
+	&__item {
 		display: flex;
 		gap: 1em;
 		padding: 20px 16px;
@@ -59,58 +58,44 @@
 		box-shadow: 16px 15px 13px rgba(0, 0, 0, 0.02), 7px 7px 10px rgba(0, 0, 0, 0.03), 2px 2px 5px rgba(0, 0, 0, 0.03) !important;
 		text-align: center;
 		position: relative;
-		z-index: 2; /* Ensure that cards appear above the gradient overlays */
+		z-index: 2;
 		text-decoration: none !important;
+		width: 440px;
 
 		&:hover {
 			border-color: $primary;
 			transition: all 0.3s ease;
 		}
-	}
 
-	&__image {
+		&__image {
 
-		img {
-			width: 42px;
-			height: auto;
+			img {
+				width: 42px;
+				height: auto;
+			}
+		}
+
+		&__content {
+			text-align: left;
+			width: fit-content;
+
+			h3 {
+				font-size: 1rem !important;
+				margin-bottom: 0.5em;
+			}
+
+			p {
+				color: $gray-500;
+				font-size: 14px;
+				margin-bottom: 0;
+			}
 		}
 	}
 
+	@keyframes scroll {
 
-	&__title {
-		font-size: 1rem;
-		margin-bottom: 0.5em;
-	}
-
-	&__content {
-		text-align: left;
-		width: fit-content;
-	}
-
-	&__desc {
-		color: $gray-500;
-		font-size: 14px;
-		margin-bottom: 0;
-	}
-
-	.first-row {
-		grid-row: 1;
-		transform: translateX(-50%);
-	}
-
-	.second-row {
-		grid-row: 2;
+		to {
+			transform: translate(calc(-50% - 1.5rem));
+		}
 	}
 }
-
-@keyframes scroll {
-
-	0% {
-		transform: translateX(0%);
-	}
-
-	100% {
-		transform: translateX(-50%);
-	}
-}
-
