@@ -7,6 +7,7 @@ import eslint from 'gulp-eslint';
 import filter from 'gulp-filter';
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
+import stylelint from "@ronilaukkarinen/gulp-stylelint";
 // const gcmq from 'gulp-group-css-media-queries';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
@@ -167,10 +168,23 @@ gulp.task('vendor-js', () =>
 
 gulp.task('eslint', () =>
 	gulp
-		.src(['gulpfile.js', 'assets/scripts/**/*.js'])
+		.src(['assets/scripts/**/*.js', '!assets/scripts/vendor/*.js'])
 		.pipe(eslint())
 		.pipe(eslint.format())
 		.pipe(eslint.failAfterError())
+);
+
+gulp.task('stylelint', () =>
+	gulp.src('assets/styles/**/*.scss').pipe(
+		stylelint({
+			reporters: [
+				{
+					formatter: 'string',
+					console: true,
+				},
+			],
+		})
+	)
 );
 
 gulp.task(

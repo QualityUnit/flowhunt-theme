@@ -44,6 +44,7 @@
 		"stylelint": "^14"
 	},
 	"dependencies": {
+		"@ronilaukkarinen/gulp-stylelint": "^14.1.2",
 		"gsap": "^3.12.5",
 		"gulp-replace": "^1.1.4",
 		"gulp-svg-sprite": "^2.0.3",

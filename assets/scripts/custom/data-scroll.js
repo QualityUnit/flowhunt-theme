@@ -1,116 +1,117 @@
-const scrollByOne = document.querySelectorAll('[data-scroll="one"]');
+/* global gsap */
 
-if (scrollByOne.length > 0) {
-  scrollByOne.forEach(scroller => {
+const scrollByOne = document.querySelectorAll( '[data-scroll="one"]' );
 
-    const images = gsap.utils.toArray(".e-child > .elementor-widget-image", scroller);
-    const details = gsap.utils.toArray(".e-child > .e-child:has(.elementor-widget-heading)", scroller);
+if ( scrollByOne.length > 0 ) {
+	scrollByOne.forEach( ( scroller ) => {
+		const images = gsap.utils.toArray( '.e-child > .elementor-widget-image', scroller );
+		const details = gsap.utils.toArray( '.e-child > .e-child:has(.elementor-widget-heading)', scroller );
 
-    let timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: scroller,
-        toggleActions: "restart pause reverse pause",
-        start: "center center",
-        end: `+=${(images.length - 1) * 100}%`,
-        pin: true,
-        scrub: true,
-        // markers: true
-      }
-    });
+		const timeline = gsap.timeline( {
+			scrollTrigger: {
+				trigger: scroller,
+				toggleActions: 'restart pause reverse pause',
+				start: 'center center',
+				end: `+=${ ( images.length - 1 ) * 100 }%`,
+				pin: true,
+				scrub: true,
+				// markers: true
+			},
+		} );
 
-    images.forEach((img, i) => {
-      if (images[i + 1]) {
-        timeline.to(img, { opacity: 0 }, "+=0.5")
-          .to(images[i + 1], { opacity: 1 }, "<")
-          .to(details, { yPercent: -(100 * (i + 1)), ease: "none" }, "<");
-      }
-    });
-    timeline.to({}, {}, "+=0.5");
-  })
+		images.forEach( ( img, i ) => {
+			if ( images[ i + 1 ] ) {
+				timeline.to( img, { opacity: 0 }, '+=0.5' )
+					.to( images[ i + 1 ], { opacity: 1 }, '<' )
+					.to( details, { yPercent: -( 100 * ( i + 1 ) ), ease: 'none' }, '<' );
+			}
+		} );
+		timeline.to( {}, {}, '+=0.5' );
+	} );
 }
 
-const scrollByPoint = document.querySelectorAll('[data-scroll="all"]');
+const scrollByPoint = document.querySelectorAll( '[data-scroll="all"]' );
 
-if (scrollByPoint.length > 0) {
-  scrollByPoint.forEach(scroller => {
+if ( scrollByPoint.length > 0 ) {
+	scrollByPoint.forEach( ( scroller ) => {
+		const images = gsap.utils.toArray( scroller.querySelectorAll( '.e-child > .elementor-widget-image' ) );
+		const videos = gsap.utils.toArray( scroller.querySelectorAll( '.e-child > .elementor-widget-video' ) );
+		const details = gsap.utils.toArray( scroller.querySelectorAll( '.details > .e-child:has(.elementor-widget-heading)' ) );
 
-    const images = gsap.utils.toArray(scroller.querySelectorAll(".e-child > .elementor-widget-image"));
-    const videos = gsap.utils.toArray(scroller.querySelectorAll(".e-child > .elementor-widget-video"));
-    const details = gsap.utils.toArray(scroller.querySelectorAll(".details > .e-child:has(.elementor-widget-heading)"));
+		const media = images.length ? images : videos;
 
-    const media = images.length ? images : videos
+		const timelineDetails = gsap.timeline( {
+			scrollTrigger: {
+				toggleActions: 'restart pause restart pause',
+				start: 'center center',
+				end: `+=${ ( details.length ) * 100 }%`,
+				pin: true,
+				scrub: 1,
+				markers: true,
+			},
+		} );
 
-    let timelineDetails = gsap.timeline({
-      scrollTrigger: {
-        toggleActions: "restart pause restart pause",
-        start: "center center",
-        end: `+=${(details.length) * 100}%`,
-        pin: true,
-        scrub: 1,
-        markers: true,
-      }
-    });
+		const timelineMedia = gsap.timeline( {
+			scrollTrigger: {
+				trigger: scroller,
+				toggleActions: 'restart pause restart pause',
+				start: 'center center',
+				end: `+=${ ( media.length ) * 100 }%`,
+				pin: true,
+				scrub: 1,
+				markers: true,
+			},
+		} );
 
-    let timelineMedia = gsap.timeline({
-      scrollTrigger: {
-        trigger: scroller,
-        toggleActions: "restart pause restart pause",
-        start: "center center",
-        end: `+=${(media.length) * 100}%`,
-        pin: true,
-        scrub: 1,
-        markers: true,
-      }
-    });
+		const restartVideo = ( video ) => {
+			video.pause();
+			video.currentTime = 0;
+		};
 
-    const restartVideo = (video) => {
-      video.pause();
-      video.currentTime = 0;
-    }
+		details.forEach( ( detail ) => {
+			timelineDetails.to( detail, {
+				// trigger: media[i],
+				onStart: () => {
+					detail.classList.add( 'active' );
+				},
+				onComplete: () => detail.classList.remove( 'active' ),
+			} );
+		} );
 
-    details.forEach((detail, i) => {
+		media.forEach( ( medium, i ) => {
+			// .to(details[i], { minHeight: 100 }, ">")
 
-      timelineDetails.to(detail, {
-        // trigger: media[i],
-        onStart: () => { detail.classList.add('active') },
-        onComplete: () => detail.classList.remove('active'),
-      })
-    })
+			timelineMedia.to( medium, {
+				// trigger: media[i],
+				onStart: () => {
+					medium.style.zIndex = media.length + i;
+					medium.querySelector( 'video' ).play();
+				},
+				onComplete: () => {
+					medium.style.zIndex = 1;
+					restartVideo( media[ i ].querySelector( 'video' ) );
+				},
+				// onReverseComplete: () => {
+				//   media[i].style.zIndex = media.length + i;
+				//   restartVideo(media[i].querySelector('video'));
+				//   media[i].querySelector('video').play();
+				// }
+				// onR
+			} );
+			if ( media[ i ] && media[ i ].querySelector( 'video' ) ) {
+				// timeline.scrollTrigger
 
-    media.forEach((medium, i) => {
-      // .to(details[i], { minHeight: 100 }, ">")
+			}
 
-      timelineMedia.to(medium, {
-        // trigger: media[i],
-        onStart: () => {
-          medium.style.zIndex = media.length + i;
-          medium.querySelector('video').play()
-        },
-        onComplete: () => {
-          medium.style.zIndex = 1;
-          restartVideo(media[i].querySelector('video'))
-        },
-        // onReverseComplete: () => {
-        //   media[i].style.zIndex = media.length + i;
-        //   restartVideo(media[i].querySelector('video'));
-        //   media[i].querySelector('video').play();
-        // }
-        // onR
-      })
-      if (media[i] && media[i].querySelector('video')) {
-        // timeline.scrollTrigger
-        return
-      }
-
-      // media.forEach((img, i) => {
-      //   if (images[i + 1]) {
-      //     timeline.to(img, { opacity: 0 }, "+=0.5")
-      //       .to(images[i + 1], { opacity: 1 }, "<")
-      //       .to(details, { yPercent: -(100 * (i + 1)), ease: "none" }, "<");
-      //   }
-      // });
-    });
-    // timelineDetails.to({}, {});
-  })
+			// media.forEach((img, i) => {
+			//   if (images[i + 1]) {
+			//     timeline.to(img, { opacity: 0 }, "+=0.5")
+			//       .to(images[i + 1], { opacity: 1 }, "<")
+			//       .to(details, { yPercent: -(100 * (i + 1)), ease: "none" }, "<");
+			//   }
+			// });
+		} );
+		// timelineDetails.to({}, {});
+	} );
 }
 
