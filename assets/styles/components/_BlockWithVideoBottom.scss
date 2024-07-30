@@ -4,7 +4,8 @@
 @use "../common/mixins" as *;
 
 .block-with-video-bottom {
-
+	padding-top: 140px;
+	background-color: $gray-50;
 	&-transparent-pricing {
 
 		.block-with-video-bottom__video {
@@ -49,10 +50,12 @@
 	&__video {
 		padding-bottom: 0;
 		background-position: center bottom;
+		background-size: contain;
 		background-repeat: no-repeat;
 		padding-top: 4em;
 		margin-bottom: 0 !important;
 		width: 100%;
+
 
 		@media (min-width: $breakpoint-tablet-landscape) {
 			padding-top: 8.75em;
