@@ -75,7 +75,6 @@ if ( scrollByPoint.length > 0 ) {
 		} );
 
 		media.forEach( ( medium, i ) => {
-
 			timelineMedia.to( medium, {
 				onStart: () => {
 					medium.style.zIndex = media.length + i;
