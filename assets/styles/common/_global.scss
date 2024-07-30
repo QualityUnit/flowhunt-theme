@@ -68,23 +68,22 @@ hr {
 	max-width: $max-width;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 40px;
+
 	position: relative;
 	padding-left: $wrapper-padding;
 	padding-right: $wrapper-padding;
 	border-radius: $border-radius-6;
 
-	&.elementor-element {
-		margin-bottom: $block-bg-space-sm;
+	margin-bottom: $block-bg-space-sm;
 
-		@media (min-width: $breakpoint-tablet) {
-			margin-bottom: $block-space-md;
-		}
-
-		@media (min-width: $breakpoint-desktop) {
-			margin-bottom: $block-space;
-		}
+	@media (min-width: $breakpoint-tablet) {
+		margin-bottom: $block-space-md;
 	}
+
+	@media (min-width: $breakpoint-desktop) {
+		margin-bottom: $block-space;
+	}
+
 
 	&.mb-0 {
 		margin-bottom: 0;
@@ -354,10 +353,6 @@ hr {
 }
 
 
-.posts-infinity-slider-section {
-	z-index: 3;
-}
-
 .doted-bg {
 
 	&:has(.block-image-with-text):has(.posts-infinity-slider-section) {
@@ -385,7 +380,7 @@ hr {
 		&::after {
 			content: "";
 			position: absolute;
-			width: 1920px;
+			width: 80%;
 			height: 504px;
 			border-radius: 1230px;
 			background: $gray-50;

@@ -5,52 +5,109 @@
 
 .block-boxes-grid {
 
-
-	&__content--bg {
-		padding: 13em 0 0 0;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: right top;
-		border: 2px solid $gray-200;
-		border-radius: 16px;
-		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.01);
+	.e-child {
+		padding: 0;
+		width: 100%;
 	}
 
-	&__content {
-		background: linear-gradient(107.75deg, rgba(10, 11, 12, 0.96) 2.48%, rgba(10, 11, 12, 0.9) 48.4%, rgba(30, 34, 39, 0.85) 100.04%);
-		border-radius: 0 0 10px 10px;
-		color: $white;
-		padding: 2em;
-		height: 100%;
+	h2.elementor-heading-title {
+		margin-bottom: 1em;
+		align-self: flex-start;
+	}
 
-		.elementor-widget-heading {
+	.e-grid {
+		column-gap: 20px;
 
-			h3 {
-				font-size: 24px;
-				color: $white;
-			}
-
+		@media (min-width: $breakpoint-tablet-landscape) {
+			column-gap: 34px;
 		}
 
-		.elementor-widget-text-editor {
+		> .e-child {
+			gap: 0;
+			transition: all 0.3s;
 
-			.learn-more {
+			&:hover,
+			&:active {
+				transform: none;
+			}
+
+			.learn-more a {
+				font-size: 1rem;
 
 				&:hover {
 
 					svg {
 						fill: $white;
 					}
-
 				}
 			}
 
-			p,
-			a {
-				color: $white;
-				margin-bottom: 0;
+			@media (min-width: $breakpoint-tablet) {
+				flex-direction: column;
 			}
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+
+				&:hover {
+					transform: translateY(-2em);
+
+					.learn-more a {
+
+						svg {
+							transform: translate(30%, 0);
+						}
+					}
+				}
+
+			}
+
+			.e-child:first-child:has(.elementor-widget-image) {
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: right top;
+				border: 1px solid $gray-200;
+				border-bottom: 0;
+				border-radius: $border-radius $border-radius 0 0;
+				box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.01);
+
+				img {
+					border-radius: $border-radius $border-radius 0 0;
+				}
+			}
+
+			.e-child:last-child {
+				background: linear-gradient(107.75deg, rgba(10, 11, 12, 0.96) 2.48%, rgba(10, 11, 12, 0.9) 48.4%, rgba(30, 34, 39, 0.85) 100.04%);
+				border-radius: 0 0 10px 10px;
+				color: $white;
+				padding: 2em;
+				align-items: flex-start;
+				gap: 20px;
+
+				@media (min-width: $breakpoint-tablet) {
+					text-align: left;
+					align-items: flex-start;
+				}
+
+				h3 {
+					font-size: 24px;
+					color: $white;
+					margin-bottom: 0;
+				}
+
+				.elementor-widget-text-editor {
+
+
+					p,
+					a {
+						color: $white;
+						margin-bottom: 0;
+					}
+				}
+
+			}
+
 		}
 	}
+
 }
 

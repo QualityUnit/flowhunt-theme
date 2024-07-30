@@ -4,17 +4,20 @@
 @use "../common/mixins" as *;
 
 .block-with-video-bottom {
+	padding-top: 140px;
+	background-color: $gray-50;
 
 	&-transparent-pricing {
 
 		.block-with-video-bottom__video {
 
 			&::after {
-				content: url(../../images/transparent-pricing-app-img.png);
+				content: url(../../images/transparent-pricing-app-after.svg);
 				position: absolute;
 				top: 0;
 				right: 2%;
 				z-index: 1;
+				background: $white;
 				border-radius: $border-radius;
 				border: 0.465px solid $gray-200;
 				box-shadow: 15.501px 23.251px 7.75px 0 rgba(7, 32, 65, 0), 10.075px 14.726px 6.975px 0 rgba(7, 32, 65, 0.01), 5.425px 8.525px 6.2px 0 rgba(7, 32, 65, 0.02), 2.325px 3.875px 4.65px 0 rgba(7, 32, 65, 0.03), 0.775px 0.775px 2.325px 0 rgba(7, 32, 65, 0.04);
@@ -48,9 +51,12 @@
 	&__video {
 		padding-bottom: 0;
 		background-position: center bottom;
+		background-size: contain;
 		background-repeat: no-repeat;
 		padding-top: 4em;
 		margin-bottom: 0 !important;
+		width: 100%;
+
 
 		@media (min-width: $breakpoint-tablet-landscape) {
 			padding-top: 8.75em;
@@ -62,13 +68,15 @@
 
 
 			.elementor-widget-video {
-				max-width: 916px;
+				max-width: 100%;
+				width: 100%;
 				max-height: 498px;
 				display: flex;
 				margin: 0 auto;
 				height: 100%;
 				justify-content: center;
 				align-items: flex-end;
+
 
 				.e-hosted-video {
 					background: $primary-gradient;
@@ -79,13 +87,13 @@
 
 					@media (min-width: $breakpoint-tablet-landscape) {
 						width: 916px;
-						max-height: 498px;
+						height: calc(490px + 8px);
 					}
 
 					video {
 						max-width: calc(100% - $border-radius-16);
 						max-height: calc(100% - $border-radius);
-						margin: 0 auto;
+						margin: 8px auto 0 auto;
 						background: transparent;
 						border-radius: $border-radius $border-radius 0 0;
 					}
