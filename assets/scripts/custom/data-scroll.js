@@ -1,4 +1,4 @@
-/* global gsap */
+/* global gsap, ScrollTrigger */
 
 const scrollByOne = document.querySelectorAll( '[data-scroll="one"]' );
 
@@ -37,7 +37,10 @@ if ( scrollByPoint.length > 0 ) {
 		const videos = gsap.utils.toArray( scroller.querySelectorAll( '.e-child > .elementor-widget-video' ) );
 		const details = gsap.utils.toArray( scroller.querySelectorAll( '.details > .e-child:has(.elementor-widget-heading)' ) );
 
-		const media = images.length ? images : videos;
+		const restartVideo = ( video ) => {
+			video.pause();
+			video.currentTime = 0;
+		};
 
 		const timelineDetails = gsap.timeline( {
 			scrollTrigger: {
@@ -49,43 +52,45 @@ if ( scrollByPoint.length > 0 ) {
 			},
 		} );
 
-		const timelineMedia = gsap.timeline( {
-			scrollTrigger: {
-				trigger: scroller,
-				toggleActions: 'restart pause restart pause',
-				start: 'center center',
-				end: `+=${ ( media.length ) * 100 }%`,
-				pin: true,
-				scrub: 1,
-			},
+		ScrollTrigger.create( {
+			trigger: scroller,
+			toggleActions: 'restart pause restart pause',
+			start: 'center center',
+			end: `+=${ ( details.length ) * 100 }%`,
+			pin: true,
+			scrub: 1,
 		} );
 
-		const restartVideo = ( video ) => {
-			video.pause();
-			video.currentTime = 0;
-		};
+		details.forEach( ( detail, i ) => {
+			const detailPara = detail.querySelector( '.elementor-widget-heading + .elementor-widget-text-editor' );
+			detailPara.insertAdjacentHTML( 'afterbegin', '<div class="progress"></div>' );
+			const detailParaProgress = detailPara.querySelector( '.progress' );
 
-		details.forEach( ( detail ) => {
-			timelineDetails.to( detail, {
-				onStart: () => {
-					detail.classList.add( 'active' );
-				},
-				onComplete: () => detail.classList.remove( 'active' ),
-			} );
+			timelineDetails.to( detailParaProgress, { height: `${ 0 }%` } ).add( () => {
+				if ( i > 0 ) {
+					details[ i - 1 ].classList.remove( 'active' );
+					videos[ i - 1 ].style.zIndex = 1;
+					restartVideo( videos[ i - 1 ].querySelector( 'video' ) );
+				}
+				videos[ i ].style.zIndex = videos.length + i;
+				videos[ i ].querySelector( 'video' ).play();
+				detail.classList.add( 'active' );
+
+				if ( details[ i + 1 ] && videos[ i + 1 ] ) {
+					details[ i + 1 ].classList.remove( 'active' );
+					videos[ i + 1 ].style.zIndex = 1;
+					restartVideo( videos[ i + 1 ].querySelector( 'video' ) );
+				}
+			}, '<' ).to( detailParaProgress, { height: `${ 100 }%` }, '<' );
 		} );
 
-		media.forEach( ( medium, i ) => {
-			timelineMedia.to( medium, {
-				onStart: () => {
-					medium.style.zIndex = media.length + i;
-					medium.querySelector( 'video' ).play();
-				},
-				onComplete: () => {
-					medium.style.zIndex = 1;
-					restartVideo( media[ i ].querySelector( 'video' ) );
-				},
-			} );
+		images.forEach( ( img, i ) => {
+			if ( images[ i + 1 ] ) {
+				timelineDetails.to( img, { opacity: 0 }, '+=0.5' )
+					.to( images[ i + 1 ], { opacity: 1 }, '<' );
+			}
 		} );
+		timelineDetails.to( {}, {}, '<' );
 	} );
 }
 
