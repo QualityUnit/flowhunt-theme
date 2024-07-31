@@ -170,11 +170,13 @@ button,
 
 	background-color: $black;
 	border-color: $black;
+	color: $white;
 
 	&:active,
 	&:focus,
 	&:hover {
 		border-color: $primary-dark;
+		color: $primary;
 	}
 }
 

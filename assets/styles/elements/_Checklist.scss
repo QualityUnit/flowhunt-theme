@@ -23,7 +23,7 @@
 			position: absolute;
 			top: 2px;
 			left: -0.5em;
-			background: $secondary-light url(../../images/icon-post-check.svg?#{$version}) center center no-repeat;
+			background: $gray-200 url(../../images/icon-post-check.svg?#{$version}) center center no-repeat;
 			background-size: 50%;
 			padding: 0.25em;
 			font-size: 1.25em;
@@ -96,7 +96,7 @@ ul.checklist {
 			position: absolute;
 			top: 2px;
 			left: 0;
-			background: $primary-light url(../../images/icon-post-check.svg) center center no-repeat;
+			background: $gray-100 url(../../images/icon-post-check.svg) center center no-repeat;
 			background-size: 50%;
 			padding: 0.25em;
 			font-size: 1.25em;
