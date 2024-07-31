@@ -1,4 +1,4 @@
-/* global gsap */
+/* global gsap, ScrollTrigger */
 
 const scrollByOne = document.querySelectorAll( '[data-scroll="one"]' );
 
@@ -37,8 +37,6 @@ if ( scrollByPoint.length > 0 ) {
 		const videos = gsap.utils.toArray( scroller.querySelectorAll( '.e-child > .elementor-widget-video' ) );
 		const details = gsap.utils.toArray( scroller.querySelectorAll( '.details > .e-child:has(.elementor-widget-heading)' ) );
 
-		const progress = 0;
-
 		const restartVideo = ( video ) => {
 			video.pause();
 			video.currentTime = 0;
@@ -61,7 +59,6 @@ if ( scrollByPoint.length > 0 ) {
 			end: `+=${ ( details.length ) * 100 }%`,
 			pin: true,
 			scrub: 1,
-			onUpdate: ( self ) => console.log( self.animation ),
 		} );
 
 		details.forEach( ( detail, i ) => {
