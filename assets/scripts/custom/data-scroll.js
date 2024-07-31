@@ -33,6 +33,7 @@ const scrollByPoint = document.querySelectorAll( '[data-scroll="all"]' );
 
 if ( scrollByPoint.length > 0 ) {
 	scrollByPoint.forEach( ( scroller ) => {
+		const mm = gsap.matchMedia();
 		const images = gsap.utils.toArray( scroller.querySelectorAll( '.e-child > .elementor-widget-image' ) );
 		const videos = gsap.utils.toArray( scroller.querySelectorAll( '.e-child > .elementor-widget-video' ) );
 		const details = gsap.utils.toArray( scroller.querySelectorAll( '.details > .e-child:has(.elementor-widget-heading)' ) );
@@ -52,13 +53,15 @@ if ( scrollByPoint.length > 0 ) {
 			},
 		} );
 
-		ScrollTrigger.create( {
-			trigger: scroller,
-			toggleActions: 'restart pause restart pause',
-			start: 'center center',
-			end: `+=${ ( details.length ) * 100 }%`,
-			pin: true,
-			scrub: 1,
+		mm.add( '(min-width: 768px)', () => {
+			ScrollTrigger.create( {
+				trigger: scroller,
+				toggleActions: 'restart pause restart pause',
+				start: 'center center',
+				end: `+=${ ( details.length ) * 100 }%`,
+				pin: true,
+				scrub: 1,
+			} );
 		} );
 
 		details.forEach( ( detail, i ) => {
