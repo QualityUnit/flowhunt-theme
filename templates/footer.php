@@ -71,7 +71,7 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 			<a href="#" class="Medovnicky__button Medovnicky__button--no Medovnicky__button--more Button Button--medium Button--outline">
 				<span><?php _e( 'Decline', 'flowhunt' ); ?></span>
 			</a>
-			<a href="#" class="Medovnicky__button Medovnicky__button--yes Button Button--medium Button--full">
+			<a href="#" class="Medovnicky__button Medovnicky__button--yes Button Button--medium  Button--white">
 				<span><?php _e( 'Accept', 'flowhunt' ); ?></span>
 			</a>
 		</div>

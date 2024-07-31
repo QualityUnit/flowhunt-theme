@@ -10,7 +10,6 @@
 		margin-bottom: 0;
 		display: block;
 		padding: 3.125em 1.125em;
-
 	}
 
 	.small {
@@ -230,7 +229,6 @@
 	}
 
 	@media (min-width: $breakpoint-tablet-landscape) {
-		margin-top: 3em;
 
 		&__navigation {
 			flex-wrap: nowrap;
