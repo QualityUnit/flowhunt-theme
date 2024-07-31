@@ -26,8 +26,12 @@
 			&.e-con-inner {
 				position: relative;
 				align-items: stretch;
-				gap: $header-height;
-				padding-top: $header-height * 2;
+
+				@media (min-width: $breakpoint-tablet) {
+
+					gap: $header-height;
+					padding-top: $header-height;
+				}
 
 				@media (min-width: $breakpoint-tablet-landscape) {
 					gap: 0;
@@ -36,40 +40,73 @@
 
 				> .e-child {
 					position: relative;
-					display: block !important;
+					display: block;
 					flex-direction: column;
-					height: auto;
+					height: 35vh;
 					z-index: 1;
 
 					> .e-child {
 						display: flex;
-						flex-direction: column;
-						justify-content: center;
 						align-items: flex-start;
 						height: 100%;
 					}
 
 					.elementor-heading-title[class] {
-						font-size: 3.125rem !important;
+						font-size: 2rem !important;
 						text-align: left;
 					}
 
-					&:first-child:has(.elementor-heading-title) {
-						padding-right: 7.5em;
+					@media (min-width: $breakpoint-tablet-landscape) {
+						height: auto;
+
+						&:first-child:has(.elementor-heading-title) {
+							padding-right: 3em;
+						}
+
+						&:last-child:has(.elementor-heading-title) {
+							padding-left: 3em;
+						}
+
+						>.e-child {
+							flex-direction: column;
+							justify-content: center;
+						}
 					}
 
-					&:last-child:has(.elementor-heading-title) {
-						padding-left: 7.5em;
+					@media (min-width: $breakpoint-desktop-box) {
+
+						.elementor-heading-title[class] {
+							font-size: 3.125rem !important;
+						}
+
+						&:first-child:has(.elementor-heading-title) {
+							padding-right: 7.5em;
+						}
+
+						&:last-child:has(.elementor-heading-title) {
+							padding-left: 7.5em;
+						}
 					}
 
 
 					&:not(:has(.elementor-heading-title)) {
 						position: relative;
 						z-index: 2;
-						height: 100%;
+						flex: 1 0 calc(var(--scroll-height) / 2) !important;
 						order: -1;
 
+						&:has(.elementor-widget-video) {
+							display: none;
+
+							@media (min-width: $breakpoint-tablet) {
+								display: block !important;
+								flex: 0 0 clamp(30em, calc(var(--scroll-height) / 2), var(--scroll-height)) !important;
+							}
+						}
+
 						@media (min-width: $breakpoint-tablet-landscape) {
+							height: 100%;
+							flex: auto;
 							order: 0;
 						}
 
@@ -79,8 +116,12 @@
 							position: absolute;
 							opacity: 0;
 							bottom: 0;
-							min-height: var(--scroll-height) !important;
+							min-height: calc(var(--scroll-height) / 2) !important;
 							z-index: 1;
+
+							@media (min-width: $breakpoint-tablet-landscape) {
+								min-height: var(--scroll-height) !important;
+							}
 
 							&:first-child {
 								opacity: 1;
@@ -106,10 +147,10 @@
 						}
 
 						> .elementor-widget-video[class] {
-							position: absolute;
-							top: 0;
 							display: flex;
 							align-items: center;
+							position: absolute;
+							top: 0;
 							padding: 0;
 							max-width: none;
 
@@ -177,9 +218,33 @@
 
 					.details {
 
+						@media (min-width: $breakpoint-tablet) {
+							display: block;
+							columns: 2;
+						}
+
+						@media (min-width: $breakpoint-tablet-landscape) {
+							display: flex;
+						}
+
 						> .e-child {
+							display: flex;
 							align-items: flex-start;
-							opacity: 0.5;
+							break-inside: avoid-column;
+
+
+							@media (max-width: ($breakpoint-tablet - 1px)) {
+
+								.elementor-heading-title[class] {
+									background: linear-gradient(to right, #0497dc, #465ce0);
+									background-clip: text;
+									-webkit-text-fill-color: transparent;
+								}
+							}
+
+							@media (min-width: $breakpoint-tablet) {
+								opacity: 0.5;
+							}
 
 							&.active {
 								opacity: 1;
@@ -193,34 +258,36 @@
 
 							.elementor-widget-text-editor {
 								position: relative;
-								padding-left: 2em;
 								margin-bottom: 2em;
 
-								&::before {
-									position: absolute;
-									left: 0.625em;
-									width: 2px;
-									height: 100%;
-									background-color: $gray-400;
-									content: "";
-									z-index: -1;
-								}
 
 								p {
 									font-size: 1rem;
 									margin-bottom: 0;
 								}
 
-								.progress {
-									position: absolute;
-									left: 0.625em;
-									border-radius: 10px;
-									overflow: hidden;
-									width: 2px;
-									background-color: $primary;
-									height: 0;
+								@media (min-width: $breakpoint-tablet) {
+									padding-left: 2em;
 
+									&::before {
+										position: absolute;
+										left: 0.625em;
+										width: 2px;
+										height: 100%;
+										background-color: $gray-400;
+										content: "";
+										z-index: -1;
+									}
 
+									.progress {
+										position: absolute;
+										left: 0.625em;
+										border-radius: 10px;
+										overflow: hidden;
+										width: 2px;
+										background-color: $primary;
+										height: 0;
+									}
 								}
 							}
 						}
