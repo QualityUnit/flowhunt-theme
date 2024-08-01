@@ -306,6 +306,16 @@
     "@babel/helper-environment-visitor" "^7.24.7"
     "@babel/helper-plugin-utils" "^7.24.7"
 
+"@babel/plugin-proposal-optional-chaining-assign@^7.24.7":
+  version "7.24.7"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-optional-chaining-assign/-/plugin-proposal-optional-chaining-assign-7.24.7.tgz#ca4c9d0fc9304469dfd45461bd84597e9b33ec4a"
+  integrity sha512-a7+U9LJ06lqftkbRQB8P0tTIADoQhzZMl3owT/Rly7JZjcpDX/VNauogJmuK5VIBJN91jQMUd8EGPTpNehvvFQ==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.24.7"
+    "@babel/helper-skip-transparent-expression-wrappers" "^7.24.7"
+    "@babel/plugin-syntax-optional-chaining-assign" "^7.24.7"
+    "@babel/plugin-transform-optional-chaining" "^7.24.7"
+
 "@babel/plugin-proposal-private-property-in-object@7.21.0-placeholder-for-preset-env.2":
   version "7.21.0-placeholder-for-preset-env.2"
   resolved "https://registry.npmjs.org/@babel/plugin-proposal-private-property-in-object/-/plugin-proposal-private-property-in-object-7.21.0-placeholder-for-preset-env.2.tgz"
@@ -415,6 +425,14 @@
   integrity sha512-6VPD0Pc1lpTqw0aKoeRTMiB+kWhAoT24PA+ksWSBrFtl5SIRVpZlwN3NNPQjehA2E/91FV3RjLWoVTglWcSV3Q==
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
+
+"@babel/plugin-syntax-optional-chaining-assign@^7.24.7":
+  version "7.24.7"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-optional-chaining-assign/-/plugin-syntax-optional-chaining-assign-7.24.7.tgz#17466ed78d6bd1f7e1e41b3edbb3feabdd3294d0"
+  integrity sha512-syk5SNtBRAMFM32edresIIKDfJh4KHdJU8Cc5WLhUx2iRVovERCfiBaxJaZ5M1p4fxnVznc7ioSe21qPMCSwhw==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.24.7"
+    "@babel/helper-validator-option" "^7.24.7"
 
 "@babel/plugin-syntax-optional-chaining@^7.8.3":
   version "7.8.3"

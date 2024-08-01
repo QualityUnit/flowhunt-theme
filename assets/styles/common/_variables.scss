@@ -79,6 +79,7 @@ $main-nav-submenu-line-height: 2.14;
 $breakpoint-desktop-hd: 1920px;
 $breakpoint-desktop-big: 1600px;
 $breakpoint-desktop-box: 1380px;
+$breakpoint-desktop-md: 1400px;
 $breakpoint-ipad-pro: 1360px;
 $breakpoint-desktop: 1180px;
 $breakpoint-tablet-small: 600px;
@@ -152,6 +153,7 @@ $fields-bg: $gray-300; // fields backgrounds
 
 // Borders
 $borders-color: $gray-300; // borders color
+$border-divider-primary: #cfd6dd;
 
 // Backgrounds
 $dark-background: $gray-100; // darker backgrounds

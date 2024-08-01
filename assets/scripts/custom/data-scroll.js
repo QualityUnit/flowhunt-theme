@@ -72,15 +72,22 @@ if ( scrollByPoint.length > 0 ) {
 			timelineDetails.to( detailParaProgress, { height: `${ 0 }%` } ).add( () => {
 				if ( i > 0 ) {
 					details[ i - 1 ].classList.remove( 'active' );
+				}
+				if ( videos[ i - 1 ] ) {
 					videos[ i - 1 ].style.zIndex = 1;
 					restartVideo( videos[ i - 1 ].querySelector( 'video' ) );
 				}
-				videos[ i ].style.zIndex = videos.length + i;
-				videos[ i ].querySelector( 'video' ).play();
+				if ( videos[ i ] ) {
+					videos[ i ].style.zIndex = videos.length + i;
+					videos[ i ].querySelector( 'video' ).play();
+				}
 				detail.classList.add( 'active' );
 
-				if ( details[ i + 1 ] && videos[ i + 1 ] ) {
+				if ( details[ i + 1 ] ) {
 					details[ i + 1 ].classList.remove( 'active' );
+				}
+
+				if ( videos[ i + 1 ] ) {
 					videos[ i + 1 ].style.zIndex = 1;
 					restartVideo( videos[ i + 1 ].querySelector( 'video' ) );
 				}

@@ -1,4 +1,6 @@
 <?php // @codingStandardsIgnoreLine
+
+
 $current_lang    = apply_filters( 'wpml_current_language', null );
 $header_category = get_en_category( 'features', $post->ID );
 do_action( 'wpml_switch_language', $current_lang );
@@ -43,9 +45,12 @@ if ( $categories && $categories_url ) {
 	<meta itemprop="url" content="<?= esc_url( get_permalink() ); ?>">
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="LiveAgent"></span>
 
-	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
+	<?php 
+	// get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); 
+	?>
 
-	<div class="wrapper Post__container">
+	<div class="Post__container">
+		
 		<div class="Post__content">
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
@@ -59,6 +64,29 @@ if ( $categories && $categories_url ) {
 				</div>
 			</div>
 		</div>
-		<?php echo do_shortcode( '[sidebarBanner chatbotType="' . get_post_meta( get_the_ID(), 'chatbot', true ) . '"]' ); ?>
+		<div class="Post__sidebar urlslab-skip-keywords">
+			<div class="Post__sidebar__inn">
+				<?php if ( sidebar_toc() !== false ) { ?>
+					<div class="SidebarTOC Post__SidebarTOC">
+						<ul class="SidebarTOC__content">
+							<?= wp_kses_post( sidebar_toc() ); ?>
+						</ul>
+					</div>
+				<?php } ?>
+				<div class="Signup__sidebar-wrapper">
+					<h4>
+						<?=
+						esc_html( 'Try Flowhunt today', 'flowhunt' );
+						?>
+					</h4>
+					<p>
+						<?=
+						esc_html( 'Handle all support channels in one solution', 'flowhunt' );
+						?>
+					</p>
+					<a class="Button Button--full pt-s pb-s" href="<?= esc_url( '#0' ); ?>" target="_blank"><?= esc_html( 'Get started for FREE', 'flowhunt' ); ?></a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

@@ -11,19 +11,24 @@ no-descending-specificity, scss/no-global-function-names */
 
 	&__container {
 
+		@include wrapper-styles($wrapper-md);
+		padding-left: $wrapper-padding;
+		padding-right: $wrapper-padding;
+		margin: 0 auto;
+
 		@media (min-width: $breakpoint-tablet) {
 			display: flex;
-			margin-top: 1em;
+			margin-top: 2.5em;
+		}
 
-			.SidebarBanner {
-				position: sticky;
-				top: 12em;
-				margin-left: auto;
-			}
+		@media (min-width: $breakpoint-desktop-md) {
+
+			@include wrapper-styles($wrapper-xl);
 		}
 	}
 
 	&__content {
+		margin: 0 auto;
 
 		.Content {
 
