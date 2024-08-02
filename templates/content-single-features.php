@@ -56,7 +56,7 @@ if ( $categories && $categories_url ) {
 				<?php the_content(); ?>
 
 				<div class="Related__Articles urlslab-skip-keywords">
-					<div class="Related__Articles--title h2"><?php _e( 'Related' . ' ' . $categories[0]->name, 'flowhunt' ); ?></div>
+					<div class="Related__Articles--title h2"><?php _e( 'Related', 'flowhunt' ); ?> <?= esc_html( $categories[0]->name ); ?></div>
 					<?php
 					$query_related_posts = new WP_Query(
 						array(
