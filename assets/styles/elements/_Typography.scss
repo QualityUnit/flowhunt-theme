@@ -717,26 +717,6 @@ a:not(.Button) {
 		}
 	}
 
-	.Button[target="_blank"],
-	.Button[href*="http"] {
-
-		span {
-
-			&::after {
-				content: "\e832" !important;
-				font-family: fontello, sans-serif;
-				font-style: normal;
-				font-weight: 400;
-				display: inline-block;
-				width: 1em;
-				text-align: center;
-				font-variant: normal;
-				text-transform: none;
-				margin-left: 4px;
-				text-decoration: none !important;
-			}
-		}
-	}
 
 	.Button[href*="postaffiliatepro."],
 	.Button[href*="cdn.qualityunit.com"] {

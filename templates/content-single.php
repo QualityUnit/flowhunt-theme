@@ -30,38 +30,9 @@ if ( isset( $categories ) ) {
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
 	<div class="wrapper Post__container">
-		<div class="Post__sidebar">
-			<div class="Signup__sidebar-wrapper">
-			</div>
-		</div>
 		<div class="BlogPost__content Post__content">
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
-
-				<div class="BlogPost__share">
-					<p class="BlogPost__share__title"><?php _e( 'Share this article', 'ms' ); ?></p>
-
-					<div class="BlogPost__share__items">
-						<div class="BlogPost__share__items__item">
-							<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" itemprop="sameAs"
-								 title="<?php _e( 'Share on', 'ms' ); ?> <?php _e( 'Facebook', 'ms' ); ?>">
-								<i class="fontello-facebook-f-brands"></i>
-							</a>
-						</div>
-						<div class="BlogPost__share__items__item">
-							<a href="https://twitter.com/share?url=<?php the_permalink(); ?>" target="_blank" itemprop="sameAs"
-								 title="<?php _e( 'Share on', 'ms' ); ?> <?php _e( 'Twitter', 'ms' ); ?>">
-								<i class="fontello-twitter-brands"></i>
-							</a>
-						</div>
-						<div class="BlogPost__share__items__item">
-							<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>" target="_blank" itemprop="sameAs"
-								 title="<?php _e( 'Share on', 'ms' ); ?> <?php _e( 'LinkedIn', 'ms' ); ?>">
-								<i class="fontello-linkedin-in-brands"></i>
-							</a>
-						</div>
-					</div>
-				</div>
 
 				<div class="BlogPost__author-box" itemprop="author" itemscope itemtype="http://schema.org/Person">
 					<div class="BlogPost__author-box__avatar">
@@ -123,15 +94,8 @@ if ( isset( $categories ) ) {
 					<?php endif; ?>
 					<?php wp_reset_postdata(); ?>
 				</div>
-
-
-				<div class="Post__content__resources">
-					<div class="Post__sidebar__title h4"><?php _e( 'Related Articles', 'ms' ); ?></div>
-					<div class="SimilarSources">
-						<?php echo do_shortcode( '[urlslab-related-resources related-count="4" show-image="true" show-summary="true"]' ); ?>
-					</div>
-				</div>
 			</div>
 		</div>
+		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>
 	</div>
 </div>

@@ -16,11 +16,22 @@
 	max-width: $wrapper-wide;
 	padding: 0;
 
+	.Content & {
+		max-width: 45em;
+		margin: 2em auto;
+
+		&__content {
+			padding: 2.25em !important;
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			margin: 0 -2.25em 2em;
+		}
+	}
+
 	border-radius: $border-radius-16;
-	background-image: url(../../images/block-improve-bg.jpg);
-	background-repeat: no-repeat;
+	background: url(../../images/block-improve-bg.jpg) left top no-repeat;
 	background-size: cover;
-	background-position: left top;
 	backdrop-filter: blur(6.32016px);
 
 

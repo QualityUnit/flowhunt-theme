@@ -55,38 +55,34 @@ if ( $categories && $categories_url ) {
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
 
-				<div class="Post__content__resources">
-					<div class="Post__sidebar__title h4"><?php _e( 'Related Articles', 'ms' ); ?></div>
-
-					<div class="SimilarSources">
-						<?php echo do_shortcode( '[urlslab-related-resources related-count="4" show-image="true" show-summary="true"]' ); ?>
-					</div>
+				<div class="Post__content--Related urlslab-skip-keywords">
+					<div class="Post__content--Related__title h4"><?php _e( 'Related', 'ms' ); ?></div>
+					<?php
+					$query_related_posts = new WP_Query(
+						array(
+							'posts_per_page' => 4,
+							'orderby'        => array( 'random', 'name' ),
+						)
+					);
+					if ( $query_related_posts->have_posts() ) :
+						while ( $query_related_posts->have_posts() ) :
+							$query_related_posts->the_post();
+							?>
+							<div class="BlogPost__articles__article">
+								<div class="BlogPost__articles__article__thumbnail">
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+										<?php the_post_thumbnail( 'person_thumbnail', array( 'alt' => get_the_title() ) ); ?>
+									</a>
+								</div>
+								<p class="BlogPost__articles__article__title"><a href="<?php the_permalink(); ?>"
+																																 title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
+							</div>
+						<?php endwhile; ?>
+					<?php endif; ?>
+					<?php wp_reset_postdata(); ?>
 				</div>
 			</div>
 		</div>
-		<div class="Post__sidebar urlslab-skip-keywords">
-			<div class="Post__sidebar__inn">
-				<?php if ( sidebar_toc() !== false ) { ?>
-					<div class="SidebarTOC Post__SidebarTOC">
-						<ul class="SidebarTOC__content">
-							<?= wp_kses_post( sidebar_toc() ); ?>
-						</ul>
-					</div>
-				<?php } ?>
-				<div class="Signup__sidebar-wrapper">
-					<h4>
-						<?=
-						esc_html( 'Try Flowhunt today', 'flowhunt' );
-						?>
-					</h4>
-					<p>
-						<?=
-						esc_html( 'Handle all support channels in one solution', 'flowhunt' );
-						?>
-					</p>
-					<a class="Button Button--full pt-s pb-s" href="<?= esc_url( '#0' ); ?>" target="_blank"><?= esc_html( 'Get started for FREE', 'flowhunt' ); ?></a>
-				</div>
-			</div>
-		</div>
+		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>
 	</div>
 </div>

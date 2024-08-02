@@ -4,48 +4,17 @@ no-descending-specificity, value-keyword-case */
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
-.Post__sidebar {
-	display: none;
-	top: 0;
-	right: 0;
-	width: 18.75em;
-	padding: 0 2.5em;
-	margin-right: -2.5em;
-	box-sizing: content-box;
-
-	@media (min-width: $breakpoint-tablet-landscape) {
-		display: block;
-	}
-
-	@media (min-width: $breakpoint-desktop-md) {
-		position: fixed;
-		top: calc($header-height + 2.5em);
-		margin-right: 0;
-	}
-
-	&__inn {
-		position: sticky;
-		top: calc($header-height + 2.5em);
-		right: 0;
-
-		> * {
-			padding: 0 1.125em;
-
-			+ * {
-				margin-top: 1.5em;
-				padding-top: 1.5em;
-				border-top: 1px solid $border-divider-primary;
-			}
-		}
-	}
-}
-
 .SidebarTOC {
 
 	@include scrollbar($width: 4px, $color: $gray-400);
 	max-height: 16em;
 	overflow-y: auto;
 	overflow-x: visible;
+
+	&:hover {
+
+		@include scrollbar($width: 4px, $color: $gray-900);
+	}
 
 	&__item {
 		font-size: 0.875rem;

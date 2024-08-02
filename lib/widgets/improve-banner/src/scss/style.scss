@@ -1,4 +1,5 @@
 /* stylelint-disable selector-class-pattern, no-descending-specificity */
+@use "../../../../../assets/styles/common/variables" as *;
 @forward "Button";
 
 * {
@@ -11,54 +12,75 @@
 	}
 }
 
-.ImproveBanner {
-	font-family: Helvetica, Arial, sans-serif;
-	display: flex;
-	flex-direction: column;
-	background: linear-gradient(139.49deg, rgba(93, 137, 226, 0.41) 7.97%, rgba(219, 107, 215, 0.41) 89.5%);
-	box-shadow: 0 2.75494px 9.18314px rgba(0, 0, 0, 0.14), inset -0.70224px 0.70224px 0.84435px rgba(255, 255, 255, 0.55);
+.block-improve {
+	max-width: $wrapper-wide;
+	padding: 0;
+
+	border-radius: $border-radius-16;
+	background: url(../../images/block-improve-bg.jpg) left top no-repeat;
+	background-size: cover;
 	backdrop-filter: blur(6.32016px);
-	border-radius: 16px;
-	overflow: hidden;
 
-	&__text {
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__content,
+	&__img {
+		width: 100%;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			width: 50%;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
 		padding: 1.5em;
+		margin-bottom: 4em;
 
-		h4 {
-			font-size: 2rem;
-			line-height: 1.15;
+		@media (min-width: $breakpoint-tablet) {
+			padding: 4.5em;
 			margin-bottom: 0;
+
+		}
+
+		@media (min-width: $breakpoint-desktop) {
+			padding: 4.5em 5em 4.5em 7.5em;
 		}
 
 		p {
-			margin: 1.5em 0;
-			line-height: 1.33;
+			color: $white;
+			margin-bottom: 2em;
 		}
 
-		.Button {
-			margin-bottom: 1.5em;
+		h2 {
+			font-size: $font-size-h2;
+			line-height: 1.15;
+			color: $white;
+
+			@media (min-width: $breakpoint-desktop) {
+				font-size: $font-size-h1;
+			}
 		}
 	}
 
-	&__image {
-		max-width: 15em;
-		margin-left: auto;
-		margin-top: -6em;
-	}
+	&__img {
+		margin-top: -3.8em;
+		align-self: flex-end;
 
-	@media (min-width: 768px) {
-		flex-direction: row;
-		align-items: center;
-
-		&__text {
-			padding-left: 2em;
-			flex: 1 0 55.55%;
-		}
-
-		&__image {
-			width: 40%;
-			max-width: none;
-			margin-top: auto;
+		img {
+			margin: 0 auto;
+			width: 100%;
 		}
 	}
 }

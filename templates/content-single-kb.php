@@ -13,5 +13,6 @@
 				<?php the_content(); ?>
 			</div>
 		</div>
+		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>
 	</div>
 </div>

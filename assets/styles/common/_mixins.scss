@@ -269,15 +269,23 @@
 		background-color: $color;
 		border-radius: .625em;
 		height: 5em;
+		transition: all .25s;
 	}
-
+	
 	&::-webkit-scrollbar {
 		width: $width;
+		transition: all .25s;
 	}
-
-	scrollbar-width: $width;
+	
+	@if $width < 8px {
+		scrollbar-width: thin;
+	}
+	@else {
+		scrollbar-width: auto;
+	}
 	scrollbar-color: $color transparent;
 	scroll-behavior: smooth;
+	transition: all .25s;
 }
 
 // hover mixin
