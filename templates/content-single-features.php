@@ -46,7 +46,7 @@ if ( $categories && $categories_url ) {
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="LiveAgent"></span>
 
 	<?php 
-	// get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); 
+	get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); 
 	?>
 
 	<div class="Post__container">
