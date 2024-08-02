@@ -1,0 +1,44 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.Related__Articles {
+
+	&--Article {
+		display: flex;
+		background-color: $fields-bg-hover;
+		padding: 1em;
+		text-decoration: none !important;
+		border-radius: $border-radius-16;
+		border: 1px solid $borders-color;
+		margin-bottom: 1.5em;
+
+		&:hover &__title {
+			color: $primary;
+		}
+
+		&__content {
+			padding-right: 2em;
+		}
+
+		&__title[class] {
+			margin: 0;
+			margin-bottom: 0.5em;
+			transition: color 0.25s;
+		}
+
+		p {
+			font-size: 0.875rem;
+			color: $level-2;
+			margin: 0;
+		}
+
+		.icon-arrow {
+
+			@include square(1.125em);
+			align-self: center;
+			flex: 1 0 auto;
+		}
+	}
+}

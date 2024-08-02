@@ -2,11 +2,9 @@
 
 function components_imports( $content ) {
 	$blocks = array(
-		'ImproveBanner'                 => 'components/ImproveBanner',
 		'HorizontalTabs'                => 'components/HorizontalTabs',
 		'Block__red'                    => 'components/BlockRed',
 		'Block__meet'                   => 'components/BlockMeet',
-		'Block__improve'                => 'components/BlockImprove',
 		'Block__illustration'           => 'components/BlockIllustration',
 		'Block__background'             => 'components/BlockBackground',
 		'BlockSimple'                   => 'components/BlockSimple',

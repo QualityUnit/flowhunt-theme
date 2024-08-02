@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name:       Statistics
- * Description:       Statisticks block for Gutenberg.
+ * Plugin Name:       Improve Banner
+ * Description:       Improve Banner for Gutenberg.
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           0.1.0
- * Author:            The WordPress Contributors
+ * Author:            QualityUnit
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       improvebanner
@@ -91,15 +91,15 @@ function improvebanner_block_init() {
 			'attributes'                     => array(
 				'title'   => array(
 					'type'    => 'string',
-					'default' => 'Improve your website',
+					'default' => 'Ready to build your own AI',
 				),
 				'content' => array(
 					'type'    => 'string',
-					'default' => 'Get started today and download the URLsLab WordPress plugin',
+					'default' => 'Chatbots and AI tools under one roof. Connect intuitive blocks to turn your ideas into automated Flows.',
 				),
 				'button'  => array(
 					'type'    => 'string',
-					'default' => 'Get the WordPress plugin',
+					'default' => 'Book a demo',
 				),
 			),
 		)

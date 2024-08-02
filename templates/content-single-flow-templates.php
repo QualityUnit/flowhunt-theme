@@ -49,16 +49,8 @@ if ( $categories && $categories_url ) {
 		<div class="Post__content">
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
-
-				<div class="Post__content__resources">
-					<div class="Post__sidebar__title h4"><?php _e( 'Related Articles', 'ms' ); ?></div>
-
-					<div class="SimilarSources">
-						<?php echo do_shortcode( '[urlslab-related-resources related-count="4" show-image="true" show-summary="true"]' ); ?>
-					</div>
-				</div>
 			</div>
 		</div>
-		<?php echo do_shortcode( '[sidebarBanner chatbotType="' . get_post_meta( get_the_ID(), 'chatbot', true ) . '"]' ); ?>
+		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>
 	</div>
 </div>
