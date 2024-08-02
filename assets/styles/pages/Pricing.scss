@@ -18,7 +18,7 @@ no-descending-specificity, scss/no-global-function-names */
 		padding: 12em 0;
 	}
 
-	@media (min-width: $breakpoint-desktop-big) {
+	@media (min-width: $breakpoint-desktop-hd) {
 		mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
 
 	}

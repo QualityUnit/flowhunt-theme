@@ -18,58 +18,71 @@ body.compact-header--active {
 .compact-header {
 	$class-name: compact-header;
 	$v-space: 1em;
-	$bg-color: #f9f9fa;
-	padding-top: $v-space;
-	padding-bottom: 0.5em;
+	$bg-color: $white;
 	background-color: $bg-color;
+	width: 100%;
+	position: relative;
+	margin-bottom: 4em;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 150px;
+		background: url(../../images/compact-header-dots.jpg) no-repeat bottom center;
+		background-size: cover;
+	}
 
 	& ~ & {
 		margin-top: -2.2em;
 	}
 
-	&:not(:last-child) {
-		margin-bottom: 3.125em;
+
+	&__left {
+		padding-block: 2.1875em;
 	}
 
+	&__right {
+		display: none;
+
+		@media (min-width: $breakpoint-desktop) {
+			display: block;
+			flex: 0 0 auto;
+		}
+	}
+
+
 	&__wrapper {
-		position: static;
 		display: flex;
 		flex-wrap: wrap;
+		margin-bottom: 0;
+		padding-block: 2em;
+		z-index: 2;
 
 		> * {
 			width: 100%;
+		}
+
+		@media (min-width: $breakpoint-desktop) {
+			padding-block: 0;
 		}
 	}
 
 	&__image {
 		position: relative;
-		display: none;
+		height: 100%;
 
 		.#{$class-name}--lvl-1 & {
 			.#{$class-name}__img {
 				width: 100%;
 				max-width: 100%;
+				height: 100%;
 				object-fit: contain;
 			}
 		}
-		.#{$class-name}--lvl-2 & {
-			overflow: hidden;
-			padding-bottom: 60%;
-			border-radius: $border-radius-16;
-			border: 1px solid $gray-200;
-			.#{$class-name}__img {
 
-				@include square(100%);
-				position: absolute;
-				z-index: 1;
-				object-fit: cover;
-				object-position: center;
-			}
-		}
-
-		@media (min-width: $breakpoint-tablet) {
-			display: block;
-		}
 	}
 
 	&__logo {
@@ -123,6 +136,7 @@ body.compact-header--active {
 	}
 
 	&__text {
+		font-size: 1.125em;
 
 		&:not(:last-child) {
 			margin-bottom: 1.6em;
@@ -336,8 +350,9 @@ body.compact-header--active {
 			padding-left: 3.5em;
 			border-radius: 0.714em;
 			font-size: 0.875rem;
-			background-color: $white;
-			border: 1px solid $gray-300;
+			color: $gray-400;
+			background-color: $gray-200;
+			border: 1px solid $gray-200;
 			box-shadow: none;
 			transition: all 0.2s, background-color 0.2s;
 
@@ -466,14 +481,23 @@ body.compact-header--active {
 
 		&__wrapper {
 			justify-content: space-between;
+			flex-wrap: nowrap;
 		}
 
 		&__left {
-			max-width: 60%;
-		}
+			flex: 0 0 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			margin-right: -20%;
+			z-index: 1;
 
-		&__right {
-			max-width: 33%;
+
+			* {
+				max-width: 880px;
+			}
 		}
 
 		&__bottom {
@@ -482,10 +506,10 @@ body.compact-header--active {
 
 		&__image {
 			.#{$class-name}--lvl-1 & {
-				margin-top: -$v-space;
+				//margin-top: -$v-space;
 			}
 			.#{$class-name}--lvl-2 & {
-				margin-top: 0.7em;
+				//margin-top: 0.7em;
 			}
 		}
 
@@ -527,6 +551,7 @@ body.compact-header--active {
 
 		&__filter-label {
 			font-size: 0.75em;
+			text-align: left;
 		}
 
 		&__count {
@@ -551,7 +576,6 @@ body.compact-header--active {
 			left: 0;
 			right: 0;
 			filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.16));
-			margin-top: $headerHeight;
 			border-top: 0.063em solid $gray-200;
 			background-color: $white;
 			.#{$class-name} {
@@ -559,27 +583,16 @@ body.compact-header--active {
 				&__left > *,
 				&__right > * {
 					display: none;
+					padding-block: 0;
 				}
 
 				&__bottom {
 					padding-top: 0;
 				}
 			}
-		}
-		&--sticky.#{$class-name}--lvl-2 & {
 
-			&__wrapper {
-				align-items: center;
-			}
-
-			&__title {
-				display: block;
-				margin-bottom: 0;
-				font-size: 1.125em;
-			}
-
-			&__toc {
-				display: block;
+			&::before {
+				content: unset;
 			}
 		}
 	}
@@ -711,7 +724,7 @@ body.compact-header--active {
 					content: "";
 					display: block;
 					height: 0.3em;
-					background-color: $gray-200;
+					background-color: $gray-100;
 				}
 			}
 
