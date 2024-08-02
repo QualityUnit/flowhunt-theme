@@ -42,7 +42,7 @@
 	} )();
 	const tocTitle = query( '.js-toc .js-toc__title' );
 	const tocItems = queryAll( '.js-toc .js-toc__item' );
-	const threshold = 96; // about height of regular <p> paragraph to delay the highlight of toc item
+	const threshold = 70; // about height of regular <p> paragraph to delay the highlight of toc item
 	const mql = window.matchMedia( '(min-width: 1380px)' );
 
 	function fnOffsetTop( elem ) {

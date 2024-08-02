@@ -14,7 +14,7 @@ if ( has_post_thumbnail() ) {
 }
 $page_header_args = array(
 	'image' => array(
-		'src' => get_template_directory_uri() . '/assets/images/features-post-header-bg.png?ver=' . THEME_VERSION,
+		'src' => get_template_directory_uri() . '/assets/images/compact-header-features-img.png?ver=' . THEME_VERSION,
 		'alt' => get_the_title(),
 	),
 	'logo'  => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
@@ -45,12 +45,12 @@ if ( $categories && $categories_url ) {
 	<meta itemprop="url" content="<?= esc_url( get_permalink() ); ?>">
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="LiveAgent"></span>
 
-	<?php 
-	get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); 
+	<?php
+	get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args );
 	?>
 
 	<div class="Post__container">
-		
+
 		<div class="Post__content">
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
