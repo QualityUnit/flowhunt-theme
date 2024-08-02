@@ -1,9 +1,13 @@
 @forward "style";
 
-.ImproveBanner {
-	max-width: 45em;
+.block-improve {
+	max-width: none !important;
 
-	h4 {
+	&__content {
+		padding: 2.5em !important;
+	}
+
+	h2 {
 
 		textarea {
 			font-size: 2rem !important;

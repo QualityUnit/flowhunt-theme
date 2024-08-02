@@ -21,10 +21,24 @@
 	background-size: cover;
 	backdrop-filter: blur(6.32016px);
 
+	.Content & {
+		max-width: 45em;
+		margin: 2em auto;
+
+		&__content {
+			padding: 2.25em !important;
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			margin: 0 -2.25em 2em;
+		}
+	}
+
 
 	&__wrapper {
 		display: flex;
 		flex-wrap: wrap;
+		width: 100%;
 
 		@media (min-width: $breakpoint-tablet-landscape) {
 			flex-wrap: nowrap;

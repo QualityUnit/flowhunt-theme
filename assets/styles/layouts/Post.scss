@@ -31,10 +31,18 @@ no-descending-specificity, scss/no-global-function-names */
 		margin: 0 auto;
 
 		.Content {
+			display: flex;
+			flex-direction: column;
 
 			.wp-block-embed {
 				margin: 0;
 				padding: 0;
+			}
+
+			// Sets the FAQ after the Related articles in posts
+
+			.Faq {
+				order: 10;
 			}
 
 			.wp-block-embed-youtube {

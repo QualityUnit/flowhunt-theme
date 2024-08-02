@@ -21,6 +21,13 @@
 		font-size: 1rem;
 	}
 
+	@media (max-height: 768px) {
+
+		.SidebarTOC ~ * {
+			display: none;
+		}
+	}
+
 	@media (min-width: $breakpoint-tablet-landscape) {
 		display: block;
 	}

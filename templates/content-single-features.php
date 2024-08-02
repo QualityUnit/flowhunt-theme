@@ -55,28 +55,39 @@ if ( $categories && $categories_url ) {
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
 
-				<div class="Post__content--Related urlslab-skip-keywords">
-					<div class="Post__content--Related__title h4"><?php _e( 'Related', 'ms' ); ?></div>
+				<div class="Related__Articles urlslab-skip-keywords">
+					<div class="Related__Articles--title h2"><?php _e( 'Related' . ' ' . $categories[0]->name, 'flowhunt' ); ?></div>
 					<?php
 					$query_related_posts = new WP_Query(
 						array(
 							'posts_per_page' => 4,
+							'post_type'      => array( 'features' ),
 							'orderby'        => array( 'random', 'name' ),
+							'tax_query'      => array(
+								array(
+									'taxonomy' => 'features-categories',
+									'field'    => 'slug',
+									'terms'    => $categories[0]->slug,
+								),
+							),
 						)
 					);
 					if ( $query_related_posts->have_posts() ) :
 						while ( $query_related_posts->have_posts() ) :
 							$query_related_posts->the_post();
 							?>
-							<div class="BlogPost__articles__article">
-								<div class="BlogPost__articles__article__thumbnail">
-									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-										<?php the_post_thumbnail( 'person_thumbnail', array( 'alt' => get_the_title() ) ); ?>
-									</a>
-								</div>
-								<p class="BlogPost__articles__article__title"><a href="<?php the_permalink(); ?>"
-																																 title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
-							</div>
+								<a class="Related__Articles--Article" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+									<div class="Related__Articles--Article__thumbnail">
+											<?php the_post_thumbnail( 'person_thumbnail', array( 'alt' => get_the_title() ) ); ?>
+									</div>
+									<div class="Related__Articles--Article__content">
+										<h5 class="Related__Articles--Article__title">
+											<?php the_title(); ?>
+										</h5>
+										<p><?= esc_html( wp_trim_words( get_the_excerpt(), 30, '…' ) ); ?></p>
+									</div>
+									<svg class='icon icon-arrow'><use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#arrow-right' ); ?>"></use></svg>
+								</a>
 						<?php endwhile; ?>
 					<?php endif; ?>
 					<?php wp_reset_postdata(); ?>

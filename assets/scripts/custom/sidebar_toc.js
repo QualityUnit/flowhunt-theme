@@ -4,7 +4,6 @@ const queryAll = document.querySelectorAll.bind( document );
 const headerFaq = query( '.Content h2#faq' );
 const tocFaq = query( '.SidebarTOC__item a[href*=faq]' );
 const sidebarTOC = query( '.SidebarTOC' );
-const signupSidebar = query( '.Signup__sidebar' );
 
 if (
 	headerFaq !== null &&
@@ -29,7 +28,6 @@ const headerItems = ( () => {
 const tocItems = queryAll( '.SidebarTOC__item a' );
 const treshold = 96; // about height of regular <p> paragraph to delay the highlight of toc item
 const headerHeight = query( '.Header' ).clientHeight + treshold;
-const scrollSidebarsElement = queryAll( '[data-scrollsidebars]' );
 
 const mql = window.matchMedia( '(min-width: 1380px)' );
 
@@ -104,18 +102,6 @@ function activateSidebars() {
 						tocRemoveActive();
 						activateItem.classList.add( 'active' );
 						sidebarTOC.scrollTo( 0, activateItem.offsetTop );
-					}
-				} );
-
-				scrollSidebarsElement.forEach( ( scrollOutElem ) => {
-					if (
-						scrollOutElem.getBoundingClientRect().top - 217 <
-						window.innerHeight
-					) {
-						sidebarTOC.classList.add( 'scrolled' );
-						if ( signupSidebar ) {
-							signupSidebar.classList.add( 'scrolled' );
-						}
 					}
 				} );
 			}

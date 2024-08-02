@@ -5,7 +5,6 @@ function components_imports( $content ) {
 		'HorizontalTabs'                => 'components/HorizontalTabs',
 		'Block__red'                    => 'components/BlockRed',
 		'Block__meet'                   => 'components/BlockMeet',
-		'block-improve'                 => 'components/BlockImprove',
 		'Block__illustration'           => 'components/BlockIllustration',
 		'Block__background'             => 'components/BlockBackground',
 		'BlockSimple'                   => 'components/BlockSimple',

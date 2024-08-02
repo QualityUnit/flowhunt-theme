@@ -10,7 +10,7 @@
 		</ul>
 	  </div>
 	<?php } ?>
-	<div class="Post__sidebar--Signup">
+	<div class="Post__sidebar--Signup" >
 	  <h4>
 		<?=
 		esc_html( 'Try Flowhunt today', 'flowhunt' );
