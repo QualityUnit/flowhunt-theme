@@ -197,8 +197,8 @@ inline_compact_header();
 								</a>
 								<div class=" compact-header__filters-wrap
 							<?php
-								if ( isset( $filter_count ) ) {
-									?>
+							if ( isset( $filter_count ) ) {
+								?>
 								 compact-header__filters-wrap--count<?php } ?>">
 									<span class="compact-header__filters-collapse js-compact-header__close"></span>
 									<div class="compact-header__filters-inn">
@@ -347,7 +347,7 @@ inline_compact_header();
 																		<?php foreach ( $filter_list as $filter_list_item ) { ?>
 																			<?php if ( isset( $filter_list_item['href'] ) && isset( $filter_list_item['title'] ) && isset( $filter_list_item['active'] ) ) { ?>
 																				<a href="<?= esc_url( $filter_list_item['href'] ); ?>" class="checkbox FilterMenu__item
-																			<?php if ( true == $filter_list_item['active'] ) { ?>
+																				<?php if ( true == $filter_list_item['active'] ) { ?>
 																				active
 																			<?php } ?>
 																			" active>
