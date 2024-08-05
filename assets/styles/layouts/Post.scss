@@ -334,7 +334,7 @@ no-descending-specificity, scss/no-global-function-names */
 		}
 
 		@media (min-width: $breakpoint-tablet-landscape) {
-			max-width: 30em;
+			max-width: calc(100% - var(--sidebar-width) - 5em);
 
 			&--page {
 				max-width: none;
@@ -380,10 +380,18 @@ no-descending-specificity, scss/no-global-function-names */
 		}
 
 		@media (min-width: $breakpoint-desktop-box) {
-			max-width: 40.625em;
 
 			&--page {
 				max-width: none;
+			}
+		}
+
+		@media (min-width: $breakpoint-desktop-md) {
+			max-width: 40.625em;
+
+			.Content {
+				position: relative;
+				left: calc(var(--sidebar-width) / 2 + 1.125em);
 			}
 		}
 	}

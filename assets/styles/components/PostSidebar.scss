@@ -3,13 +3,14 @@
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
+:root {
+	--sidebar-width: 18.75em;
+}
+
 .Post__sidebar {
 	display: none;
-	top: 0;
-	right: 0;
-	width: 18.75em;
-	padding: 0 2.5em;
-	margin-right: -2.5em;
+	width: var(--sidebar-width);
+	padding-left: 2.5em;
 	box-sizing: content-box;
 	color: $level-2;
 
@@ -32,16 +33,10 @@
 		display: block;
 	}
 
-	@media (min-width: $breakpoint-desktop-md) {
-		position: fixed;
-		top: calc($header-height + 2.5em);
-		margin-right: 0;
-	}
 
 	&__inn {
 		position: sticky;
 		top: calc($header-height + 2.5em);
-		right: 0;
 
 		>* {
 			padding: 0 1.125em;
