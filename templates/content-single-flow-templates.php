@@ -37,6 +37,11 @@ if ( $categories && $categories_url ) {
 		$page_header_args['tags'][] = $new_tags;
 	}
 }
+
+$related_args = array(
+	'post_type'  => 'flow-templates',
+	'categories' => $categories,
+);
 ?>
 
 <div class="Post Post--sidebar-right" itemscope itemtype="http://schema.org/TechArticle">
@@ -49,6 +54,8 @@ if ( $categories && $categories_url ) {
 		<div class="Post__content">
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
+
+				<?php get_template_part( 'lib/components/related-articles', null, $related_args ); ?>
 			</div>
 		</div>
 		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>

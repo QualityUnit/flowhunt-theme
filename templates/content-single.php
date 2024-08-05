@@ -23,6 +23,10 @@ if ( isset( $categories ) ) {
 		$page_header_args['tags'] = $page_header_tags;
 	}
 }
+
+$related_args = array(
+	'categories' => $categories,
+);
 ?>
 <div class="Post Post--sidebar-right" itemscope itemtype="http://schema.org/BlogPosting">
 	<meta itemprop="url" content="<?= esc_url( get_permalink() ); ?>">
@@ -69,31 +73,7 @@ if ( isset( $categories ) ) {
 					</div>
 				</div>
 
-				<div class="BlogPost__articles urlslab-skip-keywords">
-					<?php
-					$query_blog_posts = new WP_Query(
-						array(
-							'posts_per_page' => 2,
-							'orderby'        => 'modified',
-						)
-					);
-					if ( $query_blog_posts->have_posts() ) :
-						while ( $query_blog_posts->have_posts() ) :
-							$query_blog_posts->the_post();
-							?>
-							<div class="BlogPost__articles__article">
-								<div class="BlogPost__articles__article__thumbnail">
-									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-										<?php the_post_thumbnail( 'person_thumbnail', array( 'alt' => get_the_title() ) ); ?>
-									</a>
-								</div>
-								<p class="BlogPost__articles__article__title"><a href="<?php the_permalink(); ?>"
-																																 title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
-							</div>
-						<?php endwhile; ?>
-					<?php endif; ?>
-					<?php wp_reset_postdata(); ?>
-				</div>
+				<?php get_template_part( 'lib/components/related-articles', null, $related_args ); ?>
 			</div>
 		</div>
 		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>

@@ -39,6 +39,11 @@ if ( $categories && $categories_url ) {
 		$page_header_args['tags'][] = $new_tags;
 	}
 }
+
+$related_args = array(
+	'post_type'  => 'features',
+	'categories' => $categories,
+);
 ?>
 
 <div class="Post Post--sidebar-right" itemscope itemtype="http://schema.org/TechArticle">
@@ -55,43 +60,7 @@ if ( $categories && $categories_url ) {
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
 
-				<div class="Related__Articles urlslab-skip-keywords">
-					<div class="Related__Articles--title h2"><?php _e( 'Related', 'flowhunt' ); ?> <?= esc_html( $categories[0]->name ); ?></div>
-					<?php
-					$query_related_posts = new WP_Query(
-						array(
-							'posts_per_page' => 4,
-							'post_type'      => array( 'features' ),
-							'orderby'        => array( 'random', 'name' ),
-							'tax_query'      => array(
-								array(
-									'taxonomy' => 'features-categories',
-									'field'    => 'slug',
-									'terms'    => $categories[0]->slug,
-								),
-							),
-						)
-					);
-					if ( $query_related_posts->have_posts() ) :
-						while ( $query_related_posts->have_posts() ) :
-							$query_related_posts->the_post();
-							?>
-								<a class="Related__Articles--Article" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-									<div class="Related__Articles--Article__thumbnail">
-											<?php the_post_thumbnail( 'person_thumbnail', array( 'alt' => get_the_title() ) ); ?>
-									</div>
-									<div class="Related__Articles--Article__content">
-										<h5 class="Related__Articles--Article__title">
-											<?php the_title(); ?>
-										</h5>
-										<p><?= esc_html( wp_trim_words( get_the_excerpt(), 30, '…' ) ); ?></p>
-									</div>
-									<svg class='icon icon-arrow'><use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#arrow-right' ); ?>"></use></svg>
-								</a>
-						<?php endwhile; ?>
-					<?php endif; ?>
-					<?php wp_reset_postdata(); ?>
-				</div>
+				<?php get_template_part( 'lib/components/related-articles', null, $related_args ); ?>
 			</div>
 		</div>
 		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>
