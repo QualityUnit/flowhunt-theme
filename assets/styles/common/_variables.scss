@@ -62,8 +62,8 @@ $font-size-h6: 1rem;
 $line-height-h6: 1.5;
 
 // font sizes for single pages
-$font-size-h1-single: clamp(1.875rem, 3vw, 2.5rem);
-$font-size-h2-single: clamp(2rem, 1vw, 3.75rem);
+$font-size-h1-single: clamp(1.875rem, 4vw, 3em);
+$font-size-h2-single: clamp(2rem, 1vw, 2.75rem);
 $font-size-h3-single: clamp(1.2rem, 1vw, 1.5rem);
 
 $font-weight-normal: 400;
@@ -109,7 +109,7 @@ $border-radius-14: 14px;
 $border-radius-16: 16px;
 $border-radius-30: 30px;
 
-$button-font-size-normal: 0.875rem;
+$button-font-size-normal: 1rem;
 $button-height-normal: 3.43em;
 $button-padding-normal: 2.1em;
 

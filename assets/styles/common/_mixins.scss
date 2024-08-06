@@ -8,12 +8,10 @@
 	max-width: $max-width;
 	margin-left: auto;
 	margin-right: auto;
-
 	position: relative;
 	padding-left: $wrapper-padding;
 	padding-right: $wrapper-padding;
 	border-radius: $border-radius-6;
-
 	margin-bottom: $block-bg-space-sm;
 
 	@media (min-width: $breakpoint-tablet) {
@@ -24,9 +22,26 @@
 		margin-bottom: $block-space;
 	}
 
-
 	&.mb-0 {
 		margin-bottom: 0;
+	}
+
+	&.gray-bg {
+		background-color: $gray-50;
+		padding-top: $block-space;
+		padding-bottom: $block-space;
+		margin-top: 0;
+		margin-bottom: 0;
+
+		@media (min-width: $breakpoint-tablet) {
+			padding-top: $block-space-md;
+			padding-bottom: $block-space-md;
+		}
+
+		@media (min-width: $breakpoint-desktop) {
+			padding-top: $block-space;
+			padding-bottom: $block-space;
+		}
 	}
 
 	.e-con-inner {
@@ -271,12 +286,12 @@
 		height: 5em;
 		transition: all .25s;
 	}
-	
+
 	&::-webkit-scrollbar {
 		width: $width;
 		transition: all .25s;
 	}
-	
+
 	@if $width < 8px {
 		scrollbar-width: thin;
 	}
