@@ -98,7 +98,6 @@ function elementor_blog_posts() {
 		wp_reset_postdata();
 	?>
   </ul>
-  <div class="text-align-center"><a href="/blog" class="Button Button--outline">Explore resources</a></div>
 </div>
 
 		<?php
