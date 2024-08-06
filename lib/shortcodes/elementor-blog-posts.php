@@ -67,14 +67,13 @@ function elementor_blog_posts() {
 				?>
 		style="display: block;"
 		>
-		 <a href="<?= esc_url( the_permalink() ); ?>">
+		 <a href="<?= esc_url( get_the_permalink() ); ?>">
 	  <div class="Elementor__Blog__item--thumbnail">
 	  <meta itemprop="image" content="<?= esc_url( get_the_post_thumbnail_url( '' ) ); ?>"></meta>
 	  <img style="opacity: 0; transition: opacity 0.2s;" data-src="<?= esc_url( get_the_post_thumbnail_url() ); ?>" alt="<?= esc_attr( get_the_title() ); ?>" />
 	  </div>
 	</a>
 	  <div class="Elementor__Blog__item--content">
-		<div class="Elementor__Blog__item--meta">
 		<div class="Elementor__Blog__item--meta__categories">
 				<?php
 				/* translators: %s: don't modify */
@@ -85,11 +84,12 @@ function elementor_blog_posts() {
 				echo wp_kses_post( $cats );
 				?>
 		</div>
-	<a href="<?= esc_url( the_permalink() ); ?>">
+	<a href="<?= esc_url( get_the_permalink() ); ?>">
 	  <h3 class="Elementor__Blog__item--title" itemprop="name">
 				<?php the_title(); ?>
 	  </h3>
 	  </a>
+	  </div>
 	</li>
 			<?php endwhile; ?>
 			<?php
