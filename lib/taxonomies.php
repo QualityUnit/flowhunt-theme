@@ -9,3 +9,6 @@
 
 	// Templates
 	require_once get_template_directory() . '/lib/taxonomies/flow-templates-categories.php';
+
+	// Tools
+	require_once get_template_directory() . '/lib/taxonomies/tools-categories.php';
