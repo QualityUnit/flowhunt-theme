@@ -10,6 +10,7 @@ no-descending-specificity, scss/no-global-function-names */
 		color: $level-2;
 		gap: 2em;
 		text-align: left;
+		grid-template-rows: auto !important;
 
 		> .e-child {
 			background-color: $white;

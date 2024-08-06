@@ -7,20 +7,20 @@ no-descending-specificity, scss/no-global-function-names */
 
 .Pricing {
 	position: relative;
-	padding: 6em 0;
+	padding: 4em 0;
 	margin-bottom: 0;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: bottom;
 	border-radius: 0;
 
-	@media (min-width: $breakpoint-tablet-landscape) {
-		padding: 12em 0;
-	}
-
 	@media (min-width: $breakpoint-desktop-hd) {
 		mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
 
+	}
+
+	.wrapper-md {
+		margin-bottom: 4em;
 	}
 
 	> .e-child {
