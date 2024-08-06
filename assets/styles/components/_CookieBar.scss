@@ -92,13 +92,16 @@
 
 	&__button {
 
+		+ .Button {
+			margin-top: 0;
+			margin-left: 1em;
+		}
+
 		&--more[class] {
 
 			color: $white !important;
-			border-color: transparent !important;
-			padding: 0;
+			border-color: currentcolor !important;
 			font-weight: $font-weight-normal;
-			text-decoration: underline;
 			background: none;
 
 			&:active,
