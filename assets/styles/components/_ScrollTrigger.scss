@@ -4,15 +4,21 @@
 @use "../common/mixins" as *;
 
 [data-scroll] {
-	overflow: clip;
+
+	@media (min-width: $breakpoint-tablet) {
+		overflow: clip;
+	}
 
 	&.wrapper-md {
 		max-width: none !important;
 		padding: 0;
-		height: clamp(50vh, var(--scroll-height), 80vh) !important;
 
-		@media (max-width: $breakpoint-tablet-landscape) {
+		@media (min-width: $breakpoint-tablet) {
 			height: 100vh !important;
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			height: clamp(50vh, var(--scroll-height), 80vh) !important;
 		}
 
 		> div {
@@ -42,7 +48,6 @@
 					position: relative;
 					display: block;
 					flex-direction: column;
-					height: 35vh;
 					z-index: 1;
 
 					> .e-child {
@@ -54,6 +59,10 @@
 					.elementor-heading-title[class] {
 						font-size: 2rem !important;
 						text-align: left;
+					}
+
+					@media (min-width: $breakpoint-tablet) {
+						height: 35vh;
 					}
 
 					@media (min-width: $breakpoint-tablet-landscape) {
@@ -90,10 +99,15 @@
 
 
 					&:not(:has(.elementor-heading-title)) {
+						display: none;
 						position: relative;
 						z-index: 2;
 						flex: 1 0 calc(var(--scroll-height) / 2) !important;
 						order: -1;
+
+						@media (min-width: $breakpoint-tablet) {
+							display: block;
+						}
 
 						&:has(.elementor-widget-video) {
 							display: none;
@@ -111,13 +125,19 @@
 						}
 
 						>.elementor-widget-image {
+							display: none;
 
-							@include posZero();
-							position: absolute;
-							opacity: 0;
-							bottom: 0;
-							min-height: calc(var(--scroll-height) / 2) !important;
-							z-index: 1;
+
+							@media (min-width: $breakpoint-tablet) {
+
+								@include posZero();
+								display: block;
+								position: absolute;
+								opacity: 0;
+								bottom: 0;
+								min-height: calc(var(--scroll-height) / 2) !important;
+								z-index: 1;
+							}
 
 							@media (min-width: $breakpoint-tablet-landscape) {
 								min-height: var(--scroll-height) !important;
@@ -138,12 +158,21 @@
 								height: 100%;
 							}
 
-							img,
-							picture {
-								object-fit: contain;
-								object-position: center bottom;
-								max-height: none;
-								margin-top: auto;
+							> div > {
+
+								img,
+								picture {
+									object-fit: contain;
+									object-position: center bottom;
+									max-height: none;
+									margin-top: auto;
+
+									img {
+										object-fit: contain;
+										object-position: center bottom;
+										max-height: none;
+									}
+								}
 							}
 						}
 
