@@ -423,7 +423,7 @@ inline_compact_header();
 					</div>
 				<?php } ?>
 			</div>
-			<div class="compact-header__right">
+			<div class="compact-header__right urlslab-skip-lazy">
 				<?php if ( ! empty( $args['image'] ) ) { ?>
 					<?php
 					$image = $args['image'];
