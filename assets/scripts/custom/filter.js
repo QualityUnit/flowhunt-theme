@@ -200,45 +200,66 @@
 		}
 
 		// Search
-		search.addEventListener( 'keyup', () => {
-			const val = search.value.toLowerCase();
+		if ( search ) {
+			search.addEventListener( 'keyup', () => {
+				const val = search.value.toLowerCase();
 
-			listItems.forEach( ( element ) => {
-				const listItem = element;
-				const title = listItem
-					.querySelector( '[data-title]' )
-					?.textContent?.toLowerCase();
-				const excerpt = listItem
-					.querySelector( '[data-excerpt]' )
-					?.textContent?.toLowerCase();
+				listItems.forEach( ( element ) => {
+					const listItem = element;
+					const title = listItem
+						.querySelector( '[data-title]' )
+						?.textContent?.toLowerCase();
+					const excerpt = listItem
+						.querySelector( '[data-excerpt]' )
+						?.textContent?.toLowerCase();
 
-				if (
-					listItem.style.display === 'none' &&
-					! listItem.classList?.contains( 'pillar' )
-				) {
-					listItem.style.display = 'block';
-				}
+					if (
+						listItem.style.display === 'none' &&
+						! listItem.classList?.contains( 'pillar' )
+					) {
+						listItem.style.display = 'block';
+					}
 
-				if (
-					listItem.style.display === 'none' &&
-					listItem.classList?.contains( 'pillar' )
-				) {
-					listItem.style.display = 'flex';
-				}
+					if (
+						listItem.style.display === 'none' &&
+						listItem.classList?.contains( 'pillar' )
+					) {
+						listItem.style.display = 'flex';
+					}
 
-				if ( ! title?.includes( val ) && ! excerpt?.includes( val ) ) {
-					listItem.style.display = 'none';
-				}
+					if ( ! title?.includes( val ) && ! excerpt?.includes( val ) ) {
+						listItem.style.display = 'none';
+					}
 
+					recountVisible();
+				} );
+			} );
+
+			searchReset.addEventListener( 'click', () => {
+				search.value = '';
+				resultsReset();
 				recountVisible();
 			} );
-		} );
 
-		searchReset.addEventListener( 'click', () => {
-			search.value = '';
-			resultsReset();
-			recountVisible();
-		} );
+			search.addEventListener( 'keyup', () => {
+				if (
+					list.querySelectorAll( "li[style*='display: none']" ).length ===
+					countItems
+				) {
+					list.classList.add( 'empty' );
+				} else {
+					list.classList.remove( 'empty' );
+				}
+			} );
+			search.addEventListener( 'input', () => {
+				if ( search.value === '' ) {
+					resultsReset();
+				} else {
+					searchReset.classList.add( searchResetActive );
+					recountVisible();
+				}
+			} );
+		}
 
 		// Empty
 		filterItems.forEach( ( element ) => {
@@ -254,25 +275,6 @@
 					list.classList.remove( 'empty' );
 				}
 			} );
-		} );
-
-		search.addEventListener( 'keyup', () => {
-			if (
-				list.querySelectorAll( "li[style*='display: none']" ).length ===
-				countItems
-			) {
-				list.classList.add( 'empty' );
-			} else {
-				list.classList.remove( 'empty' );
-			}
-		} );
-		search.addEventListener( 'input', () => {
-			if ( search.value === '' ) {
-				resultsReset();
-			} else {
-				searchReset.classList.add( searchResetActive );
-				recountVisible();
-			}
 		} );
 	}
 } )();
