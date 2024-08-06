@@ -18,7 +18,7 @@ function elementor_blog_posts() {
 			$visible_cats[] = $category->slug;
 			?>
 	<li data-id="<?= esc_attr( 'category-' . $category->slug ); ?>">
-	<input class="filter-item" id="<?= esc_attr( 'category-' . $category->slug ); ?>" type="radio" value="<?= esc_attr( $category->slug ); ?>" name="category" <?= esc_attr( $visible_cats[0] === $category->slug ? 'checked' : '' ); ?> />
+	<input class="filter-item" id="<?= esc_attr( 'category-' . $category->slug ); ?>" type="radio" value="<?= esc_attr( $category->slug ); ?>" name="category" <?= esc_attr( $visible_cats[0] === $category->slug ? 'checked' : '' ); ?> data-nohistory="true" />
 	<label for="<?= esc_attr( 'category-' . $category->slug ); ?>">
 			<?= esc_html( $category->name ); ?>
 	</label>
@@ -29,11 +29,6 @@ function elementor_blog_posts() {
 	?>
   </ul>
   <ul class="list Elementor__Blog__items display-tablet-grid grid-template-col-tablet-2 grid-template-col-desktop-3 gap-2">
-	<script>
-	(() => {
-	  window.history.pushState( {}, '', '#<?= esc_html( $visible_cats[0] ); ?>' );
-	})()
-	</script>
 	<?php  
 
 	foreach ( $categories as $category ) {

@@ -40,6 +40,7 @@
 		const searchReset = query( "input[type='search']+.search-reset" );
 		const searchResetActive = 'search-reset--active';
 		const { hash } = window.location;
+		let nohash = null;
 		const activeFilter = {
 			collections: '',
 			plan: '',
@@ -85,13 +86,16 @@
 				if ( filterItem.matches( ':checked' ) ) {
 					const val = filterItem.value;
 					const name = filterItem.getAttribute( 'name' );
+					const noHistory = filterItem.dataset.nohistory;
 
-					if ( name === 'category' ) {
+					if ( name === 'category' && ! noHistory ) {
 						window.history.pushState( {}, '', `#${ val }` );
 						if ( val.length === 0 || val === 'all' ) {
 							window.history.pushState( {}, '', ' ' );
 						}
 					}
+
+					nohash = val;
 
 					activeFilter[ name ] = val;
 				}
@@ -173,8 +177,8 @@
 		} );
 
 		// URL filter
-		if ( hash.length ) {
-			const filteredHash = hash.replace( '#', '' );
+		if ( hash.length || nohash ) {
+			const filteredHash = nohash || hash.replace( '#', '' );
 
 			listItems.forEach( ( element ) => {
 				const listItem = element;
