@@ -88,7 +88,7 @@
 
 					if ( name === 'category' ) {
 						window.history.pushState( {}, '', `#${ val }` );
-						if ( val.length === 0 ) {
+						if ( val.length === 0 || val === 'all' ) {
 							window.history.pushState( {}, '', ' ' );
 						}
 					}

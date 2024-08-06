@@ -237,7 +237,7 @@
 							@media (max-width: ($breakpoint-tablet - 1px)) {
 
 								.elementor-heading-title[class] {
-									background: linear-gradient(to right, #0497dc, #465ce0);
+									background: $primary-gradient;
 									background-clip: text;
 									-webkit-text-fill-color: transparent;
 								}
