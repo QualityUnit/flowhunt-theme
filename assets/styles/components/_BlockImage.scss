@@ -15,7 +15,7 @@
 		flex-direction: column;
 
 		@media (min-width: $breakpoint-tablet-landscape) {
-			flex-direction: row;
+			flex-direction: row !important;
 		}
 
 		.elementor-widget-text-editor {
@@ -178,6 +178,7 @@
 
 					&:has(.elementor-heading-title) {
 						width: 45%;
+						text-align: left;
 					}
 
 					&:not(:has(.elementor-heading-title)):has(.elementor-widget-image) {
