@@ -1,0 +1,104 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.Elementor__Blog {
+
+	@include wrapper-styles($wrapper-md);
+
+	&--Categories {
+		flex-wrap: wrap;
+		gap: 2em;
+		margin-bottom: 3em;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			gap: 3em;
+		}
+
+		input {
+			display: none;
+
+			&:checked + label {
+				background: $primary-gradient;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+
+				&::after {
+					display: block;
+				}
+			}
+		}
+
+		label {
+			font-weight: 700;
+			color: $level-2;
+			cursor: pointer;
+
+			&::after {
+				display: none;
+				content: "";
+				margin-top: 0.5em;
+				height: 3px;
+				border-radius: 1em;
+				background: $primary-gradient;
+			}
+		}
+	}
+
+	&__item {
+		display: none !important;
+
+		@for $i from 1 through 6 {
+
+			&:nth-child(#{$i} of [style*="display: block"]) {
+				display: block !important;
+			}
+		}
+
+		a {
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+
+				text-decoration: none;
+			}
+		}
+
+		&:hover &--thumbnail {
+			filter: drop-shadow(0 0 2px rgba($primary, 1));
+		}
+
+		&--meta__categories {
+			color: $level-2;
+		}
+
+		&--title {
+			font-size: 1.375rem !important;
+		}
+
+		&--thumbnail {
+			position: relative;
+			height: 0;
+			padding-bottom: 53.33%;
+			margin-bottom: 0.75em;
+			border: 1px solid $border-divider-primary;
+			border-radius: 12px;
+			background-color: $white;
+			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.03);
+			filter: drop-shadow(0 0 2px rgba($primary, 0));
+			transition: filter 0.25s;
+			overflow: hidden;
+		}
+
+		img,
+		picture {
+
+			@include square(100%);
+			position: absolute;
+			object-fit: cover;
+			max-width: 100%;
+		}
+	}
+}

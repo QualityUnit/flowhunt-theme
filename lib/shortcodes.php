@@ -6,3 +6,4 @@
 	require_once get_template_directory() . '/lib/shortcodes/get-post.php';
 	require_once get_template_directory() . '/lib/shortcodes/block-improve.php';
 	require_once get_template_directory() . '/lib/shortcodes/posts-infinity-slider.php';
+	require_once get_template_directory() . '/lib/shortcodes/elementor-blog-posts.php';

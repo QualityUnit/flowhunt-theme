@@ -106,8 +106,18 @@ hr {
 	display: none !important;
 }
 
+.gap {
+	$gap: 1,2,3,4,5,6;
+
+	@each $g in $gap {
+		&-#{$g} {
+			gap: #{$g}em;
+		}
+	}
+}
+
 .display {
-	$display: "none", "block", "inline-block", "inline-flex";
+	$display: none, block, grid, inline-block, inline-flex;
 
 	@each $displayas in $display {
 		&-#{$displayas} {
