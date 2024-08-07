@@ -37,7 +37,7 @@ add_action( 'template_redirect', 'videos_category_redirect' );
  * Redirect Glossary Categories
  */
 function glossary_category_redirect() {
-	if ( is_tax( 'glossary_categories' ) ) {
+	if ( is_tax( 'glossary-categories' ) ) {
 		wp_safe_redirect( '/glossary/', 301 );
 		exit;
 	}

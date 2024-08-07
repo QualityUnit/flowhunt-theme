@@ -8,13 +8,20 @@ if ( has_post_thumbnail() ) {
 }
 $page_header_args = array(
 	'image' => array(
-		'src' => get_template_directory_uri() . '/assets/images/compact_header_glossary.png?ver=' . THEME_VERSION,
+		'src' => get_template_directory_uri() . '/assets/images/compact-header-glossary.png?ver=' . THEME_VERSION,
 		'alt' => get_the_title(),
 	),
 	'logo'  => $page_header_logo,
 	'title' => get_the_title(),
-	'text'  => '', // do_shortcode( '[urlslab-generator id="6"]' ) that was in the original code
+	'text'  => wp_trim_words( get_the_excerpt(), 25, '…' ), // do_shortcode( '[urlslab-generator id="6"]' ) that was in the original code
 	'toc'   => true,
+);
+$current_id       = apply_filters( 'wpml_object_id', $post->ID, 'glossary' );
+$categories       = get_the_terms( $current_id, 'glossary-categories' );
+
+$related_args = array(
+	'post_type'  => 'glossary',
+	'categories' => $categories,
 );
 ?>
 <div class="Post Post--sidebar-right" itemscope itemtype="http://schema.org/TechArticle">
@@ -29,13 +36,7 @@ $page_header_args = array(
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
 
-				<div class="Post__buttons">
-					<a href="<?php _e( '/glossary/', 'flowhunt' ); ?>" class="Button Button--outline Button--back"><span><?php _e( 'Back to Glossary', 'flowhunt' ); ?></span></a>
-
-					<a href="<?php _e( '/trial/', 'flowhunt' ); ?>" class="Button Button--full">
-						<span><?php _e( 'Create account for FREE', 'flowhunt' ); ?></span>
-					</a>
-				</div>
+				<?php get_template_part( 'lib/components/related-articles', null, $related_args ); ?>
 
 			</div>
 		</div>

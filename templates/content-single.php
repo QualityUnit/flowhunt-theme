@@ -2,7 +2,7 @@
 global $post;
 $page_header_args = array(
 	'image' => array(
-		'src' => get_the_post_thumbnail_url( $post, 'blog_post_thumbnail' ),
+		'src' => get_the_post_thumbnail_url( $post, 'person_thumbnail' ),
 		'alt' => get_the_title(),
 	),
 	'title' => get_the_title(),
