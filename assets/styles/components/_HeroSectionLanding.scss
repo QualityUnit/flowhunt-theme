@@ -1,4 +1,3 @@
-
 // stylelint-disable no-descending-specificity
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
@@ -57,7 +56,6 @@
 	&__content {
 		padding: 0;
 
-
 		h1.elementor-heading-title {
 
 			@media (min-width: $breakpoint-tablet-landscape) {
@@ -71,12 +69,25 @@
 			padding: 0;
 			font-weight: $font-weight-normal;
 
-			@media (min-width: $breakpoint-desktop-hd) {
-				padding-right: 11em;
-			}
 
 			@media (min-width: $breakpoint-tablet-landscape) {
 				font-size: 24px;
+			}
+		}
+
+		.elementor-widget-html {
+
+			&:has(.Button) {
+
+				.elementor-widget-container {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 1em;
+				}
+
+				.Button + .Button {
+					margin-left: 0;
+				}
 			}
 		}
 
