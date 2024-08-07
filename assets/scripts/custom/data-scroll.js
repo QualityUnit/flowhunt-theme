@@ -4,28 +4,31 @@ const scrollByOne = document.querySelectorAll( '[data-scroll="one"]' );
 
 if ( scrollByOne.length > 0 ) {
 	scrollByOne.forEach( ( scroller ) => {
+		const mm = gsap.matchMedia();
 		const images = gsap.utils.toArray( '.e-child > .elementor-widget-image', scroller );
 		const details = gsap.utils.toArray( '.e-child > .e-child:has(.elementor-widget-heading)', scroller );
 
-		const timeline = gsap.timeline( {
-			scrollTrigger: {
-				trigger: scroller,
-				toggleActions: 'restart pause reverse pause',
-				start: 'center center',
-				end: `+=${ ( images.length - 1 ) * 100 }%`,
-				pin: true,
-				scrub: true,
-			},
-		} );
+		mm.add( '(min-width: 768px)', () => {
+			const timeline = gsap.timeline( {
+				scrollTrigger: {
+					trigger: scroller,
+					toggleActions: 'restart pause reverse pause',
+					start: 'center center',
+					end: `+=${ ( images.length - 1 ) * 100 }%`,
+					pin: true,
+					scrub: true,
+				},
+			} );
 
-		images.forEach( ( img, i ) => {
-			if ( images[ i + 1 ] ) {
-				timeline.to( img, { opacity: 0 }, '+=0.5' )
-					.to( images[ i + 1 ], { opacity: 1 }, '<' )
-					.to( details, { yPercent: -( 100 * ( i + 1 ) ), ease: 'none' }, '<' );
-			}
+			images.forEach( ( img, i ) => {
+				if ( images[ i + 1 ] ) {
+					timeline.to( img, { opacity: 0 }, '+=0.5' )
+						.to( images[ i + 1 ], { opacity: 1 }, '<' )
+						.to( details, { yPercent: -( 100 * ( i + 1 ) ), ease: 'none' }, '<' );
+				}
+			} );
+			timeline.to( {}, {}, '+=0.5' );
 		} );
-		timeline.to( {}, {}, '+=0.5' );
 	} );
 }
 
