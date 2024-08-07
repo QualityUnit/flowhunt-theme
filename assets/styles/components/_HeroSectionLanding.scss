@@ -30,8 +30,13 @@
 					div {
 						height: 100%;
 
+						>picture {
+							width: 100vw;
+						}
+
 						> img,
-						picture {
+						img,
+						> picture {
 							height: 100%;
 							max-width: none;
 							object-fit: contain;
