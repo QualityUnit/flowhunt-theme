@@ -5,6 +5,7 @@
 
 // mixin for wrapper width
 @mixin wrapper-styles($max-width, $inner-max-width: $max-width) {
+	width: 100%;
 	max-width: $max-width;
 	margin-left: auto;
 	margin-right: auto;
