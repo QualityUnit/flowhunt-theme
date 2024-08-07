@@ -3,17 +3,18 @@ set_custom_source( 'layouts/Archive' );
 set_custom_source( 'components/Index' );
 require_once get_template_directory() . '/lib/components/searchfield.php';
 $index             = array();
-$page_header_title = __( 'SEO Glossary', 'flowhunt' );
-$page_header_text  = __( 'If you`re new to website optimization or SEO, you may find yourself facing many unfamiliar terms and concepts . We`ve put together a comprehensive glossary to help you understand these key terms more easily.', 'flowhunt' );
-if ( is_tax( 'glossary_categories' ) ) :
+$page_header_title = __( 'AI Glossary', 'flowhunt' );
+$page_header_text  = '';
+// $page_header_text  = __( 'If you`re new to website optimization or SEO, you may find yourself facing many unfamiliar terms and concepts . We`ve put together a comprehensive glossary to help you understand these key terms more easily.', 'flowhunt' );
+if ( is_tax( 'glossary-categories' ) ) :
 	$page_header_title = single_term_title( '', false );
-	$page_header_text  = term_description();
+	// $page_header_text  = term_description();
 endif;
 
 $page_header_args = array(
 	'type'  => 'lvl-1',
 	'image' => array(
-		'src' => get_template_directory_uri() . '/assets/images/compact_header_glossary.png?ver=' . THEME_VERSION,
+		'src' => get_template_directory_uri() . '/assets/images/compact-header-glossary.png?ver=' . THEME_VERSION,
 		'alt' => $page_header_title,
 	),
 	'title' => $page_header_title,
