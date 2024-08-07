@@ -17,6 +17,7 @@ if ( scrollByOne.length > 0 ) {
 					end: `+=${ ( images.length - 1 ) * 100 }%`,
 					pin: true,
 					scrub: true,
+					invalidateOnRefresh: true,
 				},
 			} );
 
@@ -53,6 +54,7 @@ if ( scrollByPoint.length > 0 ) {
 				end: `+=${ ( details.length ) * 100 }%`,
 				pin: true,
 				scrub: 1,
+				invalidateOnRefresh: true,
 			},
 		} );
 
@@ -64,6 +66,7 @@ if ( scrollByPoint.length > 0 ) {
 				end: `+=${ ( details.length ) * 100 }%`,
 				pin: true,
 				scrub: 1,
+				invalidateOnRefresh: true,
 			} );
 		} );
 

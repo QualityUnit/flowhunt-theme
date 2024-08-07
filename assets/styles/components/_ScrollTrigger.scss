@@ -4,6 +4,9 @@
 @use "../common/mixins" as *;
 
 [data-scroll] {
+	position: relative;
+	z-index: 2;
+	background-color: $white;
 
 	@media (min-width: $breakpoint-tablet) {
 		overflow: clip;
@@ -171,6 +174,7 @@
 										object-fit: contain;
 										object-position: center bottom;
 										max-height: none;
+										height: 100%;
 									}
 								}
 							}
