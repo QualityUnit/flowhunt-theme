@@ -66,7 +66,7 @@ if ( scrollByPoint.length > 0 ) {
 				end: `+=${ ( details.length ) * 100 }%`,
 				pin: true,
 				scrub: 1,
-				invalidateOnRefresh: true
+				invalidateOnRefresh: true,
 			} );
 		} );
 
