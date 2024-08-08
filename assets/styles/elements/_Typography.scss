@@ -692,7 +692,7 @@ a:not(.Button) {
 .Post__sidebar {
 
 	a[target="_blank"]:not(.Button),
-	a[href*="http"]:not(.Button) {
+	a[href*="http"]:not(.Button):not(:has(img)) {
 
 		&::after {
 			content: "\e832" !important;

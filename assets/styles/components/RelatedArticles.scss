@@ -14,8 +14,8 @@
 		border: 1px solid $borders-color;
 		margin-bottom: 1.5em;
 
-		&:hover &__title {
-			color: $primary;
+		&:hover {
+			border-color: $primary;
 		}
 
 		&__content {
