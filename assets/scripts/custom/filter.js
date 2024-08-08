@@ -152,7 +152,7 @@
 						listItem.style.display === 'none' &&
 						listItem.classList.contains( 'pillar' )
 					) {
-						listItem.style.display = 'flex';
+						listItem.style.display = 'block';
 					}
 
 					if (
@@ -228,7 +228,7 @@
 						listItem.style.display === 'none' &&
 						listItem.classList?.contains( 'pillar' )
 					) {
-						listItem.style.display = 'flex';
+						listItem.style.display = 'block';
 					}
 
 					if ( ! title?.includes( val ) && ! excerpt?.includes( val ) ) {
