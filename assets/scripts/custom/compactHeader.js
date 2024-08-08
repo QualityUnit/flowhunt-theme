@@ -14,9 +14,9 @@
 	const elApply = query( '.js-compact-header__apply' );
 	//disable sticky header
 	let stickyDisable = false;
-	const elStickyMain = query( '.' + clStickyMain );
 	const elStickyBottom = query( '.compact-header__bottom' );
-	if ( elStickyMain.classList.contains( 'compact-header--lvl-1' ) && ! elStickyBottom ) {
+
+	if ( elSticky.classList.contains( 'compact-header--lvl-1' ) && ! elStickyBottom ) {
 		stickyDisable = true;
 	}
 	//scroll bar on single pages
@@ -54,18 +54,21 @@
 		const top = box.top + scrollTop - clientTop;
 		return Math.round( top );
 	}
+
 	function fnHeaderHeight( units = null ) {
 		if ( elHeader && elSticky ) {
 			const heightHeader = elHeader.offsetHeight;
 			const heightSticky = elSticky.offsetHeight;
-			const height = heightHeader + heightSticky;
+
+			const height = heightSticky - heightHeader;
 			if ( units ) {
 				return height + units;
 			}
-			return height;
+			return heightSticky;
 		}
 		return false;
 	}
+
 	function fnStickyHeader() {
 		if ( false === stickyDisable ) {
 			if ( elSticky && fnHeaderHeight() ) {
