@@ -20,7 +20,7 @@ function components_imports( $content ) {
 		'[data-lightbox="gallery"]'    => array( 'splide' ),
 		'[data-lightbox="youtube"]'    => array( 'splide' ),
 		'/data-lightbox="gallery/'     => array( 'custom_lightbox', 'splide' ),
-		'/data-scroll/'                => array( 'data-scroll', 'gsap-js' ),
+		// '/data-scroll/'                => array( 'data-scroll', 'gsap-js' ),
 		// '/data-lightbox="youtube/'         => array( 'custom_lightbox_youtube', 'splide' ),
 		// '/class=.+Block--video/'           => array( 'custom_lightbox_youtube', 'splide' ),
 		// '/class=.+GutenbergVideo/'         => array( 'custom_lightbox_youtube', 'splide' ),
