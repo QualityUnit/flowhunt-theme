@@ -63,7 +63,7 @@
 		}
 
 		function resultsReset() {
-			searchReset.classList.remove( searchResetActive );
+			searchReset?.classList.remove( searchResetActive );
 			list.classList.remove( 'empty' );
 			list.querySelectorAll( 'li' ).forEach( ( element ) => {
 				const el = element;
@@ -239,7 +239,7 @@
 				} );
 			} );
 
-			searchReset.addEventListener( 'click', () => {
+			searchReset?.addEventListener( 'click', () => {
 				search.value = '';
 				resultsReset();
 				recountVisible();
@@ -259,7 +259,7 @@
 				if ( search.value === '' ) {
 					resultsReset();
 				} else {
-					searchReset.classList.add( searchResetActive );
+					searchReset?.classList.add( searchResetActive );
 					recountVisible();
 				}
 			} );

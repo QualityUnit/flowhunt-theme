@@ -2,7 +2,8 @@
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 @use "../elements/SearchField" as *;
-@use "../elements/MultiSelectMenu" as *;
+@use "../elements/FilterMenu" as *;
+@use "../elements/SortingMenu" as *;
 
 .Filter {
 	max-width: $wrapper-width;

@@ -1,0 +1,56 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.SortingMenu {
+
+	&__title {
+
+		&::before {
+
+			@include square(1.125em);
+			content: "";
+			margin-right: 0.5em;
+			background: url(../../images/icon-sorting.svg) center center no-repeat;
+			background-size: contain;
+			filter: grayscale(100%) brightness(0);
+		}
+
+		&.active {
+
+			&::before {
+				filter: grayscale(0);
+			}
+		}
+
+		@media (hover: hover) {
+
+			&.active {
+
+				&:hover::before {
+					filter: grayscale(100%) brightness(0);
+				}
+			}
+		}
+	}
+
+	@media (max-width: $breakpoint-tablet - 1) {
+
+		&__desc {
+
+			display: flex;
+			align-items: center;
+
+			&::before {
+
+				@include square(1em);
+				content: "";
+				display: block;
+				margin-right: 0.5em;
+				background: url(../../images/icon-sorting.svg) center center no-repeat;
+				background-size: contain;
+				filter: grayscale(100%) brightness(0);
+			}
+		}
+	}
+}
