@@ -319,11 +319,17 @@ hr {
 
 	@media (min-width: $breakpoint-tablet) {
 		padding-top: $block-space-md;
+		padding-bottom: $block-space-md;
 	}
 
 	@media (min-width: $breakpoint-desktop) {
+		padding-bottom: $block-space;
 		padding-top: $block-space;
 	}
+}
+
+.hp-flow-templates-section {
+	padding-bottom: 0;
 }
 
 .gray-bg {

@@ -1,4 +1,3 @@
-/* stylelint-disable selector-class-pattern, no-descending-specificity */
 
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
@@ -9,132 +8,143 @@
 @forward "../components/Login";
 
 
-// Overlay for mobile menu
-html.mobile-menu-opened {
-	overflow: hidden;
+body {
+
+
+	#app {
+		padding-top: $headerHeight;
+
+		@media (min-width: $breakpoint-tablet) {
+			padding-top: 0;
+		}
+	}
 
 	.Header {
-
-		&__mobile__menu__overlay {
-			background: #717c86;
-			content: "";
-			height: 100%;
-			left: 0;
-			opacity: 0.3;
-			position: fixed;
-			top: $headerHeight;
-			transition: all 0.25s linear;
-			visibility: visible;
-			width: 100%;
-			z-index: -1;
-			overflow-y: hidden;
-			display: block;
-		}
-	}
-}
-
-.Header {
-	position: fixed;
-	top: 0;
-	// left: 0;
-	z-index: 99991;
-	width: 100%;
-	height: $headerHeight;
-	background-color: $white;
-
-	@media (min-width: $breakpoint-tablet) {
-		position: sticky;
-	}
-
-	&.noMenu {
-		background-color: transparent;
-	}
-
-	.wrapper-md {
-		display: flex;
-		align-items: center;
-		padding-left: 1.125em;
-		padding-right: 1.125em;
-		height: 100%;
-		border-radius: 0;
+		position: fixed;
+		top: 0;
+		// left: 0;
+		z-index: 99991;
+		width: 100%;
+		height: $headerHeight;
 		background-color: $white;
-	}
 
-	&__items {
-		display: flex;
-		align-items: center;
-		margin-left: auto;
-
-		.hamburger {
-
-			.line {
-				width: 1.75em;
-				height: 0.1875em;
-				background-color: $black;
-				display: block;
-				margin: 0.25em auto;
-				-webkit-transition: all 0.3s ease-in-out;
-				-o-transition: all 0.3s ease-in-out;
-				transition: all 0.3s ease-in-out;
-			}
-
-			&.open {
-
-				.line {
-
-					&:nth-child(2) {
-						opacity: 0;
-					}
-
-					&:nth-child(1) {
-						transform: translateY(6px) rotate(45deg);
-					}
-
-					&:nth-child(3) {
-						transform: translateY(-8px) rotate(-45deg);
-					}
-				}
-			}
-
+		@media (min-width: $breakpoint-tablet) {
+			position: sticky;
 		}
 
-	}
-
-	&__mobile__menu__overlay {
-		display: none;
-	}
-
-	.LoginOrSignup {
-		font-size: 0.875rem;
-
-		.Button {
-			margin-left: 1em;
-		}
-	}
-
-	@media (min-width: $breakpoint-tablet-landscape) {
-
-		.signup &.noMenu {
+		&.noMenu {
 			background-color: transparent;
 		}
 
+		.wrapper-md {
+			display: flex;
+			align-items: center;
+			padding-left: 1.125em;
+			padding-right: 1.125em;
+			height: 100%;
+			border-radius: 0;
+			background-color: $white;
+		}
+
 		&__items {
-			width: 100%;
-			margin-left: 0;
+			display: flex;
+			align-items: center;
+			margin-left: auto;
 
 			.hamburger {
-				display: none;
+
+				.line {
+					width: 1.75em;
+					height: 0.1875em;
+					background-color: $black;
+					display: block;
+					margin: 0.25em auto;
+					-webkit-transition: all 0.3s ease-in-out;
+					-o-transition: all 0.3s ease-in-out;
+					transition: all 0.3s ease-in-out;
+				}
+
+				&.open {
+
+					.line {
+
+						&:nth-child(2) {
+							opacity: 0;
+						}
+
+						&:nth-child(1) {
+							transform: translateY(6px) rotate(45deg);
+						}
+
+						&:nth-child(3) {
+							transform: translateY(-8px) rotate(-45deg);
+						}
+					}
+				}
+
+			}
+
+		}
+
+		&__mobile__menu__overlay {
+			display: none;
+		}
+
+		.LoginOrSignup {
+			font-size: 0.875rem;
+
+			.Button {
+				margin-left: 1em;
 			}
 		}
 
-		&__buttons {
+		@media (min-width: $breakpoint-tablet-landscape) {
 
-			&__login {
-				margin: 0;
-				display: flex;
-				align-items: center;
+			.signup &.noMenu {
+				background-color: transparent;
+			}
+
+			&__items {
+				width: 100%;
+				margin-left: 0;
+
+				.hamburger {
+					display: none;
+				}
+			}
+
+			&__buttons {
+
+				&__login {
+					margin: 0;
+					display: flex;
+					align-items: center;
+				}
+			}
+		}
+	}
+
+	// Overlay for mobile menu
+	html.mobile-menu-opened {
+		overflow: hidden;
+
+		.Header {
+
+			&__mobile__menu__overlay {
+				background: #717c86;
+				content: "";
+				height: 100%;
+				left: 0;
+				opacity: 0.3;
+				position: fixed;
+				top: $headerHeight;
+				transition: all 0.25s linear;
+				visibility: visible;
+				width: 100%;
+				z-index: -1;
+				overflow-y: hidden;
+				display: block;
 			}
 		}
 	}
 }
-

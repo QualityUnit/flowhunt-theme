@@ -41,7 +41,12 @@ body.compact-header--active {
 
 
 	&__left {
-		padding-block: 2.1875em;
+
+		padding-block: 0;
+
+		@media (min-width: $breakpoint-tablet) {
+			padding-block: 2.1875em;
+		}
 	}
 
 	&__right {

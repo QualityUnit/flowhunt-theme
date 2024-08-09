@@ -29,6 +29,22 @@
 		padding-top: 2em;
 		padding-bottom: 2em;
 
+		&.e-flex {
+			align-items: center;
+		}
+
+		.elementor-widget-html:has(.Button) {
+			margin-top: 2.2em;
+
+			> .elementor-widget-container {
+
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 1em;
+			}
+		}
+
 		@media (min-width: $breakpoint-tablet-landscape) {
 			padding-top: 10em;
 			padding-bottom: 10em;
@@ -50,10 +66,11 @@
 		p {
 			color: $gray-500;
 			font-size: 24px;
+			margin-bottom: 0;
 		}
 
 		.Button {
-			margin-bottom: 1em;
+			margin: 0;
 		}
 
 	}

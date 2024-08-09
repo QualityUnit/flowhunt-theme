@@ -24,6 +24,10 @@
 		padding-block: 8em 0;
 		z-index: 1;
 
+		&.e-flex {
+			align-items: center;
+		}
+
 		padding-inline: 1.125em;
 
 		@media (min-width: $breakpoint-mobile) {
@@ -43,6 +47,10 @@
 			margin-bottom: 0;
 		}
 
+		.elementor-widget-html:has(.Button) {
+			margin-top: 2.2em;
+		}
+
 		h2,
 		p {
 			color: $white;
@@ -59,9 +67,11 @@
 		}
 
 		p {
-
 			font-size: 1.125em;
+			margin-bottom: 0;
 		}
+
+
 	}
 
 	&__image {
