@@ -14,8 +14,8 @@
 	"rules": {
 		"no-unused-expressions": [
 			{
-				"allowShortCircuit": 0,
-				"allowTernary": 0
+				"allowShortCircuit": "off",
+				"allowTernary": "off"
 			}
 		]
 	}
