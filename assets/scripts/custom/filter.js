@@ -63,7 +63,7 @@
 		}
 
 		function resultsReset() {
-			searchReset?.classList.remove( searchResetActive );
+			searchReset.classList.remove( searchResetActive );
 			list.classList.remove( 'empty' );
 			list.querySelectorAll( 'li' ).forEach( ( element ) => {
 				const el = element;
@@ -239,11 +239,13 @@
 				} );
 			} );
 
-			searchReset?.addEventListener( 'click', () => {
-				search.value = '';
-				resultsReset();
-				recountVisible();
-			} );
+			if ( searchReset ) {
+				searchReset.addEventListener( 'click', () => {
+					search.value = '';
+					resultsReset();
+					recountVisible();
+				} );
+			}
 
 			search.addEventListener( 'keyup', () => {
 				if (
@@ -259,7 +261,9 @@
 				if ( search.value === '' ) {
 					resultsReset();
 				} else {
-					searchReset?.classList.add( searchResetActive );
+					if ( searchReset ) {
+						searchReset.classList.add( searchResetActive );
+					}
 					recountVisible();
 				}
 			} );
