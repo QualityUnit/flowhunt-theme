@@ -7,7 +7,6 @@
 
 .Medovnicky { // Naming as Slovak “gingerbread“ due to adblocks
 
-	@include shakeX(2em);
 	position: fixed;
 	left: 25px;
 	z-index: 9999999;
@@ -24,6 +23,7 @@
 	color: $white;
 	transition: bottom 0.5s;
 
+	@include shakeX(2em);
 
 	&.shakeX {
 		animation: shakeX 0.75s;

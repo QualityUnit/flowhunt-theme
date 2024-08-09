@@ -11,10 +11,11 @@ no-descending-specificity, scss/no-global-function-names */
 
 	&__container {
 
-		@include wrapper-styles($wrapper-md);
 		padding-left: $wrapper-padding;
 		padding-right: $wrapper-padding;
 		margin: 0 auto;
+
+		@include wrapper-styles($wrapper-md);
 
 		@media (min-width: $breakpoint-tablet) {
 			display: flex;

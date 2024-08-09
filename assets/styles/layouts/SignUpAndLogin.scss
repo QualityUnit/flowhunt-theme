@@ -84,11 +84,12 @@
 
 	@media (min-width: $breakpoint-tablet-landscape) {
 
+		align-items: center;
+		align-content: center;
+
 		> .elementor-container {
 			flex-direction: row;
 		}
-		align-items: center;
-		align-content: center;
 
 		&__main {
 			width: 59.3%;

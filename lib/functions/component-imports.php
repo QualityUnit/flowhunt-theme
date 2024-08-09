@@ -8,6 +8,7 @@ function components_imports( $content ) {
 		'Block__illustration'           => 'components/BlockIllustration',
 		'Block__background'             => 'components/BlockBackground',
 		'BlockSimple'                   => 'components/BlockSimple',
+		'BlockVideo'                    => 'components/BlockVideo',
 		'table'                         => 'components/Table',
 		'Modules'                       => 'components/BlockModules',
 		'FormIcons'                     => 'components/FormIcons',

@@ -6,10 +6,11 @@ no-descending-specificity, value-keyword-case */
 
 .SidebarTOC {
 
-	@include scrollbar($width: 4px, $color: $gray-400);
 	max-height: 16em;
 	overflow-y: auto;
 	overflow-x: visible;
+
+	@include scrollbar($width: 4px, $color: $gray-400);
 
 	&:hover {
 
