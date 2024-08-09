@@ -201,6 +201,7 @@ if (
 	) {
 	?>
 
+<div class="ContactUs__chatBotOnly__wrapper">
 	<button class="ContactUs__chatBotOnly hidden" id="chatBotOnly" rel="nofollow noopener external">
 		<img class="ContactUs__icon" src="<?= esc_url( get_template_directory_uri() . '/assets/images/contact/chatbot.svg' ); ?>" />
 	</button>
@@ -215,6 +216,8 @@ if (
 		// 	loadChatBot(chatBtnOptions);
 		// }
 	</script>
+</div>
+	
 	<?php
 }
 ?>

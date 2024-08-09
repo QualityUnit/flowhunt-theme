@@ -36,7 +36,7 @@ function theme_gsap_script() {
 		wp_enqueue_script( 'gsapSt-js', get_template_directory_uri() . '/assets/dist/gsap-scrolltrigger' . wpenv() . '.js', array( 'gsap-js' ), THEME_VERSION, true );
 }
 
-add_action( 'wp_enqueue_scripts', 'theme_gsap_script' );
+// add_action( 'wp_enqueue_scripts', 'theme_gsap_script' ); // Comment out if GSAP is required
 /**
  * Scripts
  */

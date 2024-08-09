@@ -5,10 +5,10 @@
 
 body.compact-header--active {
 
-	@media (max-width: ($breakpoint-tablet - 1)) {
+	@media (max-width: $breakpoint-tablet - 1) {
 		overflow: hidden;
 
-		.ContactUs {
+		.ContactUs__chatBotOnly__wrapper + div:not([class]) {
 			opacity: 0;
 			pointer-events: none;
 		}
@@ -401,6 +401,12 @@ body.compact-header--active {
 		}
 	}
 
+
+	&__search {
+		position: relative;
+		display: flex;
+	}
+
 	@media (min-width: $breakpoint-tablet) {
 		transition: margin 0.3s ease;
 
@@ -488,10 +494,6 @@ body.compact-header--active {
 			font-size: 0.875em;
 		}
 
-		&__search {
-			position: relative;
-			display: inline-flex;
-		}
 
 		&--sticky {
 

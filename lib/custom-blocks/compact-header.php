@@ -383,7 +383,7 @@ set_custom_source( 'common/splide', 'css' );
 								</div>
 							</div>
 							<div class="compact-header__filters-apply">
-								<a class="Button Button--full js-compact-header__apply">
+								<a class="Button Button--full Button--medium js-compact-header__apply">
 									<span><?= esc_html( __( 'Apply', 'ms' ) ); ?></span>
 								</a>
 							</div>

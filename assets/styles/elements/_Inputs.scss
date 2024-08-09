@@ -54,6 +54,10 @@ input[type="search"] {
 	font-size: 0.875rem;
 	margin-bottom: 0.75em;
 
+	input {
+		display: none;
+	}
+
 	label {
 		display: flex;
 		align-content: center;

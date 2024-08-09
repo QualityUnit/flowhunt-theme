@@ -239,11 +239,13 @@
 				} );
 			} );
 
-			searchReset.addEventListener( 'click', () => {
-				search.value = '';
-				resultsReset();
-				recountVisible();
-			} );
+			if ( searchReset ) {
+				searchReset.addEventListener( 'click', () => {
+					search.value = '';
+					resultsReset();
+					recountVisible();
+				} );
+			}
 
 			search.addEventListener( 'keyup', () => {
 				if (
@@ -259,7 +261,9 @@
 				if ( search.value === '' ) {
 					resultsReset();
 				} else {
-					searchReset.classList.add( searchResetActive );
+					if ( searchReset ) {
+						searchReset.classList.add( searchResetActive );
+					}
 					recountVisible();
 				}
 			} );

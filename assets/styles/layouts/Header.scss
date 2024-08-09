@@ -34,13 +34,17 @@ html.mobile-menu-opened {
 }
 
 .Header {
-	position: sticky;
+	position: fixed;
 	top: 0;
 	// left: 0;
 	z-index: 99991;
 	width: 100%;
 	height: $headerHeight;
 	background-color: $white;
+
+	@media (min-width: $breakpoint-tablet) {
+		position: sticky;
+	}
 
 	&.noMenu {
 		background-color: transparent;
