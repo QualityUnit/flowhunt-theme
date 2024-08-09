@@ -59,7 +59,11 @@
 	}
 
 	&__content {
-		padding: 0;
+		padding-block: 2em;
+
+		@media (min-width: $breakpoint-tablet) {
+			padding-block: 0;
+		}
 
 		h1.elementor-heading-title {
 
