@@ -10,13 +10,5 @@
 	},
 	"extends": [
 		"plugin:@wordpress/eslint-plugin/recommended-with-formatting"
-	],
-	"rules": {
-		"no-unused-expressions": [
-			{
-				"allowShortCircuit": "off",
-				"allowTernary": "off"
-			}
-		]
-	}
+	]
 }
