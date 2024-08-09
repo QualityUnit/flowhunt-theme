@@ -1064,7 +1064,7 @@ picture.Screenshot,
 			left: 0.625em;
 			border-radius: 10px;
 			width: 2px;
-			background: linear-gradient(to top, #0497dc, #465ce0);
+			background: $primary-gradient-reverse;
 			height: 100%;
 		}
 
