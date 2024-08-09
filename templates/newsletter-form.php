@@ -1,5 +1,5 @@
 <div class="Footer__newsletter--form" id="newsletter">
-  <form action="https://qualityunit.us3.list-manage.com/subscribe/post?u=18d6ab6093f8e6cdbbd783635&amp;id=22b687a6cc&amp;f_id=00f6c2e1f0" method="post" name="mc-embedded-subscribe-form" target="_blank">
+  <form action="https://qualityunit.us3.list-manage.com/subscribe/post?u=18d6ab6093f8e6cdbbd783635&amp;id=5b7884a7fb&amp;v_id=102&amp;f_id=00f5c2e1f0" method="post" name="mc-embedded-subscribe-form" target="_blank">
     <input type="email" name="EMAIL" placeholder="Enter your e-mail for latest news" id="newsletter_input"
     class="Input" required />
   <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
