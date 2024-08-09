@@ -280,6 +280,18 @@
 }
 
 @mixin scrollbar($width:6px, $color: $gray-200) {
+	@if $width < 8px {
+		scrollbar-width: thin;
+	}
+
+	@else {
+		scrollbar-width: auto;
+	}
+
+	scrollbar-color: $color transparent;
+	scroll-behavior: smooth;
+	transition: all .25s;
+	
 	&::-webkit-scrollbar-track {
 		background-color: transparent;
 	}
@@ -295,16 +307,6 @@
 		width: $width;
 		transition: all .25s;
 	}
-
-	@if $width < 8px {
-		scrollbar-width: thin;
-	}
-	@else {
-		scrollbar-width: auto;
-	}
-	scrollbar-color: $color transparent;
-	scroll-behavior: smooth;
-	transition: all .25s;
 }
 
 // hover mixin

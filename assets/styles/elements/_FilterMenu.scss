@@ -29,13 +29,14 @@
 
 		&::after { // aka menuArrow
 
-			@include square(0.52rem);
 			position: absolute;
 			top: 50%;
 			right: 1em;
 			margin: -0.4rem 0 0 0;
 			border-color: $black;
 			border-width: 0.125rem;
+
+			@include square(0.52rem);
 		}
 
 		&.menu-active,
@@ -96,9 +97,10 @@
 
 				.FilterMenu__items--inn {
 
-					@include scrollbar(8px);
 					overflow-y: scroll;
 					margin-right: -1.35em;
+
+					@include scrollbar(8px);
 				}
 			}
 
@@ -139,7 +141,7 @@
 		}
 	}
 
-	@media (max-width: $breakpoint-tablet - 1) {
+	@media (max-width: ($breakpoint-tablet - 1px)) {
 
 		&__title {
 			display: none !important;

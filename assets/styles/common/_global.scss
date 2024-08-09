@@ -65,7 +65,6 @@ hr {
 
 .wrapper {
 
-	@include wrapper-styles($wrapper);
 	position: relative;
 
 	margin-left: auto !important;
@@ -73,6 +72,8 @@ hr {
 	padding-left: $wrapper-padding;
 	padding-right: $wrapper-padding;
 	border-radius: $border-radius-6;
+
+	@include wrapper-styles($wrapper);
 
 	@media (min-width: $breakpoint-desktop) {
 		padding: 0;
@@ -95,10 +96,10 @@ hr {
 
 	&-full {
 
-		@include wrapper-styles($wrapper-full);
 		padding-right: 0;
 		padding-left: 0;
 
+		@include wrapper-styles($wrapper-full);
 	}
 }
 
@@ -314,6 +315,7 @@ hr {
 	padding-top: $block-space-sm;
 	padding-bottom: $block-space-sm;
 	background-color: $gray-50;
+	margin-bottom: 0 !important;
 
 	@media (min-width: $breakpoint-tablet) {
 		padding-top: $block-space-md;
@@ -322,8 +324,6 @@ hr {
 	@media (min-width: $breakpoint-desktop) {
 		padding-top: $block-space;
 	}
-
-	margin-bottom: 0 !important;
 }
 
 .gray-bg {
@@ -367,6 +367,5 @@ hr {
 			transform: translateX(-50%);
 			bottom: -250px;
 		}
-
 	}
 }

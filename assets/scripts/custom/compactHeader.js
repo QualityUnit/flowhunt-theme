@@ -85,7 +85,10 @@
 	function fnStickyHeaderActions() {
 		if ( elToggle && elClose && elApply ) {
 			[ elToggle, elClose, elApply ].forEach( ( item ) => {
-				item.addEventListener( 'click', () => {
+				item.addEventListener( 'click', ( event ) => {
+					if ( event.target !== item && event.target.parentNode !== item ) {
+						return;
+					}
 					elBody.classList.toggle( clMobileActive );
 				} );
 			} );

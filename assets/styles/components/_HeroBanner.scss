@@ -93,11 +93,12 @@
 
 		.elementor-col-50 {
 
+			@include elementor-col-50;
+
 			&:first-of-type {
 				padding-left: 0;
 			}
 
-			@include elementor-col-50;
 		}
 	}
 }
@@ -125,11 +126,12 @@
 
 		.elementor-col-50 {
 
+			@include elementor-col-50;
+
 			&:first-of-type {
 				padding-left: 0;
 			}
 
-			@include elementor-col-50;
 		}
 	}
 }

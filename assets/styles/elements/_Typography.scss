@@ -923,8 +923,9 @@ picture.Screenshot,
 
 	a {
 
-		@include learn-more();
 		color: $black;
+
+		@include learn-more();
 	}
 }
 
@@ -934,8 +935,9 @@ picture.Screenshot,
 
 	svg {
 
-		@include square(1.25em);
 		margin-right: 0.5em;
+
+		@include square(1.25em);
 	}
 
 	.elementor-text-editor,
@@ -972,29 +974,32 @@ picture.Screenshot,
 
 			&::before {
 
-				@include square(1.25em);
 				content: "";
 				background: url(../images/tag_smile.svg) center center no-repeat;
 				background-size: contain;
 				margin-right: 0.5em;
 				margin-bottom: 0;
 				flex-shrink: 0;
+
+				@include square(1.25em);
 			}
 		}
 
 		.elementor-image-box-img.elementor-image-box-img {
 
-			@include square(1.25em);
 			display: block;
 			margin-right: 0.5em;
 			margin-bottom: 0;
 			flex-shrink: 0;
 
+			@include square(1.25em);
+
 			img,
 			picture {
 
-				@include square(1.25em);
 				display: block;
+
+				@include square(1.25em);
 			}
 		}
 	}
@@ -1037,5 +1042,51 @@ picture.Screenshot,
 
 	&__text {
 		font-weight: 600;
+	}
+}
+
+[class*="TextGutter"] {
+	display: block !important;
+	margin-bottom: 2em;
+
+	.elementor-heading-title[class] {
+		background: linear-gradient(to right, #0497dc, #465ce0);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.elementor-widget-text-editor {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0.625em;
+			border-radius: 10px;
+			width: 2px;
+			background: linear-gradient(to top, #0497dc, #465ce0);
+			height: 100%;
+		}
+
+		p {
+			font-size: 1rem;
+			margin-bottom: 0;
+		}
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		max-width: 40em;
+	}
+
+
+	&.TextGutter {
+
+		&__left {
+
+			.elementor-widget-text-editor {
+				padding-left: 2em;
+
+			}
+		}
 	}
 }

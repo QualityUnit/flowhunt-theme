@@ -137,15 +137,15 @@ figure.wp-block-table,
 
 				.MobileHeader {
 
-					&__top {
-						color: $primary;
-					}
-
 					font-weight: 600;
 					word-break: normal;
 					width: 40%;
 					flex-basis: auto;
 					flex-shrink: 0;
+
+					&__top {
+						color: $primary;
+					}
 				}
 			}
 
