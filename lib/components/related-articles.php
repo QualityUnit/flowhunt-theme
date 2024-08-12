@@ -34,7 +34,8 @@ if ( isset( $args ) ) {
 		?>
 
 <div class="Related__Articles urlslab-skip-keywords">
-  <div class="Related__Articles--title h2"><?php _e( 'Related', 'flowhunt' ); ?> <?= isset( $categories[0] ) ? esc_html( $categories[0]->name ) : esc_html( __( 'articles', 'flowhunt' ) ); ?></div>
+
+  <div class="Related__Articles--title h2"><?php _e( 'Related articles in', 'flowhunt' ); ?> <?= isset( $categories[0] ) ? esc_html( $categories[0]->name ) : esc_html( __( 'articles', 'flowhunt' ) ); ?></div>
 		<?php
 		$query_related_posts = new WP_Query( $query );
 		if ( $query_related_posts->have_posts() ) :
