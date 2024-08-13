@@ -23,10 +23,6 @@
 					left: -10%;
 					z-index: -1;
 
-					@media (min-width: $breakpoint-desktop-hd) {
-						height: clamp(30em, 58.75em, 100vh);
-					}
-
 					div {
 						height: 100%;
 
@@ -54,6 +50,13 @@
 						margin-right: 0;
 					}
 				}
+			}
+		}
+
+		.e-child:has(.elementor-widget-image) {
+
+			@media (min-width: $breakpoint-desktop-big) {
+				height: clamp(30em, 58.75em, 100vh);
 			}
 		}
 	}

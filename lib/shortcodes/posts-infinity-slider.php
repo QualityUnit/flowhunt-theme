@@ -37,34 +37,17 @@ function posts_infinity_slider( $atts ) {
 			$query->the_post();
 
 			// Default image path
-			$default_image_url = get_template_directory_uri() . '/assets/images/flows-templates-post-thumbnail.svg?ver=' . THEME_VERSION;
+			$default_image_url = get_template_directory_uri() . '/assets/images/default-icon-features.svg?ver=' . THEME_VERSION;
 
-			// Get the SVG color meta value
-			$thumbnail_color = get_post_meta( get_the_ID(), 'svg_color', true );
-			if ( empty( $thumbnail_color ) ) {
-				$thumbnail_color = '#d1d5db';
-			}
-			$svg_code = get_colored_svg( $thumbnail_color );
-
-			// Initialize the featured_image variable
-			$featured_image = '';
-
-			// Custom image logic based on post type or taxonomy
-			if ( 'features' === $atts['post_type'] && has_term( '', 'features-categories' ) ) {
-				// Use SVG code for 'features' post type with specific taxonomy
-				$featured_image = $svg_code;
-			} else {
-				// Use default image URL for other post types
-				$featured_image = '<img src="' . esc_url( $default_image_url ) . '" alt="' . esc_attr( get_the_title() ) . '" />';
-			}
+			$thumbnail_icon = get_post_meta( get_the_ID(), 'icon', true );
 
 			$posts[] = array(
 				'title' => get_the_title(),
 				'excerpt' => wp_trim_words( get_the_excerpt(), $atts['word_limit'], '...' ),
 				'permalink' => get_permalink(),
-				'featured_image' => $featured_image,
+				'featured_image' => $thumbnail_icon,
+				'featured_image_default' => $default_image_url,
 			);
-
 		}
 	}
 
@@ -78,10 +61,16 @@ function posts_infinity_slider( $atts ) {
 		?>
 		<div class="posts-infinity-slider" data-slider="first" data-speed="slow">
 			<div class="posts-infinity-slider__items">
-				<?php foreach ( $first_half as $post ) : ?>
+				<?php
+				foreach ( $first_half as $post ) :
+					?>
 					<a class="posts-infinity-slider__item" href="<?= esc_url( $post['permalink'] ); ?>">
 						<div class="posts-infinity-slider__item__image">
-							<?= $post['featured_image']; // phpcs:ignore ?>
+							<?php if ( empty( $post['featured_image'] ) ) : ?>
+								<img src="<?= esc_url( $post['featured_image_default'] ); ?>" alt="<?= esc_attr( $post['title'] ); ?>">
+							<?php else : ?>
+								<?= wp_get_attachment_image( $post['featured_image'], 'full' ); ?>
+							<?php endif; ?>
 						</div>
 						<div class="posts-infinity-slider__item__content">
 							<h3><?= esc_html( $post['title'] ); ?></h3>
@@ -93,10 +82,16 @@ function posts_infinity_slider( $atts ) {
 		</div>
 		<div class="posts-infinity-slider" data-slider="second" data-direction="right" data-speed="slow">
 			<div class="posts-infinity-slider__items">
-				<?php foreach ( $second_half as $post ) : ?>
+				<?php
+				foreach ( $second_half as $post ) :
+					?>
 					<a class="posts-infinity-slider__item" href="<?= esc_url( $post['permalink'] ); ?>">
 						<div class="posts-infinity-slider__item__image">
-							<?= $post['featured_image']; // phpcs:ignore ?>
+							<?php if ( empty( $post['featured_image'] ) ) : ?>
+								<img src="<?= esc_url( $post['featured_image_default'] ); ?>" alt="<?= esc_attr( $post['title'] ); ?>">
+							<?php else : ?>
+								<?= wp_get_attachment_image( $post['featured_image'], 'full' ); ?>
+							<?php endif; ?>
 						</div>
 						<div class="posts-infinity-slider__item__content">
 							<h3><?= esc_html( $post['title'] ); ?></h3>

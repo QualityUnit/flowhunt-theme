@@ -3,8 +3,6 @@ no-descending-specificity */
 @use "sass:math";
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
-@forward "../elements/BoxMain";
-@forward "../elements/BoxShadow";
 
 .Posts {
 
@@ -63,42 +61,170 @@ no-descending-specificity */
 	}
 
 	&__item {
-
-		@extend .Box--main;
-		@extend .Box--shadow;
+		$border-width: 2px;
+		position: relative;
 		margin-bottom: 0;
-		box-shadow: 0 0 0 3px rgba($primary, 0);
+		background-color: $white;
+		box-shadow: 0 15px 10px -15px rgba(9, 0, 44, 0.12);
+		border: 1px solid $gray-200;
+		border-radius: 10px - 2px;
+		transition: border-color 0.3s;
 
-		&[class]:hover {
+		&::before {
+			content: "";
+			position: absolute;
+			opacity: 0;
+			left: - calc($border-width + 1px);
+			top: - calc($border-width + 1px);
+			width: calc(100% + $border-width * 2 + 2px); // 2px for the default li border
+			height: calc(100% + $border-width * 2 + 2px); // 2px for the default li border
+			background: $primary-gradient;
+			border-radius: 10px;
+			z-index: -1;
+			transition: opacity 0.3s;
+
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		&:has(.main) {
+			padding: 0;
+		}
+
+		&--header {
+			position: relative;
+			background-size: cover;
+			overflow: hidden;
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+			top: -1px;
+		}
+
+		&--icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 50px;
+			height: 50px;
+			margin: 1em 0 1em 2em;
+			border: 1px solid $gray-200;
+			border-radius: $border-radius-6;
 			background-color: $white;
-			color: $black;
-			box-shadow: 0 0 0 3px rgba($primary, 1);
-			filter: $box-shadow-big;
 
-			a {
-				text-decoration: none;
+			img {
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		&--content {
+
+			padding: 1.5em;
+
+			h4 {
+				font-size: $font-size-bigger;
+			}
+
+			p {
+				font-size: $font-size-smaller;
+			}
+		}
+
+		&.main {
+
+			.Posts__item {
+
+				&--inn {
+
+					display: grid;
+					grid-template-columns: 1fr;
+					grid-template-rows: auto;
+					align-items: flex-start;
+
+					@media (min-width: $breakpoint-tablet-small) {
+						grid-template-columns: 1fr 1fr;
+					}
+
+					@media (min-width: $breakpoint-desktop) {
+						display: grid;
+						grid-template-columns: 31.25em 1fr;
+					}
+				}
+
+				&--header {
+					position: relative;
+					border-top-right-radius: 0;
+
+					@media (min-width: $breakpoint-tablet) {
+						height: 100%;
+					}
+				}
+
+				&--image {
+					display: block;
+					border-right: 1px solid $gray-200;
+					background-size: cover;
+					min-height: 14em;
+					height: 100%;
+
+					picture,
+					img {
+
+						@include square(100%);
+						object-fit: cover;
+						object-position: right bottom;
+					}
+
+					@media (min-width: $breakpoint-tablet) {
+						display: block;
+						border-right: 1px solid $gray-200;
+						background-size: cover;
+						min-height: 14em;
+						height: 100%;
+					}
+				}
+
+				&--content {
+					padding: 0;
+
+					&:has(.Posts__item--header) {
+
+						.Posts__item--header {
+							display: none;
+
+							@media (min-width: $breakpoint-tablet) {
+								display: block;
+								position: relative;
+								background-size: cover;
+								margin: 0;
+								overflow: hidden;
+								border-top-left-radius: 0;
+							}
+						}
+
+					}
+
+					h4 {
+						font-size: 1.75rem;
+						padding: 18px 30px 0 30px;
+					}
+
+				}
+
+				&--excerpt {
+					padding: 0 30px 30px 30px;
+				}
 			}
 		}
 
 		&:not(.main) {
-			padding: 1.5em;
-
-			a {
-				text-decoration: none;
-			}
 
 			.Posts__item {
 
 				&--inn {
 					display: block;
-				}
-
-				&--header {
-					position: relative;
-					background: url(../../images/circles-bg.svg) left bottom no-repeat;
-					background-size: cover;
-					margin: -1.5em -1.5em 1.5em;
-					overflow: hidden;
 				}
 
 				&--categories {
@@ -111,102 +237,42 @@ no-descending-specificity */
 
 				&--category {
 					display: inline-block;
-					background-color: $white;
+					background-color: $primary;
 					border-radius: $border-radius-6;
 					padding: 0.25em 1em;
-					color: $black !important;
-					filter: $box-shadow-small;
+					color: $white;
+					box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.16);
 
 					+ li {
 						margin-left: 0.45em;
 					}
 				}
 
-				&--image {
-
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					width: 4.875em;
-					height: 4.5em;
-					margin-top: 1.5em;
-					margin-left: 1.5em;
-					border-radius: $border-radius-10 $border-radius-10 0 0;
-					background-color: $white;
-					box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16);
-
-					img {
-						height: 3.75em;
-					}
-				}
-
-				&--content {
-
-					h4 {
-						font-size: $font-size-bigger;
-					}
-
-					p {
-						font-size: $font-size-smaller;
-					}
-				}
-			}
-		}
-
-		&.main {
-			padding: 0;
-
-			a {
-				text-decoration: none;
-			}
-
-			.Posts__item {
-
-				&--header {
-					position: relative;
-					margin-top: auto;
-
-					@media (min-width: $breakpoint-tablet) {
-						flex: 1 0 31em;
-					}
-				}
-
-				&--image {
-					display: none;
-
-					picture,
-					img {
-
-						@include square(100%);
-						object-fit: cover;
-						object-position: right bottom;
-					}
-
-					@media (min-width: $breakpoint-tablet) {
-						display: block;
-					}
-				}
-
-				&--content {
-					padding: 1.5em;
-
-					h4 {
-						font-size: 1.75rem;
-					}
-
-					@media (min-width: $breakpoint-tablet) {
-						padding: 4.25em 3em 4.25em 2em;
-						flex: 1 1 calc(100% - 31em);
-					}
-				}
 			}
 		}
 
 		@media (max-width: ($breakpoint-tablet - 1px)) {
 
 			&[class] {
-
 				margin-bottom: 1.5em;
+			}
+		}
+
+		&:hover {
+			border-color: transparent;
+			transition: border-color 0.3s;
+
+			&::before {
+				opacity: 1;
+				transition: opacity 0.3s;
+			}
+
+			*:not(li) {
+				color: $black;
+			}
+
+			a {
+				text-decoration: none;
 			}
 		}
 	}
