@@ -57,7 +57,12 @@ $page_header_args = array(
 				$category = '';
 
 
-				$categories = get_the_terms( 0, 'flow-templates-categories' );
+				$categories = get_the_terms( 0, 'flow-templates-categories' ); // post categories
+				$post_item_icon = get_post_meta( get_the_ID(), 'icon', true ); // post icon
+				$post_item_bg = get_template_directory_uri() . '/assets/images/features-card-background-dots.jpg'; // default background
+				$post_item_pillar_img = get_the_post_thumbnail_url( get_the_ID() ); // pillar article image
+
+				$its_main = get_post_meta( get_the_ID(), 'main', true ); // if it's pillar article
 
 				if ( ! empty( $categories ) ) {
 					foreach ( $categories as $category_item ) {
@@ -77,26 +82,17 @@ $page_header_args = array(
 					?>
 					<?= esc_attr( $category ); ?> " data-category="<?= esc_attr( $category ); ?>" data-href="<?php the_permalink(); ?>">
 					<a href="<?php the_permalink(); ?>" class="Posts__item--inn flex flex-align-center">
-						<div class="Posts__item--header">
-							<?php if ( get_post_meta( get_the_ID(), 'main', true ) ) : ?>
-								<div class="Posts__item--image">
-									<?php
-									the_post_thumbnail( 'large' );
-									?>
+						<div class="Posts__item--header"
+							<?php if ( ! $its_main ) : ?>
+								style="background: url(<?= esc_url( $post_item_bg ); ?>) left bottom no-repeat;"
+							<?php endif; ?>>
+							<?php if ( $its_main ) : ?>
+								<div class="Posts__item--image" style="background: url('<?= esc_url( $post_item_pillar_img ); ?>') left bottom no-repeat; background-size: cover;">
 								</div>
 							<?php else : ?>
-								<div class="Posts__item--image">
-									<?php
-									$thumnbail_color = get_post_meta( get_the_ID(), 'svg_color', true ) ?? '';
-									$svg_code = get_colored_svg( $thumnbail_color );
-									?>
-									<?= $svg_code; //@codingStandardsIgnoreLine ?>
+								<div class="Posts__item--icon">
+									<?= wp_get_attachment_image( $post_item_icon, 'full' ); ?>
 								</div>
-							<?php endif; ?>
-
-							<?php
-							if ( ! get_post_meta( get_the_ID(), 'main', true ) ) {
-								?>
 								<ul class="Posts__item--categories">
 									<?php
 									if ( ! empty( $categories ) ) {
@@ -109,20 +105,21 @@ $page_header_args = array(
 									}
 									?>
 								</ul>
-							<?php } ?>
+							<?php endif; ?>
 						</div>
+
 						<div class="Posts__item--content">
+							<?php if ( $its_main ) { ?>
+								<div class="Posts__item--header" style="background: url(<?= esc_url( $post_item_bg ); ?>) left bottom no-repeat;">
+									<div class="Posts__item--icon">
+										<?= wp_get_attachment_image( $post_item_icon, 'full' ); ?>
+									</div>
+								</div>
+							<?php } ?>
 							<h4 data-title><?php the_title(); ?></h4>
 							<div class="Posts__item--excerpt" data-excerpt>
 								<?= esc_html( wp_trim_words( get_the_excerpt(), 16 ) ); ?>
 							</div>
-							<?php
-							if ( get_post_meta( get_the_ID(), 'main', true ) ) {
-								?>
-								<p class="learn-more icn-arrow-right">
-									<?php _e( 'Learn more', 'flowhunt' ); ?>
-								</p>
-							<?php } ?>
 						</div>
 					</a>
 				</li>
