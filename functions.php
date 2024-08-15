@@ -40,3 +40,12 @@ define( 'THEME_VERSION', '1.0.54' );
 		require_once $filepath;
 	}
 	unset( $file, $filepath );
+
+
+	add_filter(
+		'big_image_size_threshold',
+		function () {
+			return 3840;
+		}
+	);
+
