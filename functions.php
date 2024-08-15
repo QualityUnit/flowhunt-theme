@@ -48,4 +48,3 @@ define( 'THEME_VERSION', '1.0.54' );
 			return 3840;
 		}
 	);
-
