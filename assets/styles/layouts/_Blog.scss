@@ -20,83 +20,42 @@ no-descending-specificity, value-keyword-case */
 		}
 	}
 
-	&__items {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-
-		.Blog__item {
-			margin-bottom: 1.5em;
-			opacity: 1;
-			transition: opacity 0.2s;
-
-			&.inactive {
-				opacity: 0;
-			}
-		}
-
-		&__loading {
-			text-align: center;
-			font-size: 1.5rem;
-			line-height: 1.5;
-			font-weight: $font-weight-semi;
-			margin-bottom: 1em;
-
-			span {
-				$animationTime: 1.5s;
-
-				display: inline-block;
-				font-size: 1.5em;
-				margin-left: 0.05em;
-				animation: chatDots 1.5s linear infinite;
-
-				&:nth-child(2) {
-					animation-delay: math.div($animationTime, 6);
-				}
-
-				&:nth-child(3) {
-					animation-delay: math.div($animationTime, 3);
-				}
-			}
-		}
-
-		@media (min-width: $breakpoint-tablet) {
-
-			.Blog__item {
-				width: calc(50% - 1em);
-				margin-bottom: 2em;
-			}
-		}
-
-		@media (min-width: $breakpoint-tablet-landscape) {
-
-			.Blog__item {
-				width: calc(33.33% - 1.725em);
-				margin-bottom: 2.625em;
-			}
-		}
-	}
 
 	&__item {
+		$border-width: 2px;
 
+		position: relative;
 		background: $white;
 		box-shadow: 0 0.25em 4em 0 rgba($black-real, 0.07);
-		border-radius: $border-radius-16;
-		overflow: hidden;
+		border-radius: $border-radius;
 		transition: all 0.2s;
 
-		@media (min-width: $breakpoint-desktop) {
+		&::before {
+			content: "";
+			position: absolute;
+			opacity: 0;
+			left: - calc($border-width + 1px);
+			top: - calc($border-width + 1px);
+			width: calc(100% + $border-width * 2 + 2px); // 2px for the default li border
+			height: calc(100% + $border-width * 2 + 2px); // 2px for the default li border
+			background: $primary-gradient;
+			border-radius: 10px;
+			z-index: -1;
+			transition: opacity 0.3s;
 
-			&:hover {
-				box-shadow: 0 0.25em 4em 0 rgba($black-real, 0.16);
-
-				.Blog__item__title,
-				.learn-more {
-
-					color: $primary;
-				}
-			}
 		}
+
+		&:hover {
+			border-color: transparent;
+			transition: border-color 0.3s;
+
+			&::before {
+				opacity: 1;
+				transition: opacity 0.3s;
+			}
+
+		}
+
 
 		a {
 			text-decoration: none !important;
@@ -117,6 +76,7 @@ no-descending-specificity, value-keyword-case */
 			picture {
 
 				@include square(100%);
+				border-radius: $border-radius $border-radius 0 0;
 				object-fit: cover;
 
 				&[src*=".svg"] {
