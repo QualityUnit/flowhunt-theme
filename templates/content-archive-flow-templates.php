@@ -6,7 +6,7 @@ if ( is_tax( 'flow-templates-categories' ) ) :
 	$page_header_title       = single_cat_title();
 	$page_header_description = the_archive_description();
 else :
-	$page_header_title       = __( 'Templates', 'flowhunt' );
+	$page_header_title       = __( 'Flow Templates', 'flowhunt' );
 	$page_header_description = __( 'FlowHunt lets you create all sorts of specialized chatbots and AI tools, all in one place—no more jumping between multiple websites. Browse the ever-expanding library of Flow templates to get a head start.', 'flowhunt' );
 endif;
 $filter_items_categories = array(
