@@ -137,7 +137,7 @@
 
 	&__navigation {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, 150px);
+		grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
 		justify-content: space-between;
 		color: $black;
 		margin-top: 2.5em;
@@ -145,7 +145,13 @@
 
 
 		@media (min-width: $breakpoint-tablet) {
-			grid-template-columns: repeat(4, 150px);
+			grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
+			grid-auto-flow: column;
+			width: 100%;
+
+			li {
+				min-width: 150px;
+			}
 		}
 
 		a {
