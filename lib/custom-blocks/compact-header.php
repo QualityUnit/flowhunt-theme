@@ -19,16 +19,23 @@ function inline_compact_header() {
 inline_compact_header();
 ?>
 
-<?php 
+<?php
 set_custom_source( 'filterMenu', 'js' );
 set_custom_source( 'sortingMenu', 'js' );
-set_custom_source( 'compactHeader', 'js' ); 
+set_custom_source( 'compactHeader', 'js' );
 set_custom_source( 'common/splide', 'css' );
 
 ?>
 <?php if ( isset( $args ) ) { ?>
 	<?php
 	$header_type = 'lvl-2';
+
+	if ( ! empty( $args['is_infinity'] ) ) {
+		$is_infinity = $args['is_infinity'];
+	} else {
+		$is_infinity = false;
+	}
+
 	if ( ! empty( $args['type'] ) ) {
 		$header_type = $args['type'];
 	}
@@ -59,7 +66,7 @@ set_custom_source( 'common/splide', 'css' );
 		$checklist = $args['checklist'];
 	}
 	?>
-	<div class="compact-header compact-header--<?= sanitize_html_class( $header_type ); ?>">
+	<div class="compact-header <?= true === $is_infinity ? 'compact-header--infinity' : ''; ?> compact-header--<?= sanitize_html_class( $header_type ); ?>">
 		<div class="compact-header__wrapper wrapper-md">
 			<div class="compact-header__left">
 				<?php

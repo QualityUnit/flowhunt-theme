@@ -1,4 +1,4 @@
-/* stylelint-disable selector-class-pattern */
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
 
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
@@ -39,7 +39,6 @@ body.compact-header--active {
 		margin-top: -2.2em;
 	}
 
-
 	&__left {
 
 		padding-block: 0;
@@ -58,6 +57,38 @@ body.compact-header--active {
 		}
 	}
 
+	&:not(.compact-header--infinity) {
+
+		.compact-header {
+
+			&__image {
+				align-items: center;
+			}
+
+			&__left {
+				margin-right: -5%;
+			}
+
+			&__right {
+
+				picture {
+					height: 100%;
+					display: flex;
+					align-items: center;
+				}
+
+				img {
+					width: 320px;
+					max-height: 200px;
+					object-fit: cover;
+					object-position: left top;
+					border-radius: $border-radius;
+				}
+			}
+
+		}
+
+	}
 
 	&__wrapper {
 		display: flex;
@@ -87,6 +118,7 @@ body.compact-header--active {
 			max-height: 20em;
 			object-fit: contain;
 			object-position: left bottom;
+
 		}
 
 	}
@@ -543,6 +575,7 @@ body.compact-header--active {
 
 		&__image {
 			margin: 0.5em 0 1.125em 0;
+
 		}
 
 		&__filters {

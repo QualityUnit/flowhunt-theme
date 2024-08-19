@@ -32,6 +32,7 @@ $filter_items     = array(
 );
 $page_header_args = array(
 	'type'   => 'lvl-1',
+	'is_infinity'   => true,  // set true if header image is infinity to right
 	'image'  => array(
 		'src' => get_template_directory_uri() . '/assets/images/compact-header-templates-img.png?ver=' . THEME_VERSION,
 		'alt' => $page_header_title,
@@ -48,7 +49,7 @@ $page_header_args = array(
 <div class="Posts Features" itemScope itemType="http://schema.org/Collection">
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="wrapper">
+	<div class="wrapper-md">
 		<ul class="Posts__items Archive__columns list">
 			<?php
 			while ( have_posts() ) :
