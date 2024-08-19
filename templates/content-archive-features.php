@@ -32,6 +32,7 @@ $filter_items     = array(
 );
 $page_header_args = array(
 	'type'   => 'lvl-1',
+	'is_infinity'   => true,  // set true if header image is infinity to right
 	'image'  => array(
 		'src' => get_template_directory_uri() . '/assets/images/compact-header-features-img.png?ver=' . THEME_VERSION,
 		'alt' => $page_header_title,
