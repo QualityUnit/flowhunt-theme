@@ -1,4 +1,4 @@
-/* stylelint-disable selector-class-pattern */
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
 
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
@@ -61,6 +61,10 @@ body.compact-header--active {
 
 		.compact-header {
 
+			&__image {
+				align-items: center;
+			}
+
 			&__left {
 				margin-right: -5%;
 			}
@@ -75,10 +79,15 @@ body.compact-header--active {
 
 				img {
 					width: 320px;
+					max-height: 200px;
+					object-fit: cover;
+					object-position: left top;
 					border-radius: $border-radius;
 				}
 			}
+
 		}
+
 	}
 
 	&__wrapper {
