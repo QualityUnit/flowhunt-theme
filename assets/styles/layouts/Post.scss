@@ -6,6 +6,7 @@ no-descending-specificity, scss/no-global-function-names */
 @use "../elements/Checklist";
 @use "../elements/PostTypography";
 @use "../components/WhatBlock";
+@use "../components/PostSidebar";
 
 .Post {
 

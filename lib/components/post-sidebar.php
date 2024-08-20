@@ -1,6 +1,3 @@
-<?php
-	set_custom_source( 'components/PostSidebar', 'css' );
-?>
 <div class="Post__sidebar urlslab-skip-keywords">
   <div class="Post__sidebar__inn">
 	<?php if ( sidebar_toc() !== false ) { ?>
