@@ -113,6 +113,13 @@ no-descending-specificity */
 			border-radius: $border-radius-6;
 			background-color: $white;
 
+			&:has(picture:not([src])) {
+
+				picture {
+					width: auto !important;
+				}
+			}
+
 			img {
 				width: 24px;
 				height: 24px;
