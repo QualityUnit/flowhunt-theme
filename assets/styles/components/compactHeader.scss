@@ -536,7 +536,7 @@ body.compact-header--active {
 
 		&--sticky {
 
-			position: fixed;
+			position: sticky;
 			z-index: 99;
 			top: 0;
 			left: 0;
