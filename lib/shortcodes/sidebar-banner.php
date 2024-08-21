@@ -19,8 +19,8 @@ function sidebar_banner( $atts ) {
 				esc_html(
 					! empty( $atts['bannerTitle'] ) ? $atts['bannerTitle'] : __(
 						'Try Flowhunt today',
-						'flowhunt' 
-					) 
+						'flowhunt'
+					)
 				);
 				?>
 			</h4>
@@ -29,12 +29,12 @@ function sidebar_banner( $atts ) {
 				esc_html(
 					! empty( $atts['bannerSubtitle'] ) ? $atts['bannerSubtitle'] : __(
 						'Handle all support channels in one solution',
-						'flowhunt' 
-					) 
+						'flowhunt'
+					)
 				);
 				?>
 			</p>
-			<a class="Button Button--full pt-s pb-s" href="<?= esc_url( '#0' ); ?>" target="_blank"><?= esc_html( 'Get started for FREE', 'flowhunt' ); ?></a>
+			<a class="Button Button--full pt-s pb-s" href="<?= esc_url( 'https://app.flowhunt.io/sign-in' ); ?>" target="_blank"><?= esc_html( 'Get started for FREE', 'flowhunt' ); ?></a>
 		</div>
   </div>
 
