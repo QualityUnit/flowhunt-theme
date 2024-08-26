@@ -51,6 +51,17 @@
 			margin-top: 2.2em;
 		}
 
+		.elementor-widget-text-editor {
+
+			a {
+				color: $white;
+
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+
 		h2,
 		p {
 			color: $white;
@@ -70,7 +81,6 @@
 			font-size: 1.125em;
 			margin-bottom: 0;
 		}
-
 
 	}
 
