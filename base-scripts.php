@@ -21,16 +21,6 @@
 
 	acceptButton.addEventListener( "click", () => {
 
-		const demobarNow = document.querySelector('#demobar');
-
-		if( demobar ) {
-			demobarNow.classList.add( 'visible' );
-
-			setTimeout( () => {
-				demobarNow.classList.add( 'show' );
-			}, 5000 );
-		}
-
 		consentGranted();
 		grafana();
 		postAffiliate();
@@ -41,19 +31,6 @@
 		}
 		<?php } ?>
 	});
-
-	if ( trialButton !== null ) {
-		trialButton.addEventListener( "click", () => {
-			if ( ! getCookieFrontend( "cookieLaw" ) ) {
-				setCookie( 'cookieLaw', 'yes', 14 );
-				document.querySelector( '.Medovnicky' ).classList.add( 'hide' );
-
-				consentGranted();
-				grafana();
-				postAffiliate();
-			}
-		});
-	}
 
 </script>
 
@@ -217,7 +194,7 @@ if (
 		// }
 	</script>
 </div>
-	
+
 	<?php
 }
 ?>
