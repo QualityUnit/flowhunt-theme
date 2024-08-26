@@ -41,10 +41,20 @@ if ( isset( $args ) ) {
 		if ( $query_related_posts->have_posts() ) :
 			while ( $query_related_posts->have_posts() ) :
 				$query_related_posts->the_post();
+
+				// Default image path
+				$default_image_url = get_template_directory_uri() . '/assets/images/default-icon-features.svg?ver=' . THEME_VERSION;
+
+				$related_articel_icon = get_post_meta( get_the_ID(), 'icon', true );
+
 				?>
 		<a class="Related__Articles--Article" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 		  <div class="Related__Articles--Article__thumbnail">
-				<?php the_post_thumbnail( 'person_thumbnail', array( 'alt' => get_the_title() ) ); ?>
+				<?php if ( $related_articel_icon ) : ?>
+					<?= wp_get_attachment_image( $related_articel_icon, 'full' ); ?>
+				<?php else : ?>
+				<img src="<?= esc_url( $default_image_url ); ?>" alt="<?php the_title(); ?>">
+				<?php endif; ?>
 		  </div>
 		  <div class="Related__Articles--Article__content">
 			<h5 class="Related__Articles--Article__title">
