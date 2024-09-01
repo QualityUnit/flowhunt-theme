@@ -39,7 +39,7 @@
 		"gulp-sass": "^5.1",
 		"gulp-terser": "^2.1",
 		"gulp-uglifycss": "^1.1",
-		"husky": "^9.1.4",
+		"husky": "^9.1.5",
 		"minimist": "^1.2",
 		"stylelint": "^14"
 	},
