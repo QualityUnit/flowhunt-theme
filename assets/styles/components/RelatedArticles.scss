@@ -29,6 +29,10 @@
 			justify-content: center;
 			align-items: center;
 
+			picture {
+				width: auto;
+			}
+
 			img {
 				width: 1.5em;
 				height: 1.5em;
@@ -36,8 +40,7 @@
 		}
 
 		&__title[class] {
-			margin: 0;
-			margin-bottom: 0.5em;
+			margin: 0 0 0.5em;
 			transition: color 0.25s;
 		}
 
