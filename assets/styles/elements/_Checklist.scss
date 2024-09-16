@@ -17,13 +17,14 @@
 
 		&::before {
 
-			@include circle(0.75rem);
+			@include circle(0.5625em);
+			border: 1px solid $primary;
 			display: inline-block;
 			content: "";
 			position: absolute;
-			top: 0.4em;
+			top: 0.6em;
 			left: 0;
-			border: 3px solid $primary;
+			background-color: $black;
 			font-size: 1em;
 			margin: 0;
 		}
@@ -34,16 +35,13 @@
 		margin-top: 1em;
 
 		li {
-			padding-left: 0.5em;
+			padding-left: 1.5em;
 
 			&::before {
 
-				@include square(auto);
-				content: "\2022";
-				background: none;
-				padding: 0;
-				top: 0;
-				color: $primary;
+				@include circle(0.4375em);
+				background-color: $black;
+				border: 1px solid $primary;
 			}
 		}
 	}
