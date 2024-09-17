@@ -1,7 +1,7 @@
 <?php // @codingStandardsIgnoreLine
 set_custom_source( 'layouts/Archive' );
 set_custom_source( 'filter', 'js' );
-$categories = array_unique( get_categories( array( 'taxonomy' => 'features-categories' ) ), SORT_REGULAR );
+$categories = array_unique( get_categories( array( 'taxonomy' => 'tools-categories' ) ), SORT_REGULAR );
 if ( is_tax( 'tools-categories' ) ) :
 	$page_header_title       = single_cat_title();
 	$page_header_description = the_archive_description();
