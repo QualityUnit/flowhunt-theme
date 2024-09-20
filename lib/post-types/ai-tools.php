@@ -4,19 +4,19 @@ add_action(
 	'init',
 	function () {
 		$labels  = array(
-			'name'           => _x( 'Tools', 'Post Type General Name', 'flowhunt' ),
-			'singular_name'  => _x( 'Tool', 'Post Type Singular Name', 'flowhunt' ),
-			'menu_name'      => __( 'Tools', 'flowhunt' ),
-			'name_admin_bar' => __( 'Tools', 'flowhunt' ),
+			'name'           => _x( 'AI Tools', 'Post Type General Name', 'flowhunt' ),
+			'singular_name'  => _x( 'AI Tool', 'Post Type Singular Name', 'flowhunt' ),
+			'menu_name'      => __( 'AI Tools', 'flowhunt' ),
+			'name_admin_bar' => __( 'AI Tools', 'flowhunt' ),
 		);
 		$rewrite = array(
-			'slug'       => 'tools',
+			'slug'       => 'ai-tools',
 			'with_front' => true,
 			'pages'      => true,
 			'feeds'      => false,
 		);
 		$args    = array(
-			'label'               => __( 'Tools', 'flowhunt' ),
+			'label'               => __( 'AI Tools', 'flowhunt' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author' ),
 			'hierarchical'        => false,
@@ -35,8 +35,8 @@ add_action(
 			'capability_type'     => 'post',
 			'show_in_rest'        => true,
 			'show_in_graphql'     => true,
-			'graphql_single_name' => 'tool',
-			'graphql_plural_name' => 'tools',
+			'graphql_single_name' => 'ai-tool',
+			'graphql_plural_name' => 'ai-tools',
 		);
 		register_post_type( 'tools', $args );
 	},

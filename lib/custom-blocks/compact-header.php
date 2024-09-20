@@ -434,6 +434,7 @@ set_custom_source( 'common/splide', 'css' );
 					</div>
 				<?php } ?>
 			</div>
+			<?php if ( true === $is_infinity ) { ?>
 			<div class="compact-header__right urlslab-skip-lazy">
 				<?php if ( ! empty( $args['image'] ) ) { ?>
 					<?php
@@ -450,6 +451,7 @@ set_custom_source( 'common/splide', 'css' );
 					<?php } ?>
 				<?php } ?>
 			</div>
+			<?php } ?>
 		</div>
 	</div>
 <?php } ?>
