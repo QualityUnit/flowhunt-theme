@@ -36,6 +36,21 @@ $related_args = array(
 	<div class="wrapper Post__container">
 		<div class="BlogPost__content Post__content">
 			<div class="Content" itemprop="articleBody">
+				<?php if ( ! empty( $page_header_args['image']['url'] ) ) { ?>
+					<div class="Content__hero">
+						<?php
+						$image = $page_header_args['image'];
+						?>
+						<?php if ( isset( $image['src'] ) ) { ?>
+								<img
+									src="<?= esc_url( $image['src'] ); ?>"
+									alt="<?= esc_attr( $image['alt'] ); ?>"
+									class="Content__hero__img"
+								>
+						<?php } ?>
+					</div>
+				<?php } ?>
+
 				<?php the_content(); ?>
 
 				<div class="BlogPost__author-box" itemprop="author" itemscope itemtype="http://schema.org/Person">

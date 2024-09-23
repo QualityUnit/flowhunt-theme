@@ -43,3 +43,14 @@ function glossary_category_redirect() {
 	}
 }
 add_action( 'template_redirect', 'glossary_category_redirect' );
+
+/**
+ * Redirect Features Categories
+ */
+function ai_tools_category_redirect() {
+	if ( is_tax( 'tools-categories' ) ) {
+		wp_safe_redirect( '/ai-tools/', 301 );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'ai_tools_category_redirect' );

@@ -34,6 +34,22 @@ $related_args = array(
 		<div class="Post__content">
 
 			<div class="Content" itemprop="articleBody">
+
+				<?php if ( ! empty( $page_header_args['image']['url'] ) ) { ?>
+					<div class="Content__hero">
+						<?php
+						$image = $page_header_args['image'];
+						?>
+						<?php if ( isset( $image['src'] ) ) { ?>
+							<img
+								src="<?= esc_url( $image['src'] ); ?>"
+								alt="<?= esc_attr( $image['alt'] ); ?>"
+								class="Content__hero__img"
+							>
+						<?php } ?>
+					</div>
+				<?php } ?>
+
 				<?php the_content(); ?>
 
 				<?php get_template_part( 'lib/components/related-articles', null, $related_args ); ?>

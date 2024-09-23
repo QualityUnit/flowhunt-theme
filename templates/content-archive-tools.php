@@ -6,7 +6,7 @@ if ( is_tax( 'tools-categories' ) ) :
 	$page_header_title       = single_cat_title();
 	$page_header_description = the_archive_description();
 else :
-	$page_header_title       = __( 'Tools', 'flowhunt' );
+	$page_header_title       = __( 'AI Tools', 'flowhunt' );
 	$page_header_description = __( 'Explore the features and components for building AI tools and chatbots. Designed with modularity and flexibility at heart, FlowHunt is ready to support all your automation needs.', 'flowhunt' );
 endif;
 $filter_items_categories = array(
@@ -32,6 +32,7 @@ $filter_items     = array(
 );
 $page_header_args = array(
 	'type'   => 'lvl-1',
+	'is_infinity'   => true,  // set true if header image is infinity to right
 	'image'  => array(
 		'src' => get_template_directory_uri() . '/assets/images/compact-header-features-img.png?ver=' . THEME_VERSION,
 		'alt' => $page_header_title,
