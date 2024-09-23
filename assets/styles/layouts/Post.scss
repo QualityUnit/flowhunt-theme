@@ -339,7 +339,7 @@ no-descending-specificity, scss/no-global-function-names */
 			max-width: calc(100% - var(--sidebar-width) - 5em);
 
 			&--page {
-				max-width: none;
+				max-width: 40.625em;
 			}
 
 			.Content {
@@ -384,17 +384,21 @@ no-descending-specificity, scss/no-global-function-names */
 		@media (min-width: $breakpoint-desktop-box) {
 
 			&--page {
-				max-width: none;
+				max-width: 40.625em;
 			}
 		}
 
-		@media (min-width: $breakpoint-desktop-md) {
-			max-width: 40.625em;
+		&:has(+ .Post__sidebar) {
 
-			.Content {
-				position: relative;
-				left: calc(var(--sidebar-width) / 2 + 1.125em);
+			@media (min-width: $breakpoint-desktop-md) {
+				max-width: 40.625em;
+
+				.Content {
+					position: relative;
+					left: calc(var(--sidebar-width) / 2 + 1.125em);
+				}
 			}
 		}
+
 	}
 }
