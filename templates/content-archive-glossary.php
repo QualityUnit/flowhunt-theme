@@ -2,11 +2,13 @@
 set_custom_source( 'layouts/Archive' );
 set_custom_source( 'components/Index' );
 require_once get_template_directory() . '/lib/components/searchfield.php';
+
+$post_type_category = 'glossary-categories';
 $index             = array();
 $page_header_title = __( 'AI Glossary', 'flowhunt' );
 $page_header_text  = '';
 // $page_header_text  = __( 'If you`re new to website optimization or SEO, you may find yourself facing many unfamiliar terms and concepts . We`ve put together a comprehensive glossary to help you understand these key terms more easily.', 'flowhunt' );
-if ( is_tax( 'glossary-categories' ) ) :
+if ( is_tax( $post_type_category ) ) :
 	$page_header_title = single_term_title( '', false );
 	// $page_header_text  = term_description();
 endif;

@@ -239,6 +239,14 @@
 				} );
 			} );
 
+			// We will prevent the form from being sent to enter
+			const searchForm = document.querySelector( '#searchform' );
+			if ( searchForm ) {
+				searchForm.addEventListener( 'submit', function( e ) {
+					e.preventDefault();
+				} );
+			}
+
 			if ( searchReset ) {
 				searchReset.addEventListener( 'click', () => {
 					search.value = '';
