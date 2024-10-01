@@ -13,14 +13,15 @@ function duration_to_time( $youtube_time ) {
 	return $youtube_time;
 }
 
-$categories = array_unique( get_categories( array( 'taxonomy' => 'videos_categories' ) ), SORT_REGULAR );
-if ( is_tax( 'videos_categories' ) ) :
+$post_type_category = 'videos_categories';
+$categories = array_unique( get_categories( array( 'taxonomy' => $post_type_category ) ), SORT_REGULAR );
+if ( is_tax( $post_type_category ) ) :
 	$page_header_title       = single_cat_title();
 	$page_header_description = the_archive_description();
 else :
 	$page_header_title = __( 'Videos', 'flowhunt' );
 endif;
-if ( is_tax( 'videos_categories' ) ) :
+if ( is_tax( $post_type_category ) ) :
 	$page_header_title = single_term_title( '', false );
 	$page_header_text  = term_description();
 endif;
@@ -54,7 +55,7 @@ $page_header_args = array(
 	'title'  => $page_header_title,
 	'text'   => '', // do_shortcode( '[urlslab-generator id="6"]' ) that was in the original code
 	'search' => array(
-		'type' => 'academy',
+		'type' => $post_type_category,
 	),
 	'filter' => $filter_items,
 );
@@ -72,7 +73,7 @@ $page_header_args = array(
 
 					$category = '';
 
-					$categories = get_the_terms( 0, 'videos_categories' );
+					$categories = get_the_terms( 0, $post_type_category );
 
 					if ( ! empty( $categories ) ) {
 						foreach ( $categories as $category_item ) {

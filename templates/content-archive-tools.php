@@ -1,8 +1,9 @@
 <?php // @codingStandardsIgnoreLine
 set_custom_source( 'layouts/Archive' );
 set_custom_source( 'filter', 'js' );
-$categories = array_unique( get_categories( array( 'taxonomy' => 'tools-categories' ) ), SORT_REGULAR );
-if ( is_tax( 'tools-categories' ) ) :
+$post_type_category = 'tools-categories';
+$categories = array_unique( get_categories( array( 'taxonomy' => $post_type_category ) ), SORT_REGULAR );
+if ( is_tax( $post_type_category ) ) :
 	$page_header_title       = single_cat_title();
 	$page_header_description = the_archive_description();
 else :
@@ -41,7 +42,7 @@ $page_header_args = array(
 	'text'   => $page_header_description,
 	'filter' => $filter_items,
 	'search' => array(
-		'type' => 'academy',
+		'type' => $post_type_category,
 	),
 );
 ?>
@@ -58,7 +59,7 @@ $page_header_args = array(
 				$category = '';
 
 
-				$categories = get_the_terms( 0, 'tools-categories' );
+				$categories = get_the_terms( 0, $post_type_category );
 
 				if ( ! empty( $categories ) ) {
 					foreach ( $categories as $category_item ) {

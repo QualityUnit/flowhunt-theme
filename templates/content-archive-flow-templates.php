@@ -1,8 +1,9 @@
 <?php // @codingStandardsIgnoreLine
 set_custom_source( 'layouts/Archive' );
 set_custom_source( 'filter', 'js' );
-$categories = array_unique( get_categories( array( 'taxonomy' => 'flow-templates-categories' ) ), SORT_REGULAR );
-if ( is_tax( 'flow-templates-categories' ) ) :
+$post_type_category = 'flow-templates-categories';
+$categories = array_unique( get_categories( array( 'taxonomy' => $post_type_category ) ), SORT_REGULAR );
+if ( is_tax( $post_type_category ) ) :
 	$page_header_title       = single_cat_title();
 	$page_header_description = the_archive_description();
 else :
@@ -41,7 +42,7 @@ $page_header_args = array(
 	'text'   => $page_header_description,
 	'filter' => $filter_items,
 	'search' => array(
-		'type' => 'academy',
+		'type' => $post_type_category,
 	),
 );
 ?>
@@ -58,7 +59,7 @@ $page_header_args = array(
 				$category = '';
 
 
-				$categories = get_the_terms( 0, 'flow-templates-categories' ); // post categories
+				$categories = get_the_terms( 0, $post_type_category ); // post categories
 				$post_item_icon = get_post_meta( get_the_ID(), 'icon', true ); // post icon
 				$post_item_bg = get_template_directory_uri() . '/assets/images/features-card-background-dots.jpg'; // default background
 				$post_item_pillar_img = get_the_post_thumbnail_url( get_the_ID() ); // pillar article image

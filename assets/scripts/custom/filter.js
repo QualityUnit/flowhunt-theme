@@ -239,6 +239,13 @@
 				} );
 			} );
 
+			// Keydown to prevent form submission on Enter key
+			search.addEventListener( 'keydown', ( event ) => {
+				if ( event.key === 'Enter' ) {
+					event.preventDefault(); // Prevent form submission
+				}
+			} );
+
 			if ( searchReset ) {
 				searchReset.addEventListener( 'click', () => {
 					search.value = '';
