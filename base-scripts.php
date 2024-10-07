@@ -161,15 +161,35 @@
 <!-- End Google Tag Manager -->
 
 <!-- Chat Button Loader -->
-<script type="text/javascript" id="fh-chatbot-script">
-	(function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
-		'https://app.flowhunt.io/fh-chat-widget.js?v=1.0.20',
-		function(e){ FHChatbot.initChatbot({
-			chatbotId: '4f954c97-1f1b-4164-82df-1b259ce5f645',
-			workspaceId: 'e31db667-893b-4e47-92c3-bb1f93c1b594',
-			urlSuffix: '#utm_source=chatbot',
-			maxWindowWidth: '700px',
-		}); });
+<script type="text/javascript" id="fh-chatbot-script-4f954c97-1f1b-4164-82df-1b259ce5f645">
+	(function(d, src, c) {
+		var t = d.scripts[d.scripts.length - 1],
+			s = d.createElement('script');
+		s.async = true;
+		s.src = src;
+		s.onload = s.onreadystatechange = function() {
+			var rs = this.readyState;
+			if (rs && (rs != 'complete') && (rs != 'loaded')) {
+				return;
+			}
+			c(this);
+		};
+		t.parentElement.insertBefore(s, t.nextSibling);
+	})(document,
+		'https://app.flowhunt.io/fh-chat-widget.js',
+		function(e) {
+			FHChatbot.initChatbot({
+				chatbotId: '4f954c97-1f1b-4164-82df-1b259ce5f645',
+				workspaceId: 'e31db667-893b-4e47-92c3-bb1f93c1b594',
+				urlSuffix: '#utm_source=chatbot',
+				maxWindowWidth: '700px',
+				customOptions: JSON.stringify({
+					welcomeMessage: "🤖 Hi there! Welcome to Flowhunt! 🎉\n\nLooking to automate your workflows and build AI Assistants? We're here to help! 💪✨\n\nGot any questions? Ask away! 💬👇",
+					faqs: ["What are FlowHunt features?", "What are flows?", "What is your pricing?", "Show me some templates for SEO"]
+				})
+			});
+		}
+	);
 </script>
 
 <?php
