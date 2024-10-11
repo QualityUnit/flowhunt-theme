@@ -7,7 +7,7 @@ $page_header_title = single_term_title( '', false );
 $page_header_args  = array(
 	'type'  => 'lvl-1',
 	'title' => $page_header_title,
-	'text'  => term_description(),
+	'text'  => ! empty( term_description() ) ? term_description() : 'Explore the features and components for building AI tools and chatbots. Designed with modularity and flexibility at heart, FlowHunt is ready to support all your automation needs.',
 );
 if ( has_nav_menu( 'blog_filter_navigation' ) ) :
 	$menu_locations          = get_nav_menu_locations();
@@ -38,7 +38,7 @@ if ( has_nav_menu( 'blog_filter_navigation' ) ) :
 	$page_header_args['filter'] = $filter_items;
 endif;
 ?>
-<div id="blog" class="Blog" itemscope itemtype="http://schema.org/Blog">
+<div id="blog" class="Blog pos-relative" itemscope itemtype="http://schema.org/Blog">
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
 	<div class="Blog__container wrapper-md">
@@ -46,7 +46,7 @@ endif;
 			<?php
 			if ( ! is_author() ) {
 				$current_category = get_queried_object();
-				$show_top_args = array(
+				$show_top_args    = array(
 					'posts_per_page'      => 1,
 					'ignore_sticky_posts' => 1,
 					'post__in'            => get_option( 'sticky_posts' ),
@@ -133,8 +133,8 @@ endif;
 				$category_id = $categories[1]->cat_ID;
 			}
 
-			$this_category      = get_queried_object();
-			$sticky_posts       = get_option( 'sticky_posts' );
+			$this_category = get_queried_object();
+			$sticky_posts  = get_option( 'sticky_posts' );
 
 			// Get posts in current category
 			$category_posts = array();
@@ -142,7 +142,7 @@ endif;
 				$category_posts = get_posts(
 					array(
 						'category' => $this_category->term_id,
-						'fields' => 'ids',
+						'fields'   => 'ids',
 					)
 				);
 			}
