@@ -24,15 +24,6 @@ function remove_jquery_migrate( $scripts ) {
 }
 add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
 
-add_action( 'admin_enqueue_scripts', 'add_media_script' );
-
-function add_media_script( $hook_suffix ) {
-
-	wp_enqueue_media();
-
-}
-
-
 /**
   * Remove WPML codes
   */
