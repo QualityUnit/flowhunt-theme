@@ -24,16 +24,52 @@ body.compact-header--active {
 	position: relative;
 	margin-bottom: 4em;
 
+
 	&::before {
 		content: "";
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
+		min-height: 100%;
 		height: 22.75em;
 		background: $white url(../../images/header-dots.png) repeat-x center bottom;
 		background-size: 20px;
 		border-bottom: 1px solid $gray-200;
+	}
+
+	&--imageUnder {
+
+		.compact-header__image {
+			position: relative;
+			object-fit: cover;
+			object-position: center top;
+			overflow: hidden;
+			border-radius: $border-radius-10;
+			width: 90%;
+			height: 0;
+			margin: 0 auto 1em;
+			padding-bottom: 45.27%;
+
+			picture,
+			img {
+
+				@include square(100%);
+				top: 0;
+				left: 0;
+				position: absolute;
+				object-fit: cover;
+				object-position: center top;
+				max-height: none;
+			}
+
+			@media (min-width: $breakpoint-ipad-pro) {
+				border-radius: 20px;
+				width: 887px;
+				height: 508px;
+				padding-bottom: 0;
+			}
+		}
 	}
 
 	& ~ & {
@@ -178,6 +214,7 @@ body.compact-header--active {
 
 	&__text {
 		font-size: 1.125em;
+		color: $gray-500;
 
 		&:not(:last-child) {
 			margin-bottom: 1.6em;
@@ -186,8 +223,7 @@ body.compact-header--active {
 
 	&__date {
 
-		color: $level-2;
-		font-size: 0.75em;
+		font-size: 1rem;
 
 		&:not(:last-child) {
 			margin-bottom: 0.625em;
@@ -219,6 +255,14 @@ body.compact-header--active {
 	}
 
 	&__tags {
+		display: flex;
+		align-items: center;
+
+		&--title {
+			font-size: 0.75rem;
+			margin-right: 1em;
+			color: $gray-500;
+		}
 
 		&:not(:last-child) {
 			margin-bottom: 0.625em;

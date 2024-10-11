@@ -1,14 +1,15 @@
 <?php
 global $post;
 $page_header_args = array(
-	'image' => array(
-		'src' => get_the_post_thumbnail_url( $post, 'person_thumbnail' ),
+	'image'      => array(
+		'src' => get_the_post_thumbnail_url( $post, 'big_image' ),
 		'alt' => get_the_title(),
 	),
-	'title' => get_the_title(),
-	'text'  => '', // do_shortcode( '[urlslab-generator id="4"]' ) that was in the original code
-	'date'  => true,
-	'toc'   => true,
+	'title'      => get_the_title(),
+	'text'       => '', // do_shortcode( '[urlslab-generator id="4"]' ) that was in the original code
+	'date'       => true,
+	'toc'        => true,
+	'imageUnder' => true,
 );
 $categories       = get_the_terms( $post->ID, 'category' );
 if ( isset( $categories ) ) {

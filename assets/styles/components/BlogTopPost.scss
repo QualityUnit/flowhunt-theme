@@ -10,8 +10,17 @@
 	position: relative;
 
 	&__item {
-		$border-width: 2px;
 		border-radius: 10px;
+
+		&:hover {
+
+			.blog__top__post__title {
+				background: $primary-gradient;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				color: transparent;
+			}
+		}
 	}
 
 
@@ -45,7 +54,6 @@
 		@media (min-width: $breakpoint-desktop) {
 			min-height: auto;
 			height: 21.5em;
-
 		}
 	}
 
@@ -60,10 +68,6 @@
 		}
 	}
 
-	&__title {
-		line-height: 1.5;
-	}
-
 	@media (min-width: $breakpoint-tablet) {
 
 		&__image,
@@ -75,23 +79,23 @@
 			height: 100%;
 		}
 
-		&__content {
-			padding: 0 2em;
+		&__content[class] {
+			padding: 0 3em;
 
 			p:last-of-type {
 				margin-bottom: 0;
 			}
 		}
 
-		&__title {
-			font-size: 1.625rem;
+		&__title[class] {
+			font-size: 2.25rem !important;
 		}
 	}
 
 	@media (min-width: $breakpoint-tablet-landscape) {
 
-		&__content {
-			padding: 0 3.5em;
+		&__content[class] {
+			padding: 0 3.125em;
 		}
 	}
 

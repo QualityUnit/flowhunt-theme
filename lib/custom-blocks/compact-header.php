@@ -36,6 +36,10 @@ set_custom_source( 'common/splide', 'css' );
 		$is_infinity = false;
 	}
 
+	if ( ! empty( $args['imageUnder'] ) ) {
+		$image_under = $args['imageUnder'];
+	}
+
 	if ( ! empty( $args['type'] ) ) {
 		$header_type = $args['type'];
 	}
@@ -66,7 +70,7 @@ set_custom_source( 'common/splide', 'css' );
 		$checklist = $args['checklist'];
 	}
 	?>
-	<div class="compact-header <?= true === $is_infinity ? 'compact-header--infinity' : ''; ?> compact-header--<?= sanitize_html_class( $header_type ); ?>">
+	<div class="compact-header <?= true === $image_under ? 'compact-header--imageUnder' : ''; ?> <?= true === $is_infinity ? 'compact-header--infinity' : ''; ?> compact-header--<?= sanitize_html_class( $header_type ); ?>">
 		<div class="compact-header__wrapper wrapper-md">
 			<div class="compact-header__left">
 				<?php
@@ -115,6 +119,22 @@ set_custom_source( 'common/splide', 'css' );
 						<?php } ?>
 					</div>
 				<?php } ?>
+				<?php if ( true === $image_under ) { ?>
+			<div class="compact-header__image urlslab-skip-lazy">
+					<?php if ( ! empty( $args['image'] ) ) { ?>
+						<?php
+						$image = $args['image'];
+						?>
+						<?php if ( isset( $image['src'] ) ) { ?>
+							<img
+								src="<?= esc_url( $image['src'] ); ?>"
+								alt="<?= esc_attr( $image['alt'] ); ?>"
+								class="compact-header__img"
+							>
+					<?php } ?>
+				<?php } ?>
+			</div>
+			<?php } ?>
 				<?php if ( ! empty( $args['buttons'] ) ) { ?>
 					<div class="compact-header__buttons">
 						<div class="compact-header__buttons-items">
@@ -153,6 +173,7 @@ set_custom_source( 'common/splide', 'css' );
 				<?php } ?>
 				<?php if ( ! empty( $args['tags'] ) ) { ?>
 					<div class="compact-header__tags">
+						<span class="compact-header__tags--title">Categories: </span>
 						<?php foreach ( $args['tags'] as $item ) { ?>
 							<div class="compact-header__tags-item">
 								<?php if ( isset( $item['title'] ) ) { ?>
