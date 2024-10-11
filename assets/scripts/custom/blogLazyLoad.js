@@ -1,4 +1,3 @@
-/* global customLazyLoad */
 /* eslint-disable camelcase */
 
 /*
