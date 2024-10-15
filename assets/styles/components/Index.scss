@@ -63,12 +63,19 @@
 				display: flex;
 
 				ul {
-					flex-basis: calc(100% - 4em);
+					flex-basis: 100%;
 					padding-left: 1.5em;
 
 					li {
 						width: 33%;
 					}
+				}
+			}
+
+			@media (min-width: $breakpoint-ipad-pro) {
+
+				ul {
+					padding-left: 6em;
 				}
 			}
 		}

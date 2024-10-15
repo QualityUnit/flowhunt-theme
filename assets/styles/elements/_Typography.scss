@@ -250,13 +250,16 @@ a:not(.Button) {
 
 	color: $black;
 	text-decoration: underline;
+	transition: border-color 0.3s;
 
 	&:active,
 	&:focus,
 	&:hover {
 
-		color: $primary;
-		text-decoration: underline;
+		background: $primary-gradient;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: transparent;
 	}
 }
 
