@@ -38,6 +38,8 @@ set_custom_source( 'common/splide', 'css' );
 
 	if ( ! empty( $args['imageUnder'] ) ) {
 		$image_under = $args['imageUnder'];
+	} else {
+		$image_under = false;
 	}
 
 	if ( ! empty( $args['type'] ) ) {
