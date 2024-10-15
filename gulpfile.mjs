@@ -7,7 +7,7 @@ import eslint from 'gulp-eslint';
 import filter from 'gulp-filter';
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
-import stylelint from "@ronilaukkarinen/gulp-stylelint";
+import stylelint from '@ronilaukkarinen/gulp-stylelint';
 // const gcmq from 'gulp-group-css-media-queries';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
@@ -16,23 +16,22 @@ import terser from 'gulp-terser';
 import uglifycss from 'gulp-uglifycss';
 import svgSprites from 'gulp-svg-sprite';
 
-
-const sass = gulpSass(dartSass);
+const sass = gulpSass( dartSass );
 browserSync.create();
 
-gulp.task('set-path', async () => {
-	if (process.env.NODE_ENV === 'production') {
+gulp.task( 'set-path', async () => {
+	if ( process.env.NODE_ENV === 'production' ) {
 		return process.env.url = '/app/themes/flowhunt/assets';
 	}
 	return process.env.url = '/app/themes/flowhunt-theme/assets';
-});
+} );
 
-gulp.task('browser-reload', (done) => {
+gulp.task( 'browser-reload', ( done ) => {
 	browserSync.reload();
 	done();
-});
+} );
 
-gulp.task('clean-dist', () =>
+gulp.task( 'clean-dist', () =>
 	clean(
 		[
 			'./assets/dist/**/*',
@@ -41,9 +40,9 @@ gulp.task('clean-dist', () =>
 	)
 );
 
-gulp.task('browser-sync', () => {
+gulp.task( 'browser-sync', () => {
 	browserSync.init(
-		['**/*.html', '**/*.php', '**/*.{png,jpg,jpeg,gif,svg}'],
+		[ '**/*.html', '**/*.php', '**/*.{png,jpg,jpeg,gif,svg}' ],
 		{
 			proxy: 'http://flowhunt.local',
 			port: 3000,
@@ -53,21 +52,21 @@ gulp.task('browser-sync', () => {
 		}
 	);
 
-	gulp.watch('./assets/styles/**/*.scss', gulp.series('styles'));
-	gulp.watch('./assets/scripts/app/**/*.js', gulp.series('app-js'));
-	gulp.watch('./assets/scripts/custom/**/*.js', gulp.series('custom-js'));
+	gulp.watch( './assets/styles/**/*.scss', gulp.series( 'styles' ) );
+	gulp.watch( './assets/scripts/app/**/*.js', gulp.series( 'app-js' ) );
+	gulp.watch( './assets/scripts/custom/**/*.js', gulp.series( 'custom-js' ) );
 	gulp.watch(
 		'./assets/images/icons-common/*.svg',
-		gulp.series('iconsSprite')
+		gulp.series( 'iconsSprite' )
 	);
-});
+} );
 
 const iconsConfig = {
 	shape: {
 		id: {
 			separator: '/',
-			generator: (name) => {
-				const renamed = name.replace('/', '-').replace('.svg', '');
+			generator: ( name ) => {
+				const renamed = name.replace( '/', '-' ).replace( '.svg', '' );
 				return renamed;
 			},
 		},
@@ -87,103 +86,102 @@ const iconsConfig = {
 	},
 };
 
-gulp.task('iconsSprite', () => gulp
-	.src([
+gulp.task( 'iconsSprite', () => gulp
+	.src( [
 		'./vendor/qualityunit/wordpress-icons/icons/common/**/*.svg',
 		'./vendor/qualityunit/wordpress-icons/icons/urlslab/**/*.svg',
-	])
-	.pipe(svgSprites(iconsConfig))
-	.pipe(gulp.dest('./assets/images')));
+	] )
+	.pipe( svgSprites( iconsConfig ) )
+	.pipe( gulp.dest( './assets/images' ) ) );
 
-gulp.task('styles', () =>
+gulp.task( 'styles', () =>
 	gulp
-		.src('./assets/styles/**/*.scss')
-		.pipe(plumber())
+		.src( './assets/styles/**/*.scss' )
+		.pipe( plumber() )
 		.pipe(
-			sass({
+			sass( {
 				errLogToConsole: true,
 				outputStyle: 'expanded',
 				precision: 10,
-			})
+			} )
 		)
-		.pipe(autoprefixer('last 3 version', 'android 4', 'ie 11'))
-		.pipe(plumber.stop())
-		.pipe(replace(/(url\().+?(images|webfonts)/g, `$1${process.env.url}/$2`))
-		.pipe(gulp.dest('./assets/dist/'))
-		.pipe(filter('**/*.css'))
+		.pipe( autoprefixer( 'last 3 version', 'android 4', 'ie 11' ) )
+		.pipe( plumber.stop() )
+		.pipe( replace( /(url\().+?(images|webfonts)/g, `$1${ process.env.url }/$2` ) )
+		.pipe( gulp.dest( './assets/dist/' ) )
+		.pipe( filter( '**/*.css' ) )
 		// .pipe( gcmq() )
-		.pipe(browserSync.reload({ stream: true }))
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(uglifycss())
-		.pipe(gulp.dest('./assets/dist'))
-		.pipe(browserSync.reload({ stream: true }))
+		.pipe( browserSync.reload( { stream: true } ) )
+		.pipe( rename( { suffix: '.min' } ) )
+		.pipe( uglifycss() )
+		.pipe( gulp.dest( './assets/dist' ) )
+		.pipe( browserSync.reload( { stream: true } ) )
 );
 
-gulp.task('app-js', () =>
+gulp.task( 'app-js', () =>
 	gulp
-		.src('./assets/scripts/app/**/*.js')
-		.pipe(concat('app.js'))
-		.pipe(gulp.dest('./assets/dist'))
+		.src( './assets/scripts/app/**/*.js' )
+		.pipe( concat( 'app.js' ) )
+		.pipe( gulp.dest( './assets/dist' ) )
 		.pipe(
-			rename({
+			rename( {
 				basename: 'app',
 				suffix: '.min',
-			})
+			} )
 		)
-		.pipe(terser())
-		.pipe(gulp.dest('./assets/dist/'))
-		.pipe(browserSync.reload({ stream: true }))
+		.pipe( terser() )
+		.pipe( gulp.dest( './assets/dist/' ) )
+		.pipe( browserSync.reload( { stream: true } ) )
 );
 
-gulp.task('custom-js', () =>
+gulp.task( 'custom-js', () =>
 	gulp
-		.src('./assets/scripts/custom/**/*.js')
-		.pipe(gulp.dest('./assets/dist'))
+		.src( './assets/scripts/custom/**/*.js' )
+		.pipe( gulp.dest( './assets/dist' ) )
 		.pipe(
-			rename((path) => {
+			rename( ( path ) => {
 				// eslint-disable-next-line no-param-reassign
 				path.basename += '.min';
-			})
+			} )
 		)
-		.pipe(terser())
-		.pipe(gulp.dest('./assets/dist/'))
-		.pipe(browserSync.reload({ stream: true }))
+		.pipe( terser() )
+		.pipe( gulp.dest( './assets/dist/' ) )
+		.pipe( browserSync.reload( { stream: true } ) )
 );
 
-
-gulp.task('vendor-js', () =>
+gulp.task( 'vendor-js', () =>
 	gulp
-		.src('./assets/scripts/vendor/**/*.js')
-		.pipe(gulp.dest('./assets/dist'))
+		.src( './assets/scripts/vendor/**/*.js' )
+		.pipe( gulp.dest( './assets/dist' ) )
 		.pipe(
-			rename((path) => {
+			rename( ( path ) => {
 				// eslint-disable-next-line no-param-reassign
 				path.basename += '.min';
-			})
+			} )
 		)
-		.pipe(terser())
-		.pipe(gulp.dest('./assets/dist/'))
-		.pipe(browserSync.reload({ stream: true }))
+		.pipe( terser() )
+		.pipe( gulp.dest( './assets/dist/' ) )
+		.pipe( browserSync.reload( { stream: true } ) )
 );
 
-gulp.task('eslint', () =>
+gulp.task( 'eslint', () =>
 	gulp
-		.src(['assets/scripts/**/*.js', '!assets/scripts/vendor/*.js'])
-		.pipe(eslint())
-		.pipe(eslint.format())
-		.pipe(eslint.failAfterError())
+		.src( [ 'assets/scripts/**/*.js', '!assets/scripts/vendor/*.js' ] )
+		.pipe( eslint() )
+		.pipe( eslint.format() )
+		.pipe( eslint.failAfterError() )
 );
 
-gulp.task('stylelint', () =>
-	gulp.src('assets/styles/**/*.scss').pipe(
-		stylelint({
+gulp.task( 'stylelint', () =>
+	gulp.src( 'assets/styles/**/*.scss' ).pipe(
+		stylelint( {
 			reporters: [
 				{
 					formatter: 'string',
 					console: true,
 				},
 			],
-		})
+		} )
 	)
 );
 
