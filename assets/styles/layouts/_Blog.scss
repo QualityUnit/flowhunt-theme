@@ -87,8 +87,13 @@ no-descending-specificity, value-keyword-case */
 					font-size: 0.75rem;
 					border-radius: $border-radius-6;
 					border: 1px solid $accent-electric-blue;
+					background-color: $white;
 					padding: 0.125em 0.6em;
 					margin-bottom: 0.5em;
+
+					&:hover {
+						background-color: $gray-100;
+					}
 
 					+ span,
 					+ .Blog__item__meta__category {
