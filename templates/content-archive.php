@@ -99,7 +99,7 @@ endif;
 									</h3>
 									<p itemprop="abstract"><?= esc_html( wp_trim_words( get_the_excerpt(), 20 ) ); ?>
 										<span class="learn-more">
-									<?php _e( 'Learn More', 'ms' ); ?>
+									<?php _e( 'Read More', 'ms' ); ?>
 									<svg width="15" height="13" xmlns="http://www.w3.org/2000/svg">
 										<path d="M8.514 0 7.37 1.146l4.525 4.542H0v1.625h11.895L7.37 11.854 8.514 13 15 6.5 8.514 0Z" />
 										</svg>
@@ -231,7 +231,7 @@ endif;
 								<?= esc_html( wp_trim_words( get_the_excerpt(), 20 ) ); ?>
 
 								<span class="learn-more">
-									<?php _e( 'Learn More', 'ms' ); ?>
+									<?php _e( 'Read More', 'ms' ); ?>
 									<svg width="15" height="13" xmlns="http://www.w3.org/2000/svg">
 										<path d="M8.514 0 7.37 1.146l4.525 4.542H0v1.625h11.895L7.37 11.854 8.514 13 15 6.5 8.514 0Z" />
 										</svg>
