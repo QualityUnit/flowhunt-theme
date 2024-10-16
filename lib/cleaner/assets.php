@@ -92,6 +92,7 @@ add_action(
 	1000
 );
 
+
 // Removes unwanted CSS and JS files which are loaded without hook
 function callback( $buffer ) {
 	// Adding unique character to allow non greedy regex
