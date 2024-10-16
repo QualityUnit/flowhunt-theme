@@ -122,10 +122,11 @@ no-descending-specificity */
 
 		&--header {
 			position: relative;
-			background-size: cover;
 			overflow: hidden;
 			border-top-right-radius: 0.625em;
 			border-top-left-radius: 0.625em;
+			background: url(../images/post_item_header-background-dots.png) no-repeat center left;
+			background-size: auto 100%;
 
 			&:not(:has(.Posts__item--image)) {
 				top: -1px;
@@ -245,7 +246,7 @@ no-descending-specificity */
 							@media (min-width: $breakpoint-tablet) {
 								display: block;
 								position: relative;
-								background-size: cover;
+								background-size: auto 100%;
 								margin: 0;
 								overflow: hidden;
 								border-top-left-radius: 0;
