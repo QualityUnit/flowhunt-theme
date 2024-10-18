@@ -125,8 +125,14 @@ set_custom_source( 'common/splide', 'css' );
 					</div>
 				<?php } ?>
 				<?php if ( ! empty( $header_chatbot ) ) { ?>
+					<?php 
+						preg_match( '/chatbotId:\s?(\'|")(.*?)(\'|")/', get_post_meta( get_the_ID(), 'headerchatbot', true ), $match );
+						$chatbot_id = $match[2];
+					?>
 					<div class="compact-header__chatbot">
-							<?= $header_chatbot; // @codingStandardsIgnoreLine ?>
+						<script type="text/javascript" id="fh-chatbot-script-<?= esc_attr( $chatbot_id ); ?>">
+							<?= $header_chatbot; //@codingStandardsIgnoreLine ?>
+						</script>
 					</div>
 				<?php } ?>
 				<?php if ( true === $image_under ) { ?>
