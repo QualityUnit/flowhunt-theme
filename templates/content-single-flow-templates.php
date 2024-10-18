@@ -11,15 +11,16 @@ if ( has_post_thumbnail() ) {
 	$page_header_logo['src'] = get_the_post_thumbnail_url( $post, 'logo_thumbnail' );
 }
 $page_header_args = array(
-	'is_infinity'   => true,  // set true if header image is infinity to right
-	'image' => array(
+	'is_infinity'    => true,  // set true if header image is infinity to right
+	'image'          => array(
 		'src' => get_template_directory_uri() . '/assets/images/compact-header-templates-img.png?ver=' . THEME_VERSION,
 		'alt' => get_the_title(),
 	),
-	'logo'  => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
-	'title' => get_the_title(),
-	'text'  => get_the_excerpt(),
-	'toc'   => true,
+	'logo'           => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
+	'title'          => get_the_title(),
+	'text'           => get_the_excerpt(),
+	'toc'            => true,
+	'header_chatbot' => get_post_meta( get_the_ID(), 'chatbot', true ),
 );
 $current_id       = apply_filters( 'wpml_object_id', $post->ID, 'flow-templates' );
 $categories       = get_the_terms( $current_id, 'flow-templates-categories' );
@@ -49,7 +50,12 @@ $related_args = array(
 	<meta itemprop="url" content="<?= esc_url( get_permalink() ); ?>">
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="LiveAgent"></span>
 
+
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
+
+	<?php
+	print_r( get_post_meta( get_the_ID(), 'chatbot', true ) );
+	?>
 
 	<div class="wrapper Post__container">
 		<div class="Post__content">
