@@ -49,12 +49,7 @@ $related_args = array(
 	<meta itemprop="url" content="<?= esc_url( get_permalink() ); ?>">
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="LiveAgent"></span>
 
-
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
-
-	<?php
-	print_r( get_post_meta( get_the_ID(), 'chatbot', true ) );
-	?>
 
 	<div class="wrapper Post__container">
 		<div class="Post__content">
