@@ -4,9 +4,9 @@ set_custom_source( 'components/Index' );
 require_once get_template_directory() . '/lib/components/searchfield.php';
 
 $post_type_category = 'glossary-categories';
-$index             = array();
-$page_header_title = __( 'AI Glossary', 'flowhunt' );
-$page_header_text  = '';
+$index              = array();
+$page_header_title  = __( 'AI Glossary', 'flowhunt' );
+$page_header_text   = '';
 // $page_header_text  = __( 'If you`re new to website optimization or SEO, you may find yourself facing many unfamiliar terms and concepts . We`ve put together a comprehensive glossary to help you understand these key terms more easily.', 'flowhunt' );
 if ( is_tax( $post_type_category ) ) :
 	$page_header_title = single_term_title( '', false );
@@ -54,7 +54,7 @@ foreach ( $glossaryposts as $glossarypost ) {
 		</div>
 	</div>
 
-	<div class="wrapper Index__list">
+	<div class="wrapper-md Index__list">
 		<?php
 		foreach ( $index as $index_item ) {
 			?>
