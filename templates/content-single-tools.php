@@ -13,14 +13,15 @@ if ( has_post_thumbnail() ) {
 	$page_header_logo['src'] = get_the_post_thumbnail_url( $post, 'logo_thumbnail' );
 }
 $page_header_args = array(
-	'image' => array(
+	'image'          => array(
 		'src' => get_the_post_thumbnail_url( $post, 'person_thumbnail' ),
 		'alt' => get_the_title(),
 	),
-	'logo'  => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
-	'title' => get_the_title(),
-	'text'  => get_the_excerpt(),
-	'toc'   => true,
+	'logo'           => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
+	'title'          => get_the_title(),
+	'text'           => get_the_excerpt(),
+	'toc'            => true,
+	'header_chatbot' => get_post_meta( get_the_ID(), 'headerchatbot', true ),
 );
 $current_id       = apply_filters( 'wpml_object_id', $post->ID, 'tools' );
 $categories       = get_the_terms( $current_id, 'tools-categories' );
@@ -54,8 +55,7 @@ $related_args = array(
 	get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args );
 	?>
 
-	<div class="Post__container">
-
+<div class="Post__container">
 		<div class="Post__content">
 			<div class="Content" itemprop="articleBody">
 

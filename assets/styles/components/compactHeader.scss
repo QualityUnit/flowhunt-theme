@@ -72,6 +72,24 @@ body.compact-header--active {
 		}
 	}
 
+	&__chatbot {
+		width: 100%;
+		padding: 3px;
+		padding-bottom: 0;
+		border-radius: $border-radius-10;
+		background: $primary-gradient;
+		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+		> div {
+			position: relative;
+			top: 1.5px;
+		}
+
+		@media (min-width: $breakpoint-tablet) {
+			width: 40.625rem;
+		}
+	}
+
 	& ~ & {
 		margin-top: -2.2em;
 	}

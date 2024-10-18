@@ -9,9 +9,16 @@ function flow_templates_metaboxes( $metaboxes ) {
 		'post_type' => array( 'flow-templates' ),
 		'fields'    => array(
 			array(
-				'id' => 'icon',
+				'id'    => 'icon',
 				'label' => 'Label',
-				'type' => 'image',
+				'type'  => 'image',
+			),
+			array(
+				'id'          => 'chatbot',
+				'label'       => 'Header Chatbot',
+				'description' => 'Shows embedded chatbot in header',
+				'type'        => 'textarea',
+				'rows'        => '10',
 			),
 			array(
 				'id'                => 'main',
