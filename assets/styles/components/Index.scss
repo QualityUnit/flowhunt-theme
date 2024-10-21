@@ -19,8 +19,15 @@
 			padding: 0 0.5em;
 
 			a {
-				color: $level-2;
+				color: $black;
 				text-decoration: none;
+
+				&:hover {
+					background: $primary-gradient;
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+					color: transparent;
+				}
 			}
 		}
 
@@ -31,11 +38,17 @@
 
 	&__list {
 
-		&--groupTitle {
-			font-size: 2.625rem;
+		&--groupTitle[class] {
+
+			@include square(2.7777em);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.125rem !important;
 			font-weight: 600;
-			color: $secondary;
-			width: 1.5em;
+			color: $black;
+			background-color: $gray-100;
+			border-radius: $border-radius-10;
 		}
 
 		&--group {
@@ -50,6 +63,16 @@
 				li {
 					display: inline-block;
 					padding: 0.35em 0;
+
+					a {
+
+						&:hover {
+							background: $primary-gradient;
+							background-clip: text;
+							-webkit-text-fill-color: transparent;
+							color: transparent;
+						}
+					}
 				}
 			}
 
@@ -57,13 +80,19 @@
 				display: flex;
 
 				ul {
-					flex-basis: calc(100% - 4em);
-					border-left: 1px solid $gray-200;
+					flex-basis: 100%;
 					padding-left: 1.5em;
 
 					li {
 						width: 33%;
 					}
+				}
+			}
+
+			@media (min-width: $breakpoint-ipad-pro) {
+
+				ul {
+					padding-left: 6em;
 				}
 			}
 		}

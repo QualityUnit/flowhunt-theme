@@ -274,6 +274,8 @@ no-descending-specificity */
 
 				&--inn {
 					display: block;
+					position: relative;
+					z-index: 1;
 				}
 
 				&--categories {
@@ -286,11 +288,16 @@ no-descending-specificity */
 
 				&--category {
 					display: inline-block;
-					background-color: $primary;
+					color: $black;
+					font-size: 0.75rem;
 					border-radius: $border-radius-6;
-					padding: 0.25em 1em;
-					color: $white;
-					box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.16);
+					border: 1px solid $accent-electric-blue;
+					background-color: $white;
+					padding: 0.125em 0.6em;
+
+					&:hover {
+						background-color: $gray-100;
+					}
 
 					+ li {
 						margin-left: 0.45em;
