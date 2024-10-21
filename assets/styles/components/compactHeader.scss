@@ -19,23 +19,19 @@ body.compact-header--active {
 	$class-name: compact-header;
 	$v-space: 1em;
 	$bg-color: $white;
-	background-color: $bg-color;
+	display: flex;
+	flex-direction: column;
+
 	width: 100%;
 	position: relative;
 	margin-bottom: 4em;
 
+	background: $white url(../../images/header-dots.png) repeat-x center bottom;
+	background-size: 20px;
+	border-bottom: 1px solid $gray-200;
 
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		min-height: 100%;
-		height: 22.75em;
-		background: $white url(../../images/header-dots.png) repeat-x center top;
-		background-size: 20px;
-		border-bottom: 1px solid $gray-200;
+	&:not(.compact-header--sticky) {
+		min-height: 22.75em;
 	}
 
 	&--imageUnder {
@@ -150,6 +146,7 @@ body.compact-header--active {
 	&__wrapper {
 		display: flex;
 		flex-wrap: wrap;
+		margin-top: auto;
 		margin-bottom: 0;
 		padding-block: 2em;
 		z-index: 2;
@@ -529,7 +526,7 @@ body.compact-header--active {
 			z-index: 1;
 
 
-			* {
+			*:not(.Index) {
 				max-width: 880px;
 			}
 		}

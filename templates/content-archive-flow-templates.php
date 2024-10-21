@@ -7,7 +7,7 @@ if ( is_tax( $post_type_category ) ) :
 	$page_header_title       = single_cat_title();
 	$page_header_description = the_archive_description();
 else :
-	$page_header_title       = __( 'Flow Templates', 'flowhunt' );
+	$page_header_title       = __( 'Templates', 'flowhunt' );
 	$page_header_description = __( 'FlowHunt lets you create all sorts of specialized chatbots and AI tools, all in one place—no more jumping between multiple websites. Browse the ever-expanding library of Flow templates to get a head start.', 'flowhunt' );
 endif;
 $filter_items_categories = array(
@@ -35,7 +35,7 @@ $page_header_args = array(
 	'type'        => 'lvl-1',
 	'is_infinity' => true,  // set true if header image is infinity to right
 	'image'       => array(
-		'src' => get_template_directory_uri() . '/assets/images/compact-header-templates-img.png?ver=' . THEME_VERSION,
+		'src' => get_template_directory_uri() . '/assets/images/compact-header-templates.png?ver=' . THEME_VERSION,
 		'alt' => $page_header_title,
 	),
 	'title'       => $page_header_title,

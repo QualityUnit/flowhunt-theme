@@ -101,6 +101,9 @@ set_custom_source( 'common/splide', 'css' );
 				<?php if ( ! empty( $args['text'] ) ) { ?>
 					<div class="compact-header__text"><?= wp_kses_post( $args['text'] ); ?></div>
 				<?php } ?>
+				<?php if ( ! empty( $args['morecontent_url'] ) ) { ?>
+					<?php include_once get_template_directory() . $args['morecontent_url']; ?>
+				<?php } ?>
 				<?php if ( ! empty( $args['date'] ) ) { ?>
 					<?php
 						$date_machine  = get_the_time( 'Y-m-d' );
