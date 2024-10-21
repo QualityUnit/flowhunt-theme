@@ -12,7 +12,6 @@ if ( is_tax( $post_type_category ) ) :
 	// $page_header_text  = term_description();
 endif;
 
-
 $index         = array();
 $glossaryposts = get_posts(
 	array(
@@ -47,7 +46,7 @@ $page_header_args = array(
 <div id="archive" class="Archive" itemscope itemtype="https://schema.org/DefinedTermSet">
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="wrapper Index__list">
+	<div class="wrapper-md Index__list">
 		<?php
 		foreach ( $index as $index_item ) {
 			?>
