@@ -5,9 +5,12 @@
 
 .Index {
 	background-color: $gray-50;
+	width: 100vw;
+	margin-top: 3em;
 
 	.wrapper {
 		padding: 0.5em;
+		margin-bottom: 0;
 	}
 
 	&__top {
