@@ -19,6 +19,9 @@ body.compact-header--active {
 	$class-name: compact-header;
 	$v-space: 1em;
 	$bg-color: $white;
+	display: flex;
+	flex-direction: column;
+
 	width: 100%;
 	position: relative;
 	margin-bottom: 4em;
@@ -143,6 +146,7 @@ body.compact-header--active {
 	&__wrapper {
 		display: flex;
 		flex-wrap: wrap;
+		margin-top: auto;
 		margin-bottom: 0;
 		padding-block: 2em;
 		z-index: 2;
