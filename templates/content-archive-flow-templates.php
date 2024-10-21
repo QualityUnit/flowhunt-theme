@@ -2,7 +2,7 @@
 set_custom_source( 'layouts/Archive' );
 set_custom_source( 'filter', 'js' );
 $post_type_category = 'flow-templates-categories';
-$categories = array_unique( get_categories( array( 'taxonomy' => $post_type_category ) ), SORT_REGULAR );
+$categories         = array_unique( get_categories( array( 'taxonomy' => $post_type_category ) ), SORT_REGULAR );
 if ( is_tax( $post_type_category ) ) :
 	$page_header_title       = single_cat_title();
 	$page_header_description = the_archive_description();
@@ -32,16 +32,16 @@ $filter_items     = array(
 	),
 );
 $page_header_args = array(
-	'type'   => 'lvl-1',
-	'is_infinity'   => true,  // set true if header image is infinity to right
-	'image'  => array(
+	'type'        => 'lvl-1',
+	'is_infinity' => true,  // set true if header image is infinity to right
+	'image'       => array(
 		'src' => get_template_directory_uri() . '/assets/images/compact-header-templates-img.png?ver=' . THEME_VERSION,
 		'alt' => $page_header_title,
 	),
-	'title'  => $page_header_title,
-	'text'   => $page_header_description,
-	'filter' => $filter_items,
-	'search' => array(
+	'title'       => $page_header_title,
+	'text'        => $page_header_description,
+	'filter'      => $filter_items,
+	'search'      => array(
 		'type' => $post_type_category,
 	),
 );
@@ -59,9 +59,9 @@ $page_header_args = array(
 				$category = '';
 
 
-				$categories = get_the_terms( 0, $post_type_category ); // post categories
-				$post_item_icon = get_post_meta( get_the_ID(), 'icon', true ); // post icon
-				$post_item_bg = get_template_directory_uri() . '/assets/images/features-card-background-dots.jpg'; // default background
+				$categories           = get_the_terms( 0, $post_type_category ); // post categories
+				$post_item_icon       = get_post_meta( get_the_ID(), 'icon', true ); // post icon
+				$post_item_bg         = get_template_directory_uri() . '/assets/images/features-card-background-dots.jpg'; // default background
 				$post_item_pillar_img = get_the_post_thumbnail_url( get_the_ID() ); // pillar article image
 
 				$its_main = get_post_meta( get_the_ID(), 'main', true ); // if it's pillar article
@@ -84,10 +84,7 @@ $page_header_args = array(
 					?>
 					<?= esc_attr( $category ); ?> " data-category="<?= esc_attr( $category ); ?>" data-href="<?php the_permalink(); ?>">
 					<a href="<?php the_permalink(); ?>" class="Posts__item--inn flex flex-align-center">
-						<div class="Posts__item--header"
-							<?php if ( ! $its_main ) : ?>
-								style="background: url(<?= esc_url( $post_item_bg ); ?>) left bottom no-repeat;"
-							<?php endif; ?>>
+						<div class="Posts__item--header">
 							<?php if ( $its_main ) : ?>
 								<div class="Posts__item--image" style="background: url('<?= esc_url( $post_item_pillar_img ); ?>') left bottom no-repeat; background-size: cover;">
 								</div>

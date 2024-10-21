@@ -71,6 +71,9 @@ set_custom_source( 'common/splide', 'css' );
 	if ( ! empty( $args['checklist'] ) ) {
 		$checklist = $args['checklist'];
 	}
+	if ( ! empty( $args['header_chatbot'] ) ) {
+		$header_chatbot = $args['header_chatbot'];
+	}
 	?>
 	<div class="compact-header <?= true === $image_under ? 'compact-header--imageUnder' : ''; ?> <?= true === $is_infinity ? 'compact-header--infinity' : ''; ?> compact-header--<?= sanitize_html_class( $header_type ); ?>">
 		<div class="compact-header__wrapper wrapper-md">
@@ -122,6 +125,17 @@ set_custom_source( 'common/splide', 'css' );
 							<?= esc_html( __( 'at', 'ms' ) ); ?>
 							<?= esc_html( $time_modified ); ?>
 						<?php } ?>
+					</div>
+				<?php } ?>
+				<?php if ( ! empty( $header_chatbot ) ) { ?>
+					<?php 
+						preg_match( '/chatbotId:\s?(\'|")(.*?)(\'|")/', get_post_meta( get_the_ID(), 'headerchatbot', true ), $match );
+						$chatbot_id = $match[2];
+					?>
+					<div class="compact-header__chatbot">
+						<script type="text/javascript" id="fh-chatbot-script-<?= esc_attr( $chatbot_id ); ?>">
+							<?= $header_chatbot; //@codingStandardsIgnoreLine ?>
+						</script>
 					</div>
 				<?php } ?>
 				<?php if ( true === $image_under ) { ?>
@@ -478,4 +492,4 @@ set_custom_source( 'common/splide', 'css' );
 			<?php } ?>
 		</div>
 	</div>
-<?php } ?>
+<?php }; ?>

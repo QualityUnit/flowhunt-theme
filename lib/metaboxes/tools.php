@@ -13,6 +13,13 @@ function tools_metaboxes( $metaboxes ) {
 				'label' => 'Icon',
 				'type'  => 'image',
 			),
+			array(
+				'id'          => 'headerchatbot',
+				'label'       => 'Header Chatbot',
+				'description' => 'Shows embedded chatbot in header',
+				'type'        => 'textarea',
+				'rows'        => '10',
+			),
 		),
 	);
 
