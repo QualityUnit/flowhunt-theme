@@ -15,11 +15,11 @@
 		min-width: initial;
 		height: 2.857em;
 		padding-left: 3.5em;
-		border-radius: 0.714em;
+		border-radius: $border-radius-6;
 		font-size: 0.875rem;
 		color: $gray-400;
-		background-color: $gray-100;
-		border: 1px solid $gray-200;
+		background-color: $white;
+		border: 1px solid $gray-300;
 		box-shadow: none;
 		transition: all 0.2s, background-color 0.2s;
 
@@ -39,6 +39,7 @@
 
 		&:focus {
 			box-shadow: none;
+			color: $black;
 		}
 	}
 

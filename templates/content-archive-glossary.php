@@ -5,7 +5,7 @@ require_once get_template_directory() . '/lib/components/searchfield.php';
 
 $post_type_category = 'glossary-categories';
 $page_header_title  = __( 'AI Glossary', 'flowhunt' );
-$page_header_text   = '';
+$page_header_text   = __( 'FlowHunt lets you create all sorts of specialized chatbots and AI tools, all in one place—no more jumping between multiple websites. Browse the ever-expanding library of Flow templates to get a head start.' );
 // $page_header_text  = __( 'If you`re new to website optimization or SEO, you may find yourself facing many unfamiliar terms and concepts . We`ve put together a comprehensive glossary to help you understand these key terms more easily.', 'flowhunt' );
 if ( is_tax( $post_type_category ) ) :
 	$page_header_title = single_term_title( '', false );
