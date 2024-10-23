@@ -139,11 +139,29 @@
 				}
 			}
 
+			&:has(.submenu)::after {
+				position: fixed;
+				pointer-events: none;
+				content: "";
+				width: 100vw;
+				height: 100vh;
+				top: 92px;
+				left: 0;
+				background-color: rgba($white, 0.5);
+				opacity: 0;
+				transition: opacity 0.35s;
+			}
+
 			&:hover {
+
+				&:has(.submenu)::after {
+					opacity: 1;
+				}
 
 				.submenu {
 					display: flex;
 					flex-direction: column;
+
 
 					&[class*="col-"] {
 						display: grid;
