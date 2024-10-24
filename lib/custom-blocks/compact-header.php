@@ -127,8 +127,83 @@ set_custom_source( 'common/splide', 'css' );
 						<?php } ?>
 					</div>
 				<?php } ?>
+				<?php if ( ! empty( $args['buttons'] ) ) { ?>
+					<div class="compact-header__buttons">
+						<div class="compact-header__buttons-items">
+							<?php foreach ( $args['buttons'] as $button ) { ?>
+								<?php if ( isset( $button['title'] ) && isset( $button['href'] ) ) { ?>
+									<?php
+									$button_classes = 'Button Button--outline Button--outline-gray';
+									if ( isset( $button['target'] ) ) {
+										if ( '_blank' == $button['target'] ) {
+											$button_classes = 'Button Button--outline';
+										}
+									}
+									?>
+									<div class="compact-header__buttons-item">
+										<a href="<?= esc_url( $button['href'] ); ?>"
+											 class="<?= esc_attr( $button_classes ); ?>"
+											 title="<?= esc_attr( $button['title'] ); ?>"
+											<?php if ( isset( $button['target'] ) ) { ?>
+												<?php $button_classes .= 'Button'; ?>
+												target="<?= esc_attr( $button['target'] ); ?>"
+											<?php } ?>
+											<?php if ( isset( $button['rel'] ) ) { ?>
+												rel="<?= esc_attr( $button['rel'] ); ?>"
+											<?php } ?>
+											<?php if ( isset( $button['onclick'] ) ) { ?>
+												onclick="<?= esc_attr( $button['onclick'] ); ?>"
+											<?php } ?>
+										>
+											<span><?= esc_html( $button['title'] ); ?></span>
+										</a>
+									</div>
+								<?php } ?>
+							<?php } ?>
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ( ! empty( $args['tags'] ) ) { ?>
+					<div class="compact-header__tags">
+						<span class="compact-header__tags--title"></span>
+						<?php foreach ( $args['tags'] as $item ) { ?>
+							<div class="compact-header__tags-item">
+								<?php if ( isset( $item['title'] ) ) { ?>
+									<div class="compact-header__tags-title"><?= esc_html( $item['title'] ); ?>:</div>
+								<?php } ?>
+								<?php if ( isset( $item['list'] ) ) { ?>
+									<ul class="compact-header__tags-list">
+										<?php foreach ( $item['list'] as $tag_item ) { ?>
+											<li>
+												<?php if ( isset( $tag_item['href'] ) && isset( $tag_item['title'] ) ) { ?>
+													<a href="<?= esc_url( $tag_item['href'] ); ?>"
+														 title="<?= esc_attr( $tag_item['title'] ); ?>"
+														<?php if ( isset( $tag_item['target'] ) ) { ?>
+															target="<?= esc_attr( $tag_item['target'] ); ?>"
+														<?php } ?>
+														<?php if ( isset( $tag_item['rel'] ) ) { ?>
+															rel="<?= esc_attr( $tag_item['rel'] ); ?>"
+														<?php } ?>
+														<?php if ( isset( $tag_item['onclick'] ) ) { ?>
+															onclick="<?= esc_attr( $tag_item['onclick'] ); ?>"
+														<?php } ?>
+													>
+														<svg class="icon-tag-solid">
+															<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#tag-solid' ); ?>"></use>
+														</svg>
+														<?= esc_html( $tag_item['title'] ); ?>
+													</a>
+												<?php } ?>
+											</li>
+										<?php } ?>
+									</ul>
+								<?php } ?>
+							</div>
+						<?php } ?>
+					</div>
+				<?php } ?>
 				<?php if ( ! empty( $header_chatbot ) ) { ?>
-					<?php 
+					<?php
 						preg_match( '/chatbotId:\s?(\'|")(.*?)(\'|")/', get_post_meta( get_the_ID(), 'headerchatbot', true ), $match );
 						$chatbot_id = $match[2];
 					?>
@@ -154,81 +229,6 @@ set_custom_source( 'common/splide', 'css' );
 				<?php } ?>
 			</div>
 			<?php } ?>
-				<?php if ( ! empty( $args['buttons'] ) ) { ?>
-					<div class="compact-header__buttons">
-						<div class="compact-header__buttons-items">
-							<?php foreach ( $args['buttons'] as $button ) { ?>
-								<?php if ( isset( $button['title'] ) && isset( $button['href'] ) ) { ?>
-									<?php
-									$button_classes = 'Button Button--outline Button--outline-gray';
-									if ( isset( $button['target'] ) ) {
-										if ( '_blank' == $button['target'] ) {
-											$button_classes = 'Button Button--outline';
-										}
-									}
-									?>
-									<div class="compact-header__buttons-item">
-										<a href="<?= esc_url( $button['href'] ); ?>"
-										   class="<?= esc_attr( $button_classes ); ?>"
-										   title="<?= esc_attr( $button['title'] ); ?>"
-											<?php if ( isset( $button['target'] ) ) { ?>
-												<?php $button_classes .= 'Button'; ?>
-												target="<?= esc_attr( $button['target'] ); ?>"
-											<?php } ?>
-											<?php if ( isset( $button['rel'] ) ) { ?>
-												rel="<?= esc_attr( $button['rel'] ); ?>"
-											<?php } ?>
-											<?php if ( isset( $button['onclick'] ) ) { ?>
-												onclick="<?= esc_attr( $button['onclick'] ); ?>"
-											<?php } ?>
-										>
-											<span><?= esc_html( $button['title'] ); ?></span>
-										</a>
-									</div>
-								<?php } ?>
-							<?php } ?>
-						</div>
-					</div>
-				<?php } ?>
-				<?php if ( ! empty( $args['tags'] ) ) { ?>
-					<div class="compact-header__tags">
-						<span class="compact-header__tags--title">Categories: </span>
-						<?php foreach ( $args['tags'] as $item ) { ?>
-							<div class="compact-header__tags-item">
-								<?php if ( isset( $item['title'] ) ) { ?>
-									<div class="compact-header__tags-title"><?= esc_html( $item['title'] ); ?>:</div>
-								<?php } ?>
-								<?php if ( isset( $item['list'] ) ) { ?>
-									<ul class="compact-header__tags-list">
-									<?php foreach ( $item['list'] as $tag_item ) { ?>
-										<li>
-											<?php if ( isset( $tag_item['href'] ) && isset( $tag_item['title'] ) ) { ?>
-												<a href="<?= esc_url( $tag_item['href'] ); ?>"
-												   title="<?= esc_attr( $tag_item['title'] ); ?>"
-												   <?php if ( isset( $tag_item['target'] ) ) { ?>
-													   target="<?= esc_attr( $tag_item['target'] ); ?>"
-													<?php } ?>
-													<?php if ( isset( $tag_item['rel'] ) ) { ?>
-														rel="<?= esc_attr( $tag_item['rel'] ); ?>"
-													<?php } ?>
-													<?php if ( isset( $tag_item['onclick'] ) ) { ?>
-														onclick="<?= esc_attr( $tag_item['onclick'] ); ?>"
-													<?php } ?>
-												>
-													<svg class="icon-tag-solid">
-														<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#tag-solid' ); ?>"></use>
-													</svg>
-													<?= esc_html( $tag_item['title'] ); ?>
-												</a>
-											<?php } ?>
-										</li>
-									<?php } ?>
-								</ul>
-								<?php } ?>
-							</div>
-						<?php } ?>
-					</div>
-				<?php } ?>
 				<?php if ( isset( $filter_search ) || isset( $filter_items ) || isset( $filter_sort ) || isset( $filter_count ) || isset( $menu_header ) || isset( $research_nav ) || isset( $checklist ) ) { ?>
 					<div class="compact-header__bottom flex flex-align-center">
 						<?php if ( isset( $filter_search ) || isset( $filter_items ) || isset( $filter_sort ) || isset( $filter_count ) ) { ?>

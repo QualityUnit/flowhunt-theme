@@ -61,7 +61,7 @@ $page_header_args = array(
 
 				if ( $first_character === $index_item ) {
 					?>
-				<li class="Index__list--item" style="display: inline-block" itemscope="" itemtype="https://schema.org/DefinedTerm"><a href="<?= esc_url( get_permalink( $postid ) ); ?>" itemprop="url"><span itemprop="name" data-search><?= esc_html( $posttitle ); ?></span></a></li>
+				<li class="Index__list--item" data-search style="display: inline-block" itemscope="" itemtype="https://schema.org/DefinedTerm"><a href="<?= esc_url( get_permalink( $postid ) ); ?>" itemprop="url"><span itemprop="name" ><?= esc_html( $posttitle ); ?></span></a></li>
 					<?php
 				}
 			}
