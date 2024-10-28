@@ -18,7 +18,7 @@ $page_header_args = array(
 	),
 	'logo'        => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
 	'title'       => get_the_title(),
-	'text'        => get_the_excerpt(),
+	'text'        => do_shortcode( '[urlslab-generator id="2" input="{{page_url}}"]' ),
 	'toc'         => true,
 );
 $current_id       = apply_filters( 'wpml_object_id', $post->ID, 'flow-templates' );
