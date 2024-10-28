@@ -6,7 +6,7 @@ $page_header_args = array(
 		'alt' => get_the_title(),
 	),
 	'title'      => get_the_title(),
-	'text'       => '', // do_shortcode( '[urlslab-generator id="4"]' ) that was in the original code
+	'text'       => do_shortcode( '[urlslab-generator id="2"]' ),
 	'date'       => true,
 	'toc'        => true,
 	'imageUnder' => true,
