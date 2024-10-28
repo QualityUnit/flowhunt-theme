@@ -14,7 +14,7 @@
 	$page_title       = str_replace( '^', '', get_the_title() );
 	$page_header_args = array(
 		'title' => $page_title,
-		'text'  => do_shortcode( '[urlslab-generator id="2"]' ),
+		'text'  => do_shortcode( '[urlslab-generator id="2" input="{{page_url}}"]' ),
 		'toc'   => true,
 	);
 	if ( has_post_thumbnail() ) {

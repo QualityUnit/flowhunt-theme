@@ -13,7 +13,7 @@ $page_header_args = array(
 	),
 	'logo'  => $page_header_logo,
 	'title' => get_the_title(),
-	'text'  => do_shortcode( '[urlslab-generator id="2"]' ),
+	'text'  => do_shortcode( '[urlslab-generator id="2" input="{{page_url}}"]' ),
 	'toc'   => true,
 );
 $current_id       = apply_filters( 'wpml_object_id', $post->ID, 'glossary' );
