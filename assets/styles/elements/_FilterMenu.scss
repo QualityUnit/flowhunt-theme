@@ -64,7 +64,7 @@
 
 			position: absolute;
 			background-color: $white;
-			top: 100%;
+			top: calc(100% + 3px);
 			left: 0;
 			display: none;
 			opacity: 0;
@@ -73,7 +73,7 @@
 			width: 100%;
 			padding: 1em 1.45em;
 			transition: opacity 0.1s;
-			box-shadow: 0 0.063em 0.375em rgba($black, 0.16);
+			border: 1px solid $gray-300;
 
 			&--inn {
 				max-height: 19em;

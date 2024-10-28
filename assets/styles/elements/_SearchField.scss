@@ -8,29 +8,6 @@
 	width: 100%;
 	margin: 0;
 
-	&::before {
-		content: "";
-		position: absolute;
-		opacity: 0;
-		left: -2px;
-		top: -2px;
-		width: calc(100% + 2px + 2px);
-		height: calc(100% + 2px + 2px);
-		background: -webkit-gradient(linear, left top, right top, color-stop(0, #0497dc), to(#465ce0));
-		background: linear-gradient(90deg, #0497dc 0, #465ce0 100%);
-		border-radius: 8px;
-		z-index: -1;
-		-webkit-transition: opacity 0.3s;
-		transition: opacity 0.3s;
-	}
-
-	&.focus {
-
-		&::before {
-			opacity: 1;
-		}
-	}
-
 	input[type="search"] {
 		display: block;
 		width: 100%;
@@ -49,6 +26,8 @@
 		&:focus {
 			box-shadow: none;
 			color: $black;
+			border-color: $primary;
+			border-width: 1px;
 		}
 
 		&::-ms-clear,
