@@ -8,20 +8,27 @@
 	width: 100%;
 	margin: 0;
 
-
 	input[type="search"] {
 		display: block;
 		width: 100%;
 		min-width: initial;
 		height: 2.857em;
 		padding-left: 3.5em;
-		border-radius: 0.714em;
+		border-radius: $border-radius-6;
 		font-size: 0.875rem;
 		color: $gray-400;
-		background-color: $gray-100;
-		border: 1px solid $gray-200;
+		background-color: $gray-50;
+		border: 1px solid $gray-300;
 		box-shadow: none;
 		transition: all 0.2s, background-color 0.2s;
+
+
+		&:focus {
+			box-shadow: none;
+			color: $black;
+			border-color: $primary;
+			border-width: 1px;
+		}
 
 		&::-ms-clear,
 		&::-ms-reveal {
@@ -35,10 +42,6 @@
 		&::-webkit-search-results-button,
 		&::-webkit-search-results-decoration {
 			display: none;
-		}
-
-		&:focus {
-			box-shadow: none;
 		}
 	}
 

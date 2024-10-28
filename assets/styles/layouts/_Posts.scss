@@ -129,7 +129,7 @@ no-descending-specificity */
 			background-size: auto 100%;
 
 			&:not(:has(.Posts__item--image)) {
-				top: -1px;
+				top: 0;
 			}
 		}
 
@@ -163,11 +163,17 @@ no-descending-specificity */
 
 			h4 {
 				font-size: $font-size-bigger;
+				margin-bottom: 0.35em;
 			}
 
 			p {
 				font-size: $font-size-smaller;
 			}
+		}
+
+		&--excerpt {
+			color: $gray-500;
+			font-size: 0.875rem;
 		}
 
 		&.main {
@@ -321,10 +327,6 @@ no-descending-specificity */
 			&::before {
 				opacity: 1;
 				transition: opacity 0.3s;
-			}
-
-			*:not(li) {
-				color: $black;
 			}
 
 			a {
