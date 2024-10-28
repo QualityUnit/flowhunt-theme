@@ -89,7 +89,7 @@ $related_args = array(
 					</div>
 				</div>
 
-				<?php get_template_part( 'lib/components/related-articles', null, $related_args ); ?>
+				<?php urlslab_display_related_resources(); ?>
 			</div>
 		</div>
 		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>

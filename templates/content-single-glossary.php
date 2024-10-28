@@ -52,7 +52,7 @@ $related_args = array(
 
 				<?php the_content(); ?>
 
-				<?php get_template_part( 'lib/components/related-articles', null, $related_args ); ?>
+				<?php urlslab_display_related_resources(); ?>
 
 			</div>
 		</div>
