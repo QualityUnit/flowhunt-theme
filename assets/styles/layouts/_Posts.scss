@@ -329,10 +329,6 @@ no-descending-specificity */
 				transition: opacity 0.3s;
 			}
 
-			*:not(li) {
-				color: $black;
-			}
-
 			a {
 				text-decoration: none;
 			}
