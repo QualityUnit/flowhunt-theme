@@ -90,6 +90,19 @@
 			display: flex;
 			flex-flow: wrap row;
 		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a[target="_blank"]:not(.Button)::after {
+			content: none !important;
+		}
+
+		a.urlslab-rel-res-item-arrow {
+			display: none;
+		}
+
 	}
 }
 
