@@ -92,11 +92,14 @@
 			flex-direction: row;
 		}
 
-		a {
-			text-decoration: none;
+		.urlslab-rel-res-item-title {
 
-			&[target="_blank"]:not(.Button)::after {
-				content: none !important;
+			a {
+				text-decoration: none;
+
+				&[target="_blank"]:not(.Button)::after {
+					content: none !important;
+				}
 			}
 		}
 
