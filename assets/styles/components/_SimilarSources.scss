@@ -88,7 +88,23 @@
 
 		ul {
 			display: flex;
-			flex-flow: wrap row;
+			flex-wrap: wrap;
+			flex-direction: row;
+		}
+
+		.urlslab-rel-res-item-title {
+
+			a {
+				text-decoration: none;
+
+				&[target="_blank"]:not(.Button)::after {
+					content: none !important;
+				}
+			}
+		}
+
+		a.urlslab-rel-res-item-arrow {
+			display: none;
 		}
 	}
 }
