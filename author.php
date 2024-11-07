@@ -3,10 +3,9 @@ set_custom_source( 'pages/blog', 'css' );
 set_source( false, 'components/BlogTopPost' );
 set_custom_source( 'blogLazyLoad', 'js', array( 'app_js' ) );
 
-$page_header_title = single_term_title( 'Nejaký nadpis', false );
 $page_header_args  = array(
 	'type'  => 'lvl-1',
-	'title' => __( 'Articles by' ) . ' ' . get_the_author_meta('display_name'),
+	'title' => __( 'Articles by' ) . ' ' . get_the_author_meta( 'display_name' ),
 	'text'  => ! empty( term_description() ) ? term_description() : 'Explore the features and components for building AI tools and chatbots. Designed with modularity and flexibility at heart, FlowHunt is ready to support all your automation needs.',
 );
 if ( has_nav_menu( 'blog_filter_navigation' ) ) :
