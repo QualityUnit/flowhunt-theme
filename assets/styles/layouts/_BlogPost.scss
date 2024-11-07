@@ -91,7 +91,7 @@ no-descending-specificity, value-keyword-case */
 			justify-content: space-between;
 			align-items: flex-start;
 			max-width: 670px;
-			margin: 0 auto 40px;
+			margin: 2.5em auto 0;
 			border: 1px solid $gray-50;
 			border-radius: 30px;
 			overflow: hidden;
@@ -107,7 +107,7 @@ no-descending-specificity, value-keyword-case */
 				&__name {
 
 					color: $black;
-					font-size: 14px;
+					font-size: 0.875rem;
 					font-weight: $font-weight-bold;
 					margin-bottom: 0;
 				}
@@ -115,18 +115,16 @@ no-descending-specificity, value-keyword-case */
 				&__position {
 
 					color: $black;
-					font-size: 12px;
-					margin-bottom: 10px;
+					font-size: 0.75rem;
+					margin-bottom: 0.85em;
 				}
 
 				&__description {
 
 					color: $black;
-					font-size: 12px;
-					line-height: 20px;
-					margin-bottom: 10px;
-					max-height: 95px;
-					overflow: hidden;
+					font-size: 0.75rem;
+					line-height: 1.66;
+					margin-bottom: 0.85em;
 				}
 
 				&__social {
@@ -136,22 +134,19 @@ no-descending-specificity, value-keyword-case */
 					margin-left: -5px;
 
 					a {
-						display: block;
-						width: 20px;
-						height: 20px;
-						margin: 0 5px;
-						background-color: #777;
-						border-radius: 50%;
-						color: #fff;
-						font-size: 12px;
-						line-height: 20px;
-						text-align: center;
-						transition: all 0.3s ease;
 
-						&:active,
-						&:focus,
-						&:hover {
-							background-color: #000;
+						display: block;
+						font-size: 0.75rem;
+						margin: 0 5px;
+						line-height: 1.6;
+
+						&::after {
+							display: none !important;
+						}
+
+						svg {
+
+							@include square(1.5em);
 						}
 					}
 				}

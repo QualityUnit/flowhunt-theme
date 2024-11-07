@@ -67,22 +67,30 @@ $related_args = array(
 						<div class="BlogPost__author-box__content__social">
 							<?php if ( (bool) get_the_author_meta( 'instagram' ) ) { ?>
 								<a href="<?php the_author_meta( 'instagram' ); ?>" target="_blank" itemprop="sameAs">
-									<i class="fontello-instagram-brands"></i>
+									<svg class="icon icon-social-instagram">
+										<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-instagram' ); ?>"></use>
+									</svg>
 								</a>
 							<?php } ?>
 							<?php if ( (bool) get_the_author_meta( 'facebook' ) ) { ?>
 								<a href="<?php the_author_meta( 'facebook' ); ?>" target="_blank" itemprop="sameAs">
-									<i class="fontello-facebook-f-brands"></i>
+									<svg class="icon icon-social-facebook">
+										<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-facebook' ) ?>"></use>
+									</svg>
 								</a>
 							<?php } ?>
 							<?php if ( (bool) get_the_author_meta( 'linkedin' ) ) { ?>
 								<a href="<?php the_author_meta( 'linkedin' ); ?>" target="_blank" itemprop="sameAs">
-									<i class="fontello-linkedin-in-brands"></i>
+									<svg class="icon icon-social-linkedin">
+										<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-linkedin' ) ?>"></use>
+									</svg>
 								</a>
 							<?php } ?>
 							<?php if ( (bool) get_the_author_meta( 'twitter' ) ) { ?>
 								<a href="https://twitter.com/<?php the_author_meta( 'twitter' ); ?>" target="_blank" itemprop="sameAs">
-									<i class="fontello-twitter-brands"></i>
+									<svg class="icon icon-social-twitter">
+										<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-twitter' ) ?>"></use>
+									</svg>
 								</a>
 							<?php } ?>
 						</div>
