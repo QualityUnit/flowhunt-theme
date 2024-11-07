@@ -4,6 +4,12 @@
 if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/', get_body_class() ) ) ) {
 	?>
 
+<div class="block-improve-section wrapper-md">
+	<?php
+	echo do_shortcode( '[blockImprove]' );
+	?>
+</div>
+
 <footer class="Footer urlslab-skip-all">
   <div class="wrapper-md">
 	<div class="Footer__newsletter">

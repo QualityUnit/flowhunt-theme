@@ -121,12 +121,4 @@ $page_header_args = array(
 			<?php endwhile; ?>
 		</ul>
 	</div>
-
-	<div class="block-improve-section wrapper-md">
-		<?php
-		echo do_shortcode( '[blockImprove]' );
-		?>
-	</div>
-
-
 </div>
