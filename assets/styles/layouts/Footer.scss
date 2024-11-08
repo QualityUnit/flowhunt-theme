@@ -2,9 +2,15 @@
 
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
+@forward "./FooterTopBanner";
 
 .Footer {
-	background-color: $gray-50;
+	background-color: #0e0e11;
+	color: $white;
+
+	* {
+		color: currentcolor;
+	}
 
 	.wrapper-md {
 		margin-bottom: 0;
@@ -131,7 +137,7 @@
 	}
 
 	a {
-		color: $level-2;
+		color: $white;
 		text-decoration: none;
 	}
 
@@ -139,7 +145,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
 		justify-content: space-between;
-		color: $black;
+		color: $white;
 		margin-top: 2.5em;
 		gap: 2.5em;
 
@@ -207,6 +213,15 @@
 	&__bottom {
 		margin-top: 4.375em;
 		font-size: 0.75rem;
+
+		a {
+			color: $gray-400;
+
+			&:hover {
+				color: $white;
+				text-decoration: none;
+			}
+		}
 
 		&--copyright {
 			font-size: 12px;
