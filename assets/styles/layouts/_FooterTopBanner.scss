@@ -5,11 +5,13 @@
 
 .Footer__TopBanner {
 	background: #0e0e11 url(../../images/footer_banner_gradient.svg) center bottom no-repeat;
+	background-size: cover;
 	text-align: center;
 	padding: 3em 0;
 
 	@media (min-width: $breakpoint-tablet) {
 		padding: 8em 0;
+		background-size: auto;
 	}
 
 	&__wrapper {
@@ -18,6 +20,14 @@
 
 		&[class] {
 			margin-bottom: 0;
+		}
+	}
+
+	&__buttons {
+		margin-top: 2em;
+
+		.Button {
+			min-width: 10em;
 		}
 	}
 
@@ -36,14 +46,20 @@
 
 	&__subtitle {
 		color: $gray-400;
+		max-width: 80ch;
+		margin: 0 auto;
 	}
 
 	&__banner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5em;
 		position: relative;
 		background: $black-level2;
 		border-radius: $border-radius-10;
 		border: 1px solid $borders-color;
-		text-align: left;
+		text-align: center;
 		margin-top: 1.5em;
 		margin-bottom: 1.5em;
 		padding: 1.5em;
@@ -73,12 +89,36 @@
 			margin: 0;
 		}
 
-		@media (min-width: $breakpoint-tablet) {
+		&--social {
 			display: flex;
 			align-items: center;
+			gap: 2em;
+
+			svg {
+
+				@include square(1.5em);
+				fill: $gray-400;
+				transition: fill 0.3s;
+			}
+
+			a:hover {
+
+				svg {
+					fill: $white;
+				}
+			}
+		}
+
+		@media (min-width: $breakpoint-tablet) {
+			flex-direction: row;
+			text-align: left;
 			gap: 4em;
 			padding: 2.5em;
 			margin-top: 4.5em;
+
+			&--social {
+				margin-left: auto;
+			}
 		}
 
 		@media (hover: hover) {

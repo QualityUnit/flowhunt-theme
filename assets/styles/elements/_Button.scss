@@ -200,6 +200,19 @@ button,
 			color: $primary;
 		}
 	}
+
+	&--highlight {
+		box-shadow: 0 0 0.75em 0.25em rgba($accent-electric-blue, 0);
+		transition: all 0.3s;
+
+		&:hover {
+			box-shadow: 0 0 0.75em 0.25em rgba($accent-electric-blue, 0.8);
+
+			span {
+				color: $black;
+			}
+		}
+	}
 }
 
 .Button--outline {
@@ -223,6 +236,39 @@ button,
 		&:hover {
 			background-color: $white;
 			color: $black;
+		}
+	}
+
+	&--full {
+		position: relative;
+		background: linear-gradient($black-real, $black-real) padding-box, $primary-gradient border-box;
+		border-color: transparent;
+		transition: all 0.3s;
+
+		&::after {
+
+			@include posZero;
+			position: absolute;
+			content: "";
+			background: $primary-gradient;
+			opacity: 0;
+			transition: all 0.3s;
+		}
+
+		span {
+			position: relative;
+			z-index: 1;
+		}
+
+		&:hover {
+
+			&::after {
+				opacity: 1;
+			}
+
+			span {
+				color: $white;
+			}
 		}
 	}
 
