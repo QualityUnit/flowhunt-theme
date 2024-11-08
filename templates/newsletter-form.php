@@ -6,7 +6,12 @@
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_18d6ab6093f8e6cdbbd783635_22b687a6cc" tabindex="-1" value=""></div>
 
     <button type="submit" name="subscribe" id="newsletter_submit" class="Button Button--medium Button--dark-bg Button--outline--white" disabled>
-      <span>Subscribe</span>
+      <span class="flex flex-align-center">
+        Subscribe
+      </span>
+      <svg class="icon icon-arrow-out">
+        <use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#arrow-out' ); ?>"></use>
+      </svg>
     </button>
 
     <div id="mce-responses" class="clear">

@@ -51,7 +51,7 @@
 		z-index: 1;
 	}
 
-	@media (min-width: $breakpoint-tablet) {
+	@media (min-width: $breakpoint-tablet-landscape) {
 		flex-direction: row;
 		text-align: left;
 		gap: 4em;

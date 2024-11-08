@@ -28,7 +28,7 @@ button,
 
 	> svg {
 
-		@include square(1.5em);
+		@include square(1.25em);
 		fill: currentcolor;
 
 		&:first-child {
@@ -182,6 +182,20 @@ button,
 
 	&-bg {
 		background-color: $black-real;
+		color: $white;
+
+		span {
+			color: currentcolor !important;
+		}
+
+		svg {
+			fill: currentcolor;
+		}
+
+		&:hover {
+			background-color: $white;
+			color: $black;
+		}
 	}
 }
 

@@ -9,24 +9,7 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 <footer class="Footer urlslab-skip-all">
   <div class="wrapper-md">
 	
-		<div class="Footer__main">
-			<!-- <div class="Footer__main--intro">
-				<div class="Logo">
-					<a href="<?= esc_url( home_url( '/' ) ); ?>">
-					<img alt="URLsLab" loading="lazy" width="139" height="34" src="<?= esc_url( get_template_directory_uri() . '/assets/images/flowhunt-logo_white.svg' ); ?>" />
-					</a>
-				</div>
-				<p class="small Footer__motto"><?php _e( 'Build your custom chatbot in minutes with FlowHunt.', 'flowhunt' ); ?></p>
-			<div class="Footer__social">
-				<a href="" class="Footer__social--item">
-				<FacebookIcon />
-				</a>
-				<a href="" class="Footer__social--item">
-				<YouTubeIcon />
-				</a>
-			</div>
-			</div> -->
-			<div class="Footer__main--links">
+		<nav class="Footer__main">
 			<?php
 			if ( has_nav_menu( 'footer_navigation' ) ) :
 				wp_nav_menu(
@@ -37,8 +20,7 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 				);
 		endif;
 			?>
-			</div>
-		</div>
+		</nav>
 
 		<div class="Footer__newsletter">
 			<div class="Footer__newsletter--text">
