@@ -1,6 +1,6 @@
 <?php
 ?>
-<div class="Footer__TopBanner">
+<div class="Footer__TopBanner" >
   <div class="Footer__TopBanner__wrapper">
     <div class="Footer__TopBanner__content">
       <h2 class="Footer__TopBanner__title"><?php _e( 'Ready to build your own AI?', 'flowhunt' ); ?></h2>
@@ -14,7 +14,8 @@
         </a>
       </div>
     </div>
-    <div class="Footer__TopBanner__banner">
+    <div class="Footer__TopBanner__banner BlockDark" >
+      <a class="BlockDark__mainLink" href="<?php _e( 'https://app.flowhunt.io/sign-in', 'flowhunt' ); ?>" target="_blank"></a>
       <a class="Footer__TopBanner__banner--Logo" href="<?= esc_url( home_url( '/' ) ); ?>">
         <img alt="URLsLab" loading="lazy" width="139" height="34" src="<?= esc_url( get_template_directory_uri() . '/assets/images/flowhunt-logo_white.svg' ); ?>" />
       </a>
@@ -23,24 +24,29 @@
         <p class="Footer__TopBanner__banner--subtitle"><?php _e( 'Connect intuitive blocks to turn your ideas and needs into automated Flows', 'flowhunt' ); ?></p>
       </div>
       <div class="Footer__TopBanner__banner--social">
-        <a href="<?php the_author_meta( 'instagram' ); ?>" target="_blank" itemprop="sameAs">
-          <svg class="icon icon-social-instagram">
-            <use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-instagram' ); ?>"></use>
+        <a href="https://discord.com/invite/PySqvvY9yM" target="_blank" itemprop="sameAs">
+          <svg class="icon icon-social-discord">
+            <use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-discord' ); ?>"></use>
           </svg>
         </a>
-        <a href="<?php the_author_meta( 'facebook' ); ?>" target="_blank" itemprop="sameAs">
+        <a href="https://www.facebook.com/profile.php?id=61561161322543" target="_blank" itemprop="sameAs">
           <svg class="icon icon-social-facebook">
             <use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-facebook' ); ?>"></use>
           </svg>
         </a>
-        <a href="https://twitter.com/<?php the_author_meta( 'twitter' ); ?>" target="_blank" itemprop="sameAs">
+        <a href="https://x.com/flowhuntio" target="_blank" itemprop="sameAs">
           <svg class="icon icon-social-twitter">
             <use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-twitter' ); ?>"></use>
           </svg>
         </a>
-        <a href="<?php the_author_meta( 'linkedin' ); ?>" target="_blank" itemprop="sameAs">
+        <a href="https://www.linkedin.com/company/flowhunt/posts/?feedView=all" target="_blank" itemprop="sameAs">
           <svg class="icon icon-social-linkedin">
             <use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-linkedin' ); ?>"></use>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@FlowHunt" target="_blank" itemprop="sameAs">
+          <svg class="icon icon-social-youtube">
+            <use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-youtube' ); ?>"></use>
           </svg>
         </a>
       </div>

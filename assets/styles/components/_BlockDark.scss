@@ -1,0 +1,76 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.BlockDark {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5em;
+	position: relative;
+	background: $black-level2;
+	border-radius: $border-radius-10;
+	border: 1px solid $borders-color;
+	text-align: center;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	padding: 1.5em;
+	overflow: hidden;
+
+	&::after {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 5px;
+		content: "";
+		width: 1px;
+		height: 75%;
+		background: linear-gradient(to bottom, transparent, #0497dc 7%, #465ce0 50%, #0497dc 60%, #0497dc 75%, transparent);
+		opacity: 0;
+		transform: translateY(130%);
+		transition: all 0.3s;
+	}
+
+
+	*:not(a[href]) {
+		pointer-events: none;
+	}
+
+	&__mainLink[class] {
+
+		@include posZero;
+		display: block;
+		position: absolute;
+		z-index: 0;
+	}
+
+	a {
+		position: relative;
+		pointer-events: all;
+		z-index: 1;
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		flex-direction: row;
+		text-align: left;
+		gap: 4em;
+		padding: 2.5em;
+		margin-top: 4.5em;
+
+		&--social {
+			margin-left: auto;
+		}
+	}
+
+	@media (hover: hover) {
+
+		&:hover {
+
+			&::after {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	}
+}
