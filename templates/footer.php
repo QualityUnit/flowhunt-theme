@@ -4,7 +4,7 @@
 if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/', get_body_class() ) ) ) {
 	?>
 
-<?php include_once get_template_directory() . '/templates/footer-top-banner.php'; ?>
+	<?php include_once get_template_directory() . '/templates/footer-top-banner.php'; ?>
 
 <footer class="Footer urlslab-skip-all">
   <div class="wrapper-md">

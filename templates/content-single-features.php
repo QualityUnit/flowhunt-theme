@@ -13,15 +13,15 @@ if ( has_post_thumbnail() ) {
 	$page_header_logo['src'] = get_the_post_thumbnail_url( $post, 'logo_thumbnail' );
 }
 $page_header_args = array(
-	'is_infinity'   => true,  // set true if header image is infinity to right
-	'image' => array(
+	'is_infinity' => true,  // set true if header image is infinity to right
+	'image'       => array(
 		'src' => get_template_directory_uri() . '/assets/images/compact-header-features-img.png?ver=' . THEME_VERSION,
 		'alt' => get_the_title(),
 	),
-	'logo'  => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
-	'title' => get_the_title(),
-	'text'  => do_shortcode( '[urlslab-generator id="2" input="{{page_url}}"]' ),
-	'toc'   => true,
+	'logo'        => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
+	'title'       => get_the_title(),
+	'text'        => do_shortcode( '[urlslab-generator id="2" input="{{page_url}}"]' ),
+	'toc'         => true,
 );
 $current_id       = apply_filters( 'wpml_object_id', $post->ID, 'features' );
 $categories       = get_the_terms( $current_id, 'features-categories' );
