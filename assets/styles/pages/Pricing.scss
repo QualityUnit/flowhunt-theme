@@ -9,14 +9,33 @@ no-descending-specificity, scss/no-global-function-names */
 	position: relative;
 	padding: 4em 0;
 	margin-bottom: 0;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: bottom;
-	border-radius: 0;
 
-	@media (min-width: $breakpoint-desktop-hd) {
-		mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
 
+	&__header {
+		display: block;
+		width: 100%;
+		background: $white url(../../images/header-dots.png) repeat-x center top;
+		background-size: 20px;
+		border-bottom: 1px solid $gray-200;
+		padding-top: 3em;
+		padding-bottom: 3em;
+
+		> .e-con-inner {
+
+			@include wrapper-styles($wrapper-md);
+			display: block;
+			margin: 0 auto !important;
+
+			* {
+				display: block;
+				text-align: center;
+			}
+		}
+
+		@media (min-width: $breakpoint-tablet) {
+			padding-top: 8em;
+			padding-bottom: 4em;
+		}
 	}
 
 	.wrapper-md {
