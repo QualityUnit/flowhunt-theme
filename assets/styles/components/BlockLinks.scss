@@ -1,0 +1,87 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.BlockLinks {
+
+	.elementor-price-list {
+
+		&-item {
+			position: relative;
+			padding: 1.5em 2em;
+			text-decoration: none;
+			border-radius: $border-radius-10;
+			border: 1px solid $gray-200;
+			box-shadow: 0 1em 0.625em -1em rgba(10, 0, 44, 0.12);
+			align-items: center !important;
+			transition: all 0.3s;
+
+			&:hover {
+				text-decoration: none;
+				background-color: $gray-100;
+				border-color: rgba($primary, 1);
+			}
+
+			&::before {
+
+				@include square(1.5em);
+				content: "?";
+				color: $white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				background: $primary-gradient;
+				flex-shrink: 0;
+				margin-right: 0.75em;
+			}
+		}
+
+		&-separator {
+			display: none;
+		}
+
+		&-text {
+			align-items: center !important;
+		}
+
+		&-header[class] {
+			margin-bottom: 0;
+		}
+
+		&-title {
+			font-size: 1.25rem !important;
+			margin-bottom: 0;
+		}
+
+		&-description[class] {
+			font-size: 1rem !important;
+		}
+
+		&-description,
+		&-price[class] {
+			color: $gray-500;
+			font-weight: 400;
+		}
+
+		&-price {
+			display: flex;
+			position: absolute;
+			top: 50%;
+			font-size: 0.875rem;
+			right: 2.28em;
+			transform: translateY(-50%);
+
+			&::after {
+				position: relative;
+				display: block;
+				content: ">";
+				color: currentcolor;
+				transform: scaleY(1.25);
+				top: -0.1em;
+				margin-left: 0.75em;
+			}
+		}
+	}
+}

@@ -4,11 +4,7 @@
 @use "../common/mixins" as *;
 
 .ComparePlans {
-	$padding: 0.35em 0.75em;
-
-	.wrapper__wide {
-		padding: 0;
-	}
+	$padding: 0.6em 0.75em;
 
 	> * {
 		width: 100%;
@@ -16,7 +12,6 @@
 
 	&__sectionTitle {
 		margin-top: 4em;
-		margin-bottom: 2em !important;
 	}
 
 	&__header {
@@ -59,18 +54,6 @@
 			border: 1px solid $gray-50;
 			border-bottom: none;
 			border-radius: 0;
-
-			.enterprise & {
-				width: 50%;
-			}
-
-			&.first {
-				border-top-left-radius: $border-radius-16;
-			}
-
-			&.last {
-				border-top-right-radius: $border-radius-16;
-			}
 
 			.elementor-widget-image {
 				opacity: 1;
@@ -158,13 +141,14 @@
 
 				.elementor-heading-title {
 					font-size: 1.25rem;
-					margin-bottom: 0.625em;
+					margin-bottom: 0.35em;
 				}
 
 				.Button {
 					display: flex;
+					width: 100%;
 					padding: 0 1em;
-					height: 2.85em;
+					height: 2.5em;
 				}
 			}
 		}
@@ -177,11 +161,9 @@
 					display: flex;
 					width: 26%;
 					align-items: flex-end;
-					padding-bottom: 2em;
-
-					.enterprise & {
-						width: 30%;
-					}
+					margin-bottom: 2em;
+					margin-top: auto;
+					padding-right: 1.5em;
 
 					label {
 						font-size: 0.875rem;
@@ -191,10 +173,6 @@
 
 			.Pricing__program[class] {
 				width: 18.5%;
-
-				.enterprise & {
-					width: 35%;
-				}
 
 				.Pricing__price {
 					display: block;
@@ -211,6 +189,7 @@
 		&__title {
 			display: flex;
 			align-items: center;
+			font-size: 1rem !important;
 			font-weight: $font-weight-bold;
 			color: $black;
 			background-color: $gray-100;
@@ -256,29 +235,6 @@
 		margin-top: 0;
 	}
 
-	&.enterprise table {
-
-		td {
-
-			&:not(:first-of-type) {
-				display: none;
-			}
-
-			&:nth-of-type(4),
-			&:last-of-type {
-				display: table-cell;
-			}
-
-			@media (min-width: $breakpoint-tablet-landscape) {
-				width: 35%;
-
-				&:first-of-type {
-					width: 30%;
-				}
-			}
-		}
-
-	}
 
 	table.compare-price {
 
@@ -321,15 +277,17 @@
 		width: 100%;
 		table-layout: fixed;
 		border: none;
+		border-radius: 0;
 		margin-top: 0;
 
 		tr {
 			border: none;
-			border-bottom: 1px dashed $gray-50;
+			border-bottom: 1px solid $gray-50;
+			border-left: 1px solid $gray-50;
 			background-color: $white;
 
 			&.even {
-				background-color: $white;
+				background-color: $gray-50;
 			}
 		}
 
@@ -343,10 +301,6 @@
 				text-align: center;
 			}
 
-			&:nth-child(5) {
-				display: none;
-			}
-
 			&[class^="icn-"] {
 				color: transparent;
 
@@ -356,7 +310,7 @@
 					margin-left: 0.75ch;
 
 					&.icon-check {
-						fill: $primary-dark;
+						fill: $primary;
 					}
 				}
 			}
@@ -399,10 +353,6 @@
 				display: flex;
 				width: 25%;
 				background-color: $white;
-
-				.enterprise & {
-					width: 50%;
-				}
 
 				&:first-of-type {
 					width: 100%;

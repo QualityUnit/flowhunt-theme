@@ -21,6 +21,13 @@ no-descending-specificity, scss/no-global-function-names */
 		padding-top: 3em;
 		padding-bottom: 3em;
 
+		.elementor-widget-heading {
+
+			.elementor-heading-title[class] {
+				font-size: $font-size-h2 !important;
+			}
+		}
+
 		> .e-con-inner {
 
 			@include wrapper-styles($wrapper-md);
@@ -39,8 +46,29 @@ no-descending-specificity, scss/no-global-function-names */
 		}
 	}
 
-	.wrapper-md {
+	.wrapper-md,
+	.wrapper {
 		margin-bottom: 4em;
+	}
+
+	&.wrapper {
+		margin-bottom: 0;
+	}
+
+	.elementor-widget-heading {
+
+		+.elementor-widget-text-editor p {
+			font-size: 1.125rem;
+			color: $gray-500;
+		}
+
+		@media (min-width: $breakpoint-tablet) {
+
+			+.elementor-widget-text-editor p {
+				max-width: 80ch;
+				margin: 0 auto;
+			}
+		}
 	}
 
 	> .e-child {
