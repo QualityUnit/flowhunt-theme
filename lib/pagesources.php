@@ -12,6 +12,7 @@ foreach ( $archive_type as $specific_page ) {
 
 // Pricing page
 set_source( 'pricing', 'pages/Pricing', 'css' );
+set_source( 'pricing', 'pricingNew', 'js' );
 
 // Get plugin – Download page
 set_source( 'download', 'pages/Download', 'css' );
