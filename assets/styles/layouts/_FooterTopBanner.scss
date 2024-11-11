@@ -33,7 +33,7 @@
 	}
 
 	&__title {
-		background: linear-gradient(to right, $white 25%, #b6b6b6 100%);
+		background: linear-gradient(to right, $white 25%, $dark-text 100%);
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 
@@ -46,7 +46,7 @@
 	}
 
 	&__subtitle {
-		color: $gray-400;
+		color: $dark-text;
 		max-width: 80ch;
 		margin: 0 auto;
 	}
@@ -59,7 +59,7 @@
 		}
 
 		&--subtitle {
-			color: $gray-400;
+			color: $dark-text;
 			margin: 0;
 		}
 
@@ -71,7 +71,7 @@
 			svg {
 
 				@include square(1.5em);
-				fill: $gray-400;
+				fill: $dark-text;
 				transition: fill 0.3s;
 			}
 
