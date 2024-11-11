@@ -4,11 +4,13 @@
 @use "../common/mixins" as *;
 
 .BlockLinks {
+	width: 100%;
 
 	.elementor-price-list {
 
 		&-item {
 			position: relative;
+			width: 100%;
 			padding: 1.5em 2em;
 			text-decoration: none;
 			border-radius: $border-radius-10;
@@ -16,6 +18,10 @@
 			box-shadow: 0 1em 0.625em -1em rgba(10, 0, 44, 0.12);
 			align-items: center !important;
 			transition: all 0.3s;
+
+			&[href="#"] {
+				display: none;
+			}
 
 			&:hover {
 				text-decoration: none;
