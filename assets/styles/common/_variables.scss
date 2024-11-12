@@ -93,7 +93,8 @@ $wrapper-width: 1140px;
 $wrapper-wide: 1380px;
 $wrapper-padding: 1.125em;
 
-$wrapper: 1140px !important;
+$wrapper-sm: $wrapper-width;
+$wrapper: 1200px !important;
 $wrapper-md: 1400px !important;
 $wrapper-lg: 1600px !important;
 $wrapper-xl: 1920px !important;

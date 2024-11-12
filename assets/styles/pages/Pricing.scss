@@ -8,7 +8,6 @@ no-descending-specificity, scss/no-global-function-names */
 
 .Pricing {
 	position: relative;
-	padding: 4em 0;
 	margin-bottom: 0;
 
 
@@ -47,6 +46,7 @@ no-descending-specificity, scss/no-global-function-names */
 	}
 
 	.wrapper-md,
+	.wrapper-sm,
 	.wrapper {
 		margin-bottom: 4em;
 	}
