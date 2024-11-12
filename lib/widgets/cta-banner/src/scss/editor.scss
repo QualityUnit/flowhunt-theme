@@ -1,0 +1,48 @@
+@forward "style";
+
+.block-cta {
+	max-width: none !important;
+
+	&__content {
+		padding: 2.5em !important;
+
+		> * {
+			width: 100% !important;
+		}
+	}
+
+	&__buttons {
+
+		.Button {
+			width: calc(50% - 0.5em);
+
+			+ .Button {
+				margin-left: 1em;
+			}
+		}
+	}
+
+	h2 {
+
+		textarea {
+			font-size: 1.375rem !important;
+			font-weight: 600 !important;
+			line-height: 1.15 !important;
+		}
+	}
+
+	p.subtitle {
+		padding: 0 !important;
+		width: 100% !important;
+	}
+
+
+	p.subtitle,
+	button {
+
+		textarea {
+			font-size: 1rem !important;
+			line-height: 1.33 !important;
+		}
+	}
+}

@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
-  "name": "qu/improve-banner",
+	"apiVersion": 2,
+	"name": "qu/cta-banner",
 	"version": "0.1.0",
-	"title": "Improve Banner",
+	"title": "CTA Banner",
 	"icon": "chart-bar",
 	"category": "widgets",
-	"textdomain": "improvebanner",
+	"textdomain": "ctabanner",
 	"editorScript": "file:./build/index.js"
 }

@@ -10,9 +10,9 @@
 		"eslint": "gulp eslint",
 		"build": "NODE_ENV='production' gulp build",
 		"dev": "NODE_ENV='development' gulp",
-		"build:qu-improvebanner": "cd ./lib/widgets/improve-banner/ && yarn && yarn build",
+		"build:qu-ctabanner": "cd ./lib/widgets/cta-banner/ && yarn && yarn build",
 		"build:qu-whatblock": "cd ./lib/widgets/whatblock/ && yarn && yarn build",
-		"build:all": "yarn && yarn build && yarn build:qu-improvebanner && yarn build:qu-whatblock"
+		"build:all": "yarn && yarn build && yarn build:qu-ctabanner && yarn build:qu-whatblock"
 	},
 	"engines": {
 		"node": ">= 20"
