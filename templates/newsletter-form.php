@@ -9,9 +9,6 @@
 	  <span class="flex flex-align-center">
 		Subscribe
 	  </span>
-	  <svg class="icon icon-arrow-out">
-		<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#arrow-out' ); ?>"></use>
-	  </svg>
 	</button>
 
 	<div id="mce-responses" class="clear">

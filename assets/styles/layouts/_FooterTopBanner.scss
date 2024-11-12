@@ -29,6 +29,13 @@
 
 		.Button {
 			min-width: 10em;
+
+			&.Button--outline--white {
+
+				&:hover {
+					color: $white;
+				}
+			}
 		}
 	}
 
