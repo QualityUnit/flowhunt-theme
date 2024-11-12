@@ -1,6 +1,6 @@
 const tables = document.querySelectorAll( 'figure.wp-block-table table' );
-const pricingTableHeaderTitle = document.querySelector( '.Pricing__table--title' );
-const pricingTableHeader = document.querySelector( '.Pricing__table--header' );
+const pricingTableHeaderTitle = document.querySelector( '.ComparePlans__sectiontitle' );
+const pricingTableHeader = document.querySelector( '.ComparePlans--header' );
 
 // Setting tables header class when sticky to hide icons
 if ( pricingTableHeader ) {

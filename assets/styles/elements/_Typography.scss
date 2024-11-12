@@ -213,8 +213,21 @@ a {
 				content: url(../../images/icon_checkmark_primary.svg);
 			}
 		}
+
+		&.cross {
+
+			&::before {
+				content: url(../images/icon_checkmark_cross.svg);
+
+				.single &,
+				.archive & {
+					content: url(../../images/icon_checkmark_cross.svg);
+				}
+			}
+		}
 	}
 }
+
 
 img,
 picture,
