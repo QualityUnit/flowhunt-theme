@@ -79,6 +79,11 @@ hr {
 		padding: 0;
 	}
 
+	&-sm {
+
+		@include wrapper-styles($wrapper-sm);
+	}
+
 	&-md {
 
 		@include wrapper-styles($wrapper-md);

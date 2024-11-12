@@ -3,24 +3,72 @@ no-descending-specificity, scss/no-global-function-names */
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 @forward "../components/PricingPrograms";
-@forward "../components/PricingTable";
+@forward "../components/ComparePlansNew";
+// @forward "../components/PricingTable";
 
 .Pricing {
 	position: relative;
-	padding: 4em 0;
 	margin-bottom: 0;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: bottom;
-	border-radius: 0;
 
-	@media (min-width: $breakpoint-desktop-hd) {
-		mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
 
+	&__header {
+		display: block;
+		width: 100%;
+		background: $white url(../../images/header-dots.png) repeat-x center top;
+		background-size: 20px;
+		border-bottom: 1px solid $gray-200;
+		padding-top: 3em;
+		padding-bottom: 3em;
+
+		.elementor-widget-heading {
+
+			.elementor-heading-title[class] {
+				font-size: $font-size-h2 !important;
+			}
+		}
+
+		> .e-con-inner {
+
+			@include wrapper-styles($wrapper-md);
+			display: block;
+			margin: 0 auto !important;
+
+			* {
+				display: block;
+				text-align: center;
+			}
+		}
+
+		@media (min-width: $breakpoint-tablet) {
+			padding-top: 6em;
+			padding-bottom: 4em;
+		}
 	}
 
-	.wrapper-md {
+	.wrapper-md,
+	.wrapper-sm,
+	.wrapper {
 		margin-bottom: 4em;
+	}
+
+	&.wrapper {
+		margin-bottom: 0;
+	}
+
+	.elementor-widget-heading {
+
+		+.elementor-widget-text-editor p {
+			font-size: 1.125rem;
+			color: $gray-500;
+		}
+
+		@media (min-width: $breakpoint-tablet) {
+
+			+.elementor-widget-text-editor p {
+				max-width: 80ch;
+				margin: 0 auto;
+			}
+		}
 	}
 
 	> .e-child {

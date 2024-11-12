@@ -7,6 +7,7 @@ function components_imports( $content ) {
 		'Block__meet'                   => 'components/BlockMeet',
 		'Block__illustration'           => 'components/BlockIllustration',
 		'Block__background'             => 'components/BlockBackground',
+		'BlockLinks'                    => 'components/BlockLinks',
 		'BlockSimple'                   => 'components/BlockSimple',
 		'BlockVideo'                    => 'components/BlockVideo',
 		'table'                         => 'components/Table',

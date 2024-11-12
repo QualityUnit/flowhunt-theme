@@ -162,8 +162,8 @@ ol {
 ol {
 
 	color: $black;
-	list-style: none;
-	padding-left: 0.5em;
+	list-style: decimal;
+	padding-left: 1em;
 	text-align: left;
 	line-height: 1.8;
 	margin-top: 0.5em;
@@ -190,7 +190,8 @@ a {
 	}
 }
 
-.checklist {
+.checklist,
+.elementor-widget-text-editor ul {
 	list-style: none;
 	max-width: 40ch;
 	text-align: left;
@@ -198,17 +199,13 @@ a {
 	li {
 
 		color: $black !important;
-		font-size: 0.875rem;
-		line-height: 1.5;
-		padding-left: 2em;
 		margin-bottom: 0.5em;
 
 		&::before {
 			content: url(../images/icon_checkmark_primary.svg);
 			position: relative;
 			top: 2px;
-			left: -2px;
-			margin-left: -2em;
+			left: 0;
 			margin-right: 0.5em;
 
 			.single &,
@@ -216,8 +213,21 @@ a {
 				content: url(../../images/icon_checkmark_primary.svg);
 			}
 		}
+
+		&.cross {
+
+			&::before {
+				content: url(../images/icon_checkmark_cross.svg);
+
+				.single &,
+				.archive & {
+					content: url(../../images/icon_checkmark_cross.svg);
+				}
+			}
+		}
 	}
 }
+
 
 img,
 picture,

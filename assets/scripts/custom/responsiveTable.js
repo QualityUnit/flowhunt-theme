@@ -1,6 +1,6 @@
 const tables = document.querySelectorAll( 'figure.wp-block-table table' );
-const pricingTableHeaderTitle = document.querySelector( '.Pricing__table--title' );
-const pricingTableHeader = document.querySelector( '.Pricing__table--header' );
+const pricingTableHeaderTitle = document.querySelector( '.ComparePlans__sectiontitle' );
+const pricingTableHeader = document.querySelector( '.ComparePlans--header' );
 
 // Setting tables header class when sticky to hide icons
 if ( pricingTableHeader ) {
@@ -46,7 +46,7 @@ if ( tables.length ) {
 
 					if ( hasTooltip.test( text ) ) {
 						const infoIcon = `<svg class="icon icon-info-circle">
-							<use xlink:href="/app/themes/urlslab/assets/images/icons.svg#info-circle"></use>
+							<use xlink:href="/app/themes/flowhunt-theme/assets/images/icons.svg#info-circle"></use>
 							</svg>`;
 						cell.classList.add( 'hasTooltip' );
 						cell.innerHTML = text.replaceAll( hasTooltip, `$1<div class="ComparePlans__tooltip">${ infoIcon }<span class="ComparePlans__tooltip__text">$2</span></div>` );
@@ -61,7 +61,7 @@ if ( tables.length ) {
 						val.classList.add( 'icn-after-check' );
 						val.insertAdjacentHTML( 'afterbegin', `
 							<svg class="icon icon-check">
-								<use xlink:href="/app/themes/urlslab/assets/images/icons.svg#check"></use>
+								<use xlink:href="/app/themes/flowhunt-theme/assets/images/icons.svg#check"></use>
 							</svg>`
 						);
 					}
@@ -70,7 +70,7 @@ if ( tables.length ) {
 						val.classList.add( 'icn-after-close' );
 						val.insertAdjacentHTML( 'afterbegin', `
 							<svg class="icon icon-close">
-								<use xlink:href="/app/themes/urlslab/assets/images/icons.svg#close"></use>
+								<use xlink:href="/app/themes/flowhunt-theme/assets/images/icons.svg#close"></use>
 							</svg>`
 						);
 					}
