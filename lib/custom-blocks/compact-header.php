@@ -81,8 +81,6 @@ set_custom_source( 'common/splide', 'css' );
 				<?php
 				if ( ! empty( $args['breadcrumb'] ) ) {
 					site_breadcrumb( $args['breadcrumb'] );
-				} else {
-					site_breadcrumb();
 				}
 				?>
 				<?php if ( ! empty( $args['title'] ) ) { ?>

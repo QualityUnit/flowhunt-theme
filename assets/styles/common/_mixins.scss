@@ -21,11 +21,6 @@
 		margin-bottom: $block-space-md;
 	}
 
-	@media (min-width: $breakpoint-desktop) {
-		margin-bottom: $block-space;
-	}
-
-
 	&.mb-0 {
 		margin-bottom: 0;
 	}
