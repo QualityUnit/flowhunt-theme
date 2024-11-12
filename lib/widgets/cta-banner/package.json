@@ -1,7 +1,7 @@
 {
-  "name": "improvebanner",
+  "name": "ctabanner",
   "version": "1.0.0",
-  "description": "Gutenberg Improve Banner",
+  "description": "Gutenberg CTA Banner",
   "main": "./src/index.js",
   "author": "Jozef Remen @ QualityUnit.com",
   "license": "MIT",
