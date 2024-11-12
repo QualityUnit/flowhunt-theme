@@ -21,7 +21,7 @@ body.compact-header--active {
 	$bg-color: $white;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-end;
 
 	width: 100%;
 	position: relative;

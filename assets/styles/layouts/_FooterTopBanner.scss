@@ -1,0 +1,100 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+@forward "../components/BlockDark";
+
+.Footer__TopBanner {
+	background: #0e0e11 url(../../images/footer_banner_gradient.svg) center bottom no-repeat;
+	background-size: cover;
+	text-align: center;
+	padding: 3em 0;
+
+	@media (min-width: $breakpoint-tablet) {
+		padding: 8em 0;
+		background-size: auto;
+	}
+
+	&__wrapper {
+
+		@include wrapper-styles($wrapper-md);
+
+		&[class] {
+			margin-bottom: 0;
+		}
+	}
+
+	&__buttons {
+		margin-top: 2em;
+
+		.Button {
+			min-width: 10em;
+
+			&.Button--outline--white {
+
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
+
+	&__title {
+		background: linear-gradient(to right, $white 25%, $dark-text 100%);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		@media (min-width: $breakpoint-tablet) {
+
+			&[class] {
+				font-size: 3.25rem !important;
+			}
+		}
+	}
+
+	&__subtitle {
+		color: $dark-text;
+		max-width: 80ch;
+		margin: 0 auto;
+	}
+
+	&__banner {
+
+		&--title {
+			color: $white;
+			margin: 0;
+		}
+
+		&--subtitle {
+			color: $dark-text;
+			margin: 0;
+		}
+
+		&--social {
+			display: flex;
+			align-items: center;
+			gap: 2em;
+
+			svg {
+
+				@include square(1.5em);
+				fill: $dark-text;
+				transition: fill 0.3s;
+			}
+
+			a:hover {
+
+				svg {
+					fill: $white;
+				}
+			}
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+
+			&--social {
+				margin-left: auto;
+			}
+		}
+	}
+}

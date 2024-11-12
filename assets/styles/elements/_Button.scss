@@ -28,7 +28,7 @@ button,
 
 	> svg {
 
-		@include square(1.5em);
+		@include square(1.25em);
 		fill: currentcolor;
 
 		&:first-child {
@@ -179,6 +179,24 @@ button,
 		border-color: $primary-dark;
 		color: $primary;
 	}
+
+	&-bg {
+		background-color: $black-real;
+		color: $white;
+
+		span {
+			color: currentcolor !important;
+		}
+
+		svg {
+			fill: currentcolor;
+		}
+
+		&:hover {
+			background-color: $white;
+			color: $black;
+		}
+	}
 }
 
 .Button--white {
@@ -200,6 +218,88 @@ button,
 			color: $primary;
 		}
 	}
+
+	&--highlight {
+		box-shadow: 0 0 0.75em 0.25em rgba($accent-electric-blue, 0);
+		transition: all 0.3s;
+
+		&:hover {
+			box-shadow: 0 0 0.75em 0.25em rgba($accent-electric-blue, 0.8);
+
+			span {
+				color: $black;
+			}
+		}
+	}
+}
+
+.Button--glowing {
+	width: 165px;
+	height: 3.125em; // 50px = 3.125em
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: $border-radius-6;
+
+	font-size: 1rem;
+
+	span {
+		color: $black;
+	}
+
+	&::before {
+		content: "";
+		background-image: linear-gradient(45deg, #0497dc, #465ce0, #984ad7, #0497dc);
+		background-attachment: fixed;
+		position: absolute;
+		top: -0.125em;
+		left: -0.125em;
+		background-size: 400% 400%;
+		z-index: -1;
+		filter: blur(5px);
+		width: calc(100% + 0.25em);
+		height: calc(100% + 0.25em);
+		animation: glowing 5s linear infinite;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+		border-radius: $border-radius-6;
+
+		// this code is for safari blur issue
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+
+	}
+
+	&:active {
+		color: #000;
+	}
+
+	&:active::after {
+		background: transparent;
+	}
+
+	&:hover::before {
+		opacity: 1;
+	}
+
+	&::after {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: $white;
+		left: 0;
+		top: 0;
+		border-radius: $border-radius-6;
+	}
+
 }
 
 .Button--outline {
@@ -223,6 +323,40 @@ button,
 		&:hover {
 			background-color: $white;
 			color: $black;
+		}
+	}
+
+	&--full {
+		position: relative;
+		background: linear-gradient(#0e0e11, #0e0e11) padding-box, $primary-gradient border-box;
+		border-color: transparent;
+		transition: all 0.3s;
+
+		&::after {
+
+			@include posZero;
+			position: absolute;
+			content: "";
+			background: $primary-gradient;
+			opacity: 0;
+			transition: all 0.3s;
+			border-radius: calc($border-radius-6 - 2px);
+		}
+
+		span {
+			position: relative;
+			z-index: 1;
+		}
+
+		&:hover {
+
+			&::after {
+				opacity: 1;
+			}
+
+			span {
+				color: $white;
+			}
 		}
 	}
 

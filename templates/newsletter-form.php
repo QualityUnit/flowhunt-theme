@@ -1,18 +1,20 @@
 <div class="Footer__newsletter--form" id="newsletter">
   <form action="https://qualityunit.us3.list-manage.com/subscribe/post?u=18d6ab6093f8e6cdbbd783635&amp;id=5b7884a7fb&amp;v_id=102&amp;f_id=00f5c2e1f0" method="post" name="mc-embedded-subscribe-form" target="_blank">
-    <input type="email" name="EMAIL" placeholder="Enter your e-mail for latest news" id="newsletter_input"
-    class="Input" required />
+	<input type="email" name="EMAIL" placeholder="Enter your e-mail for latest news" id="newsletter_input"
+	class="Input" required />
   <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_18d6ab6093f8e6cdbbd783635_22b687a6cc" tabindex="-1" value=""></div>
+	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_18d6ab6093f8e6cdbbd783635_22b687a6cc" tabindex="-1" value=""></div>
 
-    <button type="submit" name="subscribe" id="newsletter_submit" class="Button Button--medium Button--dark" disabled>
-      <span>Subscribe</span>
-    </button>
+	<button type="submit" name="subscribe" id="newsletter_submit" class="Button Button--medium Button--dark-bg Button--outline--white" disabled>
+	  <span class="flex flex-align-center">
+		Subscribe
+	  </span>
+	</button>
 
-    <div id="mce-responses" class="clear">
-      <div class="response" id="mce-error-response" style="display:none"></div>
-      <div class="response" id="mce-success-response" style="display:none"></div>
-    </div>
+	<div id="mce-responses" class="clear">
+	  <div class="response" id="mce-error-response" style="display:none"></div>
+	  <div class="response" id="mce-success-response" style="display:none"></div>
+	</div>
   </form>
 </div>
 
@@ -23,12 +25,12 @@
   const subscribeBtn = document.querySelector('#newsletter_submit');
 
   subscribeInput.addEventListener( 'input', () => {
-    const subscribeVal = subscribeInput.value;
+	const subscribeVal = subscribeInput.value;
 
-    if ( ! emailRegex.test( subscribeVal ) ) {
-      subscribeBtn.disabled = true;
-      return false;
-    }
-    subscribeBtn.disabled = false;
+	if ( ! emailRegex.test( subscribeVal ) ) {
+	  subscribeBtn.disabled = true;
+	  return false;
+	}
+	subscribeBtn.disabled = false;
   } );
 </script>

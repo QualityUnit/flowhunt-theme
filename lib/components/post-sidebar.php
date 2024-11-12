@@ -26,13 +26,13 @@
 			<div class="Post__sidebar--Share__item">
 				<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>" target="_blank" itemprop="sameAs"
 					title="<?php _e( 'Share on', 'ms' ); ?> <?php _e( 'LinkedIn', 'ms' ); ?>">
-					<svg class='icon icon-linkedin'><use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#social-linkedin' ); ?>"></use></svg>
+					<svg class='icon icon-linkedin'  style="fill:rgb(10,102,194);" ><use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#social-linkedin' ); ?>"></use></svg>
 				</a>
 			</div>
 			<div class="Post__sidebar--Share__item">
 				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" itemprop="sameAs"
 					title="<?php _e( 'Share on', 'ms' ); ?> <?php _e( 'Facebook', 'ms' ); ?>">
-					<svg class='icon icon-facebook'><use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#social-facebook' ); ?>"></use></svg>
+					<svg class='icon icon-facebook' style="fill:rgb(8,102,255);"><use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#social-facebook' ); ?>"></use></svg>
 				</a>
 			</div>
 			<div class="Post__sidebar--Share__item">
