@@ -15,7 +15,7 @@ if ( has_post_thumbnail() ) {
 $page_header_args = array(
 	'is_infinity' => true,  // set true if header image is infinity to right
 	'image'       => array(
-		'src' => get_template_directory_uri() . '/assets/images/compact-header-features-img.png?ver=' . THEME_VERSION,
+		'src' => get_template_directory_uri() . '/assets/images/compact-header-features.png?ver=' . THEME_VERSION,
 		'alt' => get_the_title(),
 	),
 	'logo'        => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
