@@ -8,7 +8,7 @@ if [[ -z "$PACKAGE_VERSION" ]]; then
 fi
 
 rm -rf node_modules vendor .git .idea .github .husky *.md *.lock .editorconfig .eslintignore .eslintrc .gitignore .stylelintrc composer.json gulpfile.js commitlint.config.js package.json phpcs.xml
-cd ./lib/widgets/improve-banner/ && rm -rf node_modules package.json yarn.lock webpack.config.js
+cd ./lib/widgets/cta-banner/ && rm -rf node_modules package.json yarn.lock webpack.config.js
 cd ../whatblock/ && rm -rf node_modules package.json yarn.lock webpack.config.js
 
 cd ../../..
