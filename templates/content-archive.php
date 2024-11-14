@@ -1,6 +1,6 @@
 <?php
 set_custom_source( 'pages/blog', 'css' );
-set_source( false, 'components/BlogTopPost' );
+set_custom_source( 'components/BlogTopPost' );
 set_custom_source( 'blogLazyLoad', 'js', array( 'app_js' ) );
 
 $page_header_title = single_term_title( '', false );

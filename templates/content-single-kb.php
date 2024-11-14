@@ -4,6 +4,10 @@
 
 <div class="Post Post--sidebar-right documentation" itemscope itemtype="http://schema.org/TechArticle">
 	<meta itemprop="url" content="<?= esc_url( get_permalink() ); ?>">
+	<meta itemprop="author" itemscope itemtype="http://schema.org/Person" content="<?= esc_attr( get_the_author_meta( 'display_name' ) ); ?>">
+	<meta  itemprop="dateModified" content="<?= esc_attr( get_the_modified_time( 'F j, Y' ) ); ?>">
+	<meta  itemprop="headline" content="<?= esc_attr( get_the_title() ); ?>">
+	<meta  itemprop="image" content="<?= esc_attr( get_template_directory_uri() . '/assets/images/icon-book.svg?ver=' . THEME_VERSION ); ?>">
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Quality Unit"></span>
 
 	<div class="wrapper Post__container">
