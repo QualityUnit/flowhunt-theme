@@ -33,7 +33,7 @@ no-descending-specificity, scss/no-global-function-names */
 			display: block;
 			margin: 0 auto !important;
 
-			* {
+			*:not(a) {
 				display: block;
 				text-align: center;
 			}
