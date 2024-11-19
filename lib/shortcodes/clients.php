@@ -1,0 +1,42 @@
+<?php
+
+function clients( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'posts' => '5',
+		),
+		$atts,
+		'clients'
+	);
+
+	ob_start();
+	?>
+
+	<div class="Clients">
+	<?php
+	$query_clients_posts = new WP_Query(
+		array(
+			'post_type'      => 'clients',
+			'posts_per_page' => $atts['posts'],
+		)
+	);
+
+	if ( $query_clients_posts->have_posts() ) :
+		while ( $query_clients_posts->have_posts() ) :
+			$query_clients_posts->the_post();
+			?>
+
+		<div class="Clients__item">
+			<?php the_post_thumbnail( 'archive_small_thumbnail', array( 'class' => 'urlslab-skip-lazy' ) ); ?>
+		</div>
+
+	<?php endwhile; ?>
+	<?php endif; ?>
+	<?php wp_reset_postdata(); ?>
+	</div>
+
+	<?php
+	set_source( false, 'shortcodes/Clients' );
+	return ob_get_clean();
+}
+add_shortcode( 'clients', 'clients' );

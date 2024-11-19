@@ -58,6 +58,10 @@
 		padding: 2.5em;
 		margin-top: 4.5em;
 
+		&--column {
+			flex-direction: column;
+		}
+
 		&--social {
 			margin-left: auto;
 		}
