@@ -6,6 +6,7 @@ $colorClasses: (
 	"white": $white,
 	"level-1": $level-1,
 	"black": $black,
+	"black-level2": $black-level2,
 	"level-2": $level-2,
 	"level-3": $level-3,
 	"level-4": $level-4,
@@ -17,12 +18,24 @@ $colorClasses: (
 	"light-gray": $gray-200,
 	"light-grayBg": $gray-400,
 	"lightest-gray": $gray-50,
+	"gray-900": $gray-900,
+	"gray-500": $gray-500,
+	"gray-400": $gray-400,
+	"gray-300": $gray-300,
+	"gray-200": $gray-200,
+	"gray-100": $gray-100,
+	"gray-50": $gray-50,
+	"dark-text": $dark-text,
 
 	"gray": $gray-900,
 	"primary": $primary,
 	"primary-dark":	primary-dark,
 	"primary-lighter": $primary-light,
 	"primary-light": $primary-light,
+	"accent-electric-blue": $accent-electric-blue,
+	"accent-electric-blue-dark": $accent-electric-blue-dark,
+	"accent-dark": $accent-dark,
+	"accent-indigo": $accent-indigo,
 	"secondary": $secondary,
 	"secondary-dark": $secondary-dark,
 	"secondary-light": $secondary-light,
@@ -59,6 +72,10 @@ $colorClasses: (
 @each $class, $color in $colorClasses {
 	.c-#{$class} {
 		color: $color !important;
+
+		* {
+			color: inherit !important;
+		}
 
 		svg {
 			fill: currentcolor !important;

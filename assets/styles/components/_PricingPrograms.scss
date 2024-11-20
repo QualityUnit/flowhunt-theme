@@ -11,18 +11,22 @@ no-descending-specificity, scss/no-global-function-names */
 	}
 
 	&__programs {
-		color: $level-2;
-		gap: 2em;
-		text-align: left;
-		grid-template-rows: auto !important;
 
-		@media (min-width: $breakpoint-tablet) {
-			grid-template-columns: repeat(2, 1fr);
-			margin-top: -4em;
-		}
+		&[class] {
+			display: grid;
+			color: $level-2;
+			gap: 2em;
+			text-align: left;
+			grid-template-rows: auto !important;
 
-		@media (min-width: $breakpoint-tablet-landscape) {
-			grid-template-columns: repeat(4, 1fr);
+			@media (min-width: $breakpoint-tablet) {
+				grid-template-columns: repeat(2, 1fr);
+				margin-top: -4em;
+			}
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				grid-template-columns: repeat(4, 1fr);
+			}
 		}
 
 		> .e-child {

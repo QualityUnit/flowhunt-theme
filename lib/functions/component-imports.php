@@ -10,6 +10,7 @@ function components_imports( $content ) {
 		'BlockLinks'                    => 'components/BlockLinks',
 		'BlockSimple'                   => 'components/BlockSimple',
 		'BlockVideo'                    => 'components/BlockVideo',
+		'ImageSwitcher'                 => 'components/ImageSwitcher',
 		'table'                         => 'components/Table',
 		'Modules'                       => 'components/BlockModules',
 		'FormIcons'                     => 'components/FormIcons',

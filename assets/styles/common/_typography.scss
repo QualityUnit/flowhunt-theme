@@ -36,7 +36,8 @@ h6,
 $mobile-divider: 1.25;
 
 h1,
-.h1[class] {
+.h1[class],
+.h1 * {
 	font-size: $font-size-h1 !important;
 	line-height: $line-height-h1 !important;
 	margin-bottom: 0.33em;
@@ -44,13 +45,15 @@ h1,
 }
 
 h2,
-.h2[class] {
+.h2[class],
+.h2 * {
 	font-size: $font-size-h2 !important;
 	line-height: $line-height-h2 !important;
 }
 
 h3,
-.h3[class] {
+.h3[class],
+.h3 * {
 
 	font-size: $font-size-h3 !important;
 	line-height: $line-height-h3 !important;

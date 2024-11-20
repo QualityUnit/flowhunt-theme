@@ -26,8 +26,8 @@ function clients( $atts ) {
 			$query_clients_posts->the_post();
 			?>
 
-		<div class="Clients__item">
-			<?php the_post_thumbnail( 'archive_small_thumbnail', array( 'class' => 'urlslab-skip-lazy' ) ); ?>
+	<div class="Clients__item">
+			<a href="<?= esc_url( get_post_custom_values( 'link' ) ? get_post_custom_values( 'link' )[0] : '' ); ?>" target="_blank"><?php the_post_thumbnail( 'logo', array( 'class' => 'urlslab-skip-lazy' ) ); ?></a>
 		</div>
 
 	<?php endwhile; ?>
