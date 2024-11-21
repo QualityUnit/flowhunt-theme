@@ -12,6 +12,26 @@
 	overflow: hidden;
 	background: $black-level2;
 
+	&--tag {
+		background: linear-gradient(to right, rgba($dark-text, 10%), rgba($borders-color, 10%));
+		border: 1px solid $borders-color;
+		width: max-content;
+		padding: 0.15em 1em 0.15em 0.25em;
+		border-radius: 1em;
+		margin-bottom: 1em !important;
+
+		p {
+			display: flex !important;
+			align-items: center;
+			gap: 0.5em;
+		}
+	}
+
+	h3[class] {
+		font-size: 1.375rem !important;
+		margin-bottom: 1rem !important;
+	}
+
 	> * {
 		position: relative;
 		z-index: 1;
