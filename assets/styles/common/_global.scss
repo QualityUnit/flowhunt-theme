@@ -226,10 +226,24 @@ $borderWidth: (
 
 	&-absolute {
 		position: absolute !important;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+
+			&-tablet-landscape[class] {
+				position: absolute !important;
+			}
+		}
 	}
 
 	&-fixed {
 		position: fixed !important;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+
+			&-tablet-landscape[class] {
+				position: fixed !important;
+			}
+		}
 	}
 
 	&-sticky {
