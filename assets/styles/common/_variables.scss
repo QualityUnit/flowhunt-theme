@@ -63,8 +63,8 @@ $line-height-h6: 1.5;
 
 // font sizes for single pages
 $font-size-h1-single: clamp(1.875rem, 4vw, 3em);
-$font-size-h2-single: clamp(2rem, 1vw, 2.75rem);
-$font-size-h3-single: clamp(1.2rem, 1vw, 1.5rem);
+$font-size-h2-single: clamp(2.25rem, 1vw, 2.75rem);
+$font-size-h3-single: clamp(1.375rem, 1vw, 1.5rem);
 
 $font-weight-normal: 400;
 $font-weight-semi: 600;
@@ -156,7 +156,7 @@ $fields-bg: $gray-300; // fields backgrounds
 $fields-bg-hover: #f5f5f7; // fields backgrounds
 
 // Borders
-$borders-color: #302e32; // borders color
+$borders-color: $gray-200; // borders color
 $border-divider-primary: #cfd6dd;
 
 // Backgrounds

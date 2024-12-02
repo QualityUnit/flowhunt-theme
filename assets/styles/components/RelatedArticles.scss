@@ -3,24 +3,67 @@
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
-.Related__Articles {
+.Related__Articles,
+.urlslab-rel-res {
 
-	&--Article {
+	&--Article,
+	&-item {
+		position: relative;
 		display: grid;
 		grid-template-columns: 3.125em 1fr 1.25em;
 		gap: 1em;
-		background-color: $fields-bg-hover;
 		padding: 1em;
 		text-decoration: none !important;
-		border-radius: $border-radius-16;
+		background-color: $white !important;
+		border-radius: $border-radius;
 		border: 1px solid $borders-color;
 		margin-bottom: 1.5em;
+		overflow: hidden;
+		box-shadow: 0 15px 10px -15px rgba(9, 0, 44, 0.12);
 
-		&:hover {
-			border-color: $primary;
+		&::after {
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 5px;
+			content: "";
+			width: 1px;
+			height: 75%;
+			background: linear-gradient(to bottom, transparent, #0497dc 7%, #465ce0 50%, #0497dc 60%, #0497dc 75%, transparent);
+			opacity: 0;
+			transform: translateY(130%);
+			transition: all 0.3s;
 		}
 
-		&__thumbnail {
+		a {
+			position: static !important;
+
+			&::before {
+
+				@include square(100%);
+				position: absolute;
+				content: "";
+			}
+		}
+
+		@media (hover: hover) {
+
+			&:hover {
+				background-color: rgba(4, 151, 220, 0.03);
+
+				&::after {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+		}
+
+		&-text[class] {
+			position: static !important;
+		}
+
+		&__thumbnail,
+		&-screenshot {
 			width: 3.125em;
 			height: 3.125em;
 			background-color: $white;
@@ -39,14 +82,17 @@
 			}
 		}
 
-		&__title[class] {
-			margin: 0 0 0.5em;
+		&__title[class],
+		&-title[class] {
+			font-size: 1.125rem !important;
+			margin: 0 0 0.5em !important;
 			transition: color 0.25s;
 		}
 
-		p {
-			font-size: 0.875rem;
-			color: $level-2;
+		p:not([class*="title"]),
+		&-summary {
+			font-size: 0.875rem !important;
+			color: $level-2 !important;
 			margin: 0;
 			height: 3.8em;
 			display: -webkit-box;

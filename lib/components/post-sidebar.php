@@ -15,7 +15,7 @@
 	  </h4>
 	  <p>
 		<?=
-		esc_html( 'Handle all support channels in one solution', 'flowhunt' );
+		esc_html( 'Start building your own AI solutions', 'flowhunt' );
 		?>
 	  </p>
 	  <a class="Button Button--full pt-s pb-s" href="<?= esc_url( '#0' ); ?>" target="_blank"><span><?= esc_html( 'Get started for FREE', 'flowhunt' ); ?></span></a>

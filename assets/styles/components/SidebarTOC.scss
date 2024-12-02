@@ -33,6 +33,10 @@ no-descending-specificity, value-keyword-case */
 			text-decoration: none;
 			color: $gray-500;
 
+			&:hover {
+				text-decoration: none;
+			}
+
 			&::before {
 				position: absolute;
 				display: block;

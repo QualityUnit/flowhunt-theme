@@ -85,6 +85,7 @@ no-descending-specificity, scss/no-global-function-names */
 				min-height: 476px;
 			}
 
+			picture,
 			img {
 				display: block;
 				max-width: 100%;
@@ -103,7 +104,8 @@ no-descending-specificity, scss/no-global-function-names */
 				margin: 2rem 0;
 
 				img {
-					border: 2px solid #f1f1f1;
+					border: 1px solid $gray-200;
+					border-radius: $border-radius;
 					height: auto !important;
 				}
 
@@ -220,6 +222,10 @@ no-descending-specificity, scss/no-global-function-names */
 					padding-left: 0;
 					list-style: none;
 				}
+			}
+
+			ul.wp-block-list {
+				max-width: none;
 			}
 
 			.wp-block-gallery {
@@ -401,18 +407,18 @@ no-descending-specificity, scss/no-global-function-names */
 		@media (min-width: $breakpoint-desktop-box) {
 
 			&--page {
-				max-width: 40.625em;
+				max-width: 48.375em;
 			}
 		}
 
 		&:has(+ .Post__sidebar) {
 
 			@media (min-width: $breakpoint-desktop-md) {
-				max-width: 40.625em;
+				max-width: 48.375em;
 
 				.Content {
 					position: relative;
-					left: calc(var(--sidebar-width) / 2 + 1.125em);
+					left: calc(var(--sidebar-width) / 2 - 2em);
 				}
 			}
 		}
