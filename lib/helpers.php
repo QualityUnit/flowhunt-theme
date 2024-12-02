@@ -93,7 +93,7 @@ function elementor_playbtn( $content ) {
 		foreach ( $titles_parents as $parent ) {
 			$hasvideo = $parent->getAttribute( 'data-ytid' );
 			if ( ! empty( $hasvideo ) ) {
-				$title = $element->getElementsByTagName( 'h2' )[0];
+				$title    = $element->getElementsByTagName( 'h2' )[0];
 				$play_btn = $dom->createElement( 'span', htmlspecialchars( __( 'Play video', 'urslab' ) ) );
 				$play_btn->setAttribute( 'class', 'play' );
 				$title->appendChild( $play_btn );
@@ -131,7 +131,7 @@ function insert_svg_icons( $content ) {
 		if ( isset ( $class_fragment[2] ) ) {
 			$fragment = $class_fragment[2];
 			$svg = $dom->createDocumentFragment();
-			$svg->appendXML( '<svg class="icon icon-' . $fragment . '"><use xlink:href="' . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#' . $fragment . '"></use></svg>' );
+			$svg->appendXML( '<svg class="icon icon-' . $fragment . '"><use xlink:href="' . get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#' . $fragment . '"></use></svg>' );
 			if ( ! str_contains( $class, 'icn-after' ) and $icon !== $svg ) {
 				$icon->insertBefore( $svg, $icon->firstChild );
 			}

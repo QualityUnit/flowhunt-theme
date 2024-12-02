@@ -782,6 +782,14 @@ a:not(.Button) {
 		box-decoration-break: clone;
 	}
 
+	&-gradient-accent {
+
+		background: $accent-gradient;
+		background-clip: text;
+		color: transparent;
+		box-decoration-break: clone;
+	}
+
 	&-splash {
 
 		&::after {

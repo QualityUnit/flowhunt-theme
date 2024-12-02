@@ -35,7 +35,7 @@ if ( blockVideos.length ) {
 }
 
 const modalVideo = document.querySelectorAll(
-	'[data-lightbox="youtube"], [class*="Block--video"] [data-ytid]'
+	'[data-ytid], [data-lightbox="youtube"], [class*="Block--video"] [data-ytid]'
 );
 
 function loadYouTubeModal( yt, target ) {

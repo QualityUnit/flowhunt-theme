@@ -68,6 +68,12 @@
 	}
 
 	&__banner {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 1.5em;
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
 
 		&--title {
 			color: $white;
@@ -100,6 +106,11 @@
 		}
 
 		@media (min-width: $breakpoint-tablet-landscape) {
+			flex-direction: row;
+			text-align: left;
+			gap: 4em;
+			padding: 2.5em;
+			margin-top: 4.5em;
 
 			&--social {
 				margin-left: auto;

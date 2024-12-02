@@ -10,6 +10,8 @@ function components_imports( $content ) {
 		'BlockLinks'                    => 'components/BlockLinks',
 		'BlockSimple'                   => 'components/BlockSimple',
 		'BlockVideo'                    => 'components/BlockVideo',
+		'ImageSwitcher'                 => 'components/ImageSwitcher',
+		'SuccessStoriesGrid'            => 'components/SuccessStoriesGrid',
 		'table'                         => 'components/Table',
 		'Modules'                       => 'components/BlockModules',
 		'FormIcons'                     => 'components/FormIcons',

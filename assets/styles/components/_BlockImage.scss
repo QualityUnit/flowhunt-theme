@@ -17,6 +17,13 @@
 		}
 	}
 
+	&__transparent {
+
+		> .e-con-inner[class] {
+			background-color: transparent;
+		}
+	}
+
 	> .e-con-inner {
 		display: flex;
 		position: relative;
@@ -150,7 +157,7 @@
 					text-align: left;
 
 					.elementor-widget-heading > div {
-						margin-bottom: 1em !important;
+						margin-bottom: 1rem !important;
 					}
 				}
 
