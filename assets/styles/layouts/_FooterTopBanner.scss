@@ -56,6 +56,15 @@
 		color: $dark-text;
 		max-width: 80ch;
 		margin: 0 auto;
+
+		a {
+			color: $primary;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	&__banner {

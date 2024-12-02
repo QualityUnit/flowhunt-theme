@@ -64,18 +64,17 @@ no-descending-specificity, value-keyword-case
 
 		position: relative;
 		font-size: 0.875rem;
-		font-weight: $font-weight-semi;
-		color: $black;
+		color: $gray-900;
 		cursor: pointer;
 		transition: color 0.2s;
 
 		&:hover,
 		&.active {
-
-			color: $primary;
+			color: $black;
 		}
 
 		&.active {
+			font-weight: 700;
 			cursor: default;
 		}
 
