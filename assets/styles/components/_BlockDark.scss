@@ -5,25 +5,64 @@
 
 .BlockDark {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 1.5em;
 	position: relative;
-	background: $black-level2;
 	border-radius: $border-radius-10;
-	border: 1px solid $borders-color;
-	text-align: center;
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
+	box-shadow: inset 0 0 0 1px $borders-color;
 	padding: 1.5em;
 	overflow: hidden;
+	background: $black-level2;
 
+	&--tag {
+		background: linear-gradient(to right, rgba($dark-text, 10%), rgba($borders-color, 10%));
+		border: 1px solid $borders-color;
+		width: max-content;
+		padding: 0.15em 1em 0.15em 0.25em;
+		border-radius: 1em;
+		margin-bottom: 1em !important;
+
+		p {
+			display: flex !important;
+			align-items: center;
+			gap: 0.5em;
+		}
+	}
+
+	h3[class] {
+		font-size: 1.375rem !important;
+		margin-bottom: 1rem !important;
+	}
+
+	> * {
+		position: relative;
+		z-index: 1;
+	}
+
+	.elementor-widget-text-editor[class] p {
+		font-size: 1rem;
+		margin-bottom: 0;
+		color: $dark-text;
+	}
+
+
+	&__white {
+		background: $white;
+		box-shadow: inset 0 0 0 1px $gray-200;
+
+		.elementor-widget-text-editor[class] p {
+			color: $black;
+		}
+	}
+
+	&::before,
 	&::after {
 		display: block;
 		position: absolute;
+		content: "";
+	}
+
+	&::after {
 		left: 0;
 		top: 5px;
-		content: "";
 		width: 1px;
 		height: 75%;
 		background: linear-gradient(to bottom, transparent, #0497dc 7%, #465ce0 50%, #0497dc 60%, #0497dc 75%, transparent);
@@ -32,12 +71,27 @@
 		transition: all 0.3s;
 	}
 
+	&--hover30 {
+
+		&::after {
+			height: 30%;
+		}
+	}
+
+	&.active {
+		box-shadow: inset 0 0 0 2px $accent-electric-blue;
+
+		&::after {
+			display: none;
+		}
+	}
 
 	*:not(a[href]) {
 		pointer-events: none;
 	}
 
-	&__mainLink[class] {
+	&__mainLink[class],
+	a:first-of-type:last-of-type {
 
 		@include posZero;
 		display: block;
@@ -52,11 +106,10 @@
 	}
 
 	@media (min-width: $breakpoint-tablet-landscape) {
-		flex-direction: row;
-		text-align: left;
-		gap: 4em;
-		padding: 2.5em;
-		margin-top: 4.5em;
+
+		&--column {
+			flex-direction: column;
+		}
 
 		&--social {
 			margin-left: auto;

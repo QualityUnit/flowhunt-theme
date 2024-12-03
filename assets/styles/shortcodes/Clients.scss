@@ -1,0 +1,33 @@
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.elementor-widget-shortcode:has(.Clients) {
+	width: 100%;
+}
+
+.Clients {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 10%;
+
+	&__item {
+		filter: saturate(0%);
+		transition: filter 0.3s;
+
+		@media (hover: hover) {
+
+			&:hover {
+				filter: saturate(100%);
+			}
+		}
+	}
+
+	@media (max-width: ($breakpoint-tablet-landscape - 1px)) {
+
+		&__item {
+			margin-top: 0.5em;
+		}
+	}
+}

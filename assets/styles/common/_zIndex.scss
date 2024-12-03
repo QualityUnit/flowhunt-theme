@@ -1,0 +1,9 @@
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+@each $level,
+	$val in $levels {
+	.z-#{$level}[class] {
+		z-index: $val;
+	}
+}

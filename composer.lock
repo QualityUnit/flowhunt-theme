@@ -350,7 +350,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QualityUnit/wordpress-icons.git",
-                "reference": "4472ca38c95e89678da13dc1820ad637a7805a0f"
+                "reference": "6dd52355e0a7e03bc6451efb4085e9ed27e3b324"
             },
             "default-branch": true,
             "type": "wordpress-icons",
@@ -358,7 +358,7 @@
                 "GPL-2.0-only"
             ],
             "description": "QU WordPress Themes icons",
-            "time": "2024-11-08T10:25:45+00:00"
+            "time": "2024-11-28T13:09:53+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2002,6 +2002,6 @@
     "platform": {
         "php": ">=8.0"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

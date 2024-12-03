@@ -27,6 +27,10 @@
 				text-decoration: none;
 				background-color: $gray-100;
 				border-color: rgba($primary, 1);
+
+				&::after {
+					opacity: 1;
+				}
 			}
 
 			&::before {
@@ -36,11 +40,24 @@
 				color: $white;
 				display: flex;
 				align-items: center;
+				align-self: flex-start;
 				justify-content: center;
 				border-radius: 50%;
 				background: $primary-gradient;
 				flex-shrink: 0;
+				margin-top: 0.15em;
 				margin-right: 0.75em;
+			}
+
+			&::after {
+
+				@include square(0.625em);
+				display: block;
+				content: "";
+				background: url(../../images/arrow_link.svg);
+				background-size: contain;
+				opacity: 0;
+				transition: all 0.3s;
 			}
 		}
 

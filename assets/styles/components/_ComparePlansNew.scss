@@ -24,6 +24,7 @@
 		top: $header-height;
 		background-color: $white;
 		z-index: 20;
+		margin-top: 3em;
 
 		&.is-sticky {
 
@@ -52,12 +53,20 @@
 		}
 
 		.Pricing__program[class] {
+			position: relative;
 			width: 25%;
 			padding: 2em 1.5em;
 			margin-bottom: 0;
-			border: 1px solid $gray-50;
+			border: 1px solid $gray-200;
 			border-bottom: none;
-			border-radius: 0;
+
+			&:nth-of-type(2) {
+				border-top-left-radius: $border-radius-10;
+			}
+
+			&:last-of-type {
+				border-top-right-radius: $border-radius-10;
+			}
 
 			.elementor-widget-image {
 				opacity: 1;
@@ -71,6 +80,29 @@
 
 				small {
 					font-size: 0.7em;
+				}
+			}
+
+			.most-popular {
+
+				background-color: $black;
+				color: $white;
+				position: absolute;
+				width: 65%;
+				top: 0;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				padding: 0.45em 0.5em;
+				border-radius: $border-radius-6;
+				font-size: 0.75rem;
+				text-transform: uppercase;
+				text-align: center;
+
+				* {
+					color: currentcolor;
+					margin: 0;
+					font-size: inherit;
+					font-weight: 700;
 				}
 			}
 
@@ -276,22 +308,51 @@
 		}
 	}
 
+	.pricing_tables {
+
+		&:first-of-type {
+
+			.elementor-post__title {
+				border-top-left-radius: $border-radius-10;
+			}
+		}
+
+
+		&:last-of-type {
+
+			tr:last-of-type {
+
+				td {
+
+					&:first-child {
+						border-bottom-left-radius: $border-radius-10;
+					}
+
+					&:last-child {
+						border-bottom-right-radius: $border-radius-10;
+					}
+				}
+			}
+		}
+	}
 
 	table[class] {
 		width: 100%;
 		table-layout: fixed;
 		border: none;
+		border-collapse: separate;
+		border-spacing: 0;
 		border-radius: 0;
 		margin-top: 0;
 
 		tr {
 			border: none;
-			border-bottom: 1px solid $gray-50;
-			border-left: 1px solid $gray-50;
+			border-bottom: 1px solid $gray-200;
+			border-left: 1px solid $gray-200;
 			background-color: $white;
 
 			&.even {
-				background-color: $gray-50;
+				background-color: $gray-200;
 			}
 		}
 
@@ -299,9 +360,12 @@
 
 			padding: $padding;
 			border: none;
-			border-right: 1px solid $gray-50;
+			border-left: 1px solid $gray-200;
+			border-right: 1px solid $gray-200;
+			border-bottom: 1px solid $gray-200;
 
 			&:not(:first-of-type) {
+				border-left: 0;
 				text-align: center;
 			}
 
@@ -360,7 +424,7 @@
 
 				&:first-of-type {
 					width: 100%;
-					background-color: $gray-50;
+					background-color: $gray-200;
 				}
 			}
 		}

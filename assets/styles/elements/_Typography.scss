@@ -207,7 +207,7 @@ a {
 			position: relative;
 			top: 2px;
 			left: 0;
-			margin-right: 0.5em;
+			margin-right: 0.75em;
 
 			.single &,
 			.archive & {
@@ -777,6 +777,14 @@ a:not(.Button) {
 	&-gradient {
 
 		background: linear-gradient(90deg, $primary 0%, $primary-dark 100%);
+		background-clip: text;
+		color: transparent;
+		box-decoration-break: clone;
+	}
+
+	&-gradient-accent {
+
+		background: $accent-gradient;
 		background-clip: text;
 		color: transparent;
 		box-decoration-break: clone;

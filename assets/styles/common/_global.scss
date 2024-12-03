@@ -122,11 +122,29 @@ hr {
 	}
 }
 
+$borderWidth: (
+	"2": 2px,
+	"3": 3px,
+	"4": 4px,
+	"5": 5px,
+);
+
+.border {
+	border-width: 1px;
+	border-style: solid;
+
+	@each $width, $val in $borderWidth {
+		&-#{$width} {
+			border-width: $val;
+		}
+	}
+}
+
 .display {
-	$display: none, block, grid, inline-block, inline-flex;
+	$display: none, block, flex, grid, inline-block, inline-flex;
 
 	@each $displayas in $display {
-		&-#{$displayas} {
+		&-#{$displayas}[class] {
 			display: $displayas;
 		}
 	}
@@ -134,16 +152,16 @@ hr {
 	@media (min-width: $breakpoint-tablet) {
 
 		@each $displayas in $display {
-			&-tablet-#{$displayas} {
+			&-tablet-#{$displayas}[class] {
 				display: $displayas;
 			}
 		}
 	}
 
-	@media (min-width: $breakpoint-tablet) {
+	@media (min-width: $breakpoint-tablet-landscape) {
 
 		@each $displayas in $display {
-			&-tablet-landscape-#{$displayas} {
+			&-tablet-landscape-#{$displayas}[class] {
 				display: $displayas;
 			}
 		}
@@ -151,47 +169,50 @@ hr {
 }
 
 .flex {
-	display: flex;
 
-	&-inline {
+	&[class] {
+		display: flex;
+	}
+
+	&-inline[class] {
 		display: inline-flex;
 	}
 
 	&-align {
 
-		&-center {
+		&-center[class] {
 			align-items: center;
 			align-content: center;
 		}
 
-		&-bottom {
+		&-bottom[class] {
 			align-items: flex-end;
 			align-content: flex-end;
 		}
 	}
 
-	&-justify-center {
+	&-justify-center[class] {
 		justify-content: center;
 	}
 
-	&-justify-end {
+	&-justify-end[class] {
 		justify-content: flex-end;
 	}
 
-	&-wrap {
+	&-wrap[class] {
 		flex-wrap: wrap;
 	}
 
 	@media (min-width: $breakpoint-tablet) {
 
-		&-tablet {
+		&-tablet[class] {
 			display: flex;
 		}
 	}
 
 	@media (min-width: $breakpoint-tablet-landscape) {
 
-		&-tablet-landscape {
+		&-tablet-landscape[class] {
 			display: flex;
 		}
 	}
@@ -205,10 +226,24 @@ hr {
 
 	&-absolute {
 		position: absolute !important;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+
+			&-tablet-landscape[class] {
+				position: absolute !important;
+			}
+		}
 	}
 
 	&-fixed {
 		position: fixed !important;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+
+			&-tablet-landscape[class] {
+				position: fixed !important;
+			}
+		}
 	}
 
 	&-sticky {
