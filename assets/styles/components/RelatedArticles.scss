@@ -49,17 +49,29 @@
 		@media (hover: hover) {
 
 			&:hover {
-				background-color: rgba(4, 151, 220, 0.03);
+				background-color: rgba(4, 151, 220, 0.03) !important;
 
 				&::after {
 					transform: translateY(0);
 					opacity: 1;
+				}
+
+				.Related__Articles--Article__title[class],
+				.urlslab-rel-res-item-title[class] {
+
+					a[href]:not(.Button) {
+
+						&::after {
+							filter: grayscale(0%);
+						}
+					}
 				}
 			}
 		}
 
 		&-text[class] {
 			position: static !important;
+			padding-right: 0;
 		}
 
 		&__thumbnail,
@@ -76,9 +88,12 @@
 				width: auto;
 			}
 
+			picture,
 			img {
-				width: 1.5em;
-				height: 1.5em;
+
+				@include square(100% !important);
+				object-fit: cover;
+				object-position: center center;
 			}
 		}
 
@@ -87,6 +102,21 @@
 			font-size: 1.125rem !important;
 			margin: 0 0 0.5em !important;
 			transition: color 0.25s;
+
+			a[href]:not(.Button) {
+				display: flex;
+				align-items: center;
+
+				&::after {
+
+					@include square(1.25rem);
+					content: "" !important;
+					margin-left: auto;
+					background: url(../../images/icon-arrow-out.svg) center center no-repeat;
+					filter: grayscale(100%);
+				}
+			}
+
 		}
 
 		p:not([class*="title"]),
