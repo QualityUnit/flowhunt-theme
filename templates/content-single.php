@@ -34,7 +34,7 @@ $related_args = array(
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="LiveAgent"></span>
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="wrapper Post__container">
+	<div class="Post__container">
 		<div class="BlogPost__content Post__content">
 			<div class="Content" itemprop="articleBody">
 				<?php if ( ! empty( $page_header_args['image']['url'] ) ) { ?>
@@ -62,38 +62,7 @@ $related_args = array(
 
 					<div class="BlogPost__author-box__content">
 						<p class="BlogPost__author-box__content__name" itemprop="name"><?php the_author(); ?></p>
-						<p class="BlogPost__author-box__content__position"><?php the_author_meta( 'position' ); ?></p>
 						<p class="BlogPost__author-box__content__description" itemprop="description"><?php the_author_meta( 'description' ); ?></p>
-						<div class="BlogPost__author-box__content__social">
-							<?php if ( (bool) get_the_author_meta( 'instagram' ) ) { ?>
-								<a href="<?php the_author_meta( 'instagram' ); ?>" target="_blank" itemprop="sameAs">
-									<svg class="icon icon-social-instagram">
-										<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-instagram' ); ?>"></use>
-									</svg>
-								</a>
-							<?php } ?>
-							<?php if ( (bool) get_the_author_meta( 'facebook' ) ) { ?>
-								<a href="<?php the_author_meta( 'facebook' ); ?>" target="_blank" itemprop="sameAs">
-									<svg class="icon icon-social-facebook">
-										<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-facebook' ); ?>"></use>
-									</svg>
-								</a>
-							<?php } ?>
-							<?php if ( (bool) get_the_author_meta( 'linkedin' ) ) { ?>
-								<a href="<?php the_author_meta( 'linkedin' ); ?>" target="_blank" itemprop="sameAs">
-									<svg class="icon icon-social-linkedin">
-										<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-linkedin' ); ?>"></use>
-									</svg>
-								</a>
-							<?php } ?>
-							<?php if ( (bool) get_the_author_meta( 'twitter' ) ) { ?>
-								<a href="https://twitter.com/<?php the_author_meta( 'twitter' ); ?>" target="_blank" itemprop="sameAs">
-									<svg class="icon icon-social-twitter">
-										<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg#social-twitter' ); ?>"></use>
-									</svg>
-								</a>
-							<?php } ?>
-						</div>
 					</div>
 				</div>
 

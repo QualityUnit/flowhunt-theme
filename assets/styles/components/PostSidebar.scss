@@ -8,6 +8,7 @@
 }
 
 .Post__sidebar {
+	position: relative;
 	display: none;
 	width: var(--sidebar-width);
 	padding-left: 2.5em;
@@ -31,6 +32,10 @@
 
 	@media (min-width: $breakpoint-tablet-landscape) {
 		display: block;
+	}
+
+	@media (min-width: $breakpoint-desktop-big) {
+		left: 6.5%;
 	}
 
 

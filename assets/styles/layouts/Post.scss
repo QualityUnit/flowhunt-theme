@@ -12,20 +12,13 @@ no-descending-specificity, scss/no-global-function-names */
 
 	&__container {
 
-		padding-left: $wrapper-padding;
-		padding-right: $wrapper-padding;
+		@include wrapper-styles($wrapper-md);
 		margin: 0 auto;
 
-		@include wrapper-styles($wrapper-md);
 
 		@media (min-width: $breakpoint-tablet) {
 			display: flex;
 			margin-top: 2.5em;
-		}
-
-		@media (min-width: $breakpoint-desktop-md) {
-
-			@include wrapper-styles($wrapper-xl);
 		}
 	}
 
