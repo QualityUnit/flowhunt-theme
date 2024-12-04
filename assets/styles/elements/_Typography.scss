@@ -1023,6 +1023,46 @@ picture.Screenshot,
 	}
 }
 
+.tag-light {
+	display: inline-flex;
+	align-items: center;
+	border-radius: 0.5em;
+	padding: 0.3em 0.66em;
+	font-size: 0.75rem;
+	line-height: 1;
+	background: $gray-100;
+	color: $gray-900;
+	width: max-content;
+
+	&-title {
+		padding: 0.1em 0.66em;
+		background: $gray-50;
+		border-radius: 6em;
+		border: 1px solid $gray-100;
+	}
+
+	img {
+
+		&:first-child {
+			margin-right: 0.25em;
+		}
+
+		&:last-child {
+			margin-left: 0.25em;
+		}
+	}
+
+	&:has(.elementor-widget-container p) {
+
+		p {
+			display: inline-flex;
+			align-items: center;
+			line-height: 1;
+			margin: 0;
+		}
+	}
+}
+
 .tag-title {
 
 	color: $black;
