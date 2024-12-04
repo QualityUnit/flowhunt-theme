@@ -364,18 +364,18 @@ no-descending-specificity, scss/no-global-function-names */
 
 			.Content {
 
-				> {
+				// > {
 
-					.Post__m__negative,
-					.BlockDiscover,
-					.Faq,
-					.wide,
-					.wp-block-embed,
-					[class*="youtube"] {
-						margin-left: -2em;
-						margin-right: -2em;
-					}
-				}
+				// 	.Post__m__negative,
+				// 	.BlockDiscover,
+				// 	.Faq,
+				// 	.wide,
+				// 	.wp-block-embed,
+				// 	[class*="youtube"] {
+				// 		margin-left: -2em;
+				// 		margin-right: -2em;
+				// 	}
+				// }
 
 				figure {
 					text-align: center;

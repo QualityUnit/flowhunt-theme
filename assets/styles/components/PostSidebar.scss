@@ -57,18 +57,27 @@
 	}
 
 	&--Share {
-
-		h4 {
-			font-weight: 400;
-		}
-
-		&__items {
-			gap: 0.75em;
-		}
+		// gap: 0.25em;
+		font-size: 0.875rem;
 
 		&__item {
 
+			&::before {
+				content: "|";
+				color: $gray-100;
+				margin-left: 0.5em;
+				margin-right: 0.35em;
+			}
+
+			&:last-of-type::after {
+				content: "|";
+				color: $gray-100;
+				margin-left: 0.35em;
+			}
+
 			a {
+				text-decoration: none;
+
 
 				&::after {
 					display: none !important;
@@ -77,7 +86,8 @@
 
 			svg {
 
-				@include square(1.25rem);
+				@include square(1em);
+				fill: $gray-500;
 			}
 		}
 	}
