@@ -11,6 +11,25 @@
 	padding: 1.5em;
 	overflow: hidden;
 	background: $black-level2;
+	cursor: pointer;
+
+	&:not([data-target]):has(*):not(a) { // Do not show left side gradient if no A tag or is not a click activator
+		cursor: default;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	&.gradient-left {
+		background: linear-gradient(to right, $black-level3 21%, $black-level2 90%);
+		box-shadow: none;
+	}
+
+	&.gradient-right {
+		background: linear-gradient(to right, $black-level2 21%, $black-level3 90%);
+		box-shadow: none;
+	}
 
 	&--tag {
 		background: linear-gradient(to right, rgba($dark-text, 10%), rgba($borders-color, 10%));
@@ -50,6 +69,10 @@
 
 		.elementor-widget-text-editor[class] p {
 			color: $black;
+		}
+
+		&:hover {
+			background: linear-gradient(97deg, rgba(4, 151, 220, 0.03) 0%, rgba(70, 92, 224, 0.03) 100%);
 		}
 	}
 

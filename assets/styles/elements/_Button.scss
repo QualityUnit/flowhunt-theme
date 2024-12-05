@@ -262,7 +262,6 @@ button,
 
 .Button--glowing {
 	width: 165px;
-	height: 3.125em; // 50px = 3.125em
 	border: none;
 	outline: none;
 	color: #fff;
@@ -400,7 +399,9 @@ button,
 	&:focus,
 	&:hover {
 
-		color: $primary;
+		background: linear-gradient(136deg, #0497dc 39.1%, #465ce0 109.91%);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
 		border-color: $primary;
 	}
 }

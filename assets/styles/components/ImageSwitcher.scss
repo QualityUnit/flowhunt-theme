@@ -27,4 +27,17 @@
 			transition: opacity 0.3s;
 		}
 	}
+
+	&__activator.BlockDark {
+
+		> .elementor-widget-heading[class] > div[class],
+		h3[class] {
+			margin-bottom: 0 !important;
+		}
+
+		.FlowUsed {
+			font-size: 0.875rem;
+			color: $gray-500;
+		}
+	}
 }

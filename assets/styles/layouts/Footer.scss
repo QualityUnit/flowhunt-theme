@@ -122,6 +122,12 @@
 		margin-top: 2.5em;
 		gap: auto;
 
+		@media (max-width: ($breakpoint-tablet - 1px)) {
+
+			> li {
+				margin-top: 1em;
+			}
+		}
 
 		@media (min-width: $breakpoint-tablet) {
 			grid-template-columns: repeat(5, 1fr);
