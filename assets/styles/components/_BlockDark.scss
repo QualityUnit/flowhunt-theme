@@ -13,6 +13,24 @@
 	background: $black-level2;
 	cursor: pointer;
 
+	&:not([data-target]):has(*):not(a) { // Do not show left side gradient if no A tag or is not a click activator
+		cursor: default;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	&.gradient-left {
+		background: linear-gradient(to right, $black-level3 21%, $black-level2 90%);
+		box-shadow: none;
+	}
+
+	&.gradient-right {
+		background: linear-gradient(to right, $black-level2 21%, $black-level3 90%);
+		box-shadow: none;
+	}
+
 	&--tag {
 		background: linear-gradient(to right, rgba($dark-text, 10%), rgba($borders-color, 10%));
 		border: 1px solid $borders-color;

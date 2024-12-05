@@ -1,4 +1,4 @@
-const tables = document.querySelectorAll( 'figure.wp-block-table table' );
+const tables = document.querySelectorAll( 'table' );
 const pricingTableHeaderTitle = document.querySelector( '.ComparePlans__sectiontitle' );
 const pricingTableHeader = document.querySelector( '.ComparePlans--header' );
 
