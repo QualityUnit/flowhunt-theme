@@ -47,7 +47,9 @@ button,
 
 	[class*="elementor"] {
 		all: unset;
-		display: block;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		&.elementor-widget-container {
 			z-index: 3;
