@@ -30,6 +30,7 @@
 
 	&__activator.BlockDark {
 
+		> .elementor-widget-heading[class] > div[class],
 		h3[class] {
 			margin-bottom: 0 !important;
 		}
