@@ -13,7 +13,7 @@
 	}
 }
 
-body:not(.pricing) figure.wp-block-table,
+body:not([class*="elementor"]) figure.wp-block-table,
 .AlternativeTable,
 .Content {
 
@@ -189,6 +189,61 @@ body:not(.pricing) figure.wp-block-table,
 				&-close {
 
 					@include square(0.875em);
+				}
+			}
+		}
+	}
+}
+
+body[class*="elementor"] {
+
+	table {
+		table-layout: fixed;
+		width: 100%;
+
+		th,
+		td {
+
+			&.flowhunt {
+				background-color: $gray-100;
+			}
+		}
+
+		th {
+			padding: 1em;
+			border-bottom: 1px solid $gray-200;
+
+			&.flowhunt {
+				border-radius: $border-radius $border-radius 0 0;
+			}
+		}
+
+		td {
+			padding: $tablePadding;
+			border: none;
+			border-right: 1px solid $gray-200;
+			border-bottom: 1px solid $gray-200;
+
+			&:not(:first-of-type) {
+				border-left: 0;
+				text-align: center;
+			}
+
+			&:last-of-type {
+				border-right: 0;
+			}
+
+			&[class^="icn-"] {
+				color: transparent;
+
+				svg {
+
+					@include square(1.125em);
+					margin-left: 0.75ch;
+
+					&.icon-check {
+						fill: $primary;
+					}
 				}
 			}
 		}

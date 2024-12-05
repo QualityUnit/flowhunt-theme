@@ -78,6 +78,11 @@ if ( tables.length ) {
 						val.insertAdjacentHTML( 'afterbegin', `<div class="tablet--only MobileHeader">${ headers[ index ].innerHTML }</div>` );
 					}
 
+					if ( headers[ index ]?.innerHTML && ! table.classList.contains( 'no-header' ) && headers[ index ]?.textContent.toLowerCase() === 'flowhunt' ) {
+						headers[ index ].classList.add( 'flowhunt' );
+						val.classList.add( 'flowhunt' );
+					}
+
 					if ( ! headers[ index ]?.innerHTML && ! table.classList.contains( 'no-header' ) ) {
 						val.classList.add( 'MobileHeader__top' );
 					}

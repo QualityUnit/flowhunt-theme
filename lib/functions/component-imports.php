@@ -12,7 +12,6 @@ function components_imports( $content ) {
 		'BlockVideo'                    => 'components/BlockVideo',
 		'ImageSwitcher'                 => 'components/ImageSwitcher',
 		'SuccessStoriesGrid'            => 'components/SuccessStoriesGrid',
-		'table'                         => 'components/Table',
 		'Modules'                       => 'components/BlockModules',
 		'FormIcons'                     => 'components/FormIcons',
 		'urlslab-block-tableofcontents' => 'components/UrlslabTOC',

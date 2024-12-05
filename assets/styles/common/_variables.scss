@@ -45,6 +45,8 @@ $levels: (
 	"100": 100,
 );
 
+$tablePadding: 0.6em 0.75em;
+
 // Fonts
 $font-primary: "Helvetica Neue", Helvetica, Arial, sans-serif; // stylelint-disable-line
 
@@ -174,7 +176,7 @@ $fields-bg: $gray-300; // fields backgrounds
 $fields-bg-hover: #f5f5f7; // fields backgrounds
 
 // Borders
-$borders-color: $gray-200; // borders color
+$borders-color: #302e32; // borders color
 $border-divider-primary: #cfd6dd;
 
 // Backgrounds

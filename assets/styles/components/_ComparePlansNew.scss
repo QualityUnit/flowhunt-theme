@@ -3,8 +3,9 @@
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
 
+
 .ComparePlans {
-	$padding: 0.6em 0.75em;
+	gap: 0;
 
 	> * {
 		width: 100%;
@@ -19,11 +20,13 @@
 	}
 
 	&__header {
-		flex-direction: row !important;
+		flex-direction: row;
+		gap: 0;
 		position: sticky;
 		top: $header-height;
 		background-color: $white;
 		z-index: 20;
+		padding: 0;
 		margin-top: 3em;
 
 		&.is-sticky {
@@ -229,7 +232,7 @@
 			font-weight: $font-weight-bold;
 			color: $black;
 			background-color: $gray-100;
-			padding: $padding;
+			padding: $tablePadding;
 			margin-bottom: 0;
 			cursor: pointer;
 
@@ -358,7 +361,7 @@
 
 		td {
 
-			padding: $padding;
+			padding: $tablePadding;
 			border: none;
 			border-left: 1px solid $gray-200;
 			border-right: 1px solid $gray-200;
@@ -369,18 +372,8 @@
 				text-align: center;
 			}
 
-			&[class^="icn-"] {
-				color: transparent;
-
-				svg {
-
-					@include square(1.125em);
-					margin-left: 0.75ch;
-
-					&.icon-check {
-						fill: $primary;
-					}
-				}
+			&:last-of-type {
+				border-right: 1px solid $gray-200;
 			}
 
 			.Tooltip {
