@@ -110,7 +110,7 @@ h6,
 
 p {
 
-	color: $black;
+	color: $gray-900;
 	margin-bottom: $default-element-margin;
 	font-size: 1rem;
 	font-weight: $font-weight-normal;
@@ -191,7 +191,8 @@ a {
 }
 
 .checklist,
-.elementor-widget-text-editor ul {
+.elementor-widget-text-editor ul,
+.Content ul {
 	list-style: none;
 	max-width: 40ch;
 	text-align: left;
@@ -465,7 +466,6 @@ a:not(.Button) {
 
 		img,
 		picture {
-			border: 2px solid #f1f1f1;
 			height: auto !important;
 		}
 
