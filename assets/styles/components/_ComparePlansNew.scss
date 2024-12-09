@@ -397,29 +397,5 @@
 				}
 			}
 		}
-
-		@media (max-width: ($breakpoint-tablet-landscape - 1px)) {
-			display: block;
-
-			tbody {
-				display: block;
-			}
-
-			tr {
-				display: flex;
-				flex-wrap: wrap;
-			}
-
-			td {
-				display: flex;
-				width: 25%;
-				background-color: $white;
-
-				&:first-of-type {
-					width: 100%;
-					background-color: $gray-200;
-				}
-			}
-		}
 	}
 }
