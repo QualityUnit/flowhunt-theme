@@ -178,25 +178,34 @@ $borderWidth: (
 		display: inline-flex;
 	}
 
+	&-justify-center[class],
+	&-justify-center[class] > .e-con-inner {
+		justify-content: center;
+	}
+
+	&-justify-end[class],
+	&-justify-end[class] > .e-con-inner {
+		justify-content: flex-end;
+	}
+
 	&-align {
 
-		&-center[class] {
+		&-center[class],
+		&-center[class] > .e-con-inner {
 			align-items: center;
 			align-content: center;
 		}
 
-		&-bottom[class] {
+		&-stretch[class],
+		&-stretch[class] > .e-con-inner {
+			align-items: stretch;
+			align-content: stretch;
+		}
+
+		&-bottom[class] &-bottom[class] > .e-con-inner {
 			align-items: flex-end;
 			align-content: flex-end;
 		}
-	}
-
-	&-justify-center[class] {
-		justify-content: center;
-	}
-
-	&-justify-end[class] {
-		justify-content: flex-end;
 	}
 
 	&-wrap[class] {

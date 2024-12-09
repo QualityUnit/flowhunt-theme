@@ -23,7 +23,7 @@ button,
 	border-radius: $border-radius-6;
 	font-size: $button-font-size-normal;
 	font-weight: $font-weight-semi;
-	white-space: nowrap;
+	text-align: center;
 	cursor: pointer;
 
 	> svg {
@@ -47,7 +47,9 @@ button,
 
 	[class*="elementor"] {
 		all: unset;
-		display: block;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		&.elementor-widget-container {
 			z-index: 3;
@@ -70,6 +72,10 @@ button,
 				text-decoration: none !important;
 			}
 		}
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		white-space: nowrap;
 	}
 }
 
@@ -262,6 +268,7 @@ button,
 
 .Button--glowing {
 	width: 165px;
+	height: auto;
 	border: none;
 	outline: none;
 	color: #fff;
