@@ -65,6 +65,7 @@ $related_args = array(
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
 
+				<?php echo do_shortcode( '[urlslab-faq]' ); ?>
 				<?php urlslab_display_related_resources(); ?>
 			</div>
 		</div>

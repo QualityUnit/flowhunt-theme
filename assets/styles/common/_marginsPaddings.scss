@@ -5,6 +5,13 @@
 	margin: 0;
 }
 
+.elementorPadding[class] {
+	padding-left: var(--padding-left) !important;
+	padding-right: var(--padding-right) !important;
+	padding-top: var(--padding-top) !important;
+	padding-bottom: var(--padding-bottom) !important;
+}
+
 $marginSide: (
 	left,
 	right,

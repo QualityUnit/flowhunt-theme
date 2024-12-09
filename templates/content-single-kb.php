@@ -15,6 +15,7 @@
 			<div class="Content" itemprop="text" >
 				<h2 itemprop="name"><?php the_title(); ?></h2>
 				<?php the_content(); ?>
+				<?php echo do_shortcode( '[urlslab-faq]' ); ?>
 			</div>
 		</div>
 		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>

@@ -31,17 +31,27 @@ h6,
 	b {
 		font-weight: $font-weight-bold;
 	}
+
+	sub {
+		font-size: 60% !important;
+		line-height: 1 !important;
+		vertical-align: baseline;
+		padding: 0 0.15em;
+	}
 }
 
 $mobile-divider: 1.25;
 
 h1,
-.h1[class],
-.h1 * {
+.h1[class] {
 	font-size: $font-size-h1 !important;
 	line-height: $line-height-h1 !important;
 	margin-bottom: 0.33em;
+}
 
+.h1 * {
+	font-size: $font-size-h1 !important;
+	line-height: $line-height-h1 !important;
 }
 
 h2,
@@ -57,7 +67,6 @@ h3,
 
 	font-size: $font-size-h3 !important;
 	line-height: $line-height-h3 !important;
-
 }
 
 h4,

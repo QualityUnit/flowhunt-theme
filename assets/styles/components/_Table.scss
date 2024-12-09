@@ -218,6 +218,7 @@ body[class*="elementor"] {
 			}
 		}
 
+		tfoot th,
 		td {
 			padding: $tablePadding;
 			border: none;
@@ -246,6 +247,21 @@ body[class*="elementor"] {
 					}
 				}
 			}
+		}
+
+		tfoot th {
+			font-size: 1.125rem;
+			padding: 1.33em 0.88em;
+
+			small {
+				display: block;
+				font-weight: 400;
+			}
+		}
+
+		&:has(tbody):not(tfoot) tr:last-of-type,
+		tfoot tr:last-of-type th {
+			border-bottom: 0;
 		}
 	}
 }

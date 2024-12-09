@@ -778,7 +778,7 @@ a:not(.Button) {
 
 		background: linear-gradient(90deg, $primary 0%, $primary-dark 100%);
 		background-clip: text;
-		color: transparent;
+		color: transparent !important;
 		box-decoration-break: clone;
 	}
 
@@ -786,7 +786,7 @@ a:not(.Button) {
 
 		background: $accent-gradient;
 		background-clip: text;
-		color: transparent;
+		color: transparent !important;
 		box-decoration-break: clone;
 	}
 
