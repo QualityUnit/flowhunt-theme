@@ -5,7 +5,6 @@ no-descending-specificity, scss/no-global-function-names */
 @use "../common/mixins" as *;
 @use "../elements/Checklist";
 @use "../elements/PostTypography";
-@use "../components/WhatBlock";
 @use "../components/PostSidebar";
 
 .Post {
@@ -24,6 +23,7 @@ no-descending-specificity, scss/no-global-function-names */
 
 	&__content {
 		margin: 0 auto;
+		font-family: "Open Sans", sans-serif;
 
 		.Content {
 			display: flex;

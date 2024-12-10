@@ -7,6 +7,16 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="<?= esc_url( get_template_directory_uri() ); ?>/assets/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="<?= esc_url( get_template_directory_uri() ); ?>/assets/images/favicon/favicon-16x16.png">
 	<link rel="mask-icon" href="<?= esc_url( get_template_directory_uri() ); ?>/assets/images/favicon/safari-pinned-tab.svg" color="#000000">
+
+	<?php
+	if ( ! is_page() ) {
+		?>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500,600,700,800;1,500,600,700,800&display=swap" rel="stylesheet">
+		<?php
+	}
+	?>
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?>">
 	<meta name="application-name" content="<?php bloginfo( 'name' ); ?>">
 	<meta name="msapplication-TileColor" content="#da532c" />
