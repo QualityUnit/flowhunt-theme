@@ -18,15 +18,12 @@
 			font-size: 1.125rem !important;
 			font-weight: 700;
 			padding: 1rem 1.875rem;
-			border-bottom: 1px solid $borders-color;
-			width: calc(100% - 2px);
 			color: $white;
 		}
 
 		+ div[style*="background-color"],
 		.CodeBlock {
-			margin-top: -5.5em;
-			padding: 4rem 1.875rem 1.25rem !important;
+			margin-top: -5em;
 		}
 	}
 
@@ -37,8 +34,19 @@
 		border-radius: $border-radius !important;
 		font-size: 0.875rem !important;
 		font-family: "Courier New", Courier, monospace;
-		padding: 1.25rem 1.875rem !important;
+		padding: 4rem 1.875rem 1.25rem !important;
 		color: $white !important;
+
+		&::before {
+			position: absolute;
+			content: "";
+			left: 0;
+			top: 3.5em;
+			width: 100%;
+			display: block;
+			border-bottom: 1px solid $borders-color;
+
+		}
 
 		*:not(.Button, svg) {
 			font-size: inherit;
@@ -49,7 +57,7 @@
 		.Button {
 			font-size: 0.875rem;
 			padding: 0.25em 0.5em;
-			top: 1rem;
+			top: 0.65rem;
 			right: 1.25rem;
 			z-index: 2;
 

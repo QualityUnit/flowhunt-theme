@@ -18,30 +18,26 @@ body:not([class*="elementor"]) figure.wp-block-table,
 .Content {
 
 	table {
-		$thFontSize: 1.25;
+		$tableFontSize: 0.875;
 		table-layout: auto;
 		width: 100%;
 		text-align: left;
 		border: 1px solid $gray-200;
 		margin: 3em auto;
+		font-size: 0.875rem;
 		border-collapse: separate;
 		border-spacing: 0;
-		border-radius: 1rem;
+		border-radius: $border-radius;
 		overflow: hidden;
 
 		thead {
-			font-size: #{$thFontSize}rem;
-			background-color: rgb(232, 241, 254);
 			z-index: 1;
 
 			th {
 				padding: 1em 1.5em;
 				line-height: 1.1;
+				text-align: center;
 				border-bottom: 1px solid $gray-200;
-
-				&:empty {
-					display: none;
-				}
 			}
 		}
 
@@ -67,12 +63,13 @@ body:not([class*="elementor"]) figure.wp-block-table,
 				}
 
 				&:nth-child(odd) {
-					background-color: $tablebg;
+					background-color: $gray-50;
 				}
 			}
 
 			td {
-				padding: calc(0.75em * #{$thFontSize}) calc(1.5em * #{$thFontSize});
+				padding: calc(0.75em * #{$tableFontSize}) calc(1.5em * #{$tableFontSize});
+				border-bottom: none !important;
 
 				&.hasTooltip {
 
@@ -87,7 +84,7 @@ body:not([class*="elementor"]) figure.wp-block-table,
 				}
 
 				&[colspan] {
-					padding: calc(0.5em * #{$thFontSize}) calc(1.5em * #{$thFontSize});
+					padding: calc(0.5em * #{$tableFontSize}) calc(1.5em * #{$tableFontSize});
 					background-color: #dfeafd;
 					font-weight: 600;
 					color: $primary;
@@ -174,21 +171,37 @@ body:not([class*="elementor"]) figure.wp-block-table,
 			}
 		}
 
+		.iconWrapper {
+
+			@include square(1.1428em);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+
+			&:has(.icon-check) {
+				background-color: #0e9f6e;
+			}
+
+			&:has(.icon-close) {
+				background-color: #e02424;
+			}
+		}
+
 		svg {
 
 			@include square(1em);
-			fill: $level-2 !important;
+			fill: $white !important;
+			margin: 0 !important;
 
 			&.icon {
 
-				&-check {
-
-					@include square(1em);
-				}
+				@include square(0.75em !important);
+				margin: 0 !important;
 
 				&-close {
 
-					@include square(0.875em);
+					@include square(0.5em !important);
 				}
 			}
 		}

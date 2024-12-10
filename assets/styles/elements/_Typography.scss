@@ -318,60 +318,6 @@ a:not(.Button) {
 		}
 	}
 
-	table {
-
-		color: $level-2;
-		font-size: $font-size-default;
-		font-weight: $font-weight-normal;
-		line-height: $line-height-default;
-		width: 100%;
-		margin: 30px 0;
-
-		tr {
-
-			border-top: 1px solid $level-2;
-
-			&:first-of-type {
-				border-top: 0;
-			}
-		}
-
-		td,
-		th {
-			padding: 10px 20px;
-			word-break: normal;
-		}
-
-		&.top {
-
-			tr {
-
-				&:first-of-type {
-
-					color: $black;
-					font-size: 14px;
-					font-weight: $font-weight-bold;
-				}
-			}
-		}
-
-		&.left {
-
-			tr {
-
-				td {
-
-					&:first-of-type {
-
-						color: $black;
-						font-size: 14px;
-						font-weight: $font-weight-bold;
-					}
-				}
-			}
-		}
-	}
-
 	pre {
 
 		color: $red;
