@@ -273,7 +273,7 @@ body:not([class*="elementor"]) figure.wp-block-table,
 				background-color: #e02424;
 			}
 		}
-    
+
 		svg {
 
 			@include square(1em);
@@ -364,4 +364,3 @@ body[class*="elementor"] {
 		}
 	}
 }
-
