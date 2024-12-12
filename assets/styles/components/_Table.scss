@@ -13,6 +13,91 @@
 	}
 }
 
+table {
+
+	@media (max-width: ($breakpoint-tablet-landscape - 1px)) {
+		display: block !important;
+		width: 100%;
+		font-size: 0.875em;
+		text-align: left !important;
+
+
+		thead {
+			display: none;
+		}
+
+		tbody {
+			display: block;
+
+			tr {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			td,
+			td[colspan],
+			td:not([colspan]) {
+				display: flex;
+				align-items: center;
+				padding: 0.5em 1em;
+				max-width: none;
+				width: 100%;
+				background-color: $white;
+				text-align: left !important;
+
+				&:first-of-type {
+					width: 100%;
+					background-color: $gray-200;
+				}
+
+				+td {
+					border-left: none;
+					border-top: 1px solid $gray-200;
+				}
+			}
+
+			.MobileHeader {
+
+				font-weight: 600;
+				word-break: normal;
+				width: 40%;
+				flex-basis: auto;
+				flex-shrink: 0;
+				color: $black;
+
+				&__top {
+					color: $primary;
+				}
+			}
+		}
+
+		&.no-header {
+
+			tbody {
+
+				tr {
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				td {
+					flex: 1 1 auto;
+					max-width: 25%;
+
+					&:not(:first-of-type):not(:nth-of-type(2)) {
+						border-left: 1px solid $gray-200;
+					}
+
+					&:first-of-type {
+						width: 100%;
+						max-width: none;
+					}
+				}
+			}
+		}
+	}
+}
+
 body:not([class*="elementor"]) figure.wp-block-table,
 .AlternativeTable,
 .Content {
@@ -188,7 +273,7 @@ body:not([class*="elementor"]) figure.wp-block-table,
 				background-color: #e02424;
 			}
 		}
-
+    
 		svg {
 
 			@include square(1em);

@@ -981,7 +981,8 @@ picture.Screenshot,
 	width: max-content;
 
 	&-title {
-		padding: 0.1em 0.66em;
+		padding: 0.1em 0.5em;
+		padding-right: 0.66em;
 		background: $gray-50;
 		border-radius: 6em;
 		border: 1px solid $gray-100;
@@ -991,10 +992,6 @@ picture.Screenshot,
 
 		&:first-child {
 			margin-right: 0.25em;
-		}
-
-		&:last-child {
-			margin-left: 0.25em;
 		}
 	}
 
