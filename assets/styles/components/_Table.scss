@@ -19,6 +19,7 @@ body:not([class*="elementor"]) figure.wp-block-table,
 
 	table {
 		$tableFontSize: 0.875;
+		font-family: Helvetica, Arial, sans-serif;
 		table-layout: auto;
 		width: 100%;
 		text-align: left;
@@ -34,7 +35,7 @@ body:not([class*="elementor"]) figure.wp-block-table,
 			z-index: 1;
 
 			th {
-				padding: 1em 1.5em;
+				padding: 2.25em !important;
 				line-height: 1.1;
 				text-align: center;
 				border-bottom: 1px solid $gray-200;
