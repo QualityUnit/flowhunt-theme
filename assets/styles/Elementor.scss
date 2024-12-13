@@ -8,6 +8,7 @@
 @forward "common/typography";
 @forward "common/colorClasses";
 @forward "common/marginsPaddings";
+@forward "common/borderClasses";
 @forward "common/zIndex";
 @forward "common/gridLayout";
 
@@ -36,6 +37,7 @@
 @forward "components/BlockCaseStudy";
 @forward "components/BlockImage";
 @forward "components/BlockColumns";
+@forward "components/BlockChecklist";
 @forward "components/FAQ";
 @forward "components/Form";
 @forward "components/SimilarSources";

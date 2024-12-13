@@ -8,6 +8,7 @@
 @forward "common/typography";
 @forward "common/colorClasses";
 @forward "common/marginsPaddings";
+@forward "common/borderClasses";
 @forward "common/zIndex";
 @forward "common/gridLayout";
 
@@ -35,4 +36,6 @@
 @forward "components/FAQ";
 @forward "components/SimilarSources";
 @forward "components/Table";
+
+//Shortcodes
 @forward "shortcodes/VideoTranscript";
