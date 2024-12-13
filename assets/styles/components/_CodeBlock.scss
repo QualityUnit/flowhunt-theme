@@ -1,0 +1,76 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.Content[class] {
+
+	h2,
+	h3 {
+
+		&:has(+div[style*="background-color"],
+	.CodeBlock) {
+			position: relative;
+			left: 1px;
+			z-index: 1;
+
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 1.125rem !important;
+			font-weight: 700;
+			padding: 1rem 1.875rem;
+			color: $white;
+		}
+
+		+ div[style*="background-color"],
+		.CodeBlock {
+			margin-top: -5em;
+		}
+	}
+
+	div[style*="background-color"],
+	.CodeBlock {
+		position: relative;
+		background-color: $black-level2 !important;
+		border-radius: $border-radius !important;
+		font-size: 0.875rem !important;
+		font-family: "Courier New", Courier, monospace;
+		padding: 4rem 1.875rem 1.25rem !important;
+		color: $white !important;
+
+		&::before {
+			position: absolute;
+			content: "";
+			left: 0;
+			top: 3.5em;
+			width: 100%;
+			display: block;
+			border-bottom: 1px solid $borders-color;
+
+		}
+
+		*:not(.Button, svg) {
+			font-size: inherit;
+			font-family: inherit;
+			color: currentcolor;
+		}
+
+		.Button {
+			font-size: 0.875rem;
+			padding: 0.25em 0.5em;
+			top: 0.65rem;
+			right: 1.25rem;
+			z-index: 2;
+
+			svg {
+				margin-left: 0.5em;
+			}
+
+			// &:hover {
+
+			// 	svg {
+			// 		fill: currentcolor;
+			// 	}
+			// }
+		}
+	}
+}

@@ -81,20 +81,6 @@
 			}
 		}
 
-		h3 {
-			display: flex;
-
-			&::after {
-				position: relative;
-				top: 0.05em;
-				flex: 1 1 auto;
-				margin-left: 0.5em;
-				height: auto;
-				content: "";
-				background: url(../../images/article_title_h3_bg.svg) center center repeat-x;
-			}
-		}
-
 		table {
 
 			color: $black;

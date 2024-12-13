@@ -24,6 +24,7 @@ if ( tables.length ) {
 	const hasTooltip = new RegExp( /(.+?)<i>(.+?)<\/i>/gi );
 
 	tables.forEach( ( table ) => {
+		const articleTable = table.closest( '.Content' );
 		const tr = table.querySelectorAll( 'tr' );
 		const colspanRows = table.querySelectorAll( 'tbody tr td[colspan]:first-child' );
 
@@ -60,18 +61,24 @@ if ( tables.length ) {
 						val.textContent = null;
 						val.classList.add( 'icn-after-check' );
 						val.insertAdjacentHTML( 'afterbegin', `
+							${ articleTable ? "<span class='iconWrapper'>" : null }
 							<svg class="icon icon-check">
 								<use xlink:href="/app/themes/flowhunt/assets/images/icons.svg#check"></use>
-							</svg>`
+							</svg>
+							${ articleTable ? '</span>' : null }
+						`
 						);
 					}
 					if ( val.textContent.toLowerCase() === 'n' || val.textContent.toLowerCase() === 'no' || val.outerText.toLowerCase() === 'n' || val.outerText.toLowerCase() === 'no' ) {
 						val.textContent = null;
 						val.classList.add( 'icn-after-close' );
 						val.insertAdjacentHTML( 'afterbegin', `
+							${ articleTable ? "<span class='iconWrapper'>" : null }
 							<svg class="icon icon-close">
 								<use xlink:href="/app/themes/flowhunt/assets/images/icons.svg#close"></use>
-							</svg>`
+							</svg>
+							${ articleTable ? '</span>' : null }
+							`
 						);
 					}
 					if ( headers[ index ]?.innerHTML && ! table.classList.contains( 'no-header' ) ) {
