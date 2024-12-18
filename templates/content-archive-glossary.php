@@ -46,7 +46,7 @@ $page_header_args = array(
 <div id="archive" class="Archive" itemscope itemtype="https://schema.org/DefinedTermSet">
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="wrapper-md Index__list">
+	<div class="wrapper-md Index__list mb-10">
 		<?php
 		foreach ( $index as $index_item ) {
 			?>

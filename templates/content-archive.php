@@ -41,7 +41,7 @@ endif;
 <div id="blog" class="Blog pos-relative" itemscope itemtype="http://schema.org/Blog">
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="Blog__container wrapper-md">
+	<div class="Blog__container wrapper-md mb-10">
 		<div class="blog__top__post">
 			<?php
 			if ( ! is_author() ) {
@@ -67,7 +67,7 @@ endif;
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="blog__top__post__inn slide__inn" itemprop="url">
 							<div class="blog__top__post__inn--main">
 								<div class="blog__top__post__image">
-									
+
 									<meta itemprop="image" content="<?= esc_url( get_the_post_thumbnail_url( '' ) ); ?>"></meta>
 									<img data-src="<?= esc_url( get_the_post_thumbnail_url( '', 'box_archive_thumbnail' ) ); ?>" alt="<?= esc_attr( get_the_title() ); ?>" />
 								</div>

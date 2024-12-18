@@ -59,7 +59,7 @@ $related_args = array(
 	get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args );
 	?>
 
-<div class="Post__container">
+<div class="Post__container mb-10">
 		<div class="Post__content">
 			<div class="Content" itemprop="articleBody">
 
@@ -82,7 +82,7 @@ $related_args = array(
 				<?php the_content(); ?>
 
 				<?php echo do_shortcode( '[urlslab-faq]' ); ?>
-				
+
 				<?php urlslab_display_related_resources(); ?>
 			</div>
 		</div>
