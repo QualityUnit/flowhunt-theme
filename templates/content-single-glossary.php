@@ -33,7 +33,7 @@ $related_args = array(
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="URLsLab"></span>
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="wrapper Post__container">
+	<div class="wrapper Post__container mb-10">
 
 		<div class="Post__content">
 
