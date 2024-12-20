@@ -9,7 +9,7 @@ no-descending-specificity, scss/no-global-function-names */
 .Pricing {
 	position: relative;
 	margin-bottom: 0;
-
+	padding-bottom: 0;
 
 	&__header {
 		display: block;
@@ -75,6 +75,10 @@ no-descending-specificity, scss/no-global-function-names */
 
 		&:first-child {
 			text-align: center;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
 		}
 
 		> .e-con-inner {
