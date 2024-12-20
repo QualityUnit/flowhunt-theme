@@ -10,6 +10,9 @@ no-descending-specificity, scss/no-global-function-names */
 	position: relative;
 	margin-bottom: 0;
 
+	@media (min-width: $breakpoint-desktop) {
+		padding-bottom: 0;
+	}
 
 	&__header {
 		display: block;
@@ -75,6 +78,13 @@ no-descending-specificity, scss/no-global-function-names */
 
 		&:first-child {
 			text-align: center;
+		}
+
+		@media (min-width: $breakpoint-desktop) {
+
+			&:last-child {
+				padding-bottom: 0;
+			}
 		}
 
 		> .e-con-inner {
