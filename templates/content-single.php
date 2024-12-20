@@ -34,7 +34,7 @@ $related_args = array(
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="LiveAgent"></span>
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="Post__container">
+	<div class="Post__container mb-10">
 		<div class="BlogPost__content Post__content">
 			<div class="Content" itemprop="articleBody">
 				<?php if ( ! empty( $page_header_args['image']['url'] ) ) { ?>
@@ -67,7 +67,7 @@ $related_args = array(
 				</div>
 
 				<?php echo do_shortcode( '[urlslab-faq]' ); ?>
-				
+
 				<?php urlslab_display_related_resources(); ?>
 			</div>
 		</div>

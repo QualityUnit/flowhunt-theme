@@ -60,7 +60,7 @@ $related_args = array(
 	print_r( get_post_meta( get_the_ID(), 'chatbot', true ) );
 	?>
 
-	<div class="wrapper Post__container">
+	<div class="wrapper Post__container mb-10">
 		<div class="Post__content">
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>

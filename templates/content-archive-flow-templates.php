@@ -50,7 +50,7 @@ $page_header_args = array(
 <div class="Posts flow-templates" itemScope itemType="http://schema.org/Collection">
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="wrapper-md">
+	<div class="wrapper-md mb-10">
 		<ul class="Posts__items Archive__columns list">
 			<?php
 			while ( have_posts() ) :

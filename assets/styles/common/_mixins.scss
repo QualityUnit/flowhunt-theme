@@ -25,6 +25,20 @@
 		margin-bottom: 0;
 	}
 
+	@media (min-width: $breakpoint-desktop) {
+		&.mb-10 {
+			margin-bottom: 10em !important;
+
+			&.mb-0 {
+				margin-bottom: 0 !important;
+			}
+
+			.e-con-inner {
+				padding-bottom: 0;
+			}
+		}
+	}
+
 	&.gray-bg {
 		background-color: $gray-50;
 		padding-top: $block-space;
@@ -286,7 +300,7 @@
 	scrollbar-color: $color $white;
 	scroll-behavior: smooth;
 	transition: all .25s;
-	
+
 	&::-webkit-scrollbar-track {
 		background-color: transparent;
 	}
