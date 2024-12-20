@@ -81,6 +81,7 @@ no-descending-specificity, scss/no-global-function-names */
 		}
 
 		@media (min-width: $breakpoint-desktop) {
+
 			&:last-child {
 				padding-bottom: 0;
 			}
