@@ -69,18 +69,48 @@
 		z-index: 1;
 	}
 
-	.elementor-widget-text-editor[class] p {
-		font-size: 1rem;
-		margin-bottom: 0;
-		color: $dark-text;
+	.elementor-widget-text-editor[class] {
+
+		p {
+			font-size: 1rem;
+			line-height: 1.777;
+			color: $dark-text;
+			margin-bottom: 0;
+		}
+
+		ul {
+			margin-top: 1em;
+			max-width: none;
+
+			li {
+				margin-bottom: 0;
+				color: currentcolor !important;
+
+				&::before {
+					display: inline-block;
+					content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi4xNjE2IDMuNTg4MzNDMTIuNDM1IDMuODYxNjkgMTIuNDM1IDQuMzA0OTEgMTIuMTYxNiA0LjU3ODI4TDYuMzI4MzIgMTAuNDExNkM2LjA1NDk1IDEwLjY4NSA1LjYxMTczIDEwLjY4NSA1LjMzODM3IDEwLjQxMTZMMi40MjE3IDcuNDk0OTRDMi4xNDgzMyA3LjIyMTU4IDIuMTQ4MzMgNi43NzgzNiAyLjQyMTcgNi41MDQ5OUMyLjY5NTA3IDYuMjMxNjMgMy4xMzgyOCA2LjIzMTYzIDMuNDExNjUgNi41MDQ5OUw1LjgzMzM0IDguOTI2NjhMMTEuMTcxNyAzLjU4ODMzQzExLjQ0NTEgMy4zMTQ5NiAxMS44ODgzIDMuMzE0OTYgMTIuMTYxNiAzLjU4ODMzWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
+				}
+			}
+		}
 	}
 
 	&__white {
 		background: $white;
 		box-shadow: inset 0 0 0 1px $gray-200;
 
-		.elementor-widget-text-editor[class] p {
-			color: $black;
+		.elementor-widget-text-editor[class] {
+
+			p,
+			ul li {
+				color: $black !important;
+			}
+
+			ul li {
+
+				&::before {
+					content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi4xNjE2IDMuNTg4MzNDMTIuNDM1IDMuODYxNjkgMTIuNDM1IDQuMzA0OTEgMTIuMTYxNiA0LjU3ODI4TDYuMzI4MzIgMTAuNDExNkM2LjA1NDk1IDEwLjY4NSA1LjYxMTczIDEwLjY4NSA1LjMzODM3IDEwLjQxMTZMMi40MjE3IDcuNDk0OTRDMi4xNDgzMyA3LjIyMTU4IDIuMTQ4MzMgNi43NzgzNiAyLjQyMTcgNi41MDQ5OUMyLjY5NTA3IDYuMjMxNjMgMy4xMzgyOCA2LjIzMTYzIDMuNDExNjUgNi41MDQ5OUw1LjgzMzM0IDguOTI2NjhMMTEuMTcxNyAzLjU4ODMzQzExLjQ0NTEgMy4zMTQ5NiAxMS44ODgzIDMuMzE0OTYgMTIuMTYxNiAzLjU4ODMzWiIgLz4KPC9zdmc+Cg==);
+				}
+			}
 		}
 
 		&:hover {

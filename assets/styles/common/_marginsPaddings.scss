@@ -28,6 +28,10 @@ $marginSide: (
 
 @each $size,
 	$val in $sizes {
+	.m-#{$size}[class] {
+		margin: $val;
+	}
+
 	.mt-#{$size}[class] {
 		margin-top: $val;
 	}
@@ -42,6 +46,10 @@ $marginSide: (
 
 	.ml-#{$size}[class] {
 		margin-left: $val;
+	}
+
+	.p-#{$size}[class] {
+		padding: $val;
 	}
 
 	.pt-#{$size}[class] {
@@ -65,6 +73,10 @@ $marginSide: (
 
 	@each $size,
 		$val in $sizes {
+		.m-#{$size}-tablet[class] {
+			margin: $val;
+		}
+
 		.mt-#{$size}-tablet[class] {
 			margin-top: $val;
 		}
@@ -79,6 +91,10 @@ $marginSide: (
 
 		.ml-#{$size}-tablet[class] {
 			margin-left: $val;
+		}
+
+		.p-#{$size}-tablet[class] {
+			padding: $val;
 		}
 
 		.pt-#{$size}-tablet[class] {
@@ -103,6 +119,10 @@ $marginSide: (
 
 	@each $size,
 		$val in $sizes {
+		.m-#{$size}-tablet-landscape[class] {
+			margin: $val;
+		}
+
 		.mt-#{$size}-tablet-landscape[class] {
 			margin-top: $val;
 		}
@@ -117,6 +137,10 @@ $marginSide: (
 
 		.ml-#{$size}-tablet-landscape[class] {
 			margin-left: $val;
+		}
+
+		.p-#{$size}-tablet-landscape[class] {
+			padding: $val;
 		}
 
 		.pt-#{$size}-tablet-landscape[class] {
@@ -134,24 +158,5 @@ $marginSide: (
 		.pl-#{$size}-tablet-landscape[class] {
 			padding-left: $val;
 		}
-	}
-}
-
-@each $size,
-	$val in $sizes {
-	.pt-#{$size}[class] {
-		padding-top: $val;
-	}
-
-	.pr-#{$size}[class] {
-		padding-right: $val;
-	}
-
-	.pb-#{$size}[class] {
-		padding-bottom: $val;
-	}
-
-	.pl-#{$size}[class] {
-		padding-left: $val;
 	}
 }
