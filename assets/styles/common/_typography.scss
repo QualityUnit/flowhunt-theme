@@ -37,6 +37,10 @@ h6,
 		line-height: 1 !important;
 		vertical-align: baseline;
 		padding: 0 0.15em;
+
+		&.sm {
+			font-size: 30% !important;
+		}
 	}
 }
 
