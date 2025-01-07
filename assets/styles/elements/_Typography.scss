@@ -110,7 +110,7 @@ h6,
 
 p {
 
-	color: $black;
+	color: $gray-900;
 	margin-bottom: $default-element-margin;
 	font-size: 1rem;
 	font-weight: $font-weight-normal;
@@ -162,8 +162,8 @@ ol {
 ol {
 
 	color: $black;
-	list-style: none;
-	padding-left: 0.5em;
+	list-style: decimal;
+	padding-left: 1em;
 	text-align: left;
 	line-height: 1.8;
 	margin-top: 0.5em;
@@ -190,7 +190,9 @@ a {
 	}
 }
 
-.checklist {
+.checklist,
+.elementor-widget-text-editor ul,
+.Content ul {
 	list-style: none;
 	max-width: 40ch;
 	text-align: left;
@@ -198,26 +200,35 @@ a {
 	li {
 
 		color: $black !important;
-		font-size: 0.875rem;
-		line-height: 1.5;
-		padding-left: 2em;
 		margin-bottom: 0.5em;
 
 		&::before {
 			content: url(../images/icon_checkmark_primary.svg);
 			position: relative;
 			top: 2px;
-			left: -2px;
-			margin-left: -2em;
-			margin-right: 0.5em;
+			left: 0;
+			margin-right: 0.75em;
 
 			.single &,
 			.archive & {
 				content: url(../../images/icon_checkmark_primary.svg);
 			}
 		}
+
+		&.cross {
+
+			&::before {
+				content: url(../images/icon_checkmark_cross.svg);
+
+				.single &,
+				.archive & {
+					content: url(../../images/icon_checkmark_cross.svg);
+				}
+			}
+		}
 	}
 }
+
 
 img,
 picture,
@@ -304,60 +315,6 @@ a:not(.Button) {
 
 			color: $primary;
 			text-decoration: underline;
-		}
-	}
-
-	table {
-
-		color: $level-2;
-		font-size: $font-size-default;
-		font-weight: $font-weight-normal;
-		line-height: $line-height-default;
-		width: 100%;
-		margin: 30px 0;
-
-		tr {
-
-			border-top: 1px solid $level-2;
-
-			&:first-of-type {
-				border-top: 0;
-			}
-		}
-
-		td,
-		th {
-			padding: 10px 20px;
-			word-break: normal;
-		}
-
-		&.top {
-
-			tr {
-
-				&:first-of-type {
-
-					color: $black;
-					font-size: 14px;
-					font-weight: $font-weight-bold;
-				}
-			}
-		}
-
-		&.left {
-
-			tr {
-
-				td {
-
-					&:first-of-type {
-
-						color: $black;
-						font-size: 14px;
-						font-weight: $font-weight-bold;
-					}
-				}
-			}
 		}
 	}
 
@@ -455,7 +412,6 @@ a:not(.Button) {
 
 		img,
 		picture {
-			border: 2px solid #f1f1f1;
 			height: auto !important;
 		}
 
@@ -768,7 +724,15 @@ a:not(.Button) {
 
 		background: linear-gradient(90deg, $primary 0%, $primary-dark 100%);
 		background-clip: text;
-		color: transparent;
+		color: transparent !important;
+		box-decoration-break: clone;
+	}
+
+	&-gradient-accent {
+
+		background: $accent-gradient;
+		background-clip: text;
+		color: transparent !important;
 		box-decoration-break: clone;
 	}
 
@@ -1001,6 +965,43 @@ picture.Screenshot,
 
 				@include square(1.25em);
 			}
+		}
+	}
+}
+
+.tag-light {
+	display: inline-flex;
+	align-items: center;
+	border-radius: 0.5em;
+	padding: 0.66em;
+	font-size: 0.75rem;
+	line-height: 1;
+	background: $gray-100;
+	color: $gray-900;
+	width: max-content;
+
+	&-title {
+		padding: 0.1em 0.5em;
+		padding-right: 0.66em;
+		background: $gray-50;
+		border-radius: 6em;
+		border: 1px solid $gray-100;
+	}
+
+	img {
+
+		&:first-child {
+			margin-right: 0.25em;
+		}
+	}
+
+	&:has(.elementor-widget-container p) {
+
+		p {
+			display: inline-flex;
+			align-items: center;
+			line-height: 1;
+			margin: 0;
 		}
 	}
 }

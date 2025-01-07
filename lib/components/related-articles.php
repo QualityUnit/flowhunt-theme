@@ -2,6 +2,8 @@
 	set_custom_source( 'components/RelatedArticles', 'css' );
 
 $maxposts = 4;
+$posttype = '';
+$categories = array();
 
 if ( isset( $args ) ) {
 	if ( ! empty( $args['post_type'] ) ) {
@@ -15,27 +17,31 @@ if ( isset( $args ) ) {
 	}
 }
 
-	$query = array(
-		'posts_per_page' => $maxposts,
-		'post_type'      => array( $posttype ),
-		'orderby'        => array( 'random', 'name' ),
-		'tax_query'      => array(
-			array(
-				'taxonomy' => $posttype . '-categories',
-				'field'    => 'slug',
-				'terms'    => $categories[0]->slug,
-			),
-		),
-	);
+$query = array(
+	'posts_per_page' => $maxposts,
+	'post_type'      => array( $posttype ),
+	'orderby'        => array( 'random', 'name' ),
+	'tax_query'      => array(),
+);
 
-	if ( ! empty(
-		$args['post_type']
-	) && ! empty( $args['categories'] ) ) {
-		?>
+if ( ! empty( $categories ) && isset( $categories[0] ) && isset( $categories[0]->slug ) ) {
+	$query['tax_query'][] = array(
+		'taxonomy' => $posttype . '-categories',
+		'field'    => 'slug',
+		'terms'    => $categories[0]->slug,
+	);
+}
+
+if ( ! empty( $args['post_type'] ) && ! empty( $args['categories'] ) && isset( $categories[0] ) ) {
+	?>
 
 <div class="Related__Articles urlslab-skip-keywords">
 
-  <div class="Related__Articles--title h2"><?php _e( 'Related articles in', 'flowhunt' ); ?> <?= isset( $categories[0] ) ? esc_html( $categories[0]->name ) : esc_html( __( 'articles', 'flowhunt' ) ); ?></div>
+		<div class="Related__Articles--title h2">
+			<?php _e( 'Related articles in', 'flowhunt' ); ?>
+			<?= isset( $categories[0]->name ) ? esc_html( $categories[0]->name ) : esc_html( __( 'articles', 'flowhunt' ) ); ?>
+		</div>
+
 		<?php
 		$query_related_posts = new WP_Query( $query );
 		if ( $query_related_posts->have_posts() ) :
@@ -67,5 +73,6 @@ if ( isset( $args ) ) {
 			<?php endwhile; ?>
 		<?php endif; ?>
 		<?php wp_reset_postdata(); ?>
-</div>
+	</div>
+
 <?php } ?>

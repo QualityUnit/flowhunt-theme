@@ -1,0 +1,92 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+@use "../../../../../assets/styles/common/variables" as *;
+@forward "Button";
+
+* {
+	box-sizing: border-box;
+
+	&:active,
+	&:focus,
+	&:hover {
+		outline: 0;
+	}
+}
+
+.block-cta {
+	max-width: $wrapper-wide;
+	padding: 0;
+
+	border-radius: $border-radius-16;
+	border: 1px solid $gray-200;
+	background: url(../../images/block-cta-right-img.jpg) right bottom no-repeat;
+	background-size: contain;
+
+	.Content & {
+		max-width: 45em;
+
+		&__content {
+			padding: 2em !important;
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			margin: 1.5em -3em 2em;
+		}
+	}
+
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__content,
+	&__img {
+		width: 100%;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			width: 60%;
+		}
+	}
+
+	&__content[class] {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 1.5em;
+		margin-bottom: 4em;
+
+		@media (min-width: $breakpoint-tablet) {
+			margin-bottom: 0;
+
+		}
+
+		p.subtitle {
+			color: $black;
+			margin-top: 0.5em;
+			margin-bottom: 1.5em;
+		}
+
+		h2.title {
+			margin: 0;
+			font-size: 1.375rem !important;
+			line-height: 1.15 !important;
+			color: $black;
+		}
+	}
+
+	&__img {
+		margin-top: -3.8em;
+		align-self: flex-end;
+
+		img {
+			margin: 0 auto;
+			width: 100%;
+		}
+	}
+}

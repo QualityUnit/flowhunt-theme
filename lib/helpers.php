@@ -93,7 +93,7 @@ function elementor_playbtn( $content ) {
 		foreach ( $titles_parents as $parent ) {
 			$hasvideo = $parent->getAttribute( 'data-ytid' );
 			if ( ! empty( $hasvideo ) ) {
-				$title = $element->getElementsByTagName( 'h2' )[0];
+				$title    = $element->getElementsByTagName( 'h2' )[0];
 				$play_btn = $dom->createElement( 'span', htmlspecialchars( __( 'Play video', 'urslab' ) ) );
 				$play_btn->setAttribute( 'class', 'play' );
 				$title->appendChild( $play_btn );

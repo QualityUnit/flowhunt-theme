@@ -2,9 +2,15 @@
 
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
+@forward "./FooterTopBanner";
 
 .Footer {
-	background-color: $gray-50;
+	background-color: #0e0e11;
+	color: $white;
+
+	* {
+		color: currentcolor;
+	}
 
 	.wrapper-md {
 		margin-bottom: 0;
@@ -26,54 +32,55 @@
 
 	&__newsletter {
 		font-size: $font-size-smaller;
-		margin-bottom: 4.375em;
+		margin-bottom: 3.5em;
 
 		input[type="email"] {
 
 			border-radius: $border-radius-6;
-			padding: 0.95em 1.875em;
+			padding: 0.85em 1.4em;
 			font-size: 0.875rem;
 			position: relative;
-			background-color: $gray-200;
-			height: 2.85em;
+			background-color: rgba($gray-500, 0.15);
+			width: 100%;
+			min-width: 17.85em;
+			transition: all 0.3s;
+			line-height: 1.6;
 
 			@include input-placeholder {
 				color: $level-3;
 			}
 
-			@media (min-width: $breakpoint-iphone-new) {
-				right: -2em;
+			&:focus {
+				background-color: rgba($gray-500, 0.3);
+
+				@include input-placeholder {
+					color: $white;
+				}
 			}
 		}
 
 
 		button {
 			font-size: 0.875rem;
-			height: 2.85em;
 			width: 100%;
+			background-color: #0e0e11;
 
 			@media (min-width: $breakpoint-iphone-new) {
 				width: fit-content;
 			}
 
 			span {
-				line-height: 1.2;
+				line-height: 1.4;
 				color: $white;
 			}
 
 			&.Button[disabled] {
 				opacity: 1;
-				background-color: $gray-500;
 			}
 		}
 
 		&--form {
-			width: min(100%, 31em);
 			margin-top: 2em;
-
-			@media (min-width: $breakpoint-tablet) {
-				margin-left: -2em;
-			}
 
 			form {
 				display: flex;
@@ -82,7 +89,6 @@
 				gap: 0.5em;
 
 				@media (min-width: $breakpoint-iphone-new) {
-					margin-left: -2em;
 					flex-direction: row;
 					align-items: center;
 				}
@@ -104,58 +110,41 @@
 		}
 	}
 
-	&__social {
-		display: flex;
-		margin: 1em 0;
-
-		&--item {
-
-			display: flex;
-			align-items: center;
-
-			svg {
-
-				@include square(1.35em);
-				fill: $level-4;
-				margin-right: 0.5em;
-			}
-
-			&:first-child {
-				padding-left: 0;
-			}
-
-			&:last-child {
-				padding-right: 0;
-			}
-		}
-	}
-
 	a {
-		color: $level-2;
+		color: $white;
 		text-decoration: none;
 	}
 
 	&__navigation {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
-		justify-content: space-between;
-		color: $black;
+		color: $white;
 		margin-top: 2.5em;
-		gap: 2.5em;
+		gap: auto;
 
+		@media (max-width: ($breakpoint-tablet - 1px)) {
+
+			> li {
+				margin-top: 1em;
+			}
+		}
 
 		@media (min-width: $breakpoint-tablet) {
-			grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
-			grid-auto-flow: column;
+			grid-template-columns: repeat(5, 1fr);
+			gap: 8%;
 			width: 100%;
-
-			li {
-				min-width: 150px;
-			}
 		}
 
 		a {
 			color: currentcolor;
+			transition: all 0.3s;
+
+			&:hover {
+				background: $primary-gradient;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				text-decoration: none;
+			}
 		}
 
 		.sub-menu {
@@ -193,20 +182,17 @@
 		}
 	}
 
-	&__main {
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
-		row-gap: 2em;
-
-		@media (min-width: $breakpoint-tablet-landscape) {
-			flex-direction: row;
-		}
-	}
-
 	&__bottom {
-		margin-top: 4.375em;
 		font-size: 0.75rem;
+
+		a {
+			color: $gray-400;
+
+			&:hover {
+				color: $white;
+				text-decoration: none;
+			}
+		}
 
 		&--copyright {
 			font-size: 12px;
@@ -217,12 +203,6 @@
 
 	@media (min-width: $breakpoint-tablet) {
 
-		&__main {
-
-			&--links {
-				//margin-left: auto;
-			}
-		}
 
 		&__navigation {
 			margin-top: 0;
@@ -233,6 +213,10 @@
 					margin-left: 0;
 				}
 			}
+		}
+
+		&__newsletter {
+			margin-top: 4.5em;
 		}
 
 		&__bottom {

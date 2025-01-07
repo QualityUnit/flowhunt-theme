@@ -17,7 +17,7 @@
 		line-height: 1;
 		border: 1px solid $gray-300;
 		padding: 0.85em 2em 0.85em 1em;
-		border-radius: 0.714em;
+		border-radius: $border-radius-6;
 		background-color: $white;
 		transition: all 0.2s;
 		cursor: pointer;
@@ -64,16 +64,16 @@
 
 			position: absolute;
 			background-color: $white;
-			top: 100%;
+			top: calc(100% + 3px);
 			left: 0;
 			display: none;
 			opacity: 0;
 			overflow: hidden;
-			border-radius: 0.625em;
+			border-radius: $border-radius-6;
 			width: 100%;
 			padding: 1em 1.45em;
 			transition: opacity 0.1s;
-			box-shadow: 0 0.063em 0.375em rgba($black, 0.16);
+			border: 1px solid $gray-300;
 
 			&--inn {
 				max-height: 19em;
@@ -84,24 +84,12 @@
 
 			&.scrollbar-visible {
 
-				&::before {
-
-					display: block;
-					content: "";
-					position: absolute;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					width: 0.7em;
-					background-color: $level-2;
-				}
-
 				.FilterMenu__items--inn {
 
+					@include scrollbar(8px);
 					overflow-y: scroll;
 					margin-right: -1.35em;
 
-					@include scrollbar(8px);
 				}
 			}
 
@@ -119,7 +107,7 @@
 			position: relative;
 			display: flex;
 			align-content: center;
-			margin-bottom: 0.25em;
+			margin-bottom: 0.15em;
 			text-decoration: none !important;
 
 			&:last-of-type {

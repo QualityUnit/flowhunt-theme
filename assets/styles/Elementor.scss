@@ -8,6 +8,8 @@
 @forward "common/typography";
 @forward "common/colorClasses";
 @forward "common/marginsPaddings";
+@forward "common/borderClasses";
+@forward "common/zIndex";
 @forward "common/gridLayout";
 
 /* Generic Elements */
@@ -17,6 +19,7 @@
 @forward "elements/Checklist";
 @forward "elements/Inputs";
 @forward "elements/Tooltip";
+@forward "elements/Switcher";
 
 /* Boxes */
 @forward "components/Boxes";
@@ -34,11 +37,15 @@
 @forward "components/BlockCaseStudy";
 @forward "components/BlockImage";
 @forward "components/BlockColumns";
+@forward "components/BlockChecklist";
 @forward "components/FAQ";
 @forward "components/Form";
 @forward "components/SimilarSources";
 @forward "components/HeroSection";
 @forward "components/BlockFullWidthBackground";
+@forward "components/WavyLines";
+@forward "components/FlowModular"; // Home page AI Modular block at bottom
+@forward "components/Table"; // Home page AI Modular block at bottom
 
 /* Layouts */
 @forward "layouts/Fullscreen";

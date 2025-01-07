@@ -1,0 +1,19 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.WavyLines {
+	position: relative;
+	border-radius: $border-radius-10;
+
+	&::after {
+
+		@include posZero;
+		position: absolute;
+		content: "";
+		background: url(../../images/01-wavy-lines.svg) center top no-repeat, url(../../images/02-wavy-lines.svg) center bottom no-repeat;
+		background-size: 100%, 100%;
+		z-index: 1;
+	}
+}

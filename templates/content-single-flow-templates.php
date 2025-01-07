@@ -11,15 +11,15 @@ if ( has_post_thumbnail() ) {
 	$page_header_logo['src'] = get_the_post_thumbnail_url( $post, 'logo_thumbnail' );
 }
 $page_header_args = array(
-	'is_infinity'   => true,  // set true if header image is infinity to right
-	'image' => array(
-		'src' => get_template_directory_uri() . '/assets/images/compact-header-templates-img.png?ver=' . THEME_VERSION,
+	'is_infinity' => true,  // set true if header image is infinity to right
+	'image'       => array(
+		'src' => get_template_directory_uri() . '/assets/images/compact-header-templates.png?ver=' . THEME_VERSION,
 		'alt' => get_the_title(),
 	),
-	'logo'  => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
-	'title' => get_the_title(),
-	'text'  => get_the_excerpt(),
-	'toc'   => true,
+	'logo'        => ! get_post_meta( get_the_ID(), 'main', true ) ? $page_header_logo : null,
+	'title'       => get_the_title(),
+	'text'        => do_shortcode( '[urlslab-generator id="2" input="{{page_url}}"]' ),
+	'toc'         => true,
 );
 $current_id       = apply_filters( 'wpml_object_id', $post->ID, 'flow-templates' );
 $categories       = get_the_terms( $current_id, 'flow-templates-categories' );
@@ -47,16 +47,26 @@ $related_args = array(
 
 <div class="Post Post--sidebar-right" itemscope itemtype="http://schema.org/TechArticle">
 	<meta itemprop="url" content="<?= esc_url( get_permalink() ); ?>">
+	<meta itemprop="author" itemscope itemtype="http://schema.org/Person" content="<?= esc_attr( get_the_author_meta( 'display_name' ) ); ?>">
+	<meta  itemprop="dateModified" content="<?= esc_attr( get_the_modified_time( 'F j, Y' ) ); ?>">
+	<meta  itemprop="headline" content="<?= esc_attr( get_the_title() ); ?>">
+	<meta  itemprop="image" content="<?= esc_attr( get_template_directory_uri() . '/assets/images/icon-book.svg?ver=' . THEME_VERSION ); ?>">
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="LiveAgent"></span>
+
 
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="wrapper Post__container">
+	<?php
+	print_r( get_post_meta( get_the_ID(), 'chatbot', true ) );
+	?>
+
+	<div class="wrapper Post__container mb-10">
 		<div class="Post__content">
 			<div class="Content" itemprop="articleBody">
 				<?php the_content(); ?>
 
-				<?php get_template_part( 'lib/components/related-articles', null, $related_args ); ?>
+				<?php echo do_shortcode( '[urlslab-faq]' ); ?>
+				<?php urlslab_display_related_resources(); ?>
 			</div>
 		</div>
 		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>

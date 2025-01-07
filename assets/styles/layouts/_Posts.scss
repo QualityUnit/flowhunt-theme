@@ -97,6 +97,10 @@ no-descending-specificity */
 		border-radius: 0.625em - 0.125em;
 		transition: border-color 0.3s;
 
+		+ .Posts__item.pillar {
+			margin-top: 3.5em !important;
+		}
+
 		&::before {
 			content: "";
 			position: absolute;
@@ -109,7 +113,6 @@ no-descending-specificity */
 			border-radius: 0.625em;
 			z-index: -1;
 			transition: opacity 0.3s;
-
 		}
 
 		a {
@@ -122,13 +125,14 @@ no-descending-specificity */
 
 		&--header {
 			position: relative;
-			background-size: cover;
 			overflow: hidden;
 			border-top-right-radius: 0.625em;
 			border-top-left-radius: 0.625em;
+			background: url(../images/post_item_header-background-dots.png) no-repeat center left;
+			background-size: auto 100%;
 
 			&:not(:has(.Posts__item--image)) {
-				top: -1px;
+				top: 0;
 			}
 		}
 
@@ -162,11 +166,17 @@ no-descending-specificity */
 
 			h4 {
 				font-size: $font-size-bigger;
+				margin-bottom: 0.35em;
 			}
 
 			p {
 				font-size: $font-size-smaller;
 			}
+		}
+
+		&--excerpt {
+			color: $gray-500;
+			font-size: 0.875rem;
 		}
 
 		&.main {
@@ -245,7 +255,7 @@ no-descending-specificity */
 							@media (min-width: $breakpoint-tablet) {
 								display: block;
 								position: relative;
-								background-size: cover;
+								background-size: auto 100%;
 								margin: 0;
 								overflow: hidden;
 								border-top-left-radius: 0;
@@ -273,6 +283,8 @@ no-descending-specificity */
 
 				&--inn {
 					display: block;
+					position: relative;
+					z-index: 1;
 				}
 
 				&--categories {
@@ -285,11 +297,16 @@ no-descending-specificity */
 
 				&--category {
 					display: inline-block;
-					background-color: $primary;
+					color: $black;
+					font-size: 0.75rem;
 					border-radius: $border-radius-6;
-					padding: 0.25em 1em;
-					color: $white;
-					box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.16);
+					border: 1px solid $accent-electric-blue;
+					background-color: $white;
+					padding: 0.125em 0.6em;
+
+					&:hover {
+						background-color: $gray-100;
+					}
 
 					+ li {
 						margin-left: 0.45em;
@@ -313,10 +330,6 @@ no-descending-specificity */
 			&::before {
 				opacity: 1;
 				transition: opacity 0.3s;
-			}
-
-			*:not(li) {
-				color: $black;
 			}
 
 			a {

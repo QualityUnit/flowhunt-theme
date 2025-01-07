@@ -1,0 +1,75 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.ImageSwitcher {
+
+	> .e-con-inner {
+		align-items: stretch !important;
+
+		> .e-child:has(.elementor-heading-title) {
+			padding: 0;
+		}
+	}
+
+	.e-child {
+
+		&:has([data-targetid]) {
+			position: relative;
+			height: auto;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			width: 55% !important;
+		}
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+
+			&:has(.ImageSwitcher__activator) {
+				width: 65% !important;
+				padding-right: 4.5em !important;
+
+				.h1 {
+					max-width: 60%;
+				}
+			}
+
+			&:has([data-targetid]) {
+				width: 55% !important;
+			}
+		}
+	}
+
+	[data-targetid] {
+
+		opacity: 0;
+		transition: opacity 0.005s;
+
+		&.elementor-widget-image {
+
+			img,
+			picture {
+				max-height: 54em !important;
+			}
+		}
+
+		&.visible {
+			opacity: 1;
+			transition: opacity 0.3s;
+		}
+	}
+
+	&__activator.BlockDark {
+
+		> .elementor-widget-heading[class] > div[class],
+		h3[class] {
+			margin-bottom: 0 !important;
+		}
+
+		.FlowUsed {
+			font-size: 0.875rem;
+			color: $gray-500;
+		}
+	}
+}

@@ -6,7 +6,7 @@ $page_header_args = array(
 		'alt' => get_the_title(),
 	),
 	'title'      => get_the_title(),
-	'text'       => '', // do_shortcode( '[urlslab-generator id="4"]' ) that was in the original code
+	'text'       => do_shortcode( '[urlslab-generator id="2" input="{{page_url}}"]' ),
 	'date'       => true,
 	'toc'        => true,
 	'imageUnder' => true,
@@ -34,7 +34,7 @@ $related_args = array(
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="LiveAgent"></span>
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="wrapper Post__container">
+	<div class="Post__container mb-10">
 		<div class="BlogPost__content Post__content">
 			<div class="Content" itemprop="articleBody">
 				<?php if ( ! empty( $page_header_args['image']['url'] ) ) { ?>
@@ -62,34 +62,13 @@ $related_args = array(
 
 					<div class="BlogPost__author-box__content">
 						<p class="BlogPost__author-box__content__name" itemprop="name"><?php the_author(); ?></p>
-						<p class="BlogPost__author-box__content__position"><?php the_author_meta( 'position' ); ?></p>
 						<p class="BlogPost__author-box__content__description" itemprop="description"><?php the_author_meta( 'description' ); ?></p>
-						<div class="BlogPost__author-box__content__social">
-							<?php if ( (bool) get_the_author_meta( 'instagram' ) ) { ?>
-								<a href="<?php the_author_meta( 'instagram' ); ?>" target="_blank" itemprop="sameAs">
-									<i class="fontello-instagram-brands"></i>
-								</a>
-							<?php } ?>
-							<?php if ( (bool) get_the_author_meta( 'facebook' ) ) { ?>
-								<a href="<?php the_author_meta( 'facebook' ); ?>" target="_blank" itemprop="sameAs">
-									<i class="fontello-facebook-f-brands"></i>
-								</a>
-							<?php } ?>
-							<?php if ( (bool) get_the_author_meta( 'linkedin' ) ) { ?>
-								<a href="<?php the_author_meta( 'linkedin' ); ?>" target="_blank" itemprop="sameAs">
-									<i class="fontello-linkedin-in-brands"></i>
-								</a>
-							<?php } ?>
-							<?php if ( (bool) get_the_author_meta( 'twitter' ) ) { ?>
-								<a href="https://twitter.com/<?php the_author_meta( 'twitter' ); ?>" target="_blank" itemprop="sameAs">
-									<i class="fontello-twitter-brands"></i>
-								</a>
-							<?php } ?>
-						</div>
 					</div>
 				</div>
 
-				<?php get_template_part( 'lib/components/related-articles', null, $related_args ); ?>
+				<?php echo do_shortcode( '[urlslab-faq]' ); ?>
+
+				<?php urlslab_display_related_resources(); ?>
 			</div>
 		</div>
 		<?php require_once get_template_directory() . '/lib/components/post-sidebar.php'; ?>

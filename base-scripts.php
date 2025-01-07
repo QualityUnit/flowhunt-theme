@@ -182,11 +182,6 @@
 				chatbotId: '4f954c97-1f1b-4164-82df-1b259ce5f645',
 				workspaceId: 'e31db667-893b-4e47-92c3-bb1f93c1b594',
 				urlSuffix: '#utm_source=chatbot',
-				maxWindowWidth: '700px',
-				customOptions: JSON.stringify({
-					welcomeMessage: "🤖 Hi there! Welcome to Flowhunt! 🎉\n\nLooking to automate your workflows and build AI Assistants? We're here to help! 💪✨\n\nGot any questions? Ask away! 💬👇",
-					faqs: ["What are FlowHunt features?", "What are flows?", "What is your pricing?", "Show me some templates for SEO"]
-				})
 			});
 		}
 	);

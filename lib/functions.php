@@ -13,3 +13,4 @@
 	require_once get_template_directory() . '/lib/functions/customize-gutenberg-button.php';
 	require_once get_template_directory() . '/lib/functions/rest-api.php';
 	require_once get_template_directory() . '/lib/functions/custom-main-menu.php';
+	require_once get_template_directory() . '/lib/functions/urlslab-related-posts.php';

@@ -1,0 +1,11 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "qu/cta-banner",
+	"version": "0.1.0",
+	"title": "CTA Banner",
+	"icon": "chart-bar",
+	"category": "widgets",
+	"textdomain": "ctabanner",
+	"editorScript": "file:./build/index.js"
+}

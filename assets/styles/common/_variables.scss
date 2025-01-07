@@ -4,6 +4,7 @@ $transitionTime: 0.25s;
 $headerHeight: 70px;
 
 $sizes: (
+	"0": 0,
 	"xxs": 0.15em,
 	"xs": 0.25em,
 	"s": 0.5em,
@@ -13,7 +14,8 @@ $sizes: (
 	"xxl": 2.5em,
 	"xxxl": 3.25em,
 	"extreme": 4.5em,
-	"ultra": 6em
+	"ultra": 6em,
+	"2xultra": 12em
 );
 
 $fontSizes: (
@@ -29,6 +31,22 @@ $fontSizes: (
 	"xxxl": 3.25rem,
 );
 
+$levels: (
+	"0": 0,
+	"10": 10,
+	"20": 20,
+	"30": 30,
+	"40": 40,
+	"50": 50,
+	"60": 60,
+	"70": 70,
+	"80": 80,
+	"90": 90,
+	"100": 100,
+);
+
+$tablePadding: 0.6em 0.75em;
+
 // Fonts
 $font-primary: "Helvetica Neue", Helvetica, Arial, sans-serif; // stylelint-disable-line
 
@@ -42,11 +60,11 @@ $font-size-bigger: 1.125rem;
 $line-height-bigger: 1.44;
 
 
-$font-size-h1: clamp(2.75rem, 6vw, 3.75em);
+$font-size-h1: clamp(2.75rem, 6vw, 3.75rem);
 $font-size-h1-l: 3rem;
 $font-size-h1-s: 2.75rem;
 $line-height-h1: 1.2;
-$font-size-h2: clamp(2rem, 4vw, 3.75em);
+$font-size-h2: clamp(2rem, 4vw, 3rem);
 $line-height-h2: 1.15;
 $font-size-h2-xs: 1.5rem;
 $font-size-h2-s: 2rem;
@@ -55,7 +73,7 @@ $font-size-h2-xl: 2.75rem;
 $font-size-h3: clamp(1.2rem, 2vw, 1.5rem);
 $line-height-h3: 1.33;
 $font-size-h4: 1.125rem;
-$line-height-h4: 1.33;
+$line-height-h4: 1.77;
 $font-size-h5: 1rem;
 $line-height-h5: 1.5;
 $font-size-h6: 1rem;
@@ -63,8 +81,8 @@ $line-height-h6: 1.5;
 
 // font sizes for single pages
 $font-size-h1-single: clamp(1.875rem, 4vw, 3em);
-$font-size-h2-single: clamp(2rem, 1vw, 2.75rem);
-$font-size-h3-single: clamp(1.2rem, 1vw, 1.5rem);
+$font-size-h2-single: clamp(2.25rem, 1vw, 2.75rem);
+$font-size-h3-single: clamp(1.375rem, 1vw, 1.5rem);
 
 $font-weight-normal: 400;
 $font-weight-semi: 600;
@@ -93,6 +111,7 @@ $wrapper-width: 1140px;
 $wrapper-wide: 1380px;
 $wrapper-padding: 1.125em;
 
+$wrapper-sm: $wrapper-width;
 $wrapper: 1200px !important;
 $wrapper-md: 1400px !important;
 $wrapper-lg: 1600px !important;
@@ -128,6 +147,7 @@ $block-bg-space-sm: 2.5em;
 
 // Colors
 $black-real: #000;
+
 $white: #fff;
 
 // Grays
@@ -138,10 +158,13 @@ $gray-300: #d1d5db;
 $gray-200: #e5e7eb;
 $gray-100: #f3f4f6;
 $gray-50: #f9fafb;
+$dark-text: #a9a9ad;
 
 // Texts
 $level-1: $gray-900; // text level 1
 $black: $level-1;
+$black-level2: #1e1c21;
+$black-level3: #0e0e11;
 $level-2: $gray-500; // texts level 2 and icons
 $level-3: $gray-400; // texts level 3
 $level-4: $gray-400; // texts level 4
@@ -153,7 +176,7 @@ $fields-bg: $gray-300; // fields backgrounds
 $fields-bg-hover: #f5f5f7; // fields backgrounds
 
 // Borders
-$borders-color: $gray-300; // borders color
+$borders-color: #302e32; // borders color
 $border-divider-primary: #cfd6dd;
 
 // Backgrounds
@@ -167,11 +190,14 @@ $primary-dark: #1a56db;
 $primary-light: #e1effe;
 
 $accent-electric-blue: #0497dc;
+$accent-electric-blue-dark: #465ce0;
 $accent-dark: #1a56db;
 $accent-indigo: #984ad7;
 
-$primary-gradient: linear-gradient(90deg, $accent-electric-blue 0, #465ce0 100%);
-$primary-gradient-reverse:  linear-gradient(90deg, #465ce0 0, $accent-electric-blue 100%);
+$primary-gradient: linear-gradient(90deg, $accent-electric-blue 0, $accent-electric-blue-dark 100%);
+$primary-gradient-reverse:  linear-gradient(90deg, $accent-electric-blue-dark 0, $accent-electric-blue 100%);
+$accent-gradient: linear-gradient(90deg, $accent-electric-blue 0%, $accent-electric-blue-dark 31.08%, $accent-indigo 60.94%);
+$accent-gradient-reverse: linear-gradient(180deg, $accent-electric-blue 0%, $accent-electric-blue-dark 31.08%, $accent-indigo 60.94%);
 
 // Other colors
 $secondary: #ff3c29;

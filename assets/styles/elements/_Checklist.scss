@@ -12,38 +12,20 @@
 
 		position: relative;
 		font-size: 1rem;
-		padding-left: 1.5em;
 		margin-bottom: 0.5em;
+		padding-left: 1em;
 
 		&::before {
-
-			@include circle(0.5625em);
-			border: 1px solid $primary;
-			display: inline-block;
-			content: "";
-			position: absolute;
-			top: 0.6em;
-			left: 0;
-			background-color: $black;
-			font-size: 1em;
-			margin: 0;
+			margin-left: -1.65em;
 		}
 	}
+}
+
+.elementor-widget-text-editor {
 
 	ul {
-		list-style: none;
-		margin-top: 1em;
 
-		li {
-			padding-left: 1.5em;
-
-			&::before {
-
-				@include circle(0.4375em);
-				background-color: $black;
-				border: 1px solid $primary;
-			}
-		}
+		@extend %checklist;
 	}
 }
 
@@ -76,29 +58,4 @@
 			}
 		}
 	}
-}
-
-.elementor-widget-text-editor ul,
-ul.checklist {
-
-	li {
-		position: relative;
-
-		&::before {
-
-			@include circle(0.75rem);
-			display: inline-block;
-			content: "";
-			position: absolute;
-			top: 0.4em;
-			left: 0;
-			border: 3px solid $primary;
-			font-size: 1em;
-			margin: 0;
-		}
-	}
-}
-
-.elementor-widget-text-editor ul li {
-	padding-left: 1.5em;
 }

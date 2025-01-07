@@ -18,17 +18,17 @@ button,
 	width: auto;
 	// TODO changed for compatibility with MUI - FIXME
 	//height: $button-height-normal;
-	padding: 0 $button-padding-normal;
+	padding: 0.75em $button-padding-normal;
 	border: 0;
 	border-radius: $border-radius-6;
 	font-size: $button-font-size-normal;
 	font-weight: $font-weight-semi;
-	white-space: nowrap;
+	text-align: center;
 	cursor: pointer;
 
 	> svg {
 
-		@include square(1.5em);
+		@include square(1.25em);
 		fill: currentcolor;
 
 		&:first-child {
@@ -43,6 +43,39 @@ button,
 	&[disabled] {
 		pointer-events: none;
 		opacity: 0.5;
+	}
+
+	[class*="elementor"] {
+		all: unset;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&.elementor-widget-container {
+			z-index: 3;
+		}
+
+		a {
+			text-decoration: none !important;
+
+			&::before {
+				content: "";
+
+				@include posZero;
+				position: absolute;
+				cursor: pointer;
+			}
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: none !important;
+			}
+		}
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		white-space: nowrap;
 	}
 }
 
@@ -179,6 +212,24 @@ button,
 		border-color: $primary-dark;
 		color: $primary;
 	}
+
+	&-bg {
+		background-color: $black-real;
+		color: $white;
+
+		span {
+			color: currentcolor !important;
+		}
+
+		svg {
+			fill: currentcolor;
+		}
+
+		&:hover {
+			background-color: $white;
+			color: $black;
+		}
+	}
 }
 
 .Button--white {
@@ -200,6 +251,88 @@ button,
 			color: $primary;
 		}
 	}
+
+	&--highlight {
+		box-shadow: 0 0 0.75em 0.25em rgba($accent-electric-blue, 0);
+		transition: all 0.3s;
+
+		&:hover {
+			box-shadow: 0 0 0.75em 0.25em rgba($accent-electric-blue, 0.8);
+
+			span {
+				color: $black;
+			}
+		}
+	}
+}
+
+.Button--glowing {
+	width: 165px;
+	height: auto;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: $border-radius-6;
+
+	font-size: 1rem;
+
+	span {
+		color: $black;
+	}
+
+	&::before {
+		content: "";
+		background-image: linear-gradient(45deg, #0497dc, #465ce0, #984ad7, #0497dc);
+		background-attachment: fixed;
+		position: absolute;
+		top: -0.125em;
+		left: -0.125em;
+		background-size: 400% 400%;
+		z-index: -1;
+		filter: blur(5px);
+		width: calc(100% + 0.25em);
+		height: calc(100% + 0.25em);
+		animation: glowing 5s linear infinite;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+		border-radius: $border-radius-6;
+
+		// this code is for safari blur issue
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+
+	}
+
+	&:active {
+		color: #000;
+	}
+
+	&:active::after {
+		background: transparent;
+	}
+
+	&:hover::before {
+		opacity: 1;
+	}
+
+	&::after {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: $white;
+		left: 0;
+		top: 0;
+		border-radius: $border-radius-6;
+	}
+
 }
 
 .Button--outline {
@@ -208,6 +341,7 @@ button,
 	border: 1px solid $black;
 	overflow: hidden;
 	transition: all 0.3s;
+	background: transparent;
 
 	&-light {
 
@@ -217,12 +351,47 @@ button,
 
 	&--white {
 		color: $white;
-		border: 1px solid $white;
+		border: 1px solid currentcolor;
+		background: transparent;
 		transition: all 0.3s;
 
 		&:hover {
 			background-color: $white;
 			color: $black;
+		}
+	}
+
+	&--full {
+		position: relative;
+		background: linear-gradient(#0e0e11, #0e0e11) padding-box, $primary-gradient border-box;
+		border-color: transparent;
+		transition: all 0.3s;
+
+		&::after {
+
+			@include posZero;
+			position: absolute;
+			content: "";
+			background: $primary-gradient;
+			opacity: 0;
+			transition: all 0.3s;
+			border-radius: calc($border-radius-6 - 2px);
+		}
+
+		span {
+			position: relative;
+			z-index: 1;
+		}
+
+		&:hover {
+
+			&::after {
+				opacity: 1;
+			}
+
+			span {
+				color: $white;
+			}
 		}
 	}
 
@@ -239,7 +408,9 @@ button,
 	&:focus,
 	&:hover {
 
-		color: $primary;
+		background: linear-gradient(136deg, #0497dc 39.1%, #465ce0 109.91%);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
 		border-color: $primary;
 	}
 }
@@ -324,8 +495,9 @@ button,
 	padding: 0.75em 1.875em;
 
 	span,
-	strong {
-		font-size: 1rem;
+	strong,
+	a {
+		font-size: 0.875rem !important;
 		line-height: 1.4;
 	}
 }

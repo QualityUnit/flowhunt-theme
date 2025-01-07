@@ -5,17 +5,14 @@
 
 @mixin elementor-col-50() {
 	width: auto !important;
-
-	.Button {
-		font-size: 0.875rem;
-	}
+	flex-shrink: 0;
 
 	&:first-of-type {
-		flex-basis: 43%;
+		flex-basis: 40%;
 	}
 
 	&:last-of-type {
-		flex-basis: 57%;
+		flex-basis: 72%;
 		min-height: 34em;
 
 		picture,
@@ -30,68 +27,74 @@
 .heroHeadline,
 .heroHeadline__home {
 
-	.Button {
-		font-size: 0.875rem;
+	.playBtn[class] {
+
+		@include square(13.125em !important);
+		position: absolute;
+		top: 50%;
+		left: 15%;
+		transform: translateY(-50%);
+		z-index: 10;
 	}
 
-	&__title,
-	&--title {
+	.e-con-inner {
+		align-items: center;
 
 		@media (min-width: $breakpoint-tablet-landscape) {
+			margin-top: 6em;
+			flex-direction: row;
 
-			h1.elementor-heading-title {
-				font-size: $font-size-h1;
-				line-height: 1.15;
+			.e-child {
+				display: block;
+
+				&:has(.elementor-widget-image) {
+					position: relative;
+					right: -5%;
+
+					div {
+						height: 100%;
+
+						>picture {
+							width: 100vw;
+						}
+
+						>img,
+						img,
+						>picture {
+							height: 100%;
+							max-width: 100%;
+							object-fit: contain;
+							object-position: left bottom;
+						}
+					}
+				}
+
+				&:first-of-type {
+
+
+					&:has(.elementor-widget-image) {
+						margin-left: -10%;
+						margin-right: 0;
+					}
+				}
 			}
-		}
-	}
-
-	&__image,
-	&--image {
-
-		&.elementor-column[class]:last-of-type {
-			padding-left: 0;
-			position: relative;
-
-			@media (max-width: ($breakpoint-tablet - 1px)) {
-				display: none !important;
-			}
-		}
-	}
-
-	&__subtitle,
-	&--subtitle {
-
-		h3 {
-			font-size: 1.125rem;
-			line-height: $line-height-h3;
-			font-weight: 400;
-			margin-bottom: 0.25em;
-		}
-
-		+ .elementor-widget-html .Button {
-			margin-top: 1.5em;
-		}
-	}
-
-	@media (max-width: ($breakpoint-tablet - 1px)) {
-
-		&__subtitle,
-		&--subtitle {
-			padding: 0 1em;
 		}
 	}
 
 	@media (min-width: $breakpoint-tablet) {
 
-		.elementor-col-50:first-of-type {
+		.e-con.e-child:first-of-type {
 			padding-left: 1.5em;
 		}
 	}
 
 	@media (min-width: $breakpoint-tablet-landscape) {
 
-		.elementor-col-50 {
+		.e-con-inner {
+			flex-direction: row;
+		}
+
+		.e-con.e-child {
 
 			@include elementor-col-50;
 
@@ -107,7 +110,7 @@
 
 	@media (max-width: ($breakpoint-tablet - 1px)) {
 
-		.elementor-col-50[class] {
+		.e-con.e-child[class] {
 
 			&:last-of-type {
 				display: none !important;
@@ -117,21 +120,20 @@
 
 	@media (min-width: $breakpoint-tablet) {
 
-		.elementor-col-50:first-of-type {
+		.e-con.e-child:first-of-type {
 			padding-left: 1.5em;
 		}
 	}
 
 	@media (min-width: $breakpoint-tablet-landscape) {
 
-		.elementor-col-50 {
+		.e-con.e-child {
 
 			@include elementor-col-50;
 
 			&:first-of-type {
 				padding-left: 0;
 			}
-
 		}
 	}
 }

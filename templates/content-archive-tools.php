@@ -2,7 +2,7 @@
 set_custom_source( 'layouts/Archive' );
 set_custom_source( 'filter', 'js' );
 $post_type_category = 'tools-categories';
-$categories = array_unique( get_categories( array( 'taxonomy' => $post_type_category ) ), SORT_REGULAR );
+$categories         = array_unique( get_categories( array( 'taxonomy' => $post_type_category ) ), SORT_REGULAR );
 if ( is_tax( $post_type_category ) ) :
 	$page_header_title       = single_cat_title();
 	$page_header_description = the_archive_description();
@@ -32,16 +32,16 @@ $filter_items     = array(
 	),
 );
 $page_header_args = array(
-	'type'   => 'lvl-1',
-	'is_infinity'   => true,  // set true if header image is infinity to right
-	'image'  => array(
-		'src' => get_template_directory_uri() . '/assets/images/compact-header-features-img.png?ver=' . THEME_VERSION,
+	'type'        => 'lvl-1',
+	'is_infinity' => true,  // set true if header image is infinity to right
+	'image'       => array(
+		'src' => get_template_directory_uri() . '/assets/images/compact-header-ai-tools.png?ver=' . THEME_VERSION,
 		'alt' => $page_header_title,
 	),
-	'title'  => $page_header_title,
-	'text'   => $page_header_description,
-	'filter' => $filter_items,
-	'search' => array(
+	'title'       => $page_header_title,
+	'text'        => $page_header_description,
+	'filter'      => $filter_items,
+	'search'      => array(
 		'type' => $post_type_category,
 	),
 );
@@ -50,7 +50,7 @@ $page_header_args = array(
 <div class="Posts Tools" itemScope itemType="http://schema.org/Collection">
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>
 
-	<div class="wrapper-md">
+	<div class="wrapper-md mb-10">
 		<ul class="Posts__items Archive__columns list">
 			<?php
 			while ( have_posts() ) :
@@ -59,7 +59,8 @@ $page_header_args = array(
 				$category = '';
 
 
-				$categories = get_the_terms( 0, $post_type_category );
+				$categories     = get_the_terms( 0, $post_type_category );
+				$post_item_icon = get_post_meta( get_the_ID(), 'icon', true ); // post icon
 
 				if ( ! empty( $categories ) ) {
 					foreach ( $categories as $category_item ) {
@@ -80,26 +81,11 @@ $page_header_args = array(
 					<?= esc_attr( $category ); ?> " data-category="<?= esc_attr( $category ); ?>" data-href="<?php the_permalink(); ?>">
 					<a href="<?php the_permalink(); ?>" class="Posts__item--inn flex flex-align-center">
 						<div class="Posts__item--header">
-							<?php if ( get_post_meta( get_the_ID(), 'main', true ) ) : ?>
-								<div class="Posts__item--image">
-									<?php
-									the_post_thumbnail( 'large' );
-									?>
-								</div>
-							<?php else : ?>
-								<div class="Posts__item--image">
-									<?php
-									$thumnbail_color = get_post_meta( get_the_ID(), 'svg_color', true ) ?? '';
-									$svg_code        = get_colored_svg( $thumnbail_color );
-									?>
-									<?= $svg_code; //@codingStandardsIgnoreLine ?>
-								</div>
-							<?php endif; ?>
+							<div class="Posts__item--icon">
+								<?= wp_get_attachment_image( $post_item_icon, 'full' ); ?>
+							</div>
 
-							<?php
-							if ( ! get_post_meta( get_the_ID(), 'main', true ) ) {
-								?>
-								<ul class="Posts__item--categories">
+							<ul class="Posts__item--categories">
 									<?php
 									if ( ! empty( $categories ) ) {
 										foreach ( $categories as $category_item ) {
@@ -111,7 +97,6 @@ $page_header_args = array(
 									}
 									?>
 								</ul>
-							<?php } ?>
 						</div>
 						<div class="Posts__item--content">
 							<h4 data-title><?php the_title(); ?></h4>
@@ -136,12 +121,4 @@ $page_header_args = array(
 			<?php endwhile; ?>
 		</ul>
 	</div>
-
-	<div class="block-improve-section wrapper-md">
-		<?php
-		echo do_shortcode( '[blockImprove]' );
-		?>
-	</div>
-
-
 </div>

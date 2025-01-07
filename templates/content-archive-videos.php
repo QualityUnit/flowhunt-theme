@@ -14,7 +14,7 @@ function duration_to_time( $youtube_time ) {
 }
 
 $post_type_category = 'videos_categories';
-$categories = array_unique( get_categories( array( 'taxonomy' => $post_type_category ) ), SORT_REGULAR );
+$categories         = array_unique( get_categories( array( 'taxonomy' => $post_type_category ) ), SORT_REGULAR );
 if ( is_tax( $post_type_category ) ) :
 	$page_header_title       = single_cat_title();
 	$page_header_description = the_archive_description();
@@ -53,7 +53,7 @@ $page_header_args = array(
 		'alt' => $page_header_title,
 	),
 	'title'  => $page_header_title,
-	'text'   => '', // do_shortcode( '[urlslab-generator id="6"]' ) that was in the original code
+	'text'   => do_shortcode( '[urlslab-generator id="2" input="{{page_url}}"]' ),
 	'search' => array(
 		'type' => $post_type_category,
 	),

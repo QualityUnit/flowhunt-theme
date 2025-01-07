@@ -5,13 +5,13 @@ set_source( false, 'splide', 'js' );
 global $post;
 $page_header_args = array(
 	'title' => get_the_title(),
-	'text'  => '',  // do_shortcode( '[urlslab-generator id="4"]' ) that was in the original code
+	'text'  => do_shortcode( '[urlslab-generator id="2" input="{{page_url}}"]' ),
 	'toc'   => true,
 );
 while ( have_posts() ) :
 	the_post();
 	?>
-	<div class="Post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="Post" itemscope itemtype="http://schema.org/BlogPosting">
 	<meta itemprop="url" content="<?= esc_url( get_permalink() ); ?>">
 	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="LiveAgent"></span>
 	<?php get_template_part( 'lib/custom-blocks/compact-header', null, $page_header_args ); ?>

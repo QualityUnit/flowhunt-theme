@@ -48,6 +48,7 @@ add_action(
 		add_image_size( 'blog', 250, 250 );
 		add_image_size( 'archive_thumbnail', 185, 50 );
 		add_image_size( 'archive_small_thumbnail', 175, 25 );
+		add_image_size( 'logo', 175, 40 );
 		add_image_size( 'blog_thumbnail', 380, 380, array( 'center', 'center' ) );
 		add_image_size( 'blog_post_thumbnail', 960, 640 );
 		add_image_size( 'box_archive_thumbnail', 700, 400 );
