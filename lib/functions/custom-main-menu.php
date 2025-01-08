@@ -4,7 +4,7 @@ function wp_modify_header( $menu_objects, $args ) {
 
 	if ( 'header_navigation' === $args->theme_location ) {
 		foreach ( $menu_objects as $menu_object ) {
-			$menu_id    = ( $menu_object->object === 'page' ) ? $menu_object->object_id : $menu_object->ID;
+			$menu_id    = ( 'page' === $menu_object->object ) ? $menu_object->object_id : $menu_object->ID;
 			$title      = $menu_object->title;
 			$url        = $menu_object->url;
 			$classes    = implode( ' ', $menu_object->classes );
