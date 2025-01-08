@@ -26,7 +26,9 @@ function elementor_blog_posts( $atts ) {
 			$query_args = array(
 				'posts_per_page' => $atts['posts'],
 				'post_status'    => 'publish',
-				'orderby'        => array( 'date', 'rand' ),
+				'orderby'        => 'date',
+				'order'          => 'desc',
+				'offset'         => 1,
 				'cat'            => $category->cat_ID,
 			);
   
