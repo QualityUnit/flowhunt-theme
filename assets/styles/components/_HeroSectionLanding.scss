@@ -91,11 +91,25 @@
 
 			&:has(.Button) {
 
+
 				.elementor-widget-container {
 					display: flex;
 					flex-wrap: wrap;
 					gap: 1em;
+
+					@media (max-width: ($breakpoint-tablet-landscape - 1px)) {
+						margin-top: -1em !important;
+
+
+						.Button {
+							font-size: 0.85rem !important;
+							padding: 0.5em 1em;
+							height: auto;
+							margin-top: 0 !important;
+						}
+					}
 				}
+
 
 				.Button + .Button {
 					margin-left: 0;

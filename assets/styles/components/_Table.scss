@@ -26,7 +26,8 @@ table {
 			display: none;
 		}
 
-		tbody {
+		tbody,
+		tfoot {
 			display: block;
 
 			tr {
@@ -36,7 +37,10 @@ table {
 
 			td,
 			td[colspan],
-			td:not([colspan]) {
+			td:not([colspan]),
+			th,
+			th[colspan],
+			th:not([colspan]) {
 				display: flex;
 				align-items: center;
 				padding: 0.5em 1em;
@@ -137,7 +141,8 @@ body:not([class*="elementor"]) figure.wp-block-table,
 			}
 		}
 
-		tbody {
+		tbody,
+		tfoot {
 
 			tr {
 
@@ -197,7 +202,8 @@ body:not([class*="elementor"]) figure.wp-block-table,
 				display: none;
 			}
 
-			tbody {
+			tbody,
+			tfoot {
 
 				tr {
 					display: block;
@@ -324,6 +330,16 @@ body[class*="elementor"] {
 			border-right: 1px solid $gray-200;
 			border-bottom: 1px solid $gray-200;
 
+			> *:not(svg):not(.MobileHeader) {
+				display: block;
+				color: $black !important;
+
+				@media (max-width: ($breakpoint-tablet-landscape - 1px)) {
+
+					margin-left: 1em;
+				}
+			}
+
 			&:not(:first-of-type) {
 				border-left: 0;
 				text-align: center;
@@ -339,22 +355,30 @@ body[class*="elementor"] {
 				svg {
 
 					@include square(1.125em);
-					margin-left: 0.75ch;
 
 					&.icon-check {
 						fill: $primary;
 					}
+
 				}
 			}
+
 		}
 
 		tfoot th {
-			font-size: 1.125rem;
-			padding: 1.33em 0.88em;
 
 			small {
 				display: block;
 				font-weight: 400;
+			}
+
+			&:first-of-type {
+				text-align: left;
+			}
+
+			@media (min-width: $breakpoint-tablet-landscape) {
+				font-size: 1.125rem;
+				padding: 1.33em 0.88em;
 			}
 		}
 

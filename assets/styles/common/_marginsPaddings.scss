@@ -69,6 +69,18 @@ $marginSide: (
 	}
 }
 
+@media (max-width: ($breakpoint-tablet-landscape - 1px)) {
+	$size2xultra: 5em;
+
+	.pt-2xultra[class] {
+		padding-top: $size2xultra;
+	}
+
+	.pb-2xultra[class] {
+		padding-bottom: $size2xultra;
+	}
+}
+
 @media (min-width: $breakpoint-tablet) {
 
 	@each $size,
