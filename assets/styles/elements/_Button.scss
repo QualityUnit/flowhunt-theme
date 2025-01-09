@@ -253,12 +253,14 @@ button,
 	}
 
 	&--arrow {
+
 		span {
 			display: flex;
 			align-items: center;
-			line-height: 1.75em;
+			line-height: 1.75;
 
 			&::after {
+
 				@include square(1.25em);
 				display: block;
 				content: "";
