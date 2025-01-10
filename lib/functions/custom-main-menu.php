@@ -20,6 +20,7 @@ function menu_block( $child ) {
 						<?php the_post_thumbnail( 'box_archive_thumbnail' ); ?>
 					<h3 class="menu-item__title"><?php the_title(); ?></h3>
 					<p class="menu-item__description"><?= esc_html( wp_trim_words( get_the_excerpt(), 10, '…' ) ); ?></p>
+					<p class=learn-more"><?php _e( 'Learn more', 'flowhunt' ); ?>
 				</a>
 			</li>
 								<?php
@@ -33,14 +34,15 @@ function menu_block( $child ) {
 		<?php
 		if ( ! empty( $child['icon'] ) ) {
 			?>
-		<svg class="menu-item__icon">
-			<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#' . $child['icon'] ); ?>"></use>
-		</svg>
-				<?php } ?>
-		<div class="menu-item__data">
-			<h3 class="menu-item__title"><?= esc_html( $child['title'] ); ?></h3>
-			<p class="menu-item__description"><?= esc_html( $child['description'] ); ?></p>
-		</div>
+			<svg class="menu-item__icon">
+				<use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#' . $child['icon'] ); ?>"></use>
+			</svg>
+					<?php } ?>
+			<div class="menu-item__data">
+				<h3 class="menu-item__title"><?= esc_html( $child['title'] ); ?></h3>
+				<p class="menu-item__description"><?= esc_html( $child['description'] ); ?></p>
+				<p class=learn-more"><?php _e( 'Learn more', 'flowhunt' ); ?></p>
+			</div>
 		</a>
 	</li>
 

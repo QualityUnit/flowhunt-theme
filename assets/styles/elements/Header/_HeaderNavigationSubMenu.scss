@@ -117,6 +117,7 @@
 				position: absolute;
 				z-index: 2000;
 				top: 100%;
+				left: -10em;
 				width: min-content;
 				padding: 1.5em;
 				border-radius: 0.5rem;
@@ -129,6 +130,27 @@
 					grid-column: 1;
 				}
 
+				.menu-item {
+
+					&__icon {
+
+						@include square(1.25em);
+						flex-shrink: 0;
+						flex-grow: 0;
+						fill: $gray-400;
+					}
+
+					&__title[class] {
+						font-size: 1rem !important;
+						font-weight: 400;
+						margin-bottom: 0;
+					}
+
+					&__description {
+						font-size: 0.75rem;
+					}
+				}
+
 				li.submenu__right {
 					grid-row: 1/100;
 					grid-column: 2;
@@ -136,14 +158,25 @@
 
 				&.col-2 {
 					grid-template-columns: repeat(2, 280px);
+
+					li:not(.submenu__right) {
+
+						.learn-more {
+							display: none;
+						}
+					}
 				}
 
 				&.col-3 {
 					grid-template-columns: repeat(3, 280px);
+
+					li {
+						grid-column: initial;
+					}
 				}
 			}
 
-			&:has(.submenu)::after {
+			&:has(.submenu)::after { //On menu hover makes content of the page to have white overlay
 				position: fixed;
 				pointer-events: none;
 				content: "";
@@ -166,16 +199,14 @@
 					display: flex;
 					flex-direction: column;
 
+					@media (min-width: $breakpoint-tablet-landscape) {
 
-					&[class*="col-"] {
-						display: grid;
+						&[class*="col-"] {
+							display: grid;
+						}
 					}
 				}
 			}
 		}
 	}
-}
-
-body.hoverSubMenu header ~ * {
-	opacity: 0.5;
 }

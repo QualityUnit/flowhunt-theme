@@ -89,7 +89,7 @@ const iconsConfig = {
 gulp.task( 'iconsSprite', () => gulp
 	.src( [
 		'./vendor/qualityunit/wordpress-icons/icons/common/**/*.svg',
-		'./vendor/qualityunit/wordpress-icons/icons/urlslab/**/*.svg',
+		'./vendor/qualityunit/wordpress-icons/icons/flowhunt/**/*.svg',
 	] )
 	.pipe( svgSprites( iconsConfig ) )
 	.pipe( gulp.dest( './assets/images' ) ) );
