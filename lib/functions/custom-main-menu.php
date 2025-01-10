@@ -3,7 +3,11 @@
 function wp_modify_header( $menu_objects, $args ) {
 
 	if ( 'header_navigation' === $args->theme_location ) {
+		?>
+		<ul class="nav">
+		<?php	
 		foreach ( $menu_objects as $menu_object ) {
+			// print_r( $menu_object );
 			$menu_id    = ( 'page' === $menu_object->object ) ? $menu_object->object_id : $menu_object->ID;
 			$title      = $menu_object->title;
 			$url        = $menu_object->url;
@@ -28,13 +32,24 @@ function wp_modify_header( $menu_objects, $args ) {
 						</a>
 					</li>
 					<?php
-					// $latest_post = get_the_ID();
+					$latest_post = get_the_ID();
 				endwhile;
 				wp_reset_postdata();
-			}
-		}   
-	}
+			} else {
+				?>
 
+					<li>
+						<a href="<?= esc_url( $url ); ?>" title="<?= esc_attr( $title ); ?>"><?= esc_html( $title ); ?></a>
+					</li>
+
+					<?php 
+			}
+		}
+		?>
+		</ul>
+		<?php
+	}
+	return $menu_objects;
 }
 add_filter( 'wp_nav_menu_objects', 'wp_modify_header', 10, 2 );
 

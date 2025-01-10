@@ -14,15 +14,27 @@
 
 			<nav class="Header__navigation">
 				<ul class="nav">
+					<?php
+					print_r( wp_get_nav_menu_object( '4625' ) );
+					// 	if ( has_nav_menu( 'header_navigation' ) ) :
+					// 		wp_nav_menu(
+					// 			array(
+					// 				'theme_location' => 'header_navigation',
+					// 				'menu_class'     => 'nav',
+					// 			)
+					// 		);
+					// endif;
+					?>
 				<?php
 				$menu_items = wp_get_menu_array( 'header_navigation' );
 				foreach ( $menu_items as $item ) :
 					?>
-					<li class="menu-item">
+					<li class="menu-item" data-id="<?= esc_attr( $item['ID'] ); ?>">
 						<a href="<?= esc_url( $item['url'] ); ?>" title="<?= esc_attr( $item['title'] ); ?>"><?= esc_html( $item['title'] ); ?></a>
 					  <?php if ( ! empty( $item['children'] ) ) : ?>
 					  <ul class=" <?= esc_attr( $item['classes'] ); ?>">
 							<?php
+								print_r( wp_get_nav_menu_items( $item['ID'] ) );
 							foreach ( $item['children'] as $child ) : 
 								if ( str_contains( $child['classes'], 'topPost' ) ) {
 									$sticky_post_args = array(
@@ -49,7 +61,7 @@
 								} else {
 									?>
 
-									<li>
+									<li data-id="<?= esc_attr( $child['ID'] ); ?>">
 										<a href="<?= esc_url( $child['url'] ); ?>" title="<?= esc_attr( $child['title'] ); ?>"><?= esc_html( $child['title'] ); ?></a>
 									</li>
 
