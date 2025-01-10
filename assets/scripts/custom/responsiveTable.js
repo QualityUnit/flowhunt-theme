@@ -1,6 +1,8 @@
 const tables = document.querySelectorAll( 'table' );
 const pricingTableHeaderTitle = document.querySelector( '.ComparePlans__sectiontitle' );
 const pricingTableHeader = document.querySelector( '.ComparePlans--header' );
+const hostname = window.location.hostname;
+const isLocal = hostname?.toString().indexOf( 'local' ) > 0 ? true : false;
 
 // Setting tables header class when sticky to hide icons
 if ( pricingTableHeader ) {
@@ -25,7 +27,8 @@ if ( tables.length ) {
 
 	tables.forEach( ( table ) => {
 		const articleTable = table.closest( '.Content' );
-		const tr = table.querySelectorAll( 'tr' );
+		const trHead = table.querySelectorAll( 'thead tr' );
+		const trMain = table.querySelectorAll( 'tbody tr, tfoot tr' );
 		const colspanRows = table.querySelectorAll( 'tbody tr td[colspan]:first-child' );
 
 		if ( colspanRows?.length ) {
@@ -33,13 +36,13 @@ if ( tables.length ) {
 		}
 
 		//Sets check or crossover for Y or N vals
-		for ( let i = 0; i <= tr.length; i++ ) {
-			let headers = tr[ 0 ].querySelectorAll( 'th' );
+		for ( let i = 0; i <= trMain.length; i++ ) {
+			let headers = trHead[ 0 ].querySelectorAll( 'th' );
 			if ( ! headers?.length ) {
-				headers = tr[ 0 ].querySelectorAll( 'td' );
+				headers = trMain[ 0 ].querySelectorAll( 'td' ); // if no thead, use first row of tbody as a header values
 			}
-			const vals = tr[ i ] && tr[ i ].querySelectorAll( 'td' );
-			const allCells = tr[ i ] && tr[ i ].querySelectorAll( 'td, th' );
+			const vals = trMain[ i ] && trMain[ i ].querySelectorAll( 'td, th' );
+			const allCells = trMain[ i ] && trMain[ i ].querySelectorAll( 'td, th' );
 
 			if ( allCells?.length ) {
 				allCells.forEach( ( cell ) => {
@@ -47,7 +50,7 @@ if ( tables.length ) {
 
 					if ( hasTooltip.test( text ) ) {
 						const infoIcon = `<svg class="icon icon-info-circle">
-							<use xlink:href="/app/themes/flowhunt/assets/images/icons.svg#info-circle"></use>
+							<use xlink:href="/app/themes/flowhunt${ isLocal ? '-theme' : '' }/assets/images/icons.svg#info-circle"></use>
 							</svg>`;
 						cell.classList.add( 'hasTooltip' );
 						cell.innerHTML = text.replaceAll( hasTooltip, `$1<div class="ComparePlans__tooltip">${ infoIcon }<span class="ComparePlans__tooltip__text">$2</span></div>` );
@@ -56,28 +59,31 @@ if ( tables.length ) {
 			}
 
 			if ( vals?.length > 1 ) {
+				const yesRegex = new RegExp( '^(\\s*)(Y|n)(\\s*)\n?' );
+				const noRegex = new RegExp( '^(\\s*)(N|n)(\\s*)\n?' );
 				vals.forEach( ( val, index ) => {
-					if ( val.textContent.toLowerCase() === 'y' || val.textContent.toLowerCase() === 'yes' || val.outerText.toLowerCase() === 'y' || val.outerText.toLowerCase() === 'yes' ) {
-						val.textContent = null;
+					if ( yesRegex.test( val.firstChild.textContent ) ) {
+						val.firstChild.textContent = '';
 						val.classList.add( 'icn-after-check' );
 						val.insertAdjacentHTML( 'afterbegin', `
-							${ articleTable ? "<span class='iconWrapper'>" : null }
+							${ articleTable ? "<span class='iconWrapper'>" : '' }
 							<svg class="icon icon-check">
-								<use xlink:href="/app/themes/flowhunt/assets/images/icons.svg#check"></use>
+								<use xlink:href="/app/themes/flowhunt${ isLocal ? '-theme' : '' }/assets/images/icons.svg#check-narrow"></use>
 							</svg>
-							${ articleTable ? '</span>' : null }
-						`
+							${ articleTable ? '</span>' : '' }
+							`
 						);
+						val.childNodes.forEach( ( node, nodeIndex ) => nodeIndex !== 0 ? node.textContent : '' );
 					}
-					if ( val.textContent.toLowerCase() === 'n' || val.textContent.toLowerCase() === 'no' || val.outerText.toLowerCase() === 'n' || val.outerText.toLowerCase() === 'no' ) {
-						val.textContent = null;
+					if ( noRegex.test( val.firstChild.textContent ) ) {
+						val.firstChild.textContent = '';
 						val.classList.add( 'icn-after-close' );
 						val.insertAdjacentHTML( 'afterbegin', `
-							${ articleTable ? "<span class='iconWrapper'>" : null }
+							${ articleTable ? "<span class='iconWrapper'>" : '' }
 							<svg class="icon icon-close">
-								<use xlink:href="/app/themes/flowhunt/assets/images/icons.svg#close"></use>
+								<use xlink:href="/app/themes/flowhunt${ isLocal ? '-theme' : '' }/assets/images/icons.svg#close"></use>
 							</svg>
-							${ articleTable ? '</span>' : null }
+							${ articleTable ? '</span>' : '' }
 							`
 						);
 					}

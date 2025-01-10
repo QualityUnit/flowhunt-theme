@@ -113,19 +113,18 @@ if ( blogItems && 'IntersectionObserver' in window ) {
 				page += 1; // Iterating through pages to fetch from URL
 
 				// Temporarily showing Loader
-				loader.classList.remove( 'hidden' );
+				loader.classList.remove( 'invisible' );
 
 				// Fetching the blog posts from custom REST API endpoint
 				getPosts(
 					// If in subcategory of blog, ie. /blog/support, fetch categoriesUrl instead
-					`${
-						pathFragments.length === 2
-							? categoriesUrl + pathFragments[ 1 ]
-							: postsUrl
+					`${ pathFragments.length === 2
+						? categoriesUrl + pathFragments[ 1 ]
+						: postsUrl
 					}&page=${ page }`
 				).then( ( data ) => {
 					if ( data ) {
-						loader.classList.add( 'hidden' );
+						loader.classList.add( 'invisible' );
 
 						data.map( ( keys ) => {
 							blogItems.insertAdjacentHTML(
@@ -158,13 +157,10 @@ if ( blogItems && 'IntersectionObserver' in window ) {
 					}
 				} );
 			}
-		},
-		{
-			rootMargin: `100% 0px 0px 0px`, // Moving top of the observer window to the bottom of the screen
 		}
 	);
 
-	blogPostsObserver.observe( document.querySelector( '.Footer__newsletter' ) ); // Binding observer on the Footer newsletter element
+	blogPostsObserver.observe( document.querySelector( '.Blog__items__loading' ) ); // Binding observer on the Footer newsletter element
 }
 
 const customLazyLoad = () => {

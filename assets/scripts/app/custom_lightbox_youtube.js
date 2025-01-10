@@ -49,7 +49,7 @@ function loadYouTubeModal( yt, target ) {
 		width: '100%',
 		height: '100%',
 		frameborder: '0',
-		allow: 'accelerometer; mute; autoplay; gyroscope; fullscreen',
+		allow: 'accelerometer; mute; autoplay; controls; gyroscope; fullscreen',
 	} );
 
 	target.insertAdjacentElement( 'beforeend', iframe );

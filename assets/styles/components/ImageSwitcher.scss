@@ -27,18 +27,22 @@
 		@media (min-width: $breakpoint-tablet-landscape) {
 
 			&:has(.ImageSwitcher__activator) {
-				width: 65% !important;
-				padding-right: 4.5em !important;
+				width: clamp(695px, 70%, 695px) !important;
+				margin-right: auto;
+				padding-right: 0 !important;
+				// padding-right: 3.5em !important;
 
 				.h1 {
-					max-width: 60%;
+					max-width: 80%;
 				}
 			}
 
 			&:has([data-targetid]) {
-				width: 55% !important;
+				width: 48% !important;
+				margin-right: -4em;
 			}
 		}
+
 	}
 
 	[data-targetid] {

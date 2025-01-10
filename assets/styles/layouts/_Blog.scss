@@ -144,6 +144,23 @@ no-descending-specificity, value-keyword-case */
 		}
 	}
 
+	&__items {
+
+		&__loading {
+			text-align: center;
+			font-size: 1.5rem;
+			line-height: 1.5;
+			font-weight: $font-weight-semi;
+			margin-bottom: 1em;
+
+			span {
+				display: inline-block;
+				font-size: 1.5em;
+				margin-left: 0.05em;
+			}
+		}
+	}
+
 	.Pagination {
 		margin: 2em auto;
 

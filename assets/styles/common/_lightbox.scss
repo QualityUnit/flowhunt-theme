@@ -82,7 +82,11 @@ body.lb-disable-scrolling {
 			z-index: 1;
 
 			@media (min-width: $breakpoint-desktop) {
-				width: 85%;
+				width: 80%;
+			}
+
+			@media (min-width: $breakpoint-desktop-hd) {
+				padding-bottom: 85vh;
 			}
 		}
 

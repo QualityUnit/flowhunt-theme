@@ -126,7 +126,8 @@
 	}
 
 	&:has(a),
-	&[data-target] {
+	&[data-target],
+	&[data-ytid] {
 		cursor: pointer;
 
 		&::after {
@@ -144,7 +145,8 @@
 	&--hover30 {
 
 		&:has(a)::after,
-		&[data-target]::after {
+		&[data-target]::after,
+		&[data-ytid]::after {
 			height: 30%;
 		}
 	}
