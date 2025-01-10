@@ -2,7 +2,7 @@ const tables = document.querySelectorAll( 'table' );
 const pricingTableHeaderTitle = document.querySelector( '.ComparePlans__sectiontitle' );
 const pricingTableHeader = document.querySelector( '.ComparePlans--header' );
 const hostname = window.location.hostname;
-const isLocal = hostname?.toString().indexOf( 'local' );
+const isLocal = hostname?.toString().indexOf( 'local' ) > 0 ? true : false;
 
 // Setting tables header class when sticky to hide icons
 if ( pricingTableHeader ) {
