@@ -14,67 +14,10 @@
 
 			<nav class="Header__navigation">
 				<ul class="nav">
-					<?php
-					print_r( wp_get_nav_menu_object( '4625' ) );
-					// 	if ( has_nav_menu( 'header_navigation' ) ) :
-					// 		wp_nav_menu(
-					// 			array(
-					// 				'theme_location' => 'header_navigation',
-					// 				'menu_class'     => 'nav',
-					// 			)
-					// 		);
-					// endif;
-					?>
 				<?php
-				$menu_items = wp_get_menu_array( 'header_navigation' );
-				foreach ( $menu_items as $item ) :
-					?>
-					<li class="menu-item" data-id="<?= esc_attr( $item['ID'] ); ?>">
-						<a href="<?= esc_url( $item['url'] ); ?>" title="<?= esc_attr( $item['title'] ); ?>"><?= esc_html( $item['title'] ); ?></a>
-					  <?php if ( ! empty( $item['children'] ) ) : ?>
-					  <ul class=" <?= esc_attr( $item['classes'] ); ?>">
-							<?php
-								print_r( wp_get_nav_menu_items( $item['ID'] ) );
-							foreach ( $item['children'] as $child ) : 
-								if ( str_contains( $child['classes'], 'topPost' ) ) {
-									$sticky_post_args = array(
-										'posts_per_page' => 1,
-										'post__in'       => get_option( 'sticky_posts' ),
-										'orderby'        => 'date',
-									);
-									$the_query        = new WP_Query( $sticky_post_args );
-
-									while ( $the_query->have_posts() ) :
-										$the_query->the_post();
-										?>
-										<li class="submenu__right">
-											Top blog post
-											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
-															<?php the_post_thumbnail( 'box_archive_thumbnail' ); ?>
-												<h3><?php the_title(); ?></h3>
-												<p><?= esc_html( wp_trim_words( get_the_excerpt(), 10, '…' ) ); ?></p>
-											</a>
-										</li>
-															<?php
-									endwhile;
-									wp_reset_postdata();
-								} else {
-									?>
-
-									<li data-id="<?= esc_attr( $child['ID'] ); ?>">
-										<a href="<?= esc_url( $child['url'] ); ?>" title="<?= esc_attr( $child['title'] ); ?>"><?= esc_html( $child['title'] ); ?></a>
-									</li>
-
-									<?php 
-								}
-					endforeach;
-							?>
-					  </ul>
-					  <?php endif; ?>
-					</li>
-				  <?php endforeach; ?>
-						</ul>
-
+				 wp_get_menu_array( 'header_navigation' );
+				?>
+				</ul>
 				<div class="Header__buttons">
 					<ul class="Header__buttons__login">
 						<li class="Header__buttons__login__item">
