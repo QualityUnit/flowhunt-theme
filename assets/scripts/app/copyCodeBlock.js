@@ -1,6 +1,6 @@
 // Used to copy code blocks from flow templates etc
 
-const codeblocks = document.querySelectorAll( '.Content .CodeBlock, .Content div[style*="background-color"]' );
+const codeblocks = document.querySelectorAll( '.Content code, .Content .CodeBlock, .Content div[style*="background-color"]' );
 
 codeblocks.forEach( ( codeBlock ) => {
 	const codeText = codeBlock?.outerText;

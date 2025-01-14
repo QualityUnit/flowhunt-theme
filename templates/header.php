@@ -13,16 +13,11 @@
 			</div>
 
 			<nav class="Header__navigation">
+				<ul class="nav">
 				<?php
-				if ( has_nav_menu( 'header_navigation' ) ) :
-					wp_nav_menu(
-						array(
-							'theme_location' => 'header_navigation',
-							'menu_class'     => 'nav',
-						)
-					);
-				endif;
+				 wp_get_menu_array( 'header_navigation' );
 				?>
+				</ul>
 				<div class="Header__buttons">
 					<ul class="Header__buttons__login">
 						<li class="Header__buttons__login__item">
