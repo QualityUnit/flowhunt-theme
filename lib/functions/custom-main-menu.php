@@ -1,5 +1,19 @@
 <?php
 
+/* This creates custom main menu to show Top blog post and menu with custom image for ie. Tour video.
+
+	Each menu item that has submenu (ie. Solutions > menu) has to have .submenu class and either col-2 or col-3 class
+	to show items side by side.
+
+	To have Top Blog Post showing up, additional class for submenu subitem has to be added – .topBlog
+	Same for Custom Image (like Products > Tour) – class customImage to subitem as well as name of the image from /assets/images
+	ie. menu_tour-card_png
+
+	Please notice that filename+extension has to be in class in form of filename_(subscore)[ext], ie ending _jpg or _png
+
+	Classes, Title attribute etc. can be showed up in WP Menu via Screen Options menu at the top of the WP dashboard.
+*/
+
 function menu_block( $child ) {
 
 	if ( str_contains( $child['classes'], 'topPost' ) ) {
