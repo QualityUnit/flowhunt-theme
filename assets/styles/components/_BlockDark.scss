@@ -43,6 +43,13 @@
 		box-shadow: none;
 	}
 
+	+ .BlockDark[class]:not(.BlockDark__white) {
+
+		@media (max-width: $breakpoint-tablet-landscape) {
+			margin: 1.5em 0;
+		}
+	}
+
 	&--tag {
 		background: linear-gradient(to right, rgba($dark-text, 10%), rgba($borders-color, 10%));
 		border: 1px solid $borders-color;
