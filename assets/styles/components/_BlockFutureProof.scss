@@ -1,0 +1,248 @@
+/* stylelint-disable selector-class-pattern */
+
+@use "../common/mixins" as *;
+@use "../common/variables" as *;
+
+.label-text-wrapper {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.375em;
+
+	li {
+		padding: 0.25em 0.5em;
+		border-radius: $border-radius-6;
+		border: 1px solid $accent-electric-blue;
+		background: $white;
+		color: $gray-900;
+		font-family: $font-primary;
+		font-size:$font-size-small;
+		font-weight: $font-weight-normal;
+		line-height: 1.125em;
+	}
+}
+
+.ai-skill-wrapper {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	gap: 0;
+
+	.ai-skill-item {
+		margin-top: -0.375em;
+		max-width: 28.3125em;
+		position: relative;
+		padding: 1.875em 1.25em 1.125em 4em;
+		border-radius: 0.5em;
+		border: 1px solid $gray-200;
+		background: $white;
+		box-shadow: 0 0.9375em 0.625em 0 rgba(9, 0, 44, 0.12);
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 1.25em;
+			top: 1.875em;
+			@include square(2em);
+			background-size: contain;
+		}
+
+		&--cost {
+			&::before {
+				background: url(../../images/icon-cost.svg) center top no-repeat;
+			}
+		}
+
+		&--productivity {
+			&::before {
+				background: url(../../images/icon-productivity.svg) center top no-repeat;
+			}
+		}
+
+		&--brain {
+			&::before {
+				background: url(../../images/icon-brain.svg) center top no-repeat;
+			}
+		}
+
+		.h4 {
+
+			p {
+				font-size: $font-size-bigger;
+				color: $gray-900;
+			}
+		}
+
+		.small {
+
+			p {
+				margin-bottom: 0 !important;
+				font-size: $font-size-smaller;
+				color: $gray-500;
+			}
+		}
+	}
+
+}
+
+.AiTrainingLogo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row !important;
+	gap: 9.375em;
+	height: 3.75em;
+	margin-bottom: 1.25em;
+}
+
+.AITrainingCTA {
+	padding: 0;
+	border-radius: $border-radius-10;
+	border: 1px solid $gray-200;
+	background: $white;
+	gap: 0;
+
+	.AITraningPrices {
+
+		&--items {
+			padding: 0;
+
+			&--format {
+				margin-bottom: 1.25em;
+				padding: 0.625em 1.25em;
+				border-radius: $border-radius;
+				background: $gray-100;
+
+				.title, span {
+					color: $gray-900;
+					font-size: $font-size-smaller;
+					font-style: normal;
+					font-weight: $font-weight-normal;
+					line-height: 1.375;
+				}
+
+				.item {
+					display: flex;
+					gap: 1.25em;
+
+					& > div {
+						width: 50%;
+					}
+
+					.time {
+						color: $gray-900;
+						font-size: $font-size-default;
+						font-style: normal;
+						font-weight: $font-weight-bold;
+						line-height: 1.5;
+					}
+
+					span {
+						display: block;
+					}
+				}
+			}
+
+			&--price {
+				display: flex;
+				gap: 0.625em;
+
+				& > div {
+					width: 50%;
+					padding: 0.625em 1.25em;
+					border-radius: 0.5em;
+					background: $gray-100;
+
+					span {
+						display: block;
+
+						&:first-child {
+							margin-bottom: 0.375em;
+						}
+
+						&.cost {
+							color: $gray-900;
+							font-size: 1.625em;
+							font-style: normal;
+							font-weight: $font-weight-bold;
+							line-height: 2.125em;
+						}
+					}
+				}
+			}
+		}
+
+		&--delimiter {
+
+			p {
+				color: $gray-500;
+				font-size: $font-size-smaller;
+				font-style: normal;
+				font-weight: $font-weight-bold;
+				line-height: 1.375;
+			}
+		}
+	}
+
+	.AITrainingLabel {
+		ul {
+			margin: 0;
+			display: flex;
+			gap: 6px;
+
+			li {
+				padding: 0.125em 0.5em;
+				color: $white;
+				border-radius: $border-radius-6;
+
+				&.green-500 {
+					background: $green-500;
+				}
+
+				&.yellow-400 {
+					background: $yellow-400;
+				}
+			}
+		}
+	}
+
+	.Button {
+		width: 100%;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+}
+
+.AITrainingCertificate {
+	display: flex;
+	gap: 1.25em;
+	justify-content: flex-start;
+	height: 175px;
+	padding: 1.25em;
+	border-radius: $border-radius-10;
+	background: $black-level2;
+
+	img {
+		width: 171px;
+		height: auto;
+	}
+
+	&--title {
+		color: $white;
+		font-size: 2.25em;
+		font-style: normal;
+		font-weight: $font-weight-normal;
+
+		span {
+			color: $white;
+			font-weight: $font-weight-bold;
+		}
+	}
+}
