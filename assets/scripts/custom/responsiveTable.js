@@ -37,12 +37,12 @@ if ( tables.length ) {
 
 		//Sets check or crossover for Y or N vals
 		for ( let i = 0; i <= trMain.length; i++ ) {
-			let headers = trHead[ 0 ].querySelectorAll( 'th' );
+			let headers = trHead[ 0 ]?.querySelectorAll( 'th' );
 			if ( ! headers?.length ) {
-				headers = trMain[ 0 ].querySelectorAll( 'td' ); // if no thead, use first row of tbody as a header values
+				headers = trMain[ 0 ]?.querySelectorAll( 'td' ); // if no thead, use first row of tbody as a header values
 			}
-			const vals = trMain[ i ] && trMain[ i ].querySelectorAll( 'td, th' );
-			const allCells = trMain[ i ] && trMain[ i ].querySelectorAll( 'td, th' );
+			const vals = trMain[ i ] && trMain[ i ]?.querySelectorAll( 'td, th' );
+			const allCells = trMain[ i ] && trMain[ i ]?.querySelectorAll( 'td, th' );
 
 			if ( allCells?.length ) {
 				allCells.forEach( ( cell ) => {
@@ -59,7 +59,7 @@ if ( tables.length ) {
 			}
 
 			if ( vals?.length > 1 ) {
-				const yesRegex = new RegExp( '^(\\s*)(Y|n)(\\s*)\n?' );
+				const yesRegex = new RegExp( '^(\\s*)(Y|y)(\\s*)\n?' );
 				const noRegex = new RegExp( '^(\\s*)(N|n)(\\s*)\n?' );
 				vals.forEach( ( val, index ) => {
 					if ( yesRegex.test( val.firstChild.textContent ) ) {
