@@ -106,7 +106,8 @@
 				position: relative;
 				transition: color 0.3s;
 
-				&:hover {
+				&:hover,
+				&.active {
 
 					> a {
 
@@ -133,6 +134,7 @@
 						font-weight: 900;
 						display: inline-block;
 						margin-left: 0.625em;
+						color: currentcolor;
 					}
 				}
 
