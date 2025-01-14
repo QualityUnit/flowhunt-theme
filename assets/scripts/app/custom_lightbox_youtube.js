@@ -35,11 +35,15 @@ if ( blockVideos.length ) {
 }
 
 const modalVideo = document.querySelectorAll(
-	'[data-ytid], [data-lightbox="youtube"], [class*="Block--video"] [data-ytid]'
+	'[data-ytid], [data-lightbox="youtube"], [class*="Block--video"] [data-ytid], [href*="data-ytid"]'
 );
 
 function loadYouTubeModal( yt, target ) {
-	const videoID = yt.dataset.ytid;
+	const videoInHref = yt.href;
+	let videoID = yt.dataset?.ytid;
+	if ( videoInHref ) {
+		videoID = videoInHref.replace( /.+#data-ytid=(\"|\')?(.+?)(\"|\')?\s?/i, '$2' );
+	}
 	const iframe = document.createElement( 'iframe' );
 
 	Object.assign( iframe, {

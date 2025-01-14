@@ -18,45 +18,94 @@
 
 			.submenu {
 				display: none;
-				position: absolute;
-				z-index: 2000;
-				top: 100%;
-				left: -10em;
-				width: min-content;
-				padding: 1.5em;
 				background-color: $white;
 				overflow: hidden;
-				border: 1px solid $gray-200;
-				border-radius: 0.5rem;
-				box-shadow:
-					0 4px 6px -1px rgba(0, 0, 0, 0.1),
-					0 2px 4px -2px rgba(0, 0, 0, 0.05);
+
+				&::before,
+				.section_title {
+					content: attr(data-title);
+					display: block;
+					font-size: 0.875rem;
+					color: $gray-500;
+					grid-column: 1;
+				}
+
+				&::before {
+					display: none;
+				}
+
+				@media (min-width: $breakpoint-tablet-landscape) {
+					position: absolute;
+					z-index: 2000;
+					top: 100%;
+					left: -10em;
+					width: min-content;
+					padding: 1.5em;
+					border: 1px solid $gray-200;
+					border-radius: 0.5rem;
+					box-shadow:
+						0 4px 6px -1px rgba(0, 0, 0, 0.1),
+						0 2px 4px -2px rgba(0, 0, 0, 0.05);
+
+					&::before {
+						display: none;
+					}
+				}
 
 				li {
 					grid-column: 1;
 				}
 
+
 				&-item {
 					background-color: rgba($gray-50, 0);
 					transition: all 0.3s;
+					padding: 1em 1.5em;
+					border-radius: $border-radius;
+
+
+					&__image {
+						border-radius: $border-radius;
+						overflow: hidden;
+						max-height: 8.5em;
+					}
 
 					&__icon {
 
-						@include square(1.25em);
+						@include square(1.125em);
 						flex-shrink: 0;
 						flex-grow: 0;
 						fill: $gray-400;
 						transition: fill 0.3s;
+						margin-right: 1em;
 					}
 
 					&__title[class] {
 						font-size: 1rem !important;
 						font-weight: 400;
 						margin-bottom: 0;
+						color: $gray-900;
 					}
 
-					&__description {
+					&__description,
+					&__learn-more {
 						font-size: 0.75rem;
+						color: $gray-500;
+						margin-bottom: 0;
+						line-height: 1.33;
+					}
+
+					&__learn-more {
+						display: flex;
+						align-items: center;
+						margin-top: 0.5em;
+						transition: all 0.3s;
+
+						.icon {
+
+							@include square(0.75em);
+							margin-left: 0.5em;
+						}
 					}
 
 					&:hover {
@@ -64,39 +113,189 @@
 
 						.submenu-item {
 
-							&__icon {
+							&__icon,
+							&__learn-more {
 								fill: $primary;
+								color: $primary;
 							}
 						}
 					}
 				}
 
 				li.submenu__right {
+					position: relative;
 					grid-row: 1/100;
 					grid-column: 2;
-					margin: -1.5em;
-					margin-left: 1.5em;
-					padding: 1.5em;
+					padding-left: 1.5em;
 					background-color: $gray-50;
+
+					.section_title {
+						margin-bottom: 0.75em;
+					}
+
+					&.topPost {
+						background-color: transparent;
+
+						.submenu-item {
+
+							&__data {
+								display: flex;
+								flex-direction: column;
+								gap: 0.75em;
+								margin-top: 1em;
+								padding: 0 0.5em;
+
+								* {
+									transition: all 0.3s;
+								}
+							}
+						}
+
+						&:hover {
+
+							.submenu-item {
+
+								&__title {
+									color: $primary;
+								}
+
+								&__learn-more {
+									color: $black;
+								}
+							}
+						}
+					}
+
+					&.customImage {
+
+						a {
+							display: block;
+							padding: 0.5em;
+							border: 1px solid rgba($gray-200, 0);
+							border-radius: $border-radius-6;
+							background-color: rgba($gray-100, 0);
+							transition: all 0.3s;
+
+							.submenu-item {
+
+								&__title {
+									display: flex;
+									align-items: center;
+									margin-top: 1em;
+
+									.icon {
+
+										@include square(0.75em);
+										opacity: 0;
+										transform: translateX(-100%);
+										transition: all 0.3s;
+
+										&-wrapper {
+
+											@include square(1em);
+											position: relative;
+											display: flex;
+											align-items: center;
+											justify-content: center;
+											overflow: hidden;
+											background-color: rgba($gray-100, 0);
+											transition: all 0.3s;
+											top: 0.05em;
+										}
+									}
+								}
+							}
+
+							&:hover {
+								border-color: $gray-200;
+								background-color: rgba($gray-100, 1);
+
+								.icon {
+									opacity: 1;
+									transform: translateX(0);
+
+									&-wrapper {
+										background-color: rgba($gray-100, 1);
+									}
+								}
+							}
+						}
+
+					}
+
+					.submenu-item {
+
+						&__title {
+							font-weight: 700;
+						}
+
+						&__learn-more {
+							font-size: 0.875rem;
+							margin-top: 0;
+						}
+					}
+
+					&:not(.topPost)::before {
+
+						@include posCustom(-1.5em);
+						position: absolute;
+						background-color: $gray-50;
+						content: "";
+						left: 0;
+						z-index: -1;
+					}
 				}
 
-				&.col-2 {
-					grid-template-columns: repeat(2, 280px);
+				&.square-icons {
 
-					li:not(.submenu__right) {
+					.submenu-item__icon {
 
-						.learn-more {
-							display: none;
+						@include square(2.25em);
+						border-radius: $border-radius-6;
+						padding: 0.5em;
+						border: 1px solid $gray-200;
+						background-color: $gray-100;
+					}
+
+					li:hover {
+
+						.submenu-item__icon {
+							border-color: $primary;
+							background-color: $primary-light;
 						}
 					}
 				}
 
+				&.col-2 {
+					grid-template-columns: repeat(2, 50%);
+
+					li:not(.submenu__right) {
+						margin-right: 1.5em;
+
+						.submenu-item__learn-more {
+							display: none;
+						}
+					}
+
+					@media (min-width: $breakpoint-tablet-landscape) {
+						grid-template-columns: repeat(2, 280px);
+					}
+				}
+
 				&.col-3 {
-					grid-template-columns: repeat(3, 280px);
-					gap: 1em;
+					grid-template-columns: repeat(2, 50%);
+					gap: 0.5em;
 
 					li {
 						grid-column: initial;
+					}
+
+					li:first-child {
+						grid-column: 1;
+					}
+
+					@media (min-width: $breakpoint-tablet-landscape) {
+						grid-template-columns: repeat(3, 280px);
 					}
 				}
 			}
@@ -114,21 +313,25 @@
 				transition: opacity 0.35s;
 			}
 
-			&:hover {
-
-				&:has(.submenu)::after {
-					opacity: 1;
-				}
+			&:hover,
+			&.active {
 
 				.submenu {
 					display: flex;
 					flex-direction: column;
+				}
 
-					@media (min-width: $breakpoint-tablet-landscape) {
+				@media (min-width: $breakpoint-tablet) {
 
-						&[class*="col-"] {
-							display: grid;
-						}
+					.submenu[class*="col-"] {
+						display: grid;
+					}
+				}
+
+				@media (min-width: $breakpoint-tablet-landscape) {
+
+					&:has(.submenu)::after {
+						opacity: 1;
 					}
 				}
 			}

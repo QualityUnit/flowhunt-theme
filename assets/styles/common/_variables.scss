@@ -185,12 +185,12 @@ $light-background: $gray-50; // light backgrounds
 $lightest-background: $gray-50; // lightest background
 
 
-$primary: #1c64f2;
-$primary-dark: #1a56db;
-$primary-light: #e1effe;
+$primary: #0497dc;
+$primary-dark: #465ce0;
+$primary-light: #ebf5ff;
 
-$accent-electric-blue: #0497dc;
-$accent-electric-blue-dark: #465ce0;
+$accent-electric-blue: $primary;
+$accent-electric-blue-dark: $primary-dark;
 $accent-dark: #1a56db;
 $accent-indigo: #984ad7;
 

@@ -188,6 +188,11 @@ $borderWidth: (
 		justify-content: flex-end;
 	}
 
+	&-direction-column[class],
+	&-direction-column[class] > .e-con-inner {
+		flex-direction: column;
+	}
+
 	&-align {
 
 		&-center[class],
@@ -223,6 +228,16 @@ $borderWidth: (
 
 		&-tablet-landscape[class] {
 			display: flex;
+		}
+
+		&-tablet-direction-row[class],
+		&-tablet-direction-row[class] > .e-con-inner {
+			flex-direction: row;
+		}
+
+		&-tablet-direction-column[class],
+		&-tablet-direction-column[class] > .e-con-inner {
+			flex-direction: column;
 		}
 	}
 }
