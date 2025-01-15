@@ -19,6 +19,15 @@ $metabox = array(
 			'description' => '',
 			'type'        => 'text',
 		),
+		array(
+			'label'        => 'Tag',
+			'id'           => 'tag',
+			'type'         => 'multiselect',
+			'args'      => array(
+				'default'      => 'Default',
+				'training'  => 'AI Training',
+			),
+		),
 	),
 );
 

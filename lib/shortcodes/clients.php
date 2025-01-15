@@ -4,6 +4,7 @@ function clients( $atts ) {
 	$atts = shortcode_atts(
 		array(
 			'posts' => '5',
+			'tag' => 'default',
 		),
 		$atts,
 		'clients'
@@ -14,12 +15,22 @@ function clients( $atts ) {
 
 	<div class="Clients">
 	<?php
-	$query_clients_posts = new WP_Query(
-		array(
-			'post_type'      => 'clients',
-			'posts_per_page' => $atts['posts'],
-		)
+	$args = array(
+		'post_type'      => 'clients',
+		'posts_per_page' => $atts['posts'],
 	);
+
+	if ( isset( $atts['tag'] ) ) {
+		$args['meta_query'] = array(
+			array(
+				'key'     => 'clients_tag',
+				'value'   => $atts['tag'],
+				'compare' => 'LIKE',
+			),
+		);
+	}
+
+	$query_clients_posts = new WP_Query( $args );
 
 	if ( $query_clients_posts->have_posts() ) :
 		while ( $query_clients_posts->have_posts() ) :

@@ -4,6 +4,7 @@ function success_stories( $atts ) {
 	$atts = shortcode_atts(
 		array(
 			'posts' => '5',
+			'tag' => 'default',
 		),
 		$atts,
 		'success-stories'
@@ -14,12 +15,22 @@ function success_stories( $atts ) {
 
 	<ul class="SuccessStoriesGrid <?= ( is_page() || is_page_template( 'front-page.php' ) || is_page_template( 'page.php' ) ) ? 'SuccessStoriesGrid__elementor' : null; ?>">
 	<?php
-	$query_clients_posts = new WP_Query(
-		array(
-			'post_type'      => 'success-stories',
-			'posts_per_page' => $atts['posts'],
-		)
+	$args = array(
+		'post_type'      => 'success-stories',
+		'posts_per_page' => $atts['posts'],
 	);
+
+	if ( isset( $atts['tag'] ) ) {
+		$args['meta_query'] = array(
+			array(
+				'key'     => 'success-stories_tag',
+				'value'   => $atts['tag'],
+				'compare' => 'LIKE',
+			),
+		);
+	}
+
+	$query_clients_posts = new WP_Query( $args );
 
 	if ( $query_clients_posts->have_posts() ) :
 		while ( $query_clients_posts->have_posts() ) :
