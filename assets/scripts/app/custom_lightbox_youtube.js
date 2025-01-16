@@ -42,10 +42,21 @@ function loadYouTubeModal( yt, target ) {
 	const videoID = yt.dataset.ytid;
 	const iframe = document.createElement( 'iframe' );
 
+	let startTime = 0;
+	let endTime = '';
+
+	if ( yt.hasAttribute( 'data-ytstart' ) ) {
+		startTime = yt.dataset.ytstart || 0;
+	}
+	if ( yt.hasAttribute( 'data-ytend' ) ) {
+		endTime = yt.dataset.ytend || '';
+	}
+
 	Object.assign( iframe, {
 		className: 'youtube__inmodal',
 		title: yt.getAttribute( 'title' ),
-		src: `https://www.youtube.com/embed/${ videoID }?feature=oembed&autoplay=1&playsinline=1&rel=0`,
+		src: `https://www.youtube.com/embed/${ videoID }?feature=oembed&autoplay=1&playsinline=1&rel=0&start=${ startTime }${ endTime ? `&end=${ endTime }` : ''
+		}`,
 		width: '100%',
 		height: '100%',
 		frameborder: '0',

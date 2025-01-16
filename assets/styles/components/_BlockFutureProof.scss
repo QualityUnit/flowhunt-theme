@@ -24,6 +24,7 @@
 
 .ai-skill-wrapper {
 	display: flex !important;
+	height: auto !important;
 	align-items: center;
 	justify-content: center;
 	gap: 0;
@@ -37,6 +38,10 @@
 		border: 1px solid $gray-200;
 		background: $white;
 		box-shadow: 0 0.9375em 0.625em 0 rgba(9, 0, 44, 0.12);
+
+		@media (max-width: $breakpoint-tablet - 1px) {
+			width: 100%;
+		}
 
 		&:first-child {
 			margin-top: 0;
@@ -97,6 +102,11 @@
 	gap: 9.375em;
 	height: 3.75em;
 	margin-bottom: 1.25em;
+
+	@media (max-width: $breakpoint-tablet-landscape - 1px) {
+		height: auto !important;
+		gap: 2em !important;
+	}
 }
 
 .AITrainingCTA {
@@ -229,6 +239,11 @@
 	border-radius: $border-radius-10;
 	background: $black-level2;
 
+	@media (max-width: $breakpoint-tablet-landscape - 1px) {
+		justify-content: center;
+		height: auto !important;
+	}
+
 	img {
 		width: 171px;
 		height: auto;
@@ -239,6 +254,10 @@
 		font-size: 2.25rem;
 		font-style: normal;
 		font-weight: $font-weight-normal;
+
+		@media (max-width: $breakpoint-tablet-landscape - 1px) {
+			font-size: 1.5em;
+		}
 
 		span {
 			color: $white;
@@ -277,10 +296,21 @@
 			font-style: normal;
 			font-weight: $font-weight-bold;
 			line-height: 1.31;
+
+			@media (max-width: $breakpoint-tablet-landscape - 1px) {
+				font-size: $font-size-bigger;
+			}
 		}
 
 		.playBtn {
 			@include square(6.25em);
 		}
+	}
+}
+
+.AITrainingSuccessStories {
+
+	.e-con-inner {
+		gap: 5em;
 	}
 }
