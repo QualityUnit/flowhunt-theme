@@ -141,6 +141,9 @@
 							&__learn-more {
 								fill: url(#iconGradient);
 								color: $primary;
+								background: $primary-gradient;
+								background-clip: text;
+								-webkit-text-fill-color: transparent;
 							}
 						}
 					}
@@ -181,6 +184,9 @@
 
 								&__title {
 									color: $primary;
+									background: $primary-gradient;
+									background-clip: text;
+									-webkit-text-fill-color: transparent;
 								}
 
 								&__learn-more {
