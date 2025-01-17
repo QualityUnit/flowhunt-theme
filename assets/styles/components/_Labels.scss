@@ -15,9 +15,9 @@
 		padding: 0.25em 0.5em;
 		border-radius: $border-radius-6;
 		font-family: $font-primary;
-		font-size:$font-size-small;
+		font-size: $font-size-small;
 		font-weight: $font-weight-normal;
-		line-height: 1.125em;
+		line-height: 1.5;
 
 		&--blue-border {
 			background: $white;
@@ -29,7 +29,7 @@
 			color: $white;
 			background: $green-500;
 			font-weight: $font-weight-bold;
-			line-height: 1.375rem;
+			line-height: 1.57;
 		}
 
 		&--bg-orange {
@@ -37,7 +37,7 @@
 			color: $white;
 			background: $yellow-400;
 			font-weight: $font-weight-bold;
-			line-height: 1.375rem;
+			line-height: 1.57;
 		}
 	}
 }
