@@ -8,8 +8,9 @@
 	h2,
 	h3 {
 
-		&:has(+div[style*="background-color"],
-	.CodeBlock, code) {
+		&:has(+div[style*="background-color"]),
+		&:has(+ .CodeBlock),
+		&:has(+ pre code) {
 			position: relative;
 			left: 1px;
 			z-index: 1;
@@ -21,9 +22,13 @@
 			color: $white;
 		}
 
+		&:has(+ pre code) {
+			padding: 0 1.875rem 1.75rem;
+		}
+
 		+ div[style*="background-color"],
-		.CodeBlock,
-		code {
+		+ .CodeBlock,
+		+ pre {
 			margin-top: -5em;
 		}
 	}
@@ -31,6 +36,7 @@
 	div[style*="background-color"],
 	.CodeBlock,
 	code {
+		display: block;
 		position: relative;
 		background-color: $black-level2 !important;
 		border-radius: $border-radius !important;
