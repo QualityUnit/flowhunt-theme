@@ -1,0 +1,33 @@
+/* stylelint-disable selector-class-pattern */
+
+@use "../common/mixins" as *;
+@use "../common/variables" as *;
+
+.BannerLanding {
+	border-radius: $border-radius;
+	border: 1px solid $gray-200;
+
+	&__content {
+		padding-left: 3.75em;
+		gap: 0;
+
+		.elementor-heading-title {
+			margin-bottom: 0.625em;
+			font-size: 1.375em;
+			font-weight: $font-weight-bold;
+			line-height: 2rem;
+		}
+
+		.elementor-widget-text-editor {
+
+			p {
+				margin-bottom: 1.25em;
+				line-height: 1.75;
+			}
+		}
+	}
+
+	&__image {
+		height: 100%;
+	}
+}

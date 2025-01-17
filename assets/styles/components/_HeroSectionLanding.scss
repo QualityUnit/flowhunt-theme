@@ -5,6 +5,13 @@
 // LANDING HERO SECTION
 .hero-section-landing-page {
 
+	&__ai-training {
+
+		&__content {
+			padding-right: 9.5em;
+		}
+	}
+
 	.e-con-inner {
 		align-items: center;
 

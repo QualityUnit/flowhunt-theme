@@ -1,0 +1,102 @@
+/* stylelint-disable selector-class-pattern */
+
+@use "../common/mixins" as *;
+@use "../common/variables" as *;
+
+.Benefits {
+
+	> .e-con-inner {
+		padding: 0;
+		display: flex;
+		position: relative;
+		flex-direction: column;
+
+		@media (max-width: $breakpoint-tablet-landscape - 1px) {
+			gap: 2em;
+		}
+	}
+
+	&__items {
+		display: flex;
+		height: auto;
+		align-items: flex-end;
+		justify-content: center;
+		gap: 0;
+
+		&__item {
+			margin-top: -0.375em;
+			max-width: 28.3125em;
+			position: relative;
+			padding: 1.875em 1.25em 1.125em 4em;
+			border-radius: 0.5em;
+			border: 1px solid $gray-200;
+			background: $white;
+			box-shadow: 0 0.9375em 0.625em 0 rgba(9, 0, 44, 0.12);
+
+			@media (max-width: $breakpoint-tablet - 1px) {
+				width: 100%;
+			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&::before {
+
+				@include square(2em);
+				content: '';
+				position: absolute;
+				left: 1.25em;
+				top: 1.875em;
+				background-size: contain;
+			}
+
+			&--cost {
+				&::before {
+					background: url(../../images/icon-cost.svg) center top no-repeat;
+				}
+			}
+
+			&--productivity {
+				&::before {
+					background: url(../../images/icon-productivity.svg) center top no-repeat;
+				}
+			}
+
+			&--brain {
+				&::before {
+					background: url(../../images/icon-brain.svg) center top no-repeat;
+				}
+			}
+
+			.h4 {
+
+				p {
+					font-size: $font-size-bigger;
+					color: $gray-900;
+				}
+			}
+
+			.small {
+
+				p {
+					margin-bottom: 0 !important;
+					font-size: $font-size-smaller;
+					color: $gray-500;
+				}
+			}
+		}
+	}
+
+	&__content {
+		padding-left: 7em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (max-width: $breakpoint-tablet-landscape - 1px) {
+			padding-left: 0;
+			flex-direction: column-reverse !important;
+		}
+	}
+}

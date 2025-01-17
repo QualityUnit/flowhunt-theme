@@ -46,7 +46,10 @@
 @forward "components/WavyLines";
 @forward "components/FlowModular"; // Home page AI Modular block at bottom
 @forward "components/Table"; // Home page AI Modular block at bottom
-@forward "components/BlockFutureProof"; //AI Training page
+@forward "components/Labels";
+@forward "components/BenefitsBlock";
+@forward "components/TrainingCourseBlock";
+@forward "components/BannerLandingBlock";
 
 /* Layouts */
 @forward "layouts/Fullscreen";
