@@ -10,10 +10,13 @@ function success_stories( $atts ) {
 		'success-stories'
 	);
 
+	$access_post_type_for_elementor = array( 'services', 'solutions' );
+	$current_post_type = get_post_type();
+
 	ob_start();
 	?>
 
-	<ul class="SuccessStoriesGrid <?= ( is_page() || is_page_template( 'front-page.php' ) || is_page_template( 'page.php' ) ) ? 'SuccessStoriesGrid__elementor' : null; ?>">
+	<ul class="SuccessStoriesGrid <?= ( is_page() || is_page_template( 'front-page.php' ) || is_page_template( 'page.php' ) || in_array( $current_post_type, $access_post_type_for_elementor ) ) ? 'SuccessStoriesGrid__elementor' : null; ?>">
 	<?php
 	$args = array(
 		'post_type'      => 'success-stories',
