@@ -5,3 +5,4 @@
 	require_once get_template_directory() . '/lib/metaboxes/flow-templates.php';
 	require_once get_template_directory() . '/lib/metaboxes/tools.php';
 	require_once get_template_directory() . '/lib/metaboxes/success-stories.php';
+	require_once get_template_directory() . '/lib/metaboxes/clients.php';

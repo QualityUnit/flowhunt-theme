@@ -8,3 +8,5 @@
 	require_once get_template_directory() . '/lib/post-types/flow-templates.php';
 	require_once get_template_directory() . '/lib/post-types/ai-tools.php';
 	require_once get_template_directory() . '/lib/post-types/success-stories.php';
+	require_once get_template_directory() . '/lib/post-types/solutions.php';
+	require_once get_template_directory() . '/lib/post-types/services.php';

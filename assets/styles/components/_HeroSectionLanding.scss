@@ -5,6 +5,13 @@
 // LANDING HERO SECTION
 .hero-section-landing-page {
 
+	&__ai-training {
+
+		&__content {
+			padding-right: 9.5em;
+		}
+	}
+
 	.e-con-inner {
 		align-items: center;
 
@@ -117,5 +124,50 @@
 			}
 		}
 
+	}
+
+	&__image {
+		flex: auto !important;
+		margin-right: 0 !important;
+		height: clamp(30em, 40em, 100vh) !important;
+		left: 0 !important;
+
+		@media (max-width: ($breakpoint-tablet - 1px)) {
+			height: clamp(20em, 30em, 100vh) !important;
+		}
+	}
+
+	&__label {
+		width: max-content !important;
+		margin: 0 !important;
+		display: flex !important;
+		flex-direction: row !important;
+		height: auto !important;
+		padding: 6px 12px;
+		border-radius: $border-radius;
+		border: 1px solid $gray-200;
+		background: $white;
+		align-items: center;
+		justify-content: center;
+		z-index: 1 !important;
+
+		&--green {
+			padding: 2px 8px;
+			width: max-content !important;
+			display: flex !important;
+			flex-direction: row !important;
+			background: $green-500;
+			height: auto !important;
+			border-radius: $border-radius;
+			z-index: 1 !important;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+
+		p {
+			margin-bottom: 0;
+		}
 	}
 }
