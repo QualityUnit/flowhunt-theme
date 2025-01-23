@@ -5,6 +5,18 @@
 .BlockChecklist {
 	position: relative;
 
+	@media (max-width: ($breakpoint-desktop-box - 1px)) {
+
+		&::before {
+			content: "";
+
+			@include posZero();
+			position: absolute;
+			background-color: $white;
+			opacity: 0.4;
+		}
+	}
+
 	.elementor-widget-heading h3 {
 		font-size: 1.375rem;
 		margin-bottom: 0.5em;
