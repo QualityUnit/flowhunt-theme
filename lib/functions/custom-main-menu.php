@@ -136,8 +136,17 @@ function wp_get_menu_array( $current_menu ) {
 		esc_attr( $item['active'] );
 		?>
 	" data-id="<?= esc_attr( $item['ID'] ); ?>">
-		<a href="<?= esc_url( $item['url'] ); ?>" title="<?= esc_attr( $item['title'] ); ?>"><?= esc_html( $item['title'] ); ?></a>
+		<a href="<?= esc_url( $item['url'] ); ?>" title="<?= esc_attr( $item['title'] ); ?>"><?= esc_html( $item['title'] ); ?>
 		<?php if ( ! empty( $item['children'] ) ) : ?>
+			<svg class="icon menu-item__icon" width="100%" height="100%" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
+				<g transform="matrix(1.66332,0,0,1.66332,-5.30647,-5.30654)">
+					<path d="M3.434,5.434C3.747,5.122 4.253,5.122 4.566,5.434L8,8.869L11.434,5.434C11.747,5.122 12.253,5.122 12.566,5.434C12.878,5.747 12.878,6.253 12.566,6.566L8.566,10.566C8.253,10.878 7.747,10.878 7.434,10.566L3.434,6.566C3.122,6.253 3.122,5.747 3.434,5.434Z" />
+				</g>
+			</svg>
+		<?php endif ?>
+	</a>
+		<?php if ( ! empty( $item['children'] ) ) : ?>
+			
 		<ul class=" <?= esc_attr( $item['classes'] ); ?>" data-title="<?= esc_attr( ! empty( $item['top_title'] ) ? $item['top_title'] : $item['title'] ); ?>">
 			<?php
 			foreach ( $item['children'] as $child ) : 
