@@ -11,6 +11,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: 10%;
+	row-gap: 1.25em;
 
 	&__item {
 		filter: saturate(0%);
