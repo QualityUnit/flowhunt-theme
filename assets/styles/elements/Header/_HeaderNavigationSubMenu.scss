@@ -231,7 +231,7 @@
 											overflow: hidden;
 											background-color: rgba($gray-100, 0);
 											transition: all 0.3s;
-											top: 0.1em;
+											top: 1px;
 											margin-left: 0.5em;
 										}
 									}
@@ -293,7 +293,7 @@
 						border-radius: $border-radius-6;
 						padding: 0.5em;
 						border: 1px solid $gray-200;
-						background-color: $gray-100;
+						background: $gray-100;
 						margin-right: 0.625em;
 					}
 
@@ -301,7 +301,7 @@
 
 						.submenu-item__icon {
 							border-color: $primary;
-							background-color: $primary-light;
+							background: $primary-light;
 						}
 					}
 				}
