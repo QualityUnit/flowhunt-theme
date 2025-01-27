@@ -96,22 +96,6 @@
 			margin-top: 0;
 			margin-left: 1em;
 		}
-
-		&--more[class] {
-
-			color: $white !important;
-			border-color: currentcolor !important;
-			font-weight: $font-weight-normal;
-			background: none;
-
-			&:active,
-			&:focus,
-			&:hover {
-
-				color: $primary;
-				text-decoration: none;
-			}
-		}
 	}
 
 	&.show {

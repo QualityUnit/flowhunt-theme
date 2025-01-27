@@ -4,10 +4,10 @@
 	  <h2 class="Footer__TopBanner__title"><?php _e( 'Ready to build your own AI?', 'flowhunt' ); ?></h2>
 	  <p class="Footer__TopBanner__subtitle"><?php _e( 'Smart Chatbots and AI tools under one roof. Connect intuitive blocks to turn your ideas into automated Flows.', 'flowhunt' ); ?></p>
 	  <div class="Footer__TopBanner__buttons">
-		<a class="Button Button--glowing Button--medium" href="<?php _e( 'https://app.flowhunt.io/sign-in', 'flowhunt' ); ?>" target="_blank">
+		<a class="Button Button--white Button--medium" href="<?php _e( 'https://app.flowhunt.io/sign-in', 'flowhunt' ); ?>" target="_blank">
 		  <span><?php _e( 'Try it out', 'flowhunt' ); ?></span>
 		</a>
-		<a class="Button Button--outline--white Button--outline--full Button--medium" href="<?php _e( 'https://calendly.com/liveagentsession/flowhunt-chatbot-demo', 'flowhunt' ); ?>" target="_blank">
+		<a class="Button Button--outline--white Button--medium" href="<?php _e( 'https://calendly.com/liveagentsession/flowhunt-chatbot-demo', 'flowhunt' ); ?>" target="_blank">
 		  <span><?php _e( 'Book a demo', 'flowhunt' ); ?></span>
 		</a>
 	  </div>
