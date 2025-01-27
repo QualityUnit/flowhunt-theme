@@ -9,6 +9,22 @@
 
 		&__content {
 			padding-right: 9.5em;
+
+			@media (max-width: $breakpoint-tablet) {
+				padding-right: 0;
+			}
+
+			.highlight-gradient-accent {
+				display: inline-block;
+
+				> span {
+					display: inline-block;
+				}
+			}
+
+			h3 {
+				margin-bottom: 2.5em;
+			}
 		}
 	}
 

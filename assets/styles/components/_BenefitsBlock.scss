@@ -33,6 +33,10 @@
 			background: $white;
 			box-shadow: 0 0.9375em 0.625em 0 rgba(9, 0, 44, 0.12);
 
+			&:last-child {
+				padding-bottom: 2.25em;
+			}
+
 			@media (max-width: $breakpoint-tablet - 1px) {
 				width: 100%;
 			}

@@ -7,6 +7,14 @@
 	padding: 6.25em 10em;
 	background: $light-background;
 
+	@media (max-width: $breakpoint-tablet-landscape - 1px) {
+		padding: 5em;
+	}
+
+	@media (max-width: $breakpoint-tablet - 1px) {
+		padding: 1em;
+	}
+
 	&__logo {
 		display: flex;
 		justify-content: center;
@@ -74,6 +82,7 @@
 			}
 
 			span {
+				display: inline-block;
 				color: $white;
 				font-weight: $font-weight-bold;
 			}
@@ -82,11 +91,15 @@
 
 	&__cta {
 		margin-bottom: 1.5em;
-		padding: 0;
+		padding: 1.25em;
 		border-radius: $border-radius-10;
 		border: 1px solid $gray-200;
 		background: $white;
-		gap: 0;
+		gap: 1.25em;
+
+		> div {
+			padding: 0;
+		}
 
 		&__prices {
 
@@ -185,6 +198,17 @@
 			padding: 1.25em;
 			border-radius: $border-radius-10;
 			border: 1px solid $gray-200;
+
+			ul {
+				margin-bottom: 0;
+
+				li {
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
 		}
 	}
 
