@@ -46,6 +46,11 @@
 	}
 
 	&__resizeLogo {
+		background-color: $white !important;
+
+		@media (max-width: ($breakpoint-tablet-small - 1px)) {
+			height: 8em;
+		}
 
 		.elementor-widget-text-editor {
 			max-height: 0;
