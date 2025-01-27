@@ -427,10 +427,17 @@ button,
 	&:focus,
 	&:hover {
 
-		background: linear-gradient(136deg, #0497dc 39.1%, #465ce0 109.91%);
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
 		border-color: $primary;
+
+		span,
+		strong {
+
+			background: linear-gradient(136deg, #0497dc 39.1%, #465ce0 109.91%);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+		}
+
 	}
 }
 
