@@ -18,6 +18,9 @@
 		font-size: $font-size-small;
 		font-weight: $font-weight-normal;
 		line-height: 1.5;
+		display: flex;
+		align-items: center;
+		gap: 5px;
 
 		&--blue-border {
 			background: $white;
@@ -38,6 +41,22 @@
 			background: $yellow-400;
 			font-weight: $font-weight-bold;
 			line-height: 1.57;
+		}
+
+		i {
+			width: 1.25rem;
+			height: 1.25rem;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+
+			&.globe {
+				background-image: url(../../images/icon-globe-gradient.svg);
+			}
+
+			&.video {
+				background-image: url(../../images/icone-play-gradient.svg);
+			}
 		}
 	}
 }
