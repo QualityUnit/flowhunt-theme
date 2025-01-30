@@ -61,22 +61,6 @@
 				box-shadow: none;
 			}
 
-			&:hover {
-				outline: 2px solid $accent-electric-blue;
-
-				&.TrainingCourseAnchors__items__item--empty {
-					outline-color: transparent;
-				}
-
-				.TrainingCourseAnchors__items__item__logo {
-					.elementor-widget-image {
-						img {
-							filter: none;
-						}
-					}
-				}
-			}
-
 			> div {
 				padding: 0;
 			}
@@ -105,6 +89,7 @@
 				height: auto;
 
 				.elementor-widget-image {
+
 					img {
 						filter: brightness(0) opacity(0.5);
 					}
@@ -123,7 +108,7 @@
 					font-size: $font-size-smaller;
 					font-style: normal;
 					font-weight: $font-weight-bold;
-					line-height: 1.5em;
+					line-height: 1.5;
 
 					.arrow {
 						width: 1.25rem;
@@ -132,6 +117,24 @@
 
 						&__down {
 							background-image: url(../../images/icon-arrow-down.svg);
+						}
+					}
+				}
+			}
+
+			&:hover {
+				outline: 2px solid $accent-electric-blue;
+
+				&.TrainingCourseAnchors__items__item--empty {
+					outline-color: transparent;
+				}
+
+				.TrainingCourseAnchors__items__item__logo {
+
+					.elementor-widget-image {
+
+						img {
+							filter: none;
 						}
 					}
 				}
