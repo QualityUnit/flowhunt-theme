@@ -70,14 +70,14 @@ function menu_block( $child ) {
 			</svg>
 					<?php } ?>
 			<div class="submenu-item__data">
-				<h3 class="submenu-item__title"><?= esc_html( $child['title'] ); ?></h3>
+				<div class="submenu-item__title"><?= esc_html( $child['title'] ); ?></div>
 				<p class="submenu-item__description"><?= esc_html( $child['description'] ); ?></p>
 				<p class="submenu-item__learn-more"><?php _e( 'Learn More', 'flowhunt' ); ?><svg class="icon icon-arrow-out"><use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#arrow-out' ); ?>"></use></svg></p>
 			</div>
 		</a>
 	</li>
 
-		<?php 
+		<?php
 	}
 }
 
@@ -86,7 +86,7 @@ function wp_get_menu_array( $current_menu ) {
 	$menu_name  = $current_menu;
 	$locations  = get_nav_menu_locations();
 	$menu       = wp_get_nav_menu_object( $locations[ $menu_name ] );
-	$array_menu = wp_get_nav_menu_items( $menu->term_id ); 
+	$array_menu = wp_get_nav_menu_items( $menu->term_id );
 	$menu       = array();
 	// print_r( $array_menu );
 	foreach ( $array_menu as $m ) {
@@ -114,7 +114,7 @@ function wp_get_menu_array( $current_menu ) {
 
 			$icon  = ! empty( $icon_matches ) ? str_replace( 'icn-', '', $icon_matches[1] ) : '';
 			$image = ! empty( $image_matches ) ? preg_replace( '/(.+?)_(jpg|png|webp|gif|svg)/i', '$1.$2', $image_matches[1] ) : '';
-			
+
 			$submenu[ $m->ID ]                                  = array();
 			$submenu[ $m->ID ]['ID']                            = $m->ID;
 			$submenu[ $m->ID ]['title']                         = $m->title;
@@ -130,7 +130,7 @@ function wp_get_menu_array( $current_menu ) {
 	}
 	foreach ( $menu as $item ) :
 		?>
-	<li class="menu-item 
+	<li class="menu-item
 		<?=
 		esc_attr( ! empty( $item['children'] ) ? 'menu-item-has-children' : '' );
 		esc_attr( $item['active'] );
@@ -146,10 +146,10 @@ function wp_get_menu_array( $current_menu ) {
 		<?php endif ?>
 	</a>
 		<?php if ( ! empty( $item['children'] ) ) : ?>
-			
+
 		<ul class=" <?= esc_attr( $item['classes'] ); ?>" data-title="<?= esc_attr( ! empty( $item['top_title'] ) ? $item['top_title'] : $item['title'] ); ?>">
 			<?php
-			foreach ( $item['children'] as $child ) : 
+			foreach ( $item['children'] as $child ) :
 				menu_block( $child );
 			endforeach;
 			?>
