@@ -17,12 +17,12 @@
 	&__wrapper {
 		position: relative;
 		height: 0;
-		padding-bottom: 307.61%;
+		padding-bottom: 320%;
 
 		&::before {
 			position: absolute;
 			content: "";
-			background: url(../../images/flow_modular-ai_tablet.svg) center top no-repeat;
+			background: url(../../images/flow_modular-ai_mobile.svg) center top no-repeat;
 			background-size: cover;
 		}
 
@@ -31,6 +31,7 @@
 		}
 
 		@media (min-width: $breakpoint-tablet) {
+			background: url(../../images/flow_modular-ai_tablet.svg) center top no-repeat;
 			padding-bottom: 160.5%;
 
 			&::before {
