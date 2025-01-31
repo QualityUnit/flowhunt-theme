@@ -70,11 +70,13 @@ body.compact-header--active {
 	}
 
 	&__chatbot {
+
+		$chatbot-padding: 4px;
+
 		width: 100%;
-		padding: 3px;
-		padding-bottom: 0;
+		padding: 3px $chatbot-padding 5.5px $chatbot-padding; // those padding are like this for the best visual
 		margin-top: 2em;
-		border-radius: $border-radius-10;
+		border-radius: calc($border-radius-10 + $chatbot-padding);
 		background: $primary-gradient;
 		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 		text-align: left;
