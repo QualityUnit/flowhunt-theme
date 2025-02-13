@@ -24,6 +24,25 @@
 		}
 	}
 
+	&__wide {
+		min-height: 36.25em;
+
+		> .e-con-inner {
+
+			>.e-child {
+
+				&:has(.elementor-heading-title) {
+					width: 44.58% !important;
+					padding: 0 !important;
+				}
+
+				&:has(.elementor-widget-image) {
+					width: 55.42% !important;
+				}
+			}
+		}
+	}
+
 	> .e-con-inner {
 		display: flex;
 		position: relative;

@@ -5,12 +5,13 @@
 
 .BannerLanding {
 	padding: 0;
-	border-radius: $border-radius;
 	border: 1px solid $gray-200;
 
 	&__content {
 		padding-left: 3.75em;
 		gap: 0;
+		border-top-left-radius: $border-radius;
+		border-bottom-left-radius: $border-radius;
 
 		.elementor-heading-title {
 			margin-bottom: 0.625em;
@@ -30,5 +31,10 @@
 
 	&__image {
 		height: 100%;
+
+		&::before {
+			border-top-right-radius: $border-radius;
+			border-bottom-right-radius: $border-radius;
+		}
 	}
 }
