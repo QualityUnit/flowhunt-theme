@@ -18,7 +18,7 @@
 		esc_html( 'Start building your own AI solutions', 'flowhunt' );
 		?>
 	  </p>
-	  <a class="Button Button--full pt-s pb-s" href="<?= esc_url( '#0' ); ?>" target="_blank"><span><?= esc_html( 'Get started for FREE', 'flowhunt' ); ?></span></a>
+	  <a class="Button Button--full pt-s pb-s" href="https://calendly.com/liveagentsession/flowhunt-chatbot-demo" target="_blank"><span><?= esc_html( 'Get started for FREE', 'flowhunt' ); ?></span></a>
 	</div>
 	<div class="Post__sidebar--Share flex flex-align-center">
 		<span><?php _e( 'Share this article on', 'flowhunt' ); ?></span>
