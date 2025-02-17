@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "qu/chatbotoutput",
+	"version": "0.1.0",
+	"title": "Chatbot output",
+	"icon": "chat",
+	"category": "widgets",
+	"textdomain": "chatbotoutput",
+	"editorScript": "file:./build/index.js"
+}
+
