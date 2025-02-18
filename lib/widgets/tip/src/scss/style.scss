@@ -1,0 +1,40 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+@use "../../../../../assets/styles/common/variables" as *;
+
+* {
+	box-sizing: border-box;
+
+	&:active,
+	&:focus,
+	&:hover {
+		outline: 0;
+	}
+}
+
+.block-tip {
+	margin: 20px 0;
+	padding: 1.25em 1.875em;
+	max-width: none;
+	background: #FDFDEA;
+	border: 1px solid #FCE96A;
+	border-radius: 0.5em;
+
+	&__content {
+		display: flex;
+		gap: 10px;
+		color: $gray-900;
+
+		&__img {
+
+			img {
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		&__text {
+			font-size: 1rem;
+			line-height: 1.75;
+		}
+	}
+}

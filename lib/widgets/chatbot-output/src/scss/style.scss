@@ -163,13 +163,5 @@
 		color: $gray-900;
 		border-bottom-left-radius: 0.5em;
 		border-bottom-right-radius: 0.5em;
-
-		textarea {
-			min-height: 25em;
-			all: unset;
-			overflow: hidden;
-			resize: none;
-			width: 100%;
-		}
 	}
 }

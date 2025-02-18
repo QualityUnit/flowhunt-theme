@@ -13,7 +13,8 @@
 		"build:qu-ctabanner": "cd ./lib/widgets/cta-banner/ && yarn && yarn build",
 		"build:qu-whatblock": "cd ./lib/widgets/whatblock/ && yarn && yarn build",
 		"build:qu-chatbotoutput": "cd ./lib/widgets/chatbot-output/ && yarn && yarn build",
-		"build:all": "yarn && yarn build && yarn build:qu-ctabanner && yarn build:qu-whatblock && yarn build:qu-chatbotoutput"
+		"build:qu-tip": "cd ./lib/widgets/tip/ && yarn && yarn build",
+		"build:all": "yarn && yarn build && yarn build:qu-ctabanner && yarn build:qu-whatblock && yarn build:qu-chatbotoutput && yarn build:qu-tip"
 	},
 	"engines": {
 		"node": ">= 20"
