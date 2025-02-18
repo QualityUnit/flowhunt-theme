@@ -33,22 +33,24 @@ export default function ChatbotOutput( { attributes, setAttributes } ) {
 							value={ pointReadabilityGradeLevel }
 							onChange={ ( value ) => setAttributes( { pointReadabilityGradeLevel: value } ) }
 						/>
-						<span> (</span><RichText
+						<span>( </span><RichText
 							tagName="span"
 							value={ pointReadabilityScore }
 							onChange={ ( value ) => setAttributes( { pointReadabilityScore: value } ) }
-						/> points<span>)</span>
+						/> points<span> )</span>
 						<div className="tooltip">
-							<span>Flesch-Kincaid Grade Level: <RichText
-								tagName="span"
-								value={ pointReadabilityGradeLevel }
-								onChange={ ( value ) => setAttributes( { pointReadabilityGradeLevel: value } ) }
-							/></span>
-							<span>Flesch-Kincaid Score: <RichText
-								tagName="span"
-								value={ pointReadabilityScore }
-								onChange={ ( value ) => setAttributes( { pointReadabilityScore: value } ) }
-							/></span>
+							<div className="tooltip__text">
+								<span>Flesch-Kincaid Grade Level: <RichText
+									tagName="span"
+									value={ pointReadabilityGradeLevel }
+									onChange={ ( value ) => setAttributes( { pointReadabilityGradeLevel: value } ) }
+								/></span>
+								<span>Flesch-Kincaid Score: <RichText
+									tagName="span"
+									value={ pointReadabilityScore }
+									onChange={ ( value ) => setAttributes( { pointReadabilityScore: value } ) }
+								/></span>
+							</div>
 						</div>
 					</div>
 				</div>
