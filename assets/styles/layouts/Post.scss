@@ -151,19 +151,57 @@ no-descending-specificity, scss/no-global-function-names */
 
 			blockquote.wp-block-quote {
 				position: relative;
-				border-radius: $border-radius-16;
-				margin: 2em 0 0 0.75rem;
-				padding: 1.125em 0.875em 1.125em 1.5em;
+				margin: 0;
+				padding: 0;
 				font-size: 1rem;
+				color: $gray-900;
+				border: none;
+				font-style: normal;
+
+				& > *:first-child {
+					position: relative;
+					margin: 0.9375em 0 0 0.9375rem;
+					padding: 0.9375em;
+
+					&::before,
+					&::after {
+						content: "";
+						position: absolute;
+						left: 0;
+						right: 0;
+						width: calc(100% - 1rem);
+						height: 1px;
+						background-color: $gray-200;
+					}
+
+					&::before {
+						top: 0;
+					}
+
+					&::after {
+						bottom: 0;
+					}
+				}
 
 				&::before {
 
-					@include square(1.5rem);
+					@include square(2rem);
 					content: "";
 					position: absolute;
-					top: -0.65rem;
-					left: -0.75rem;
-					background: url(../../images/quote.svg) center center no-repeat;
+					top: 0;
+					left: -1rem;
+					background: url(../../images/quote-revert.svg) center center no-repeat;
+					background-size: contain;
+				}
+
+				&::after {
+
+					@include square(2rem);
+					content: "";
+					position: absolute;
+					bottom: -1rem;
+					right: -1rem;
+					background: url(../../images/quote-revert.svg) center center no-repeat;
 					background-size: contain;
 				}
 
@@ -172,9 +210,9 @@ no-descending-specificity, scss/no-global-function-names */
 				}
 
 				p {
-					font-weight: $font-weight-semi;
-					font-style: italic;
+					font-weight: $font-weight-normal;
 					font-size: 1rem;
+					font-style: normal;
 					line-height: 1.75;
 
 					&:last-of-type {
