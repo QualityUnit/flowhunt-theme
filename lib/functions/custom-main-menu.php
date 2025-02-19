@@ -37,7 +37,7 @@ function menu_block( $child ) {
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
 					<div class="submenu-item__image"><?php the_post_thumbnail( 'box_archive_thumbnail' ); ?></div>
 					<div class="submenu-item__data">
-						<h3 class="submenu-item__title"><?php the_title(); ?></h3>
+						<div class="submenu-item__title"><?php the_title(); ?></div>
 						<p class="submenu-item__description"><?= esc_html( wp_trim_words( get_the_excerpt(), 10, '…' ) ); ?></p>
 						<p class="submenu-item__learn-more"><?php _e( 'Learn more', 'flowhunt' ); ?><svg class="icon icon-chevron-right"><use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#chevron-right' ); ?>"></use></svg></p>
 					</div>
@@ -52,7 +52,7 @@ function menu_block( $child ) {
 			<span class="section_title"><?= ! empty( $child['top_title'] ) ? esc_html( $child['top_title'] ) : esc_html( $child['title'] ); ?></span>
 			<a href="<?= esc_url( $child['url'] ); ?>" title="<?= esc_attr( $child['title'] ); ?>">
 				<div class="submenu-item__image"><img src="<?= esc_url( get_template_directory_uri() . '/assets/images/' . $child['image'] ); ?>" alt="<?= esc_attr( $child['title'] ); ?>" /></div>
-				<h3 class="submenu-item__title"><?= esc_html( $child['title'] ); ?><span class="icon-wrapper"><svg class="icon icon-chevron-right"><use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#chevron-right' ); ?>"></use></svg></span></h3>
+				<div class="submenu-item__title"><?= esc_html( $child['title'] ); ?><span class="icon-wrapper"><svg class="icon icon-chevron-right"><use xlink:href="<?= esc_url( get_template_directory_uri() . '/assets/images/icons.svg?ver=' . THEME_VERSION . '#chevron-right' ); ?>"></use></svg></span></div>
 				<p class="submenu-item__description"><?= esc_html( $child['description'] ); ?></p>
 			</a>
 		</li>
