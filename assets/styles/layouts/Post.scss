@@ -454,5 +454,12 @@ no-descending-specificity, scss/no-global-function-names */
 			}
 		}
 
+		.fh-chatbot {
+			margin-top: 1.25em;
+			margin-bottom: 1.25em;
+			display: flex !important;
+			justify-content: center;
+		}
+
 	}
 }
