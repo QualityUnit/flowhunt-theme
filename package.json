@@ -46,7 +46,7 @@
 	"dependencies": {
 		"@babel/plugin-proposal-optional-chaining-assign": "^7.25.9",
 		"@ronilaukkarinen/gulp-stylelint": "^14.1.2",
-		"gsap": "^3.12.5",
+		"gsap": "^3.12.7",
 		"gulp-replace": "^1.1.4",
 		"gulp-svg-sprite": "^2.0.3",
 		"sass": "^1.83.4"
