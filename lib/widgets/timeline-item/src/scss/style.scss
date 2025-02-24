@@ -36,9 +36,16 @@
 	}
 
 	&__content {
-		margin-left: 0.875em;
-		padding-left: 0.875em;
+		margin-left: 0.875rem;
+		padding-left: 0.875rem;
 		border-left: 1px solid $gray-200;
-	}
 
+		> * {
+			margin-bottom: 1.25rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
 }

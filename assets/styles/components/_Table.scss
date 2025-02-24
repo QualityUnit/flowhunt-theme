@@ -124,15 +124,16 @@ body:not([class*="elementor"]) figure.wp-block-table,
 			z-index: 1;
 
 			th {
-				padding: 2.25em !important;
 				line-height: 1.1;
-				text-align: center;
 				border-bottom: 1px solid $gray-200;
+				overflow-wrap: break-word;
 			}
 		}
 
 		th,
 		td {
+			padding: 0.75rem 1.25rem !important;
+			text-align: left;
 
 			+th,
 			+td {
@@ -161,6 +162,16 @@ body:not([class*="elementor"]) figure.wp-block-table,
 			td {
 				padding: calc(0.75em * #{$tableFontSize}) calc(1.5em * #{$tableFontSize});
 				border-bottom: none !important;
+				text-align: left !important;
+				hyphens: auto;
+
+				&:first-child {
+					font-weight: $font-weight-bold;
+				}
+
+				&:not(:first-child) {
+					font-size: 1rem;
+				}
 
 				&.hasTooltip {
 

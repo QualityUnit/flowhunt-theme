@@ -1,5 +1,5 @@
 <?php
-function timelineitem( $attr ) {
+function timelineitem( $attr, $content ) {
 	$image_path = get_template_directory_uri() . '/lib/widgets/timeline-item/images/chevron-right.svg';
 	return '
 		<div class="block-timeline-item">
@@ -13,6 +13,7 @@ function timelineitem( $attr ) {
 			</div>
 			<div class="block-timeline-item__content">
 					' . esc_html( $attr['content'] ) . '
+					'. $content . '
 			</div>
 		</div>';
 }

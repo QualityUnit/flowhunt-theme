@@ -1,1 +1,15 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+@use "../../../../../assets/styles/common/variables" as *;
 @forward "style";
+
+.block-editor-inner-blocks {
+
+  .block-editor-block-list__layout {
+
+    /* > * {
+      margin-left: 0.875em;
+      padding-left: 0.875em;
+      border-left: 1px solid $gray-200;
+    } */
+  }
+}
