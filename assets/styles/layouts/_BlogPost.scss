@@ -180,7 +180,7 @@ no-descending-specificity, value-keyword-case */
 
 				@include square(100%, !important);
 				object-fit: cover;
-				max-width: auto;
+				max-width: 100%;
 			}
 		}
 
