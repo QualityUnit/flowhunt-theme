@@ -159,7 +159,7 @@ no-descending-specificity, scss/no-global-function-names */
 				border: none;
 				font-style: normal;
 
-				& > *:first-child {
+				> *:first-child {
 					position: relative;
 					margin: 0.9375em 0 0 0.9375rem;
 					padding: 0.9375em;

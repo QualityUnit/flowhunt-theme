@@ -68,8 +68,8 @@ function timeline_block_init() {
 
 	add_action( 'enqueue_block_assets', 'timeline_assets' );
 
-	function render_timeline(  $attr, $content ) {
-		return timeline(  $attr, $content );
+	function render_timeline( $attr, $content ) {
+		return timeline( $attr, $content );
 	}
 
 	register_block_type(
