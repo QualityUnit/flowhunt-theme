@@ -14,43 +14,48 @@ function elementor_blog_posts( $atts ) {
 		'elementor_blog_posts'
 	);
 
-	$categories = get_categories(); 
+	$categories = get_categories(
+		array(
+			'slug'     => 'blog',
+			'hierarchical' => true,
+		)
+	);
+	$category_ids = wp_list_pluck( $categories, 'term_id' );
+
 	ob_start();
 	?>
 <div class="Elementor__Blog">
   <ul class="list Elementor__Blog__items">
-	<?php  
+	<?php
+	if ( ! empty( $category_ids ) ) {
+		$query_args = array(
+			'posts_per_page' => $atts['posts'],
+			'post_status'    => 'publish',
+			'orderby'        => 'date',
+			'order'          => 'desc',
+			'offset'         => 1,
+			'cat'            => implode( ',', $category_ids ),
+		);
 
-	foreach ( $categories as $category ) {
-		if ( $category->count > 1 ) {
-			$query_args = array(
-				'posts_per_page' => $atts['posts'],
-				'post_status'    => 'publish',
-				'orderby'        => 'date',
-				'order'          => 'desc',
-				'offset'         => 1,
-				'cat'            => $category->cat_ID,
-			);
-  
-			/* Query Other Posts */
-			$show_other_posts = new WP_Query( $query_args );
-  
-			while ( $show_other_posts->have_posts() ) :
-				$show_other_posts->the_post();
-	
-				$category   = '';
-				$categories = get_the_category();
+		/* Query Other Posts */
+		$show_other_posts = new WP_Query( $query_args );
 
-				if ( ! empty( $categories ) ) {
-					foreach ( $categories as $category_item ) {
-						$category .= $category_item->slug;
-						$category .= ' ';
-					}
+		while ( $show_other_posts->have_posts() ) :
+			$show_other_posts->the_post();
+
+			$category   = '';
+			$categories = get_the_category();
+
+			if ( ! empty( $categories ) ) {
+				foreach ( $categories as $category_item ) {
+					$category .= $category_item->slug;
+					$category .= ' ';
 				}
-				?>
-	<li data-category="<?= esc_attr( $category ); ?>" class="Elementor__Blog__item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"
+			}
+			?>
+	<li data-category="<?= esc_attr( sanitize_title( $category ) ); ?>" class="Elementor__Blog__item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"
 				<?php
-				post_class( 'Elementor__Blog__item' ); 
+				post_class( 'Elementor__Blog__item' );
 				?>
 		>
 		<a class="Elementor__Blog__item--thumbnailWrap" href="<?= esc_url( get_the_permalink() ); ?>">
@@ -84,9 +89,10 @@ function elementor_blog_posts( $atts ) {
 			</a>
 	  </div>
 	</li>
-			<?php endwhile; ?>
+				<?php
+				endwhile;
+		?>
 			<?php
-		}
 	}
 		wp_reset_postdata();
 	?>
