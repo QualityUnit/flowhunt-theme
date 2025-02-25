@@ -95,10 +95,11 @@ no-descending-specificity, scss/no-global-function-names */
 			.wp-block-image,
 			.wp-block-video {
 				margin: 2rem 0;
+				background-color: $gray-50;
+				border: 1px solid $gray-200;
+				border-radius: $border-radius;
 
 				img {
-					border: 1px solid $gray-200;
-					border-radius: $border-radius;
 					height: auto !important;
 				}
 
