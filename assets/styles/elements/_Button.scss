@@ -547,6 +547,16 @@ button,
 	}
 }
 
+.Button--medium-small {
+	padding: 0.5em 1.625em;
+
+	span,
+	strong {
+		font-size: 0.875rem;
+		line-height: 1.7;
+	}
+}
+
 .Button--medium {
 	padding: 0.75em 1.875em;
 

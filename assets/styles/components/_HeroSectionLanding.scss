@@ -5,29 +5,6 @@
 // LANDING HERO SECTION
 .hero-section-landing-page {
 
-	&__ai-training {
-
-		&__content {
-			padding-right: 9.5em;
-
-			@media (max-width: $breakpoint-tablet) {
-				padding-right: 0;
-			}
-
-			.highlight-gradient-accent {
-				display: inline-block;
-
-				> span {
-					display: inline-block;
-				}
-			}
-
-			h3 {
-				margin-bottom: 2.5em;
-			}
-		}
-	}
-
 	.e-con-inner {
 		align-items: center;
 
@@ -167,8 +144,16 @@
 		justify-content: center;
 		z-index: 1 !important;
 
+		&--small {
+			padding: 0.3125rem 0.625rem;
+
+			p {
+				font-size: 0.875rem;
+			}
+		}
+
 		&--green {
-			padding: 2px 8px;
+			padding: 0.125rem 0.5rem;
 			width: max-content !important;
 			display: flex !important;
 			flex-direction: row !important;
@@ -177,13 +162,58 @@
 			border-radius: $border-radius;
 			z-index: 1 !important;
 
+			&--small {
+				padding: 0.1rem 0.4rem;
+
+				p {
+					font-size: 0.6875rem;
+					font-weight: $font-weight-bold;
+				}
+			}
+
 			p {
 				margin-bottom: 0;
+				font-size: 0.875rem;
 			}
 		}
 
 		p {
 			margin-bottom: 0;
+		}
+	}
+
+	&__ai-training {
+		margin-top: 5rem;
+		margin-bottom: 9.375rem;
+
+		.e-con-inner {
+
+			.hero-section-landing-page__ai-training__image {
+
+				@media (min-width: $breakpoint-desktop-big) {
+					height: clamp(30em, 35.9375em, 100vh) !important;
+				}
+			}
+		}
+
+		&__content {
+			padding-right: 9.5em;
+
+			@media (max-width: $breakpoint-tablet) {
+				padding-right: 0;
+			}
+
+			.highlight-gradient-accent {
+				display: inline-block;
+
+				> span {
+					display: inline-block;
+				}
+			}
+
+			h3 {
+				margin-bottom: 2.5em;
+			}
 		}
 	}
 }

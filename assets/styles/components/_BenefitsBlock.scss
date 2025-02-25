@@ -10,9 +10,14 @@
 		display: flex;
 		position: relative;
 		flex-direction: column;
+		gap: 7em;
 
 		@media (max-width: $breakpoint-tablet-landscape - 1px) {
 			gap: 2em;
+		}
+
+		> .e-child {
+			padding: 0;
 		}
 	}
 
@@ -22,6 +27,10 @@
 		align-items: flex-end;
 		justify-content: center;
 		gap: 0;
+
+		&::before {
+			border-radius: 0.375em;
+		}
 
 		&__item {
 			margin-top: -0.375em;
@@ -96,13 +105,11 @@
 	}
 
 	&__content {
-		padding-left: 7em;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
 		@media (max-width: $breakpoint-tablet-landscape - 1px) {
-			padding-left: 0;
 			flex-direction: column-reverse !important;
 		}
 	}
