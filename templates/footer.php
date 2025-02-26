@@ -8,7 +8,7 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 
 <footer class="Footer urlslab-skip-all">
   <div class="wrapper-md">
-	
+
 		<nav class="Footer__main">
 			<?php
 			if ( has_nav_menu( 'footer_navigation' ) ) :
@@ -51,13 +51,14 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 
 <div class="Medovnicky urlslab-skip-all">
 	<div class="wrapper">
+		<div class="Medovnicky__title"><?php _e( 'We value your privacy', 'flowhunt' ); ?></div>
 		<p><?php _e( 'Our website uses cookies. By continuing we assume your permission to deploy cookies as detailed in our', 'flowhunt' ); ?> <a href="<?php _e( '/privacy-policy/', 'flowhunt' ); ?>"><?php _e( 'privacy and cookies policy', 'ms' ); ?></a><?php _e( '.', 'flowhunt' ); ?></p>
 
 		<div class="Medovnicky__buttons">
 			<a href="#" class="Medovnicky__button Medovnicky__button--no Medovnicky__button--more Button Button--medium Button--outline--white">
 				<span><?php _e( 'Decline', 'flowhunt' ); ?></span>
 			</a>
-			<a href="#" class="Medovnicky__button Medovnicky__button--yes Button Button--medium  Button--white">
+			<a href="#" class="Medovnicky__button Medovnicky__button--yes Button Button--medium Button--white">
 				<span><?php _e( 'Accept', 'flowhunt' ); ?></span>
 			</a>
 		</div>
