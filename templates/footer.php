@@ -51,7 +51,6 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 
 <div class="Medovnicky urlslab-skip-all">
 	<div class="wrapper">
-		<div class="Medovnicky__title"><?php _e( 'We value your privacy', 'flowhunt' ); ?></div>
 		<p><?php _e( 'Our website uses cookies. By continuing we assume your permission to deploy cookies as detailed in our', 'flowhunt' ); ?> <a href="<?php _e( '/privacy-policy/', 'flowhunt' ); ?>"><?php _e( 'privacy and cookies policy', 'ms' ); ?></a><?php _e( '.', 'flowhunt' ); ?></p>
 
 		<div class="Medovnicky__buttons">
