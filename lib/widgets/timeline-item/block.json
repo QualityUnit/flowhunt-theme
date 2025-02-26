@@ -1,0 +1,11 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "qu/timelineitem",
+	"title": "Timeline Item",
+	"category": "widgets",
+	"icon": "performance",
+	"description": "Timeline item block for Gutenberg.",
+	"textdomain": "timelineitem",
+	"editorScript": "file:./build/index.js"
+}

@@ -1,0 +1,24 @@
+@forward "style";
+
+.block-editor-block-list__block {
+	.block-tip {
+
+		&__content {
+
+			&__text {
+				width: 100%;
+
+				textarea {
+					min-height: 125px;
+					all: unset;
+					overflow-x: hidden;
+					resize: none;
+					width: 100%;
+					font-size: 1rem;
+					line-height: 1.75;
+					font-weight: normal;
+				}
+			}
+		}
+	}
+}

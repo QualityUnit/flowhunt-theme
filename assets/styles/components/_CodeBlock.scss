@@ -12,14 +12,14 @@
 		&:has(+ .CodeBlock),
 		&:has(+ pre code) {
 			position: relative;
-			left: 1px;
+			left: 0;
 			z-index: 1;
 
-			font-family: Helvetica, Arial, sans-serif;
-			font-size: 1.125rem !important;
-			font-weight: 700;
-			padding: 1rem 1.875rem;
-			color: $white;
+			font-family: $font-primary;
+			font-size: 1rem !important;
+			font-weight: $font-weight-bold;
+			padding: 4.125em 1.875rem 1.25rem;
+			color: $gray-900;
 		}
 
 		&:has(+ pre code) {
@@ -33,17 +33,23 @@
 		}
 	}
 
+	pre.wp-block-code {
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
 	div[style*="background-color"],
 	.CodeBlock,
 	code {
 		display: block;
 		position: relative;
-		background-color: $black-level2 !important;
+		background-color: $sky-blue !important;
 		border-radius: $border-radius !important;
-		font-size: 0.875rem !important;
-		font-family: "Courier New", Courier, monospace;
-		padding: 4rem 1.875rem 1.25rem !important;
-		color: $white !important;
+		font-size: 1rem !important;
+		font-family: $font-primary;
+		padding: 4.125em 1.875rem 1.25rem !important;
+		color: $gray-900 !important;
 
 		&::before {
 			position: absolute;
@@ -52,7 +58,7 @@
 			top: 3.5em;
 			width: 100%;
 			display: block;
-			border-bottom: 1px solid $borders-color;
+			border-bottom: 1px solid $light-indigo;
 
 		}
 
@@ -62,23 +68,62 @@
 			color: currentcolor;
 		}
 
+		> div,
+		p {
+			margin: 0 !important;
+			padding: 0 !important;
+			color: $gray-900 !important;
+			background-color: $white !important;
+		}
+
 		.Button {
 			font-size: 0.875rem;
-			padding: 0.25em 0.5em;
-			top: 0.65rem;
-			right: 1.25rem;
+			padding: 0.25em 0.75em;
+			top: 0.75rem;
+			right: 1.875rem;
 			z-index: 2;
+			border-radius: 6px;
+			border: 1px solid $primary;
+			background-color: $white;
 
-			svg {
-				margin-left: 0.5em;
+			&::before {
+				background-color: transparent;
 			}
 
-			// &:hover {
+			span {
+				color: $primary;
+				-webkit-text-fill-color: $primary;
+				font-size: 0.875em;
+				font-weight: $font-weight-bold;
+				line-height: 1.71;
+			}
 
-			// 	svg {
-			// 		fill: currentcolor;
-			// 	}
-			// }
+			svg {
+				margin-left: 0.25em;
+				fill: $primary;
+				z-index: 9;
+			}
+
+			&:hover {
+
+				span {
+					color: $white;
+					-webkit-text-fill-color: $white;
+				}
+
+				svg {
+					fill: $white;
+				}
+			}
+		}
+	}
+
+	div[style*="background-color"] {
+		padding: 3.6em 0 0 !important;
+		background-color: $white;
+
+		> div {
+			padding: 1.875rem 1.25rem !important;
 		}
 	}
 }
