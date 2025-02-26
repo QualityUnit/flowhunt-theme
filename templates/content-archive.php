@@ -122,7 +122,7 @@ endif;
 			<?php
 			global $wp_query;
 
-			/* Gets currenty category ID */
+			/* Gets current category ID */
 			$categories = get_the_category();
 
 			// Get category ID
@@ -160,6 +160,25 @@ endif;
 				'orderby'        => 'date',
 				'no_found_rows'  => true,
 			);
+
+			if ( ! empty( $categories ) ) {
+				$category_slugs = array();
+				foreach ( $categories as $category ) {
+					if ( ( $category instanceof WP_Term ) && isset( $category->slug ) ) {
+						$category_slugs[] = $category->slug;
+					}
+				}
+
+				$query_args['tax_query'] = array(
+					'relation' => 'AND',
+					array(
+						'taxonomy' => 'category',
+						'field'     => 'slug',
+						'terms'     => $category_slugs,
+						'operator'  => 'IN',
+					),
+				);
+			}
 
 			// If author page, query posts by author
 			if ( is_author() ) {
