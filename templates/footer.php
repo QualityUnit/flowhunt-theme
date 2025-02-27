@@ -8,7 +8,7 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 
 <footer class="Footer urlslab-skip-all">
   <div class="wrapper-md">
-	
+
 		<nav class="Footer__main">
 			<?php
 			if ( has_nav_menu( 'footer_navigation' ) ) :
@@ -57,7 +57,7 @@ if ( empty( preg_grep( '/^(login|trial|free-account|demo|request-for-proposal)$/
 			<a href="#" class="Medovnicky__button Medovnicky__button--no Medovnicky__button--more Button Button--medium Button--outline--white">
 				<span><?php _e( 'Decline', 'flowhunt' ); ?></span>
 			</a>
-			<a href="#" class="Medovnicky__button Medovnicky__button--yes Button Button--medium  Button--white">
+			<a href="#" class="Medovnicky__button Medovnicky__button--yes Button Button--medium Button--white">
 				<span><?php _e( 'Accept', 'flowhunt' ); ?></span>
 			</a>
 		</div>
