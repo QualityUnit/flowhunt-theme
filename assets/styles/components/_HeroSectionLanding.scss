@@ -71,7 +71,7 @@
 		h1.elementor-heading-title {
 
 			@media (min-width: $breakpoint-tablet-landscape) {
-				font-size: 3.75em;
+				font-size: 3.75em !important;
 			}
 		}
 

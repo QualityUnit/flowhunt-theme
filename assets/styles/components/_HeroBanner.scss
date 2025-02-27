@@ -25,7 +25,8 @@
 
 .hero__banner,
 .heroHeadline,
-.heroHeadline__home {
+.heroHeadline__home,
+.heroHeadline__solution {
 
 	.playBtn[class] {
 
@@ -88,6 +89,31 @@
 
 	@media (min-width: $breakpoint-tablet) {
 
+		.hero-section-landing-page {
+
+			&__content {
+
+				h1.elementor-heading-title {
+
+					@media (min-width: $breakpoint-tablet-landscape) {
+						font-size: 3.75em !important;
+					}
+				}
+
+				h3 {
+					font-size: 1.125rem;
+					color: $level-2;
+					padding: 0;
+					font-weight: $font-weight-normal;
+
+					@media (min-width: $breakpoint-tablet-landscape) {
+						font-size: 1.5rem !important;
+						line-height: 1.5 !important;
+					}
+				}
+			}
+		}
+
 		.e-con.e-child:first-of-type {
 			padding-left: 1.5em;
 		}
@@ -107,6 +133,19 @@
 				padding-left: 0;
 			}
 
+		}
+	}
+
+
+}
+
+.heroHeadline__solution {
+
+	.e-con-inner {
+		padding: 0;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			margin-top: 0;
 		}
 	}
 }
