@@ -126,6 +126,18 @@ body.page-template-default {
 	}
 }
 
+body.single.single-solutions {
+
+	.h1,
+	.h1 h1,
+	.h1 h2,
+	.h1 p {
+		font-size: $font-size-h1-xl !important;
+		line-height: 1.2 !important;
+		font-weight: $font-weight-bold !important;
+	}
+}
+
 .breadcrumb {
 	display: flex;
 	align-items: center;
