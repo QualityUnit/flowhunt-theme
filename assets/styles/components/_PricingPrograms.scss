@@ -109,6 +109,7 @@ no-descending-specificity, scss/no-global-function-names */
 			}
 
 			@media (max-width: $breakpoint-desktop-md) {
+
 				.mark,
 				.month {
 					font-size: 1rem;
@@ -180,6 +181,7 @@ no-descending-specificity, scss/no-global-function-names */
 				&::before {
 
 					@include square(1.25em);
+
 					content: '';
 					position: absolute;
 					left: 0;
