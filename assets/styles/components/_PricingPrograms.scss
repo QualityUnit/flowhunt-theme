@@ -181,8 +181,7 @@ no-descending-specificity, scss/no-global-function-names */
 				&::before {
 
 					@include square(1.25em);
-
-					content: '';
+					content: "";
 					position: absolute;
 					left: 0;
 					top: 0.125em;
