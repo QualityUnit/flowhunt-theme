@@ -229,7 +229,7 @@ no-descending-specificity, value-keyword-case */
 
 				li {
 					position: relative;
-					padding-left: 1.75em;
+					padding-left: 1.75em !important;
 
 					&::before {
 						position: absolute !important;
