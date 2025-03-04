@@ -5,6 +5,27 @@
 
 .Discover {
 
+	&__title {
+		position: relative;
+		border-radius: $border-radius-10;
+
+		@media (min-width: $breakpoint-tablet-landscape) {
+			border-radius: $border-radius-10 0 0 $border-radius-10;
+
+			&::after {
+				position: absolute;
+				top: 0;
+				right: 0;
+				transform: translateX(100%);
+				content: "";
+				background-color: $gray-50;
+				width: 17.14%;
+				height: 100%;
+				border-radius: 0 $border-radius-10 $border-radius-10 0;
+			}
+		}
+	}
+
 	&__main {
 		position: relative;
 		border-radius: $border-radius-10;
@@ -101,7 +122,6 @@
 			}
 		}
 
-
 		@media (min-width: $breakpoint-tablet-landscape) {
 			border-radius: $border-radius-10 0 0 $border-radius-10;
 
@@ -124,12 +144,12 @@
 		padding: 1.5em;
 
 		@media (min-width: $breakpoint-tablet-landscape) {
-			padding: 4.375em;
+			padding: 0 4.375em 4.375em;
 
 			&::before {
 				position: absolute;
-				top: -35%;
-				left: -50%;
+				top: -77%;
+				left: -47%;
 				content: "";
 				background: url(../../images/dots_bg_small.png);
 				background-size: contain;
@@ -183,7 +203,7 @@
 			&__categories {
 				border: 1px solid $primary;
 				border-radius: $border-radius-6;
-				padding: 0.15em 0.65em;
+				padding: 0.25em 0.5em;
 				margin-right: auto;
 			}
 
@@ -238,4 +258,3 @@
 
 	}
 }
-

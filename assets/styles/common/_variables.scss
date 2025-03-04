@@ -9,12 +9,14 @@ $sizes: (
 	"xs": 0.25em,
 	"s": 0.5em,
 	"m": 1em,
+	"m-plus": 1.25rem,
 	"l": 1.5em,
 	"xl": 2em,
 	"xxl": 2.5em,
 	"xxxl": 3.25em,
 	"extreme": 4.5em,
 	"ultra": 6em,
+	"ultra-plus": 6.25em,
 	"ultra-xl": 9.375em,
 	"2xultra": 10em
 );
@@ -62,9 +64,10 @@ $line-height-bigger: 1.44;
 
 
 $font-size-h1: clamp(2.75rem, 6vw, 3.75rem);
+$font-size-h1-xl: 3.75rem;
 $font-size-h1-l: 3rem;
 $font-size-h1-s: 2.75rem;
-$line-height-h1: 1.2;
+$line-height-h1: 1.2666;
 $font-size-h2: clamp(2rem, 4vw, 3rem);
 $line-height-h2: 1.15;
 $font-size-h2-xs: 1.5rem;

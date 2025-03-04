@@ -30,7 +30,7 @@
 			display: none;
 		}
 
-		@media (min-width: $breakpoint-tablet) {
+		@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-tablet-landscape - 1px) {
 			background: url(../../images/flow_modular-ai_tablet.svg) center top no-repeat;
 			padding-bottom: 160.5%;
 

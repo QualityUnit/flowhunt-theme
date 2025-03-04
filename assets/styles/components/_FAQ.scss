@@ -35,7 +35,6 @@ body.page-template[class] {
 .Urlslab-Faq {
 	padding: 2.5em 1em;
 
-
 	h2,
 	h3,
 	li,
@@ -120,6 +119,29 @@ body.page-template[class] {
 				flex: 0 0 41.5%;
 				padding-right: 3em;
 			}
+		}
+	}
+}
+
+body.single.single-solutions {
+
+	.Faq,
+	.Urlslab-Faq {
+
+		h2 {
+			font-size: $font-size-h1-l !important;
+			line-height: $line-height-h1 !important;
+		}
+	}
+}
+
+.bg-black-level3 {
+
+	.Faq,
+	.Urlslab-Faq {
+
+		* {
+			color: $white;
 		}
 	}
 }
