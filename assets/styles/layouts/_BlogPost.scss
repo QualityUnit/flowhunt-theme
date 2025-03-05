@@ -226,13 +226,15 @@ no-descending-specificity, value-keyword-case */
 			ol,
 			ul {
 				max-width: inherit;
+				padding-left: 0 !important;
 
 				li {
 					position: relative;
-					padding-left: 1.75em;
+					padding-left: 1.75em !important;
 
 					&::before {
 						position: absolute !important;
+						margin-left: 0 !important;
 					}
 
 					ul {

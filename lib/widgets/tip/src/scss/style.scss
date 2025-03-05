@@ -12,11 +12,11 @@
 }
 
 .block-tip {
-	margin: 20px 0;
+	margin: 1.25em 0;
 	padding: 1.25em 1.875em;
 	max-width: none;
-	background: #FDFDEA;
-	border: 1px solid #FCE96A;
+	background: $light-ivory;
+	border: 1px solid $yellow-golden-accent;
 	border-radius: 0.5em;
 
 	&__content {
@@ -27,8 +27,9 @@
 		&__img {
 
 			img {
-				width: 24px;
-				height: 24px;
+				max-width: inherit !important;
+				width: 1.5em;
+				height: 1.5em !important;
 			}
 		}
 
