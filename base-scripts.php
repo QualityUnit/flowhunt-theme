@@ -223,3 +223,29 @@ if (
 	<?php
 }
 ?>
+
+
+
+<script>
+	(function(d,t) {
+		var script = d.createElement(t);
+		script.id = 'fh_tracking';
+		script.async = true;
+		script.src = 'https://app.flowhunt.io/fh_trk.min.js';
+
+		script.onload = script.onreadystatechange = function() {
+			var rs = this.readyState;
+			if (rs && (rs != 'complete') && (rs != 'loaded')) return;
+
+			if (window.FHTrck) {
+				window.FHTrck.init({
+					workspace_id: 'e31db667-893b-4e47-92c3-bb1f93c1b594',
+					customer_id: '7072788256',
+					cookiesEnabled: getCookieFrontend("cookieLaw") ? true : false,
+					appendSessionToLinks: true,
+				});
+			}
+		};
+		document.body.insertBefore(script, document.body.lastChild);
+	})(document, 'script');
+</script>
