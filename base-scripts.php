@@ -111,7 +111,7 @@
 		const body  = document.body;
 		const gtag1 = document.createElement('script');
 		gtag1.async = true;
-		gtag1.src = "https://www.googletagmanager.com/gtag/js?id=G-T9HBB9KMVK";
+		gtag1.src = "https://www.googletagmanager.com/gtag/js?id=G-W2STK077L2";
 
 		body.insertAdjacentElement('beforeend', gtag1);
 	}
