@@ -33,6 +33,13 @@
 	overflow: hidden;
 	background: $black-level2;
 
+	&__black-level3 {
+		background: $black-level3;
+		padding: 1.875em;
+		border: 1px solid $borders-color;
+		box-shadow: none;
+	}
+
 	&.gradient-left {
 		background: linear-gradient(to right, $black-level3 21%, $black-level2 90%);
 		box-shadow: none;

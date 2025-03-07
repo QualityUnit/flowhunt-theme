@@ -1,0 +1,36 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.BlockLink {
+
+	&__item {
+		padding: 2.5em 1.875em 1.875em 1.875em;
+		border: 1px solid $gray-200;
+		border-radius: 0.625em;
+		position: relative;
+
+		&::before {
+			content: '';
+			background: $gray-50;
+			position: absolute;
+			left: -1px;
+			top: 0;
+			bottom: 0;
+			width: 1px;
+			height: 100%;
+			background: transparent;
+			background-image: radial-gradient(circle at center, $accent-electric-blue-dark 0%, $accent-electric-blue 10%, $gray-200 41%, $gray-200 100%);
+			transform: scaleY(0);
+			transition: transform 0.3s ease;
+		}
+
+		&:hover {
+			background: $gray-50;
+
+			&::before {
+				transform: scaleY(1);
+			}
+		}
+	}
+}

@@ -1071,6 +1071,26 @@ picture.Screenshot,
 	}
 }
 
+.elementor-widget-text-editor {
+
+	@each $class,
+	$size in $fontSizes {
+		&.fs-#{$class} {
+
+			* {
+				font-size: $size !important;
+			}
+		}
+	}
+
+	&.mb-text-0 {
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
 [class*="TextGutter"] {
 	display: block !important;
 	margin-bottom: 2em;
