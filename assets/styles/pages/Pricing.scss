@@ -2,6 +2,7 @@
 no-descending-specificity, scss/no-global-function-names */
 @use "../common/variables" as *;
 @use "../common/mixins" as *;
+@forward "../elements/LabelTag";
 @forward "../components/PricingPrograms";
 @forward "../components/ComparePlansNew";
 // @forward "../components/PricingTable";
