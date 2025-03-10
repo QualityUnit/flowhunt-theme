@@ -24,6 +24,7 @@
 }
 
 @mixin play-button {
+
 	@include square(13.125em !important);
 	position: absolute;
 	top: 50%;
@@ -173,6 +174,7 @@
 		}
 
 		@media (min-width: $breakpoint-desktop-hd) {
+
 			.e-child {
 
 				&:first-of-type {
@@ -185,6 +187,7 @@
 		}
 
 		@media (min-width: $breakpoint-tablet-landscape) and (max-width: $breakpoint-desktop-hd - 1px) {
+
 			.e-con.e-child {
 				padding: 0;
 

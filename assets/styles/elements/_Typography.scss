@@ -1076,7 +1076,7 @@ picture.Screenshot,
 .elementor-widget-text-editor {
 
 	@each $class,
-	$size in $fontSizes {
+		$size in $fontSizes {
 		&.fs-#{$class} {
 
 			* {

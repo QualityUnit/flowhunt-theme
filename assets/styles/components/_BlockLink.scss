@@ -11,15 +11,14 @@
 		position: relative;
 
 		&::before {
-			content: '';
-			background: $gray-50;
+			content: "";
 			position: absolute;
 			left: -1px;
 			top: 0;
 			bottom: 0;
 			width: 1px;
 			height: 100%;
-			background: transparent;
+			background-color: transparent;
 			background-image: radial-gradient(circle at center, $accent-electric-blue-dark 0%, $accent-electric-blue 10%, $gray-200 41%, $gray-200 100%);
 			transform: scaleY(0);
 			transition: transform 0.3s ease;
