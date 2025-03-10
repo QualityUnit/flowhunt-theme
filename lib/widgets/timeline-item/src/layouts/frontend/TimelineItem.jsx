@@ -1,5 +1,4 @@
 const { RichText } = wp.blockEditor;
-const { TextareaControl } = wp.components;
 import TimelineItemIcon from '../../../images/chevron-right.svg';
 
 export default function TimelineItem( { attributes, setAttributes } ) {
@@ -18,12 +17,14 @@ export default function TimelineItem( { attributes, setAttributes } ) {
 					/>
 				</div>
 			</div>
-			<div className="block-timeline-item__content"><TextareaControl
-				value={ content }
-				rows="4"
-				onFocus={ ( e ) => e.currentTarget.select() }
-				onChange={ ( value ) => setAttributes( { content: value } ) }
-			/></div>
+			<div className="block-timeline-item__content">
+				<RichText
+					tagName="div"
+					value={ content }
+					onChange={ ( value ) => setAttributes( { content: value } ) }
+					style={ { minHeight: '120px', width: '100%' } }
+				/>
+			</div>
 		</div>
 	);
 }

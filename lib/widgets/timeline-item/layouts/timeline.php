@@ -12,7 +12,7 @@ function timelineitem( $attr, $content ) {
 				</div>
 			</div>
 			<div class="block-timeline-item__content">
-					' . esc_html( $attr['content'] ) . esc_html( $content ) . '
+					' . $attr['content'] . esc_html( $content ) . '
 			</div>
 		</div>';
 }
