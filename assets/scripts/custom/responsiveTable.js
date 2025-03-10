@@ -59,8 +59,8 @@ if ( tables.length ) {
 			}
 
 			if ( vals?.length > 1 ) {
-				const yesRegex = new RegExp( '/^(\s*)Y(\s*)$/i' );
-				const noRegex = new RegExp( '/^(\s*)N(\s*)$/i' );
+				const yesRegex = /^\s*Y\s*$/i;
+				const noRegex = /^\s*N\s*$/i;
 				vals.forEach( ( val, index ) => {
 					if ( yesRegex.test( val.firstChild.textContent ) ) {
 						val.firstChild.textContent = '';
