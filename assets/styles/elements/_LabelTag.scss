@@ -13,6 +13,10 @@ no-descending-specificity, value-keyword-case
 	font-size: 0.75rem;
 	padding: 0.25em 1.166em;
 
+	> *:last-of-type {
+		margin-left: 0.5em;
+	}
+
 	&--free--months {
 		display: flex;
 		align-items: center;
