@@ -97,11 +97,13 @@ h6,
 	line-height: $line-height-h6;
 }
 
-*:has(> [class*="arrow-out"] a) {
+*:has(> [class*="arrow-out"] a),
+*:has(> [class*="arrow-out-border"] a) {
 	position: relative;
 }
 
-[class*="arrow-out"]:has(a) {
+[class*="arrow-out"]:has(a),
+[class*="arrow-out-border"]:has(a) {
 	position: static !important;
 	display: flex;
 	align-items: center;

@@ -159,5 +159,18 @@
 			}
 		}
 	}
+
+	&__gradient {
+		padding-left: 1.437px;
+		padding-bottom: 1.437px;
+		border-radius: 10px;
+		background: radial-gradient(ellipse farthest-corner at 33% 85%, #0084FF 0%, #E5E7EB 50%, #E5E7EB 73%, #0084FF 100%);
+		box-shadow: 0 0 34.499px -7.666px rgba(0, 0, 0, 0.10);
+
+		.elementor-video {
+			min-height: 40.3125em;
+			border-radius: 10px;
+		}
+	}
 }
 
