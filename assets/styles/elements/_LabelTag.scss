@@ -14,7 +14,10 @@ no-descending-specificity, value-keyword-case
 	padding: 0.25em 1.166em;
 
 	> *:last-of-type {
-		margin-left: 0.5em;
+
+		.icon {
+			margin-right: 0;
+		}
 	}
 
 	&--free--months {
