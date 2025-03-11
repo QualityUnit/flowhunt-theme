@@ -30,12 +30,27 @@
 			&::before {
 				transform: scaleY(1);
 			}
+		}
+
+		[class*="arrow-out"]:has(a),
+		[class*="arrow-out-border"]:has(a) {
 
 			svg {
-				top: 1.25em;
-				right: 1.25em;
-			}
 
+				@include square(1.25em);
+				margin-top: -5em;
+				margin-right: -0.625em;
+				display: inline-block;
+			}
 		}
+
+		[class*="arrow-out"]:not(:has(a)),
+		[class*="arrow-out-border"]:not(:has(a)) {
+
+			svg {
+				display: none;
+			}
+		}
+
 	}
 }
