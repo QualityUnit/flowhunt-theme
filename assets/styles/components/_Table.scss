@@ -276,8 +276,8 @@ body:not([class*="elementor"]) figure.wp-block-table,
 
 		.iconWrapper {
 
-			@include square(1.1428em);
-			display: inline-flex;
+			@include square(1.125em);
+			display: inline-flex !important;
 			align-items: center;
 			justify-content: center;
 			border-radius: 50%;
@@ -299,13 +299,8 @@ body:not([class*="elementor"]) figure.wp-block-table,
 
 			&.icon {
 
-				@include square(0.75em !important);
+				@include square(1em !important);
 				margin: 0 !important;
-
-				&-close {
-
-					@include square(0.5em !important);
-				}
 			}
 		}
 	}

@@ -64,11 +64,11 @@ if ( tables.length ) {
 				vals.forEach( ( val, index ) => {
 					if ( yesRegex.test( val.firstChild.textContent ) ) {
 						val.firstChild.textContent = '';
-						val.classList.add( 'icn-after-check' );
+						val.classList.add( 'icn-after-check-rounded' );
 						val.insertAdjacentHTML( 'afterbegin', `
 							${ articleTable ? "<span class='iconWrapper'>" : '' }
-							<svg class="icon icon-check">
-								<use xlink:href="/app/themes/flowhunt${ isLocal ? '-theme' : '' }/assets/images/icons.svg#check-narrow"></use>
+							<svg class="icon icon-check-rounded">
+								<use xlink:href="/app/themes/flowhunt${ isLocal ? '-theme' : '' }/assets/images/icons.svg#check-rounded"></use>
 							</svg>
 							${ articleTable ? '</span>' : '' }
 							`
@@ -77,11 +77,11 @@ if ( tables.length ) {
 					}
 					if ( noRegex.test( val.firstChild.textContent ) ) {
 						val.firstChild.textContent = '';
-						val.classList.add( 'icn-after-close' );
+						val.classList.add( 'icn-after-close-rounded' );
 						val.insertAdjacentHTML( 'afterbegin', `
 							${ articleTable ? "<span class='iconWrapper'>" : '' }
-							<svg class="icon icon-close">
-								<use xlink:href="/app/themes/flowhunt${ isLocal ? '-theme' : '' }/assets/images/icons.svg#close"></use>
+							<svg class="icon icon-close-rounded">
+								<use xlink:href="/app/themes/flowhunt${ isLocal ? '-theme' : '' }/assets/images/icons.svg#close-rounded"></use>
 							</svg>
 							${ articleTable ? '</span>' : '' }
 							`
