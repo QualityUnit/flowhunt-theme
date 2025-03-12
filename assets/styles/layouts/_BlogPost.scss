@@ -223,36 +223,29 @@ no-descending-specificity, value-keyword-case */
 
 		.Content {
 
-			ul {
-
-				> li {
-
-					&::before {
-						content: url(../images/icon_checkmark_primary_big.svg) !important;
-						background-repeat: no-repeat;
-						background-color: transparent !important;
-					}
-				}
-			}
-
 			ol,
 			ul {
 				max-width: inherit;
-				padding-left: 0 !important;
+				padding-left: 0;
 
 				li {
 					position: relative;
-					padding-left: 1.75em !important;
+					padding-left: 1.75em;
 
 					&::before {
-						position: absolute !important;
-						margin-left: 0 !important;
+						position: absolute;
+						margin-left: 0;
 					}
 
 					ul {
 
 						li {
 							padding-left: 0.75em;
+							margin-bottom: 0.25em;
+
+							&:last-child {
+								margin-bottom: 0;
+							}
 
 							&::before {
 								content: "\2022" !important;
@@ -266,6 +259,18 @@ no-descending-specificity, value-keyword-case */
 				}
 			}
 
+			ul {
+
+				> li {
+
+					&::before {
+						content: url(../images/icon_checkmark_primary_big.svg) !important;
+						background-repeat: no-repeat;
+						background-color: transparent !important;
+					}
+				}
+			}
+
 			ol {
 				list-style: none;
 				counter-reset: list-counter;
@@ -273,16 +278,19 @@ no-descending-specificity, value-keyword-case */
 
 				> li {
 					counter-increment: list-counter;
-					margin-bottom: 0.25em;
+					margin-bottom: 0.5em;
 					position: relative;
-					padding-left: 2em;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
 
 					&::before {
 
 						@include square(1.25rem);
 						content: counter(list-counter);
 						position: absolute;
-						top: 0.2rem;
+						top: 0.3rem;
 						left: 0;
 						border-radius: 3.125em;
 						background: $primary;
