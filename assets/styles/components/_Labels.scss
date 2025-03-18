@@ -108,20 +108,20 @@
 		font-weight: $font-weight-bold;
 		line-height: 1.71;
 
+		&:has(img) {
+
+			img {
+				margin-right: 0.25em;
+			}
+		}
+
 		&:has(.elementor-widget-text-editor) {
-			
+
 			&.elementor-widget-text-editor {
 
 				* {
 					margin-bottom: 0;
 				}
-			}
-		}
-
-		&:has(img) {
-
-			img {
-				margin-right: 0.25em;
 			}
 		}
 	}
