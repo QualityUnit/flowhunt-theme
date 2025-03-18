@@ -135,8 +135,6 @@
 
 		}
 	}
-
-
 }
 
 .heroHeadline__solution {
@@ -177,6 +175,129 @@
 
 			&:first-of-type {
 				padding-left: 0;
+			}
+		}
+	}
+}
+
+.heroHeadline__services.e-flex {
+	padding: 11.1875em 2.125em 13.5625em 0;
+	position: relative;
+
+	@media (max-width: $breakpoint-desktop-md - 1px) {
+		padding: 5em 0.625em;
+	}
+
+	> .e-con-inner {
+		padding: 0;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		@media (max-width: $breakpoint-desktop-md - 1px) {
+			flex-direction: column;
+		}
+	}
+
+	.video-block {
+		position: absolute;
+		top: -2.625em;
+		right: -2.125em;
+		display: grid;
+		gap: 0.5em;
+		grid-template-columns: repeat(2, minmax(9.5em, 1fr));
+		grid-template-rows: 1fr 1fr;
+		z-index: 300;
+		max-width: 19.5625em;
+
+		@media (max-width: $breakpoint-desktop-md - 1px) {
+			top: 2em;
+			right: 2em;
+		}
+
+		@media (max-width: $breakpoint-tablet) {
+			top: 0;
+			right: 0;
+			position: relative;
+			max-width: initial;
+		}
+
+		&--item {
+			width: 9.5em;
+			height: 6.8125em;
+			border-radius: $border-radius-6;
+			border: 2px solid $white;
+
+			@media (max-width: $breakpoint-tablet) {
+				width: 100%;
+				height: auto;
+				min-height: 11.25em;
+			}
+
+			.elementor-widget-text-editor {
+				color: $white;
+				font-size: 0.46875rem;
+				font-weight: $font-weight-bold;
+				line-height: 1.23;
+
+				@media (max-width: $breakpoint-tablet) {
+					font-size: 0.875rem;
+				}
+
+				p {
+					margin: 0;
+					color: inherit;
+					font-size: inherit;
+					font-weight: inherit;
+					line-height: inherit;
+				}
+			}
+
+			.elementor-heading-title {
+				margin-bottom: 0.335em;
+				color: $white;
+				font-size: 0.8rem;
+				font-weight: $font-weight-bold;
+				line-height: 1.25;
+
+				@media (max-width: $breakpoint-tablet) {
+					font-size: 1.25rem;
+				}
+			}
+
+			.elementor-widget-image {
+				text-align: left;
+
+				img {
+
+					@include square(2em);
+
+					@media (max-width: $breakpoint-tablet) {
+
+						@include square(3em);
+					}
+				}
+			}
+		}
+	}
+
+	.label-block {
+		position: absolute;
+		bottom: 1.25em;
+		left: 1.25em;
+		width: auto;
+		display: inline-block;
+		flex-direction: column;
+		z-index: 300;
+
+		> div {
+			margin-bottom: 0.6875em;
+
+			p {
+				margin-bottom: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
 			}
 		}
 	}

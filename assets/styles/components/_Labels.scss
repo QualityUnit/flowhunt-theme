@@ -60,3 +60,66 @@
 		}
 	}
 }
+
+.label {
+
+	&--white {
+		margin: 0;
+		padding: 0.75em;
+		width: auto;
+		border-radius: $border-radius;
+		background: $white;
+		color: $gray-900;
+		font-size: $font-size-bigger;
+		line-height: 1.33;
+
+		&:has(.elementor-widget-text-editor) {
+
+			.elementor-widget-text-editor {
+
+				* {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&--gray-border {
+			border: 1px solid $gray-200;
+		}
+
+		&:has(img) {
+
+			img {
+				margin-right: 0.625em;
+			}
+		}
+	}
+
+	&--grey-shadow {
+		margin: 0;
+		padding: 0.375em 0.625em;
+		width: auto;
+		border-radius: $border-radius;
+		border: 1px solid $gray-200;
+		background: $white;
+		box-shadow: 0 1px 2px 0 rgba($black-real, 0.1);
+		color: $gray-900;
+		font-size: $font-size-smaller;
+		font-weight: $font-weight-bold;
+		line-height: 1.71;
+
+		&.elementor-widget-text-editor {
+
+			* {
+				margin-bottom: 0;
+			}
+		}
+
+		&:has(img) {
+
+			img {
+				margin-right: 0.25em;
+			}
+		}
+	}
+}
