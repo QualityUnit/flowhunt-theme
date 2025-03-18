@@ -73,6 +73,13 @@
 		font-size: $font-size-bigger;
 		line-height: 1.33;
 
+		&:has(img) {
+
+			img {
+				margin-right: 0.625em;
+			}
+		}
+
 		&:has(.elementor-widget-text-editor) {
 
 			.elementor-widget-text-editor {
@@ -85,13 +92,6 @@
 
 		&--gray-border {
 			border: 1px solid $gray-200;
-		}
-
-		&:has(img) {
-
-			img {
-				margin-right: 0.625em;
-			}
 		}
 	}
 
@@ -108,10 +108,13 @@
 		font-weight: $font-weight-bold;
 		line-height: 1.71;
 
-		&.elementor-widget-text-editor {
+		&:has(.elementor-widget-text-editor) {
+			
+			&.elementor-widget-text-editor {
 
-			* {
-				margin-bottom: 0;
+				* {
+					margin-bottom: 0;
+				}
 			}
 		}
 
