@@ -131,10 +131,8 @@ function wp_get_menu_array( $current_menu ) {
 	foreach ( $menu as $item ) :
 		?>
 	<li class="menu-item
-		<?=
-		esc_attr( ! empty( $item['children'] ) ? 'menu-item-has-children' : '' );
-		esc_attr( $item['active'] );
-		?>
+		<?= esc_attr( ! empty( $item['children'] ) ? 'menu-item-has-children' : '' ); ?>
+		<?= esc_attr( $item['active'] ); ?>
 	" data-id="<?= esc_attr( $item['ID'] ); ?>">
 		<a href="<?= esc_url( $item['url'] ); ?>" title="<?= esc_attr( $item['title'] ); ?>"><?= esc_html( $item['title'] ); ?>
 		<?php if ( ! empty( $item['children'] ) ) : ?>

@@ -111,15 +111,12 @@
 
 					> a {
 
-						color: $primary;
-						background: $primary-gradient;
-						background-clip: text;
-						-webkit-text-fill-color: transparent;
+						color: $gray-900;
 					}
 				}
 
 				a {
-					color: $black;
+					color: $gray-900;
 					text-decoration: none;
 					font-weight: $font-weight-normal;
 				}
@@ -180,6 +177,27 @@
 				.Button {
 					max-width: 5.6875em;
 
+					&--login {
+
+						&:hover {
+
+							&::before {
+								background: $sky-blue;
+							}
+
+							&::after {
+								content: none;
+							}
+
+							> span {
+								background: var(--flowhunt-hover, linear-gradient(136deg, #0497DC 39.1%, #465CE0 109.91%));
+								background-clip: text;
+								-webkit-background-clip: text;
+								-webkit-text-fill-color: transparent;
+							}
+						}
+					}
+
 					+ .Button {
 						margin-left: 0 !important;
 					}
@@ -211,9 +229,9 @@
 							content: "";
 							position: absolute;
 							left: 0;
-							bottom: -0.25em;
+							bottom: 0;
 							width: 100%;
-							height: 0.1875em;
+							height: 0.125em;
 							background: $primary-gradient;
 							transition: all 0.2s;
 						}
