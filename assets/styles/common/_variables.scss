@@ -14,7 +14,9 @@ $sizes: (
 	"xl": 2em,
 	"xxl": 2.5em,
 	"xxxl": 3.25em,
+	"extreme-small": 3.75em,
 	"extreme": 4.5em,
+	"extreme-plus": 5em,
 	"ultra": 6em,
 	"ultra-plus": 6.25em,
 	"ultra-xl": 9.375em,
@@ -28,6 +30,7 @@ $fontSizes: (
 	"xm": 0.8125rem,
 	"m": 0.875rem,
 	"normal": 1rem,
+	"semi-l": 1.125rem,
 	"l": 1.5rem,
 	"xl": 2rem,
 	"xxl": 2.5rem,
@@ -199,6 +202,7 @@ $accent-electric-blue: #0497dc;
 $accent-electric-blue-dark: #465ce0;
 $accent-dark: #1a56db;
 $accent-indigo: #984ad7;
+$accent-bright-blue: #0084ff;
 
 $primary-gradient: linear-gradient(90deg, $accent-electric-blue 0, $accent-electric-blue-dark 100%);
 $primary-gradient-reverse:  linear-gradient(90deg, $accent-electric-blue-dark 0, $accent-electric-blue 100%);

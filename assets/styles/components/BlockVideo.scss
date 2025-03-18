@@ -159,5 +159,18 @@
 			}
 		}
 	}
+
+	&__gradient {
+		padding-left: 0.09em;
+		padding-bottom: 0.09em;
+		border-radius: 0.625em;
+		background: radial-gradient(ellipse farthest-corner at 33% 85%, $accent-bright-blue 0%, $gray-200 50%, $gray-200 73%, $accent-bright-blue 100%);
+		box-shadow: 0 0 2.1875em -0.48em rgba(0, 0, 0, 0.1);
+
+		.elementor-video {
+			min-height: 40.3125em;
+			border-radius: 0.625em;
+		}
+	}
 }
 

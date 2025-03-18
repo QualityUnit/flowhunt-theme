@@ -98,6 +98,7 @@ no-descending-specificity, scss/no-global-function-names */
 				background-color: $gray-50;
 				border: 1px solid $gray-200;
 				border-radius: $border-radius;
+				overflow: hidden;
 
 				img {
 					height: auto !important;
