@@ -1,0 +1,33 @@
+/* stylelint-disable selector-class-pattern */
+
+@use "../common/variables" as *;
+@use "../common/mixins" as *;
+
+.BlockIcons {
+	padding: 1.875em 1.25em 2.25em;
+	border-radius: $border-radius;
+	border: 1px solid $gray-200;
+	background: $white;
+	box-shadow: 0 0.9375em 0.625em -0.9375em rgba($dark-violet, 0.12);
+
+	.elementor-widget-text-editor {
+
+		* {
+			margin-bottom: 0;
+			color: $gray-500;
+			font-size: $font-size-smaller;
+			line-height: 1.57;
+		}
+	}
+
+	.elementor-widget-image {
+
+		img {
+			padding: 0.375em;
+			border-radius: $border-radius-6;
+			border: 1px solid $accent-electric-blue;
+			background: $sky-blue;
+		}
+	}
+
+}

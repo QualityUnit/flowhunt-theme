@@ -1,0 +1,29 @@
+/* stylelint-disable selector-class-pattern */
+
+@use "../common/mixins" as *;
+@use "../common/variables" as *;
+
+.BlockWithLabels {
+	position: relative;
+
+	@media (max-width: $breakpoint-tablet) {
+
+		&::before {
+			content: "";
+			display: none;
+		}
+
+		&__content {
+			order: 1;
+		}
+
+		&__image {
+			min-height: auto;
+			order: 2;
+
+			> div {
+				position: static;
+			}
+		}
+	}
+}
