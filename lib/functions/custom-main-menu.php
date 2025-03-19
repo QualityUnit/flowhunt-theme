@@ -25,14 +25,10 @@ function menu_block( $child ) {
 		);
 		$the_query        = new WP_Query( $sticky_post_args );
 
-		$current_url = preg_replace( '/\/blog\/([^\/]+)\//', '$1', $_SERVER['REQUEST_URI'] ); // @codingStandardsIgnoreLine
-
 		while ( $the_query->have_posts() ) :
 			$the_query->the_post();
-
-			$active = get_post_field( 'post_name', get_post() ) == $current_url ? 'active' : '';
 			?>
-			<li class="submenu__right topPost <?= esc_attr( $active ); ?>">
+			<li class="submenu__right topPost">
 				<span class="section_title"><?= ! empty( $child['top_title'] ) ? esc_html( $child['top_title'] ) : esc_html( __( 'Top blog post', 'flowhunt' ) ); ?></span>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
 					<div class="submenu-item__image"><?php the_post_thumbnail( 'box_archive_thumbnail' ); ?></div>
@@ -48,7 +44,7 @@ function menu_block( $child ) {
 		wp_reset_postdata();
 	} elseif ( str_contains( $child['classes'], 'customImage' ) ) {
 		?>
-		<li class="submenu__right customImage <?= esc_attr( $child['active'] ); ?>">
+		<li class="submenu__right customImage">
 			<span class="section_title"><?= ! empty( $child['top_title'] ) ? esc_html( $child['top_title'] ) : esc_html( $child['title'] ); ?></span>
 			<a href="<?= esc_url( $child['url'] ); ?>" title="<?= esc_attr( $child['title'] ); ?>">
 				<div class="submenu-item__image"><img src="<?= esc_url( get_template_directory_uri() . '/assets/images/' . $child['image'] ); ?>" alt="<?= esc_attr( $child['title'] ); ?>" /></div>
@@ -60,7 +56,7 @@ function menu_block( $child ) {
 	} else {
 		?>
 
-	<li class="submenu-item <?= esc_attr( $child['active'] ); ?>">
+	<li class="submenu-item">
 		<a class="flex" href="<?= esc_url( $child['url'] ); ?>" title="<?= esc_attr( $child['title'] ); ?>">
 		<?php
 		if ( ! empty( $child['icon'] ) ) {
@@ -81,16 +77,14 @@ function menu_block( $child ) {
 	}
 }
 
-
 function wp_get_menu_array( $current_menu ) {
 	$menu_name  = $current_menu;
 	$locations  = get_nav_menu_locations();
 	$menu       = wp_get_nav_menu_object( $locations[ $menu_name ] );
 	$array_menu = wp_get_nav_menu_items( $menu->term_id );
 	$menu       = array();
-	// print_r( $array_menu );
+
 	foreach ( $array_menu as $m ) {
-		$active = ( parse_url( $m->url, PHP_URL_PATH ) == $_SERVER['REQUEST_URI'] ) ? 'active' : ''; // @codingStandardsIgnoreLine
 		if ( empty( $m->menu_item_parent ) ) {
 			$menu[ $m->ID ]                = array();
 			$menu[ $m->ID ]['ID']          = $m->ID;
@@ -99,13 +93,11 @@ function wp_get_menu_array( $current_menu ) {
 			$menu[ $m->ID ]['url']         = $m->url;
 			$menu[ $m->ID ]['description'] = $m->description;
 			$menu[ $m->ID ]['classes']     = implode( ' ', $m->classes );
-			$menu[ $m->ID ]['active']      = $active;
 			$menu[ $m->ID ]['children']    = array();
 		}
 	}
 	$submenu = array();
 	foreach ( $array_menu as $m ) {
-		$active = ( parse_url( $m->url, PHP_URL_PATH ) == $_SERVER['REQUEST_URI'] ) ? 'active' : ''; // @codingStandardsIgnoreLine
 
 		if ( $m->menu_item_parent ) {
 			$ext = '(jpg|png|webp|gif|svg)';
@@ -122,7 +114,6 @@ function wp_get_menu_array( $current_menu ) {
 			$submenu[ $m->ID ]['url']                           = $m->url;
 			$submenu[ $m->ID ]['description']                   = $m->description;
 			$submenu[ $m->ID ]['classes']                       = implode( ' ', $m->classes );
-			$submenu[ $m->ID ]['active']                        = $active;
 			$submenu[ $m->ID ]['icon']                          = $icon;
 			$submenu[ $m->ID ]['image']                         = $image;
 			$menu[ $m->menu_item_parent ]['children'][ $m->ID ] = $submenu[ $m->ID ];
@@ -132,7 +123,6 @@ function wp_get_menu_array( $current_menu ) {
 		?>
 	<li class="menu-item
 		<?= esc_attr( ! empty( $item['children'] ) ? 'menu-item-has-children' : '' ); ?>
-		<?= esc_attr( $item['active'] ); ?>
 	" data-id="<?= esc_attr( $item['ID'] ); ?>">
 		<a href="<?= esc_url( $item['url'] ); ?>" title="<?= esc_attr( $item['title'] ); ?>"><?= esc_html( $item['title'] ); ?>
 		<?php if ( ! empty( $item['children'] ) ) : ?>
