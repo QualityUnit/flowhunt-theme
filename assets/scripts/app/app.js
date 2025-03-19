@@ -393,4 +393,64 @@
 			observer.observe( section );
 		}
 	} );
+
+	document.addEventListener(
+		'DOMContentLoaded',
+		function() {
+			const navItems = document.querySelectorAll( '.Header__navigation .nav li' );
+			const currentUrl = window.location.href;
+			const currentUrlWithoutHash = currentUrl.split( '#' )[ 0 ];
+			let foundMatch = false;
+
+			if ( navItems.length > 0 ) {
+				navItems.forEach(
+					( item ) => {
+						const link = item.querySelector( 'a' );
+						if ( ! link ) {
+							return;
+						}
+						const linkUrl = link.href;
+
+						if ( currentUrl === linkUrl ) {
+							item.classList.add( 'active' );
+							foundMatch = true;
+						} else if ( item.classList.contains( 'menu-item-has-children' ) ) {
+							const subLinks = item.querySelectorAll( '.submenu a' );
+							subLinks.forEach(
+								( subLink ) => {
+									if ( currentUrl === subLink.href ) {
+										item.classList.add( 'active' );
+										subLink.parentElement.classList.add( 'active' );
+										foundMatch = true;
+									}
+								},
+							);
+						}
+					},
+				);
+
+				if ( ! foundMatch ) {
+					navItems.forEach( ( item ) => {
+						const link = item.querySelector( 'a' );
+						if ( ! link ) {
+							return;
+						}
+						const linkUrl = link.href;
+
+						if ( currentUrlWithoutHash === linkUrl && ! foundMatch ) {
+							item.classList.add( 'active' );
+						} else if ( item.classList.contains( 'menu-item-has-children' ) && ! foundMatch ) { // перевірка чи не знайдено хеш
+							const subLinks = item.querySelectorAll( '.submenu a' );
+							subLinks.forEach( ( subLink ) => {
+								if ( currentUrlWithoutHash === subLink.href ) {
+									item.classList.add( 'active' );
+									subLink.parentElement.classList.add( 'active' );
+								}
+							} );
+						}
+					} );
+				}
+			}
+		},
+	);
 } )();
