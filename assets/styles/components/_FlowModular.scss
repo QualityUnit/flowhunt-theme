@@ -182,5 +182,17 @@
 			bottom: -6em;
 		}
 	}
-}
 
+	&__linesAnim {
+
+		&.elementor-widget-video {
+
+			.elementor-wrapper {
+
+				video {
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}
