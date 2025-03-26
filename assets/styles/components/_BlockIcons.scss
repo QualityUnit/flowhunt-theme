@@ -24,10 +24,11 @@
 
 		img {
 			padding: 0.375em;
+			width: 100%;
+			height: auto;
 			border-radius: $border-radius-6;
 			border: 1px solid $accent-electric-blue;
 			background: $sky-blue;
 		}
 	}
-
 }
