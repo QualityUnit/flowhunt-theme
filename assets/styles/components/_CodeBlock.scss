@@ -46,8 +46,7 @@
 		position: relative;
 		background-color: $sky-blue !important;
 		border-radius: $border-radius !important;
-		font-size: 1rem !important;
-		font-family: $font-primary;
+		font-size: 0.875rem !important;
 		padding: 4.125em 1.875rem 1.25rem !important;
 		color: $gray-900 !important;
 
@@ -59,7 +58,18 @@
 			width: 100%;
 			display: block;
 			border-bottom: 1px solid $light-indigo;
+		}
 
+		&::after {
+			position: absolute;
+			content: "";
+			left: 0;
+			right: 0;
+			top: 0;
+			width: 100%;
+			height: 3.5em;
+			display: block;
+			background-color: $pastel-blue;
 		}
 
 		*:not(.Button, svg) {
