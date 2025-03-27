@@ -171,7 +171,18 @@
 					}
 
 					&.topPost {
-						background-color: transparent;
+						position: relative;
+
+						&::before {
+							content: "";
+							position: absolute;
+							left: 0;
+							top: -1.5em;
+							right: -1.5em;
+							bottom: -1.5em;
+							background-color: $gray-50;
+							z-index: -1;
+						}
 
 						.submenu-item {
 
@@ -188,18 +199,18 @@
 							}
 						}
 
-						&:hover {
+						> a {
+							padding: 0.625em;
+							display: block;
+							border: 1px solid transparent;
+							border-radius: $border-radius-6;
+							transition: all 0.3s;
 
-							.submenu-item {
+							&:hover {
+								border-color: $gray-200;
+								background: $gray-100;
 
-								&__title {
-									color: $primary;
-									background: $primary-gradient;
-									background-clip: text;
-									-webkit-text-fill-color: transparent;
-								}
-
-								&__learn-more {
+								.submenu-item__learn-more {
 
 									svg {
 										opacity: 1;
