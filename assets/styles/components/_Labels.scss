@@ -80,13 +80,10 @@
 			}
 		}
 
-		&:has(.elementor-widget-text-editor) {
+		.elementor-widget-text-editor {
 
-			.elementor-widget-text-editor {
-
-				* {
-					margin-bottom: 0;
-				}
+			* {
+				margin-bottom: 0;
 			}
 		}
 
@@ -115,13 +112,10 @@
 			}
 		}
 
-		&:has(.elementor-widget-text-editor) {
+		&.elementor-widget-text-editor {
 
-			&.elementor-widget-text-editor {
-
-				* {
-					margin-bottom: 0;
-				}
+			* {
+				margin-bottom: 0;
 			}
 		}
 	}
