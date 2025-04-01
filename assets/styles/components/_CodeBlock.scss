@@ -34,6 +34,7 @@
 	}
 
 	pre.wp-block-code {
+		overflow: hidden;
 		white-space: pre-wrap;
 		word-wrap: break-word;
 		overflow-wrap: break-word;
@@ -49,6 +50,10 @@
 		font-size: 0.875rem !important;
 		padding: 4.125em 1.875rem 1.25rem !important;
 		color: $gray-900 !important;
+		overflow: hidden;
+		white-space: pre-wrap;
+		word-break: break-word;
+		overflow-wrap: break-word;
 
 		&::before {
 			position: absolute;
