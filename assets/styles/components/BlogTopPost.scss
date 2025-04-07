@@ -6,7 +6,7 @@
 .blog__top__post {
 	max-width: $wrapper-md;
 	margin: 0 auto 3em;
-
+	display: none;
 	position: relative;
 
 	&__item {
@@ -69,6 +69,7 @@
 	}
 
 	@media (min-width: $breakpoint-tablet) {
+		display:block;
 
 		&__image,
 		&__content {
