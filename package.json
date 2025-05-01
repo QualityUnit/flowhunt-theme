@@ -48,7 +48,7 @@
 		"stylelint": "^14"
 	},
 	"dependencies": {
-		"@babel/plugin-proposal-optional-chaining-assign": "^7.25.9",
+		"@babel/plugin-proposal-optional-chaining-assign": "^7.27.1",
 		"@ronilaukkarinen/gulp-stylelint": "^14.1.2",
 		"gsap": "^3.12.7",
 		"gulp-replace": "^1.1.4",
