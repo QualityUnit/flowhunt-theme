@@ -53,6 +53,6 @@
 		"gsap": "^3.12.7",
 		"gulp-replace": "^1.1.4",
 		"gulp-svg-sprite": "^2.0.3",
-		"sass": "^1.83.4"
+		"sass": "^1.87.0"
 	}
 }
